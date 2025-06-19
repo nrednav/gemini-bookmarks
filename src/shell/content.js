@@ -27,9 +27,15 @@ async function main() {
       e.stopPropagation();
       e.preventDefault();
 
+      const tagsString = window.prompt("Enter optional tags for this bookmark, separated by commas:", "");
+
+      const tags = tagsString
+        ? tagsString.split(",").map(tag => tag.trim()).filter(tag => tag.length > 0)
+        : [];
+
       const newBookmarkData = {
         content: responseElement.innerText,
-        tags: []
+        tags: tags
       };
 
       const newState = GeminiBookmarker.addBookmark(currentState, newBookmarkData);
