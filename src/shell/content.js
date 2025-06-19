@@ -1,6 +1,37 @@
 async function main() {
   console.log('Gemini Bookmarker: Content script loaded.');
 
+  const uiShellHTML = `
+    <div class="gemini-bookmarker-container">
+      <div class="gb-panel">
+        <div class="gb-panel__header">
+          <h3>Bookmarked Responses</h3>
+        </div>
+        <div class="gb-panel__tags" id="gb-tags-list">
+          </div>
+        <div class="gb-panel__bookmarks" id="gb-bookmarks-list">
+          </div>
+      </div>
+
+      <button class="gb-fab" title="View Bookmarks">
+        <svg viewBox="0 0 24 24">
+          <path d="M17 3H7c-1.1 0-2 .9-2 2v16l7-3 7 3V5c0-1.1-.9-2-2-2z"/>
+        </svg>
+      </button>
+    </div>
+  `;
+
+  document.body.insertAdjacentHTML('beforeend', uiShellHTML);
+
+  const fabButton = document.querySelector('.gb-fab');
+  const panel = document.querySelector('.gb-panel');
+
+  if (fabButton && panel) {
+    fabButton.addEventListener('click', () => {
+      panel.classList.toggle('visible');
+    });
+  }
+
   const conversationKey = `bookmarks-${window.location.pathname}`;
 
   let currentState = await loadState(conversationKey);

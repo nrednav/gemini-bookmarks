@@ -42,3 +42,76 @@
 .bookmark-button.active svg {
   fill: #1967d2;
 }
+
+.gemini-bookmarker-container {
+  font-family: 'Google Sans', sans-serif;
+}
+
+.gb-fab {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 56px;
+  height: 56px;
+  background-color: #f0f4f9;
+  border: 1px solid #dcdcdc;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  cursor: pointer;
+  z-index: 9998;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s;
+}
+
+.gb-fab:hover {
+  background-color: #e6eaf0;
+}
+
+.gb-fab svg {
+  width: 24px;
+  height: 24px;
+  fill: #1f1f1f;
+}
+
+.gb-panel {
+  position: fixed;
+  bottom: 90px;
+  right: 24px;
+  width: 350px;
+  max-height: 400px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.gb-panel.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.gb-panel__header {
+  padding: 16px;
+  border-bottom: 1px solid #e0e0e0;
+}
+.gb-panel__header h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 500;
+  color: #1f1f1f;
+}
+
+.gb-panel__bookmarks {
+  overflow-y: auto;
+  flex-grow: 1;
+}
