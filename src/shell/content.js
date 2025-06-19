@@ -48,8 +48,49 @@ async function main() {
     }
   }
 
+  function updateAllButtonStates() {
+    const bookmarkButtons = document.querySelectorAll('.bookmark-button');
+
+    for (const bookmarkButton of bookmarkButtons) {
+      const responseElement = bookmarkButton.closest('model-response');
+
+      if (responseElement) {
+        updateButtonState(bookmarkButton, responseElement.id);
+      }
+    }
+  }
+
+  function renderPanelContent(state) {
+    const tagsContainer = document.getElementById('gb-tags-list');
+    const bookmarksContainer = document.getElementById('gb-bookmarks-list');
+
+    if (!tagsContainer || !bookmarksContainer) {
+      return;
+    }
+
+    const uniqueTags = GeminiBookmarker.getUniqueTags(state);
+
+    tagsContainer.innerHTML = uniqueTags.map(tag => {
+      return `<button class="gb-tag-filter" data-tag="${tag}">${tag}</button>`;
+    }).join("");
+
+    if (state.bookmarks.length === 0) {
+      bookmarksContainer.innerHTML = `<p class="gb-panel__empty-message">No bookmarks yet. Click the icon on a response to bookmark it!</p>`;
+      return;
+    }
+
+    bookmarksContainer.innerHTML = state.bookmarks.map(bookmark => `
+      <div class="gb-bookmark" data-bookmark-id="${bookmark.id}" title="Click to scroll to this response">
+        <p class="gb-bookmark__content">${bookmark.content.substring(0, 120)}...</p>
+        <div class="gb-bookmark__tags">
+          ${bookmark.tags.map(tag => `<span class="gb-bookmark__tag">${tag}</span>`).join('')}
+        </div>
+      </div>
+    `).join('');
+  }
+
   function processNewResponse(responseElement) {
-    const responseId = responseElement.id || `gemini-bookmarked-response-${Date.now()}`;
+    const responseId = responseElement.id || `gb-${crypto.randomUUID()}`;
 
     responseElement.id = responseId;
 
@@ -105,12 +146,14 @@ async function main() {
 
       await saveState(conversationKey, currentState);
 
-      updateButtonState(bookmarkButton, responseId);
+      renderPanelContent(currentState);
+
+      updateAllButtonStates();
     };
 
     responseElement.appendChild(bookmarkButton);
 
-    updateButtonState(bookmarkButton, responseId);
+    updateAllButtonStates();
   }
 
   function handleDOMChanges(mutations) {
@@ -145,6 +188,10 @@ async function main() {
   observer.observe(document.body, observerConfig);
 
   document.querySelectorAll('model-response').forEach(processNewResponse);
+
+  renderPanelContent(currentState);
+
+  updateAllButtonStates();
 }
 
 async function loadState(key) {
@@ -157,6 +204,7 @@ async function loadState(key) {
 }
 
 async function saveState(key, state) {
+  console.log('%cSaving to storage:', 'color: blue;', JSON.parse(JSON.stringify(state)));
   await browser.storage.local.set({ [key]: state });
 }
 

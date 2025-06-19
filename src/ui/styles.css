@@ -115,3 +115,72 @@
   overflow-y: auto;
   flex-grow: 1;
 }
+
+.gb-panel__tags {
+  padding: 8px 16px;
+  border-bottom: 1px solid #e0e0e0;
+  flex-shrink: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.gb-tag-filter {
+  background-color: #e8f0fe;
+  color: #1967d2;
+  border: 1px solid #d2e3fc;
+  border-radius: 16px;
+  padding: 4px 12px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.gb-tag-filter:hover {
+  background-color: #d2e3fc;
+}
+
+.gb-panel__empty-message {
+  padding: 32px 16px;
+  text-align: center;
+  color: #5f6368;
+}
+
+.gb-bookmark {
+  padding: 12px 16px;
+  border-bottom: 1px solid #f0f0f0;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.gb-bookmark:hover {
+  background-color: #f8f9fa;
+}
+.gb-bookmark:last-child {
+  border-bottom: none;
+}
+
+.gb-bookmark__content {
+  margin: 0 0 8px 0;
+  font-size: 14px;
+  color: #3c4043;
+  line-height: 1.4;
+
+  /* For showing ellipsis on multi-line text */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.gb-bookmark__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.gb-bookmark__tag {
+  background-color: #f1f3f4;
+  color: #3c4043;
+  border-radius: 4px;
+  padding: 2px 6px;
+  font-size: 11px;
+}
