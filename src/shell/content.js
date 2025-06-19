@@ -5,7 +5,23 @@ async function main() {
 
   let currentState = await loadState(conversationKey);
 
+  function updateButtonState(button, responseId) {
+    const isBookmarked = currentState.bookmarks.some(bookmark => bookmark.id === responseId);
+
+    if (isBookmarked) {
+      button.classList.add('active');
+      button.title = 'Click to remove bookmark';
+    } else {
+      button.classList.remove('active');
+      button.title = 'Click to add bookmark';
+    }
+  }
+
   function processNewResponse(responseElement) {
+    const responseId = responseElement.id || `gemini-bookmarked-response-${Date.now()}`;
+
+    responseElement.id = responseId;
+
     if (responseElement.dataset.processedByExtension) {
       return;
     }
@@ -27,27 +43,43 @@ async function main() {
       e.stopPropagation();
       e.preventDefault();
 
-      const tagsString = window.prompt("Enter optional tags for this bookmark, separated by commas:", "");
+      const existingBookmark = currentState.bookmarks.find(bookmark => bookmark.id === responseId);
 
-      const tags = tagsString
-        ? tagsString.split(",").map(tag => tag.trim()).filter(tag => tag.length > 0)
-        : [];
+      if (existingBookmark) {
+        currentState = GeminiBookmarker.removeBookmark(currentState, responseId);
+        console.log('Bookmark removed!');
+      } else {
+        const tagsString = window.prompt("Enter optional tags for this bookmark, separated by commas:", "");
 
-      const newBookmarkData = {
-        content: responseElement.innerText,
-        tags: tags
-      };
+        if (tagsString === null) {
+          return;
+        }
 
-      const newState = GeminiBookmarker.addBookmark(currentState, newBookmarkData);
+        const tags = tagsString
+          ? tagsString.split(",").map(tag => tag.trim()).filter(tag => tag.length > 0)
+          : [];
 
-      currentState = newState;
+        const newBookmarkData = {
+          id: responseId,
+          content: responseElement.innerText,
+          tags: tags
+        };
+
+        const newState = GeminiBookmarker.addBookmark(currentState, newBookmarkData);
+
+        currentState = newState;
+
+        console.log('Bookmark added!');
+      }
 
       await saveState(conversationKey, currentState);
 
-      console.log('Bookmark added and saved! New state:', currentState);
+      updateButtonState(bookmarkButton, responseId);
     };
 
     responseElement.appendChild(bookmarkButton);
+
+    updateButtonState(bookmarkButton, responseId);
   }
 
   function handleDOMChanges(mutations) {

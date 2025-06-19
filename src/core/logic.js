@@ -2,12 +2,12 @@
  * Adds a new bookmark to the state.
  *
  * @param {import('./state.js').AppState} state - The current application state.
- * @param {{content: string, tags: string[]}} newBookmarkData - The data for the new bookmark.
+ * @param {{id: string, content: string, tags: string[]}} newBookmarkData - The data for the new bookmark.
  * @returns {import('./state.js').AppState} A new state object with the added bookmark.
  */
 GeminiBookmarker.addBookmark = function (state, newBookmarkData) {
   const newBookmark = {
-    id: `bookmark-${Date.now()}`,
+    id: newBookmarkData.id,
     timestamp: Date.now(),
     content: newBookmarkData.content,
     tags: newBookmarkData.tags || []
@@ -16,6 +16,24 @@ GeminiBookmarker.addBookmark = function (state, newBookmarkData) {
   return {
     ...state,
     bookmarks: [...state.bookmarks, newBookmark]
+  };
+}
+
+/**
+ * Removes a bookmark from the state.
+ *
+ * @param {import('./state.js').AppState} state - The current application state.
+ * @param {string} bookmarkId - The id of the bookmark to remove.
+ * @returns {import('./state.js').AppState} A new state object with the bookmark removed.
+ */
+GeminiBookmarker.removeBookmark = function (state, bookmarkId) {
+  const updatedBookmarks = state.bookmarks.filter(
+    (bookmark) => bookmark.id !== bookmarkId
+  );
+
+  return {
+    ...state,
+    bookmarks: updatedBookmarks
   };
 }
 

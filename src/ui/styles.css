@@ -33,3 +33,12 @@
   height: 16px;
   fill: #444746;
 }
+
+.bookmark-button.active {
+  background-color: #d3e3fd;
+  border-color: #8ab4f8;
+}
+
+.bookmark-button.active svg {
+  fill: #1967d2;
+}
