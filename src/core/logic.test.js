@@ -32,14 +32,14 @@ function testGetUniqueTags() {
   assertEquals(tags, ['t1', 't2', 't3'], 'getUniqueTags should return unique, sorted tags');
 }
 
-function testFilterBookmarksByTag() {
+function testFilterBookmarksByTags() {
   let state = GeminiBookmarker.addBookmark(GeminiBookmarker.initialState, { id: 'test-id-1', content: 'A', tags: ['t1', 't2'] });
 
   state = GeminiBookmarker.addBookmark(state, { id: 'test-id-2', content: 'B', tags: ['t3', 't1'] });
 
-  const filtered = GeminiBookmarker.filterBookmarksByTag(state, 't1');
+  const filteredBookmarks = GeminiBookmarker.filterBookmarksByTags(state, ['t1', 't3']);
 
-  assertEquals(filtered.length, 2, 'filterBookmarksByTag should find all matching bookmarks');
+  assertEquals(filteredBookmarks.length, 2, 'filterBookmarksByTags should find all matching bookmarks');
 }
 
 export function runCoreLogicTests() {
@@ -47,7 +47,7 @@ export function runCoreLogicTests() {
     testAddBookmark();
     testRemoveBookmark();
     testGetUniqueTags();
-    testFilterBookmarksByTag();
+    testFilterBookmarksByTags();
 
     console.log('%c✅ All core logic tests passed!', 'color: green; font-weight: bold;');
   } catch(e) {

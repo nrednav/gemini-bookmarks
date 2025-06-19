@@ -17,6 +17,7 @@ async function main() {
   const conversationKey = `bookmarks-${window.location.pathname}`;
 
   let currentState = await loadState(conversationKey);
+  let activeTagFilters = [];
 
   const ui = injectUI();
 
@@ -51,15 +52,20 @@ async function main() {
     const uniqueTags = GeminiBookmarker.getUniqueTags(currentState);
 
     ui.tagsContainer.innerHTML = uniqueTags.map(tag => {
-      return `<button class="gb-tag-filter" data-tag="${tag}">${tag}</button>`;
+      const isActive = activeTagFilters.includes(tag);
+      return `<button class="gb-tag-filter ${isActive ? 'active' : ''}" data-tag="${tag}">${tag}</button>`;
     }).join("");
+
+    const bookmarksToShow = activeTagFilters.length > 0
+      ? GeminiBookmarker.filterBookmarksByTags(currentState, activeTagFilters)
+      : currentState.bookmarks;
 
     if (currentState.bookmarks.length === 0) {
       ui.bookmarksContainer.innerHTML = `<p class="gb-panel__empty-message">No bookmarks yet. Click the icon on a response to bookmark it!</p>`;
       return;
     }
 
-    ui.bookmarksContainer.innerHTML = currentState.bookmarks.map(bookmark => `
+    ui.bookmarksContainer.innerHTML = bookmarksToShow.map(bookmark => `
       <div class="gb-bookmark" data-bookmark-id="${bookmark.id}" title="Click to scroll to this response">
         <p class="gb-bookmark__content">${bookmark.content.substring(0, 120)}...</p>
         <div class="gb-bookmark__tags">
@@ -195,6 +201,61 @@ async function main() {
     });
   }
 
+  function setupEventListeners(ui) {
+    if (ui.fab && ui.panel) {
+      ui.fab.addEventListener("click", () => {
+        ui.panel.classList.toggle("visible");
+      });
+    }
+
+    if (ui.bookmarksContainer) {
+      ui.bookmarksContainer.addEventListener("click", (e) => {
+        const clickedBookmark = e.target.closest(".gb-bookmark");
+
+        if (!clickedBookmark) {
+          return;
+        }
+
+        const bookmarkId = clickedBookmark.dataset.bookmarkId;
+
+        if (!bookmarkId) {
+          return;
+        }
+
+        const responseElement = document.getElementById(bookmarkId);
+
+        if (responseElement) {
+          responseElement.scrollIntoView({ behavior: "smooth", block: "start" });
+          responseElement.classList.add("bookmark-highlight");
+
+          setTimeout(() => {
+            responseElement.classList.remove("bookmark-highlight");
+          }, 1500);
+        }
+      });
+    }
+
+    if (ui.tagsContainer) {
+      ui.tagsContainer.addEventListener("click", (e) => {
+        const clickedTagButton = e.target.closest(".gb-tag-filter");
+
+        if (!clickedTagButton) {
+          return;
+        }
+
+        const tag = clickedTagButton.dataset.tag;
+
+        if (activeTagFilters.includes(tag)) {
+          activeTagFilters = activeTagFilters.filter((activeTagFilter) => activeTagFilter !== tag);
+        } else {
+          activeTagFilters.push(tag);
+        }
+
+        render();
+      });
+    }
+  }
+
   for (const modelResponse of ui.modelResponses) {
     await addBookmarkButtonTo(modelResponse);
   }
@@ -225,55 +286,20 @@ function injectUI() {
     </div>
   `;
 
-  document.body.insertAdjacentHTML('beforeend', uiShellHTML);
+  document.body.insertAdjacentHTML("beforeend", uiShellHTML);
 
   return {
-    fab: document.querySelector('.gb-fab'),
-    panel: document.querySelector('.gb-panel'),
-    tagsContainer: document.getElementById('gb-tags-list'),
-    bookmarksContainer: document.getElementById('gb-bookmarks-list'),
+    fab: document.querySelector(".gb-fab"),
+    panel: document.querySelector(".gb-panel"),
+    tagsContainer: document.getElementById("gb-tags-list"),
+    bookmarksContainer: document.getElementById("gb-bookmarks-list"),
     get bookmarkButtons() {
-      return document.querySelectorAll('.bookmark-button')
+      return document.querySelectorAll(".bookmark-button")
     },
     get modelResponses() {
-      return document.querySelectorAll('model-response');
+      return document.querySelectorAll("model-response");
     }
   };
-}
-
-function setupEventListeners(ui) {
-  if (ui.fab && ui.panel) {
-    ui.fab.addEventListener('click', () => {
-      ui.panel.classList.toggle('visible');
-    });
-  }
-
-  if (ui.bookmarksContainer) {
-    ui.bookmarksContainer.addEventListener('click', (e) => {
-      const clickedBookmark = e.target.closest('.gb-bookmark');
-
-      if (!clickedBookmark) {
-        return;
-      }
-
-      const bookmarkId = clickedBookmark.dataset.bookmarkId;
-
-      if (!bookmarkId) {
-        return;
-      }
-
-      const responseElement = document.getElementById(bookmarkId);
-
-      if (responseElement) {
-        responseElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        responseElement.classList.add('bookmark-highlight');
-
-        setTimeout(() => {
-          responseElement.classList.remove('bookmark-highlight');
-        }, 1500);
-      }
-    });
-  }
 }
 
 async function generateContentHash(text) {

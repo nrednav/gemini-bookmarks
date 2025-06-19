@@ -55,10 +55,10 @@ GeminiBookmarker.getUniqueTags = function (state) {
  * @param {string} tag The tag to filter by.
  * @returns {import('./state.js').Bookmark[]} A new array of matching bookmarks.
  */
-GeminiBookmarker.filterBookmarksByTag = function (state, tag) {
-  if (!tag) {
+GeminiBookmarker.filterBookmarksByTags = function (state, tags) {
+  if (tags.length === 0) {
     return state.bookmarks;
   }
 
-  return state.bookmarks.filter(bookmark => bookmark.tags.includes(tag));
+  return state.bookmarks.filter(bookmark => tags.some(tag => bookmark.tags.includes(tag)));
 }

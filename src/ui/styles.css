@@ -135,8 +135,15 @@
   cursor: pointer;
   transition: background-color 0.2s;
 }
+
 .gb-tag-filter:hover {
   background-color: #d2e3fc;
+}
+
+.gb-tag-filter.active {
+  background-color: #1967d2;
+  color: #ffffff;
+  border-color: #1967d2;
 }
 
 .gb-panel__empty-message {
