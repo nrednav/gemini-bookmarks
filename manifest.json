@@ -8,10 +8,21 @@
     "scripting"
   ],
   "host_permissions": [
-    "https://gemini.google.com/u/*/app/*"
+    "https://gemini.google.com/u/*/app/*",
+    "https://gemini.google.com/u/*/gem/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://gemini.google.com/u/*/app/*",
+        "https://gemini.google.com/u/*/gem/*"
+      ],
+      "js": ["src/shell/content.js"],
+      "css": ["src/ui/styles.css"]
+    }
   ],
   "icons": {
-    "48": "icons/icon-48.png",
-    "128": "icons/icon-128.png"
+    "48": "src/icons/icon-48.png",
+    "128": "src/icons/icon-128.png"
   }
 }
