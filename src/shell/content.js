@@ -1,75 +1,94 @@
-console.log('Gemini Bookmarker: Content script loaded.');
+async function main() {
+  console.log('Gemini Bookmarker: Content script loaded.');
 
-let currentState = GeminiBookmarker.initialState;
+  const conversationKey = `bookmarks-${window.location.pathname}`;
 
-function processNewResponse(responseElement) {
-  if (responseElement.dataset.processedByExtension) {
-    return;
-  }
+  let currentState = await loadState(conversationKey);
 
-  responseElement.dataset.processedByExtension = 'true';
+  function processNewResponse(responseElement) {
+    if (responseElement.dataset.processedByExtension) {
+      return;
+    }
 
-  responseElement.classList.add('bookmark-container');
+    responseElement.dataset.processedByExtension = 'true';
 
-  const bookmarkButton = document.createElement('button');
+    responseElement.classList.add('bookmark-container');
 
-  bookmarkButton.className = 'bookmark-button';
-  bookmarkButton.innerHTML = `
+    const bookmarkButton = document.createElement('button');
+
+    bookmarkButton.className = 'bookmark-button';
+    bookmarkButton.innerHTML = `
     <svg viewBox="0 0 24 24">
       <path d="M17 3H7c-1.1 0-2 .9-2 2v16l7-3 7 3V5c0-1.1-.9-2-2-2z"/>
     </svg>
   `;
 
-  bookmarkButton.onclick = (e) => {
-    e.stopPropagation();
-    e.preventDefault();
+    bookmarkButton.onclick = async (e) => {
+      e.stopPropagation();
+      e.preventDefault();
 
-    const newBookmarkData = {
-      content: responseElement.innerText,
-      tags: []
+      const newBookmarkData = {
+        content: responseElement.innerText,
+        tags: []
+      };
+
+      const newState = GeminiBookmarker.addBookmark(currentState, newBookmarkData);
+
+      currentState = newState;
+
+      await saveState(conversationKey, currentState);
+
+      console.log('Bookmark added and saved! New state:', currentState);
     };
 
-    const newState = GeminiBookmarker.addBookmark(currentState, newBookmarkData);
+    responseElement.appendChild(bookmarkButton);
+  }
 
-    currentState = newState;
-
-    console.log('Bookmark added! New state:', currentState);
-  };
-
-  responseElement.appendChild(bookmarkButton);
-}
-
-function handleDOMChanges(mutations) {
-  for (const mutation of mutations) {
-    if (mutation.type !== 'childList') {
-      continue;
-    }
-
-    for (const addedNode of mutation.addedNodes) {
-      if(addedNode.nodeType !== Node.ELEMENT_NODE) {
+  function handleDOMChanges(mutations) {
+    for (const mutation of mutations) {
+      if (mutation.type !== 'childList') {
         continue;
       }
 
-      if(addedNode.matches('model-response')) {
-        processNewResponse(addedNode);
+      for (const addedNode of mutation.addedNodes) {
+        if(addedNode.nodeType !== Node.ELEMENT_NODE) {
+          continue;
+        }
+
+        if(addedNode.matches('model-response')) {
+          processNewResponse(addedNode);
+        }
+
+        const responses = addedNode.querySelectorAll('model-response');
+
+        responses.forEach(processNewResponse);
       }
-
-      const responses = addedNode.querySelectorAll('model-response');
-
-      responses.forEach(processNewResponse);
     }
   }
+
+  const observerConfig = {
+    childList: true,
+    subtree: true
+  };
+
+  const observer = new MutationObserver(handleDOMChanges);
+
+  observer.observe(document.body, observerConfig);
+
+  document.querySelectorAll('model-response').forEach(processNewResponse);
 }
 
-const observerConfig = {
-  childList: true,
-  subtree: true
-};
+async function loadState(key) {
+  const data = await browser.storage.local.get(key);
+  const loadedState = data[key] || GeminiBookmarker.initialState;
 
-const observer = new MutationObserver(handleDOMChanges);
+  console.log('State loaded for key:', key, loadedState);
 
-observer.observe(document.body, observerConfig);
+  return loadedState;
+}
 
-console.log('Gemini Bookmarker: Scanning for existing response elements...');
+async function saveState(key, state) {
+  await browser.storage.local.set({ [key]: state });
+}
 
-document.querySelectorAll('model-response').forEach(processNewResponse);
+main();
