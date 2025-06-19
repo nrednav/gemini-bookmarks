@@ -1,3 +1,5 @@
+var GeminiBookmarker = {};
+
 /**
  * The initial, empty state of the application.
  *
@@ -14,6 +16,6 @@
 /**
  * @type {AppState}
  */
-export const initialState = {
+GeminiBookmarker.initialState = {
   bookmarks: []
 };

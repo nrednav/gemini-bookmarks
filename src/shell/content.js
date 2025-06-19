@@ -1,5 +1,7 @@
 console.log('Gemini Bookmarker: Content script loaded.');
 
+let currentState = GeminiBookmarker.initialState;
+
 function processNewResponse(responseElement) {
   if (responseElement.dataset.processedByExtension) {
     return;
@@ -22,7 +24,16 @@ function processNewResponse(responseElement) {
     e.stopPropagation();
     e.preventDefault();
 
-    console.log('Bookmark button clicked!', responseElement);
+    const newBookmarkData = {
+      content: responseElement.innerText,
+      tags: []
+    };
+
+    const newState = GeminiBookmarker.addBookmark(currentState, newBookmarkData);
+
+    currentState = newState;
+
+    console.log('Bookmark added! New state:', currentState);
   };
 
   responseElement.appendChild(bookmarkButton);
