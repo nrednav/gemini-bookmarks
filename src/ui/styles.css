@@ -184,3 +184,9 @@
   padding: 2px 6px;
   font-size: 11px;
 }
+
+.bookmark-highlight {
+  box-shadow: 0 0 0 2px #1967d2, 0 0 15px rgba(25, 103, 210, 0.5);
+  border-radius: 8px;
+  transition: box-shadow 0.3s ease-in-out;
+}

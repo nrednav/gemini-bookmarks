@@ -12,6 +12,8 @@ async function saveState(key, state) {
 async function main() {
   console.log('Gemini Bookmarker: Content script loaded.');
 
+  await waitForElement(document.body, 'model-response');
+
   const conversationKey = `bookmarks-${window.location.pathname}`;
 
   let currentState = await loadState(conversationKey);
@@ -67,15 +69,13 @@ async function main() {
     `).join('');
   }
 
-  function handleBookmarkClick(responseElement) {
-    const responseId = responseElement.id || `gb-${crypto.randomUUID()}`;
+  async function handleBookmarkClick(responseElement, content, bookmarkId) {
+    responseElement.id = bookmarkId;
 
-    responseElement.id = responseId;
-
-    const existingBookmark = currentState.bookmarks.find(bookmark => bookmark.id === responseId);
+    const existingBookmark = currentState.bookmarks.find(bookmark => bookmark.id === bookmarkId);
 
     if (existingBookmark) {
-      currentState = GeminiBookmarker.removeBookmark(currentState, responseId);
+      currentState = GeminiBookmarker.removeBookmark(currentState, bookmarkId);
     } else {
       const tagsString = window.prompt("Enter optional tags for this bookmark, separated by commas:", "");
 
@@ -88,8 +88,8 @@ async function main() {
         : [];
 
       const newBookmarkData = {
-        id: responseId,
-        content: responseElement.innerText,
+        id: bookmarkId,
+        content: content,
         tags: tags
       };
 
@@ -101,6 +101,8 @@ async function main() {
 
   function startObserver() {
     const observer = new MutationObserver((mutations) => {
+      const newNodes = new Set();
+
       for (const mutation of mutations) {
         if (mutation.type !== 'childList') {
           continue;
@@ -112,46 +114,93 @@ async function main() {
           }
 
           if (addedNode.matches('model-response')) {
-            addBookmarkButtonTo(addedNode);
+            newNodes.add(addedNode);
           }
 
-          addedNode.querySelectorAll('model-response').forEach(addBookmarkButtonTo);
+          addedNode.querySelectorAll('model-response').forEach((modelResponseNode) => {
+            newNodes.add(modelResponseNode);
+          });
         }
       }
+
+      newNodes.forEach(addBookmarkButtonTo);
     });
 
     observer.observe(document.body, { childList: true, subtree: true });
   }
 
-  function addBookmarkButtonTo(responseElement) {
+  async function addBookmarkButtonTo(responseElement) {
     if (responseElement.dataset.processedByExtension) {
       return;
     }
 
-    responseElement.dataset.processedByExtension = 'true';
+    responseElement.dataset.processedByExtension = "true";
 
-    responseElement.classList.add('bookmark-container');
+    try {
+      const contentElement = await waitForElement(responseElement, "message-content");
+      const content = contentElement.innerText.trim();
+      const contentHash = await generateContentHash(content);
 
-    const bookmarkButton = document.createElement('button');
+      const isBookmarked = currentState.bookmarks.some(bookmark => bookmark.id === contentHash);
 
-    bookmarkButton.className = 'bookmark-button';
-    bookmarkButton.innerHTML = `<svg viewBox="0 0 24 24"><path d="M17 3H7c-1.1 0-2 .9-2 2v16l7-3 7 3V5c0-1.1-.9-2-2-2z"/></svg>`;
-    bookmarkButton.onclick = (e) => {
-      e.stopPropagation();
-      e.preventDefault();
+      if (isBookmarked) {
+        responseElement.id = contentHash;
+      }
 
-      handleBookmarkClick(responseElement);
-    };
 
-    responseElement.appendChild(bookmarkButton);
+      responseElement.classList.add('bookmark-container');
+
+      const bookmarkButton = document.createElement('button');
+
+      bookmarkButton.className = 'bookmark-button';
+      bookmarkButton.innerHTML = `<svg viewBox="0 0 24 24"><path d="M17 3H7c-1.1 0-2 .9-2 2v16l7-3 7 3V5c0-1.1-.9-2-2-2z"/></svg>`;
+      bookmarkButton.onclick = async (e) => {
+        e.stopPropagation();
+        e.preventDefault();
+
+        await handleBookmarkClick(responseElement, content, contentHash);
+      };
+
+      responseElement.appendChild(bookmarkButton);
+
+      updateButtonState(bookmarkButton, isBookmarked ? contentHash : responseElement.id);
+    } catch (error) {
+      console.warn("Gemini Bookmarker: Could not process a response element.", error.message, responseElement);
+    }
+  }
+
+  function waitForElement(parentElement, selector, timeout = 30000) {
+    return new Promise((resolve, reject) => {
+      const element = parentElement.querySelector(selector);
+
+      if (element) {
+        resolve(element);
+        return;
+      }
+
+      const interval = setInterval(() => {
+        const element = parentElement.querySelector(selector);
+
+        if (element) {
+          clearInterval(interval);
+          resolve(element);
+        }
+      }, 150);
+
+      setTimeout(() => {
+        clearInterval(interval);
+
+        reject(new Error(`Element with selector "${selector} not found within ${timeout} ms."`));
+      }, timeout);
+    });
+  }
+
+  for (const modelResponse of ui.modelResponses) {
+    await addBookmarkButtonTo(modelResponse);
   }
 
   setupEventListeners(ui);
-
   startObserver();
-
-  ui.modelResponses.forEach(addBookmarkButtonTo);
-
   render();
 }
 
@@ -198,6 +247,43 @@ function setupEventListeners(ui) {
       ui.panel.classList.toggle('visible');
     });
   }
+
+  if (ui.bookmarksContainer) {
+    ui.bookmarksContainer.addEventListener('click', (e) => {
+      const clickedBookmark = e.target.closest('.gb-bookmark');
+
+      if (!clickedBookmark) {
+        return;
+      }
+
+      const bookmarkId = clickedBookmark.dataset.bookmarkId;
+
+      if (!bookmarkId) {
+        return;
+      }
+
+      const responseElement = document.getElementById(bookmarkId);
+
+      if (responseElement) {
+        responseElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        responseElement.classList.add('bookmark-highlight');
+
+        setTimeout(() => {
+          responseElement.classList.remove('bookmark-highlight');
+        }, 1500);
+      }
+    });
+  }
+}
+
+async function generateContentHash(text) {
+  const encoder = new TextEncoder();
+  const data = encoder.encode(text);
+  const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+  const hashArray = Array.from(new Uint8Array(hashBuffer));
+  const contentHash = hashArray.map(bytes => bytes.toString(16).padStart(2, '0')).join('');
+
+  return contentHash;
 }
 
 main();
