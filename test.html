@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Core Logic Test</title>
+  </head>
+  <body>
+    <h1>Testing the Functional Core. Check the console!</h1>
+
+    <script type="module">
+      import { initialState } from './src/core/state.js';
+      import { addBookmark } from './src/core/logic.js';
+
+      console.log('--- TEST START ---');
+
+      console.log('Initial State:', initialState);
+
+      const firstBookmarkData = {
+        content: 'This is the first response we want to save.',
+        tags: ['welcome', 'testing'],
+      };
+
+      const stateAfterFirstAdd = addBookmark(initialState, firstBookmarkData);
+
+      console.log('State after first add:', stateAfterFirstAdd);
+      console.log(
+        'Is the original state mutated?',
+        initialState === stateAfterFirstAdd
+      );
+
+      const secondBookmarkData = {
+        content: 'This is the second response.',
+        tags: ['core-logic'],
+      };
+      const stateAfterSecondAdd = addBookmark(
+        stateAfterFirstAdd,
+        secondBookmarkData
+      );
+
+      console.log('State after second add:', stateAfterSecondAdd);
+      console.log(
+        'Bookmarks count should be 2:',
+        stateAfterSecondAdd.bookmarks.length
+      );
+
+      console.log('--- TEST END ---');
+    </script>
+  </body>
+</html>
