@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "Gemini Bookmarker",
+  "version": "0.1.0",
+  "description": "Bookmark and quickly navigate to responses in a Gemini conversation.",
+  "permissions": [
+    "storage",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://gemini.google.com/u/*/app/*"
+  ],
+  "icons": {
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  }
+}
