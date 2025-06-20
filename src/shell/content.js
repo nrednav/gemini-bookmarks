@@ -22,6 +22,10 @@ async function main() {
   const ui = injectUI();
 
   function render() {
+    if (ui.clearAllButton) {
+      ui.clearAllButton.disabled = currentState.bookmarks.length === 0;
+    }
+
     renderPanelContent();
     updateAllButtonStates();
   };

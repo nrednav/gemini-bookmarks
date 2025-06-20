@@ -217,3 +217,12 @@
 .gb-clear-all-button:hover {
   background-color: #fcece8;
 }
+
+.gb-clear-all-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.gb-clear-all-button:disabled:hover {
+  background-color: transparent;
+}
