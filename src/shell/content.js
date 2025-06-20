@@ -65,7 +65,18 @@ async function main() {
       return;
     }
 
-    ui.bookmarksContainer.innerHTML = bookmarksToShow.map(bookmark => `
+    const sortedBookmarks = bookmarksToShow
+      .map(bookmark => {
+        const element = document.getElementById(bookmark.id);
+
+        return {
+          ...bookmark,
+          position: element?.offsetTop ?? Infinity
+        };
+      })
+    .sort((a, b) => a.position - b.position);
+
+    ui.bookmarksContainer.innerHTML = sortedBookmarks.map(bookmark => `
       <div class="gb-bookmark" data-bookmark-id="${bookmark.id}" title="Click to scroll to this response">
         <p class="gb-bookmark__content">${bookmark.content.substring(0, 120)}...</p>
         <div class="gb-bookmark__tags">
