@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "Gemini Bookmarks",
+  "version": "0.1.0",
+  "description": "Bookmark and quickly navigate between responses in a Gemini conversation.",
+  "permissions": [
+    "storage",
+    "scripting",
+    "webNavigation"
+  ],
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://gemini.google.com/u/*/app/*",
+        "https://gemini.google.com/u/*/gem/*"
+      ],
+      "js": [
+        "src/core/state.js",
+        "src/core/logic.js",
+        "src/shell/content.js"
+      ],
+      "css": ["src/ui/styles.css"]
+    }
+  ],
+  "icons": {
+    "48": "src/icons/icon-48.png",
+    "128": "src/icons/icon-128.png"
+  }
+}

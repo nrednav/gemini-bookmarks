@@ -30,3 +30,8 @@ dist-ssr
 # Env files
 .env
 .env.*
+
+# Manifest file
+/manifest.json
+!/manifest.chrome.json
+!/manifest.firefox.json

@@ -1,3 +1,5 @@
+let currentObserver = null;
+
 async function loadState(key) {
   const data = await browser.storage.local.get(key);
   const loadedState = data[key] || GeminiBookmarks.initialState;
@@ -58,8 +60,18 @@ async function generateContentHash(text) {
   return contentHash;
 }
 
-async function main() {
+async function initializeApp() {
   console.log('Gemini Bookmarks: Content script loaded.');
+
+  if (currentObserver) {
+    currentObserver.disconnect();
+  }
+
+  const oldUI = document.querySelector('.gemini-bookmarks-container');
+
+  if (oldUI) {
+    oldUI.remove();
+  }
 
   await waitForElement(document.body, 'model-response');
 
@@ -197,6 +209,8 @@ async function main() {
     });
 
     observer.observe(document.body, { childList: true, subtree: true });
+
+    currentObserver = observer;
   }
 
   async function addBookmarkButtonTo(responseElement) {
@@ -343,4 +357,10 @@ async function main() {
   render();
 }
 
-main();
+browser.runtime.onMessage.addListener(async (message) => {
+  if (message.type === "NAVIGATION") {
+    await initializeApp();
+  }
+});
+
+initializeApp();
