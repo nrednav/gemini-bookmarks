@@ -1,6 +1,6 @@
 async function loadState(key) {
   const data = await browser.storage.local.get(key);
-  const loadedState = data[key] || GeminiBookmarker.initialState;
+  const loadedState = data[key] || GeminiBookmarks.initialState;
 
   return loadedState;
 }
@@ -9,8 +9,57 @@ async function saveState(key, state) {
   await browser.storage.local.set({ [key]: state });
 }
 
+function injectUI() {
+  const uiShellHTML = `
+    <div class="gemini-bookmarks-container">
+      <div class="gb-panel">
+        <div class="gb-panel__header">
+          <h3>Bookmarked Responses</h3>
+          <button class="gb-clear-all-button" title="Remove all bookmarks for this conversation">Clear All</button>
+        </div>
+        <div class="gb-panel__tags" id="gb-tags-list">
+          </div>
+        <div class="gb-panel__bookmarks" id="gb-bookmarks-list">
+          </div>
+      </div>
+
+      <button class="gb-fab" title="View Bookmarks">
+        <svg viewBox="0 0 24 24">
+          <path d="M17 3H7c-1.1 0-2 .9-2 2v16l7-3 7 3V5c0-1.1-.9-2-2-2z"/>
+        </svg>
+      </button>
+    </div>
+  `;
+
+  document.body.insertAdjacentHTML("beforeend", uiShellHTML);
+
+  return {
+    fab: document.querySelector(".gb-fab"),
+    panel: document.querySelector(".gb-panel"),
+    tagsContainer: document.getElementById("gb-tags-list"),
+    bookmarksContainer: document.getElementById("gb-bookmarks-list"),
+    clearAllButton: document.querySelector('.gb-clear-all-button'),
+    get bookmarkButtons() {
+      return document.querySelectorAll(".bookmark-button")
+    },
+    get modelResponses() {
+      return document.querySelectorAll("model-response");
+    }
+  };
+}
+
+async function generateContentHash(text) {
+  const encoder = new TextEncoder();
+  const data = encoder.encode(text);
+  const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+  const hashArray = Array.from(new Uint8Array(hashBuffer));
+  const contentHash = hashArray.map(bytes => bytes.toString(16).padStart(2, '0')).join('');
+
+  return contentHash;
+}
+
 async function main() {
-  console.log('Gemini Bookmarker: Content script loaded.');
+  console.log('Gemini Bookmarks: Content script loaded.');
 
   await waitForElement(document.body, 'model-response');
 
@@ -53,7 +102,7 @@ async function main() {
   }
 
   function renderPanelContent() {
-    const uniqueTags = GeminiBookmarker.getUniqueTags(currentState);
+    const uniqueTags = GeminiBookmarks.getUniqueTags(currentState);
 
     ui.tagsContainer.innerHTML = uniqueTags.map(tag => {
       const isActive = activeTagFilters.includes(tag);
@@ -61,7 +110,7 @@ async function main() {
     }).join("");
 
     const bookmarksToShow = activeTagFilters.length > 0
-      ? GeminiBookmarker.filterBookmarksByTags(currentState, activeTagFilters)
+      ? GeminiBookmarks.filterBookmarksByTags(currentState, activeTagFilters)
       : currentState.bookmarks;
 
     if (currentState.bookmarks.length === 0) {
@@ -96,7 +145,7 @@ async function main() {
     const existingBookmark = currentState.bookmarks.find(bookmark => bookmark.id === bookmarkId);
 
     if (existingBookmark) {
-      currentState = GeminiBookmarker.removeBookmark(currentState, bookmarkId);
+      currentState = GeminiBookmarks.removeBookmark(currentState, bookmarkId);
     } else {
       const tagsString = window.prompt("Enter optional tags for this bookmark, separated by commas:", "");
 
@@ -114,7 +163,7 @@ async function main() {
         tags: tags
       };
 
-      currentState = GeminiBookmarker.addBookmark(currentState, newBookmarkData);
+      currentState = GeminiBookmarks.addBookmark(currentState, newBookmarkData);
     }
 
     saveState(conversationKey, currentState).then(render);
@@ -168,7 +217,6 @@ async function main() {
         responseElement.id = contentHash;
       }
 
-
       responseElement.classList.add('bookmark-container');
 
       const bookmarkButton = document.createElement('button');
@@ -186,7 +234,7 @@ async function main() {
 
       updateButtonState(bookmarkButton, isBookmarked ? contentHash : responseElement.id);
     } catch (error) {
-      console.warn("Gemini Bookmarker: Could not process a response element.", error.message, responseElement);
+      console.warn("Gemini Bookmarks: Could not process a response element.", error.message, responseElement);
     }
   }
 
@@ -210,7 +258,6 @@ async function main() {
 
       setTimeout(() => {
         clearInterval(interval);
-
         reject(new Error(`Element with selector "${selector} not found within ${timeout} ms."`));
       }, timeout);
     });
@@ -280,7 +327,7 @@ async function main() {
   }
 
   async function clearAllBookmarks() {
-    currentState = GeminiBookmarker.initialState;
+    currentState = GeminiBookmarks.initialState;
 
     await saveState(conversationKey, currentState);
 
@@ -294,55 +341,6 @@ async function main() {
   setupEventListeners(ui);
   startObserver();
   render();
-}
-
-function injectUI() {
-  const uiShellHTML = `
-    <div class="gemini-bookmarker-container">
-      <div class="gb-panel">
-        <div class="gb-panel__header">
-          <h3>Bookmarked Responses</h3>
-          <button class="gb-clear-all-button" title="Remove all bookmarks for this conversation">Clear All</button>
-        </div>
-        <div class="gb-panel__tags" id="gb-tags-list">
-          </div>
-        <div class="gb-panel__bookmarks" id="gb-bookmarks-list">
-          </div>
-      </div>
-
-      <button class="gb-fab" title="View Bookmarks">
-        <svg viewBox="0 0 24 24">
-          <path d="M17 3H7c-1.1 0-2 .9-2 2v16l7-3 7 3V5c0-1.1-.9-2-2-2z"/>
-        </svg>
-      </button>
-    </div>
-  `;
-
-  document.body.insertAdjacentHTML("beforeend", uiShellHTML);
-
-  return {
-    fab: document.querySelector(".gb-fab"),
-    panel: document.querySelector(".gb-panel"),
-    tagsContainer: document.getElementById("gb-tags-list"),
-    bookmarksContainer: document.getElementById("gb-bookmarks-list"),
-    clearAllButton: document.querySelector('.gb-clear-all-button'),
-    get bookmarkButtons() {
-      return document.querySelectorAll(".bookmark-button")
-    },
-    get modelResponses() {
-      return document.querySelectorAll("model-response");
-    }
-  };
-}
-
-async function generateContentHash(text) {
-  const encoder = new TextEncoder();
-  const data = encoder.encode(text);
-  const hashBuffer = await crypto.subtle.digest('SHA-256', data);
-  const hashArray = Array.from(new Uint8Array(hashBuffer));
-  const contentHash = hashArray.map(bytes => bytes.toString(16).padStart(2, '0')).join('');
-
-  return contentHash;
 }
 
 main();

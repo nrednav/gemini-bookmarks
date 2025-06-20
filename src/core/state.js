@@ -1,4 +1,4 @@
-var GeminiBookmarker = {};
+var GeminiBookmarks = {};
 
 /**
  * The initial, empty state of the application.
@@ -16,6 +16,6 @@ var GeminiBookmarker = {};
 /**
  * @type {AppState}
  */
-GeminiBookmarker.initialState = {
+GeminiBookmarks.initialState = {
   bookmarks: []
 };

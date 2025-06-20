@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "Gemini Bookmarker",
+  "name": "Gemini Bookmarks",
   "version": "0.1.0",
-  "description": "Bookmark and quickly navigate to responses in a Gemini conversation.",
+  "description": "Bookmark and quickly navigate between responses in a Gemini conversation.",
   "permissions": [
     "storage",
     "scripting"
