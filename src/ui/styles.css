@@ -103,7 +103,11 @@
 .gb-panel__header {
   padding: 16px;
   border-bottom: 1px solid #e0e0e0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
+
 .gb-panel__header h3 {
   margin: 0;
   font-size: 16px;
@@ -158,9 +162,11 @@
   cursor: pointer;
   transition: background-color 0.2s;
 }
+
 .gb-bookmark:hover {
   background-color: #f8f9fa;
 }
+
 .gb-bookmark:last-child {
   border-bottom: none;
 }
@@ -196,4 +202,18 @@
   box-shadow: 0 0 0 2px #1967d2, 0 0 15px rgba(25, 103, 210, 0.5);
   border-radius: 8px;
   transition: box-shadow 0.3s ease-in-out;
+}
+
+.gb-clear-all-button {
+  background: none;
+  border: 1px solid #dddad7;
+  color: #c72300;
+  font-size: 12px;
+  border-radius: 4px;
+  padding: 4px 8px;
+  cursor: pointer;
+}
+
+.gb-clear-all-button:hover {
+  background-color: #fcece8;
 }

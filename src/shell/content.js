@@ -265,6 +265,22 @@ async function main() {
         render();
       });
     }
+
+    if (ui.clearAllButton) {
+      ui.clearAllButton.addEventListener("click", () => {
+        if (window.confirm("Are you sure you want to remove ALL bookmarks for this conversation?")) {
+          clearAllBookmarks();
+        }
+      });
+    }
+  }
+
+  async function clearAllBookmarks() {
+    currentState = GeminiBookmarker.initialState;
+
+    await saveState(conversationKey, currentState);
+
+    render();
   }
 
   for (const modelResponse of ui.modelResponses) {
@@ -282,6 +298,7 @@ function injectUI() {
       <div class="gb-panel">
         <div class="gb-panel__header">
           <h3>Bookmarked Responses</h3>
+          <button class="gb-clear-all-button" title="Remove all bookmarks for this conversation">Clear All</button>
         </div>
         <div class="gb-panel__tags" id="gb-tags-list">
           </div>
@@ -304,6 +321,7 @@ function injectUI() {
     panel: document.querySelector(".gb-panel"),
     tagsContainer: document.getElementById("gb-tags-list"),
     bookmarksContainer: document.getElementById("gb-bookmarks-list"),
+    clearAllButton: document.querySelector('.gb-clear-all-button'),
     get bookmarkButtons() {
       return document.querySelectorAll(".bookmark-button")
     },
