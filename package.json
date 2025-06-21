@@ -10,8 +10,10 @@
   },
   "scripts": {
     "dev": "vite",
-    "prebuild": "del dist/",
-    "build": "vite build"
+    "dev:watch": "npm run clean && vite build --watch --mode development",
+    "build:chrome": "npm run clean && vite build --mode chrome",
+    "build:firefox": "npm run clean && vite build --mode firefox",
+    "clean": "del dist/"
   },
   "devDependencies": {
     "del-cli": "^6.0.0",

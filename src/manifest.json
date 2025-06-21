@@ -1,13 +1,14 @@
 {
-  "manifest_version": 3,
+  "{{chrome}}.manifest_version": 3,
+  "{{firefox}}.manifest_version": 2,
   "name": "Gemini Bookmarks",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Bookmark and quickly navigate between responses in a Gemini conversation.",
   "permissions": [
     "storage",
     "scripting"
   ],
-  "host_permissions": [
+  "{{chrome}}.host_permissions": [
     "https://gemini.google.com/u/*/app/*",
     "https://gemini.google.com/u/*/gem/*"
   ],
