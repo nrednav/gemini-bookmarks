@@ -10,34 +10,38 @@ import { startObserver } from "./shell/start-observer";
 import { injectBookmarkButton } from "./ui/inject-bookmark-button";
 
 export const main = async () => {
-  logger.info("Loaded.");
+  try {
+    logger.info("Loaded.");
 
-  await waitForElement(
-    window.document.body.querySelector('main') || window.document.body,
-    elementSelectors.modelResponse.container
-  );
+    await waitForElement(
+      window.document.body.querySelector('main') || window.document.body,
+      elementSelectors.modelResponse.container
+    );
 
-  const conversationKey = createConversationKey(window.location.pathname);
-  const stateManager = new StateManager({ conversationKey });
+    const conversationKey = createConversationKey(window.location.pathname);
+    const stateManager = new StateManager({ conversationKey });
 
-  await stateManager.loadStateFromStorage();
+    await stateManager.loadStateFromStorage();
 
-  const { uiElements } = injectUi(window, elementSelectors);
+    const { uiElements } = injectUi(window, elementSelectors);
 
-  const dependencies = {
-    window,
-    uiElements,
-    elementSelectors,
-    stateManager
-  };
+    const dependencies = {
+      window,
+      uiElements,
+      elementSelectors,
+      stateManager
+    };
 
-  for (const modelResponse of uiElements.modelResponses) {
-    await injectBookmarkButton(modelResponse, dependencies);
+    for (const modelResponse of uiElements.modelResponses) {
+      await injectBookmarkButton(modelResponse, dependencies);
+    }
+
+    setupEventListeners(dependencies);
+    startObserver(dependencies);
+    renderUi(dependencies);
+  } catch (error) {
+    logger.error("Failed to initialize extension:", error);
   }
-
-  setupEventListeners(dependencies);
-  startObserver(dependencies);
-  renderUi(dependencies);
 };
 
 if (document.readyState !== "loading") {
