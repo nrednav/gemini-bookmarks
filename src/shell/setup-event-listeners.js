@@ -1,4 +1,4 @@
-import { renderUi } from "../ui/render-ui";
+import { clearAllBookmarks, toggleTagFilter } from "../core/actions";
 
 export const setupEventListeners = (dependencies) => {
   const { window, uiElements, elementSelectors, stateManager } = dependencies;
@@ -38,7 +38,7 @@ export const setupEventListeners = (dependencies) => {
 
   if (uiElements.tagsContainer) {
     uiElements.tagsContainer.addEventListener("click", (e) => {
-      const clickedTag = e.target.closest(elementSelectors.ui.panelFilterTag);
+      const clickedTag = e.target.closest(elementSelectors.ui.panelTagFilter);
 
       if (!clickedTag) {
         return;
@@ -46,30 +46,13 @@ export const setupEventListeners = (dependencies) => {
 
       const tag = clickedTag.dataset.tag;
 
-      const currentState = stateManager.getState();
-      let newActiveTagFilters = [];
-
-      if (currentState.activeTagFilters.includes(tag)) {
-        newActiveTagFilters = currentState.activeTagFilters.filter((activeTagFilter) => activeTagFilter !== tag);
-      } else {
-        newActiveTagFilters = [...currentState.activeTagFilters, tag];
-      }
-
-      stateManager.setState({ ...currentState, activeTagFilters: newActiveTagFilters });
-
-      renderUi({ window, uiElements, elementSelectors, stateManager });
+      toggleTagFilter(dependencies, tag);
     });
   }
 
   if (uiElements.clearAllButton) {
     uiElements.clearAllButton.addEventListener("click", async () => {
-      if (window.confirm("Are you sure you want to remove ALL bookmarks for this conversation?")) {
-        stateManager.resetState();
-
-        await stateManager.saveStateToStorage();
-
-        renderUi({ window, uiElements, elementSelectors, stateManager });
-      }
+      await clearAllBookmarks(dependencies);
     });
   }
 }

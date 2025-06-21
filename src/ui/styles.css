@@ -129,7 +129,7 @@
   gap: 8px;
 }
 
-.gb-panel-filter-tag {
+.gb-panel-tag-filter {
   background-color: #e8f0fe;
   color: #1967d2;
   border: 1px solid #d2e3fc;
@@ -140,11 +140,11 @@
   transition: background-color 0.2s;
 }
 
-.gb-panel-filter-tag:hover {
+.gb-panel-tag-filter:hover {
   background-color: #d2e3fc;
 }
 
-.gb-panel-filter-tag.active {
+.gb-panel-tag-filter.active {
   background-color: #1967d2;
   color: #ffffff;
   border-color: #1967d2;

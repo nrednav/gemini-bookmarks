@@ -7,7 +7,7 @@ export const elementSelectors = {
     fab: ".gb-fab",
     panel: ".gb-panel",
     panelBookmark: ".gb-panel-bookmark",
-    panelFilterTag: ".gb-panel-filter-tag",
+    panelTagFilter: ".gb-panel-tag-filter",
     tagsContainer: "gb-tags-container",
     bookmarksContainer: "gb-bookmarks-container",
     clearAllButton: ".gb-clear-all-button",

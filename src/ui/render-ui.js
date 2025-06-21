@@ -24,7 +24,7 @@ const renderPanelContent = (dependencies) => {
   uniqueTags.forEach((tag) => {
     const tagButton = window.document.createElement("button");
 
-    tagButton.className = "gb-panel-filter-tag";
+    tagButton.className = "gb-panel-tag-filter";
     tagButton.textContent = tag;
     tagButton.dataset.tag = tag;
 

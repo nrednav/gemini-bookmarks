@@ -21,3 +21,32 @@ export const toggleBookmark = async (dependencies, { id, content, tags }) => {
 
   renderUi(dependencies);
 }
+
+export const toggleTagFilter = (dependencies, tag) => {
+  const { stateManager } = dependencies;
+  const currentState = stateManager.getState();
+
+  let newActiveTagFilters;
+
+  if (currentState.activeTagFilters.includes(tag)) {
+    newActiveTagFilters = currentState.activeTagFilters.filter((activeTag) => activeTag !== tag);
+  } else {
+    newActiveTagFilters = [...currentState.activeTagFilters, tag];
+  }
+
+  stateManager.setState({ ...currentState, activeTagFilters: newActiveTagFilters });
+
+  renderUi(dependencies);
+};
+
+export const clearAllBookmarks = async (dependencies) => {
+  const { stateManager, window } = dependencies;
+
+  if (window.confirm("Are you sure you want to remove ALL bookmarks for this conversation?")) {
+    stateManager.resetState();
+
+    await stateManager.saveStateToStorage();
+
+    renderUi(dependencies);
+  }
+};
