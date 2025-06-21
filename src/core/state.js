@@ -1,21 +1,5 @@
-var GeminiBookmarks = {};
+const AppState = new Map();
 
-/**
- * The initial, empty state of the application.
- *
- * @typedef {object} Bookmark
- * @property {string} id - A unique identifier for the bookmark
- * @property {string} content - The text or HTML content of the bookmarked response.
- * @property {string[]} tags - An array of user-defined tags.
- * @property {number} timestamp - The UTC timestamp when the bookmark was created.
- *
- * @typedef {object} AppState
- * @property {Bookmark[]} bookmarks - An array of all bookmark objects for the current conversation.
- */
+AppState.set('initialState', { bookmarks: [] });
 
-/**
- * @type {AppState}
- */
-GeminiBookmarks.initialState = {
-  bookmarks: []
-};
+export { AppState };

@@ -5,7 +5,7 @@
  * @param {{id: string, content: string, tags: string[]}} newBookmarkData - The data for the new bookmark.
  * @returns {import('./state.js').AppState} A new state object with the added bookmark.
  */
-GeminiBookmarks.addBookmark = function (state, newBookmarkData) {
+export const addBookmark = function (state, newBookmarkData) {
   const newBookmark = {
     id: newBookmarkData.id,
     timestamp: Date.now(),
@@ -26,7 +26,7 @@ GeminiBookmarks.addBookmark = function (state, newBookmarkData) {
  * @param {string} bookmarkId - The id of the bookmark to remove.
  * @returns {import('./state.js').AppState} A new state object with the bookmark removed.
  */
-GeminiBookmarks.removeBookmark = function (state, bookmarkId) {
+export const removeBookmark = function (state, bookmarkId) {
   const updatedBookmarks = state.bookmarks.filter(
     (bookmark) => bookmark.id !== bookmarkId
   );
@@ -42,7 +42,7 @@ GeminiBookmarks.removeBookmark = function (state, bookmarkId) {
  * @param {import('./state.js').AppState} state The current application state.
  * @returns {string[]} A new array of unique tag strings.
  */
-GeminiBookmarks.getUniqueTags = function (state) {
+export const getUniqueTags = function (state) {
   const allTags = state.bookmarks.flatMap(bookmark => bookmark.tags);
   const uniqueTags = new Set(allTags);
 
@@ -55,7 +55,7 @@ GeminiBookmarks.getUniqueTags = function (state) {
  * @param {string} tag The tag to filter by.
  * @returns {import('./state.js').Bookmark[]} A new array of matching bookmarks.
  */
-GeminiBookmarks.filterBookmarksByTags = function (state, tags) {
+export const filterBookmarksByTags = function (state, tags) {
   if (tags.length === 0) {
     return state.bookmarks;
   }

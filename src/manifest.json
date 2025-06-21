@@ -18,10 +18,9 @@
         "https://gemini.google.com/u/*/app/*",
         "https://gemini.google.com/u/*/gem/*"
       ],
+      "run_at": "document_end",
       "js": [
-        "src/core/state.js",
-        "src/core/logic.js",
-        "src/shell/content.js"
+        "src/main.js"
       ],
       "css": ["src/ui/styles.css"]
     }
