@@ -35,3 +35,9 @@
  * @property {() => Promise<void>} onNavigate - The callback function to re-initialize the script on navigation.
  * @property {import('../shell/logger.js').Logger} logger - The application logger instance.
  */
+
+/**
+ * Defines the possible theme values for the UI.
+ * 'system' means the theme will follow the OS preference.
+ * @typedef {'light' | 'dark' | 'system'} Theme
+ */
