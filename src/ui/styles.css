@@ -334,10 +334,11 @@
 body[data-gemini-bookmarks-theme='dark'] .gb-panel {
   background-color: #202124;
   color: #e8eaed;
+  border: 1px solid #5f6368;
 }
 
 body[data-gemini-bookmarks-theme='dark'] .gb-panel__header {
-  border-bottom-color: #3c4043;
+  border-bottom-color: #5f6368;
 }
 
 body[data-gemini-bookmarks-theme='dark'] .gb-panel__header h3 {
@@ -345,15 +346,15 @@ body[data-gemini-bookmarks-theme='dark'] .gb-panel__header h3 {
 }
 
 body[data-gemini-bookmarks-theme='dark'] .gb-panel__tags {
-  border-bottom-color: #3c4043;
+  border-bottom-color: #5f6368;
 }
 
 body[data-gemini-bookmarks-theme='dark'] .gb-panel-bookmark {
-  border-bottom-color: #3c4043;
+  border-bottom-color: #5f6368;
 }
 
 body[data-gemini-bookmarks-theme='dark'] .gb-panel-bookmark:hover {
-  background-color: #3c4043;
+  background-color: #2d2e31;
 }
 
 body[data-gemini-bookmarks-theme='dark'] .gb-panel-bookmark__content {
@@ -361,8 +362,8 @@ body[data-gemini-bookmarks-theme='dark'] .gb-panel-bookmark__content {
 }
 
 body[data-gemini-bookmarks-theme='dark'] .gb-panel-bookmark__tag {
-  background-color: #3c4043;
-  color: #bdc1c6;
+  background-color: #5f6368;
+  color: #e8eaed;
 }
 
 body[data-gemini-bookmarks-theme='dark'] .gb-panel__empty-message {
