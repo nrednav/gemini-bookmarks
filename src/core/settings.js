@@ -8,7 +8,7 @@ const THEME_STORAGE_KEY = 'gemini-bookmarks-theme';
  * @returns {Promise<Theme>} The saved theme, defaulting to 'system'.
  */
 export const getTheme = async () => {
-  const result = await browser.storage.local.get(THEME_STORAGE_KEY);
+  const result = await chrome.storage.local.get(THEME_STORAGE_KEY);
   return result[THEME_STORAGE_KEY] || 'system';
 };
 
@@ -18,5 +18,5 @@ export const getTheme = async () => {
  * @returns {Promise<void>}
  */
 export const saveTheme = async (theme) => {
-  await browser.storage.local.set({ [THEME_STORAGE_KEY]: theme });
+  await chrome.storage.local.set({ [THEME_STORAGE_KEY]: theme });
 };

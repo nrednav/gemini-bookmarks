@@ -1,0 +1,62 @@
+{
+  "panelHeader": {
+    "message": "Bookmarked Responses",
+    "description": "The title text in the header of the bookmarks panel."
+  },
+  "clearAllButtonTitle": {
+    "message": "Remove all bookmarks for this conversation",
+    "description": "The tooltip for the 'Clear All' button."
+  },
+  "clearAllButtonText": {
+    "message": "Clear All",
+    "description": "The text on the 'Clear All' button."
+  },
+  "themeButtonTitleLight": {
+    "message": "Theme: Light (Switch to Dark)",
+    "description": "Tooltip for the theme button when the light theme is active."
+  },
+  "themeButtonTitleDark": {
+    "message": "Theme: Dark (Switch to System)",
+    "description": "Tooltip for the theme button when the dark theme is active."
+  },
+  "themeButtonTitleSystem": {
+    "message": "Theme: System (Switch to Light)",
+    "description": "Tooltip for the theme button when the system theme is active."
+  },
+  "fabTitle": {
+    "message": "View Bookmarks",
+    "description": "Tooltip for the floating action button that opens the panel."
+  },
+  "tagEditorPlaceholder": {
+    "message": "Add tags, comma-separated...",
+    "description": "Placeholder text for the tag editor input field."
+  },
+  "tagEditorSaveButton": {
+    "message": "Save",
+    "description": "Text for the save button in the tag editor."
+  },
+  "tagEditorCancelButton": {
+    "message": "Cancel",
+    "description": "Text for the cancel button in the tag editor."
+  },
+  "addBookmarkTooltip": {
+    "message": "Click to add bookmark",
+    "description": "Tooltip for the bookmark icon when a response is not yet bookmarked."
+  },
+  "removeBookmarkTooltip": {
+    "message": "Click to remove bookmark",
+    "description": "Tooltip for the bookmark icon when a response is already bookmarked."
+  },
+  "panelEmptyMessage": {
+    "message": "No bookmarks yet. Click the icon on a response to bookmark it!",
+    "description": "Message shown in the panel when there are no bookmarks."
+  },
+  "clearAllConfirmation": {
+    "message": "Are you sure you want to remove ALL bookmarks for this conversation?",
+    "description": "The confirmation text shown to the user before clearing all bookmarks."
+  },
+  "scrollToBookmarkTitle": {
+    "message": "Click to scroll to this response",
+    "description": "Tooltip on a bookmark item in the side panel."
+  }
+}

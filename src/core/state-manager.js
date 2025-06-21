@@ -45,7 +45,7 @@ export class StateManager {
    * @returns {Promise<void>}
    */
   async loadStateFromStorage() {
-    const storedState = await browser.storage.local.get(this.conversationKey);
+    const storedState = await chrome.storage.local.get(this.conversationKey);
 
     this.state = storedState[this.conversationKey] || this.getInitialState();
   }
@@ -55,6 +55,6 @@ export class StateManager {
    * @returns {Promise<void>}
    */
   async saveStateToStorage() {
-    await browser.storage.local.set({ [this.conversationKey]: this.state });
+    await chrome.storage.local.set({ [this.conversationKey]: this.state });
   }
 }

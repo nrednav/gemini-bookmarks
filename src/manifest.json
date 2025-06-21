@@ -11,23 +11,25 @@
   ],
   "{{chrome}}.host_permissions": [
     "https://gemini.google.com/u/*/app/*",
-    "https://gemini.google.com/u/*/gem/*"
+    "https://gemini.google.com/u/*/gem/*",
+    "https://gemini.google.com/app/*",
+    "https://gemini.google.com/gem/*"
   ],
   "content_scripts": [
     {
       "matches": [
         "https://gemini.google.com/u/*/app/*",
-        "https://gemini.google.com/u/*/gem/*"
+        "https://gemini.google.com/u/*/gem/*",
+        "https://gemini.google.com/app/*",
+        "https://gemini.google.com/gem/*"
       ],
-      "js": [
-        "src/main.js"
-      ],
-      "run_at": "document_idle",
-      "css": ["src/ui/styles.css"]
+      "js": ["src/main.js"],
+      "run_at": "document_idle"
     }
   ],
   "icons": {
-    "48": "src/icons/icon-48.png",
-    "128": "src/icons/icon-128.png"
+    "16": "icons/icon-16.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
   }
 }

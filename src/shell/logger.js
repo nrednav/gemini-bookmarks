@@ -1,6 +1,6 @@
 export class Logger {
   constructor(window) {
-    const { version } = browser.runtime.getManifest();
+    const { version } = chrome.runtime.getManifest();
 
     this.prefix = `Gemini Bookmarks (v${version}):`;
     this.debug = this.createDebugMethod(window);

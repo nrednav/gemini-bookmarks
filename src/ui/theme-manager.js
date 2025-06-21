@@ -15,12 +15,12 @@ export const applyTheme = (theme, uiElements) => {
 
   if (theme === 'light') {
     themeToggleButton.innerHTML = themeIcons.light;
-    themeToggleButton.title = browser.i18n.getMessage("themeButtonTitleLight");
+    themeToggleButton.title = chrome.i18n.getMessage("themeButtonTitleLight");
   } else if (theme === 'dark') {
     themeToggleButton.innerHTML = themeIcons.dark;
-    themeToggleButton.title = browser.i18n.getMessage("themeButtonTitleDark");
+    themeToggleButton.title = chrome.i18n.getMessage("themeButtonTitleDark");
   } else {
     themeToggleButton.innerHTML = themeIcons.system;
-    themeToggleButton.title = browser.i18n.getMessage("themeButtonTitleSystem");
+    themeToggleButton.title = chrome.i18n.getMessage("themeButtonTitleSystem");
   }
 };

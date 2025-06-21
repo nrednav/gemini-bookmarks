@@ -10,12 +10,15 @@ import { startObserver } from "./shell/start-observer";
 import { injectBookmarkButton } from "./ui/inject-bookmark-button";
 import { getTheme } from "./core/settings";
 import { applyTheme } from "./ui/theme-manager";
+import { injectStyles } from './ui/inject-styles';
 
 export const main = async () => {
   const logger = new Logger(window);
 
   try {
     logger.info("Loaded.");
+
+    injectStyles({ logger });
 
     await waitForElement(
       window.document.body.querySelector('main') || window.document.body,
