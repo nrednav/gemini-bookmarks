@@ -24,12 +24,12 @@ const renderPanelContent = (dependencies) => {
   uniqueTags.forEach((tag) => {
     const tagButton = window.document.createElement("button");
 
-    tagButton.className = 'gb-panel-filter-tag';
+    tagButton.className = "gb-panel-filter-tag";
     tagButton.textContent = tag;
     tagButton.dataset.tag = tag;
 
     if (currentState.activeTagFilters.includes(tag)) {
-      tagButton.classList.add('active');
+      tagButton.classList.add("active");
     }
 
     uiElements.tagsContainer.appendChild(tagButton);
@@ -40,30 +40,55 @@ const renderPanelContent = (dependencies) => {
     ? filterBookmarksByTags(currentState, currentState.activeTagFilters)
     : currentState.bookmarks;
 
+  uiElements.bookmarksContainer.replaceChildren();
+
   if (currentState.bookmarks.length === 0) {
-    uiElements.bookmarksContainer.innerHTML = `<p class="gb-panel__empty-message">No bookmarks yet. Click the icon on a response to bookmark it!</p>`;
+    const emptyMessage = window.document.createElement("p");
+
+    emptyMessage.className = "gb-panel__empty-message";
+    emptyMessage.textContent = "No bookmarks yet. Click the icon on a response to bookmark it!";
+
+    uiElements.bookmarksContainer.appendChild(emptyMessage);
+
     return;
   }
 
   const sortedBookmarks = bookmarksToShow
     .map(bookmark => {
       const element = window.document.getElementById(bookmark.id);
-
-      return {
-        ...bookmark,
-        position: element?.offsetTop ?? Infinity
-      };
+      return { ...bookmark, position: element?.offsetTop ?? Infinity };
     })
     .sort((a, b) => a.position - b.position);
 
-  uiElements.bookmarksContainer.innerHTML = sortedBookmarks.map(bookmark => `
-    <div class="gb-panel-bookmark" data-bookmark-id="${bookmark.id}" title="Click to scroll to this response">
-      <p class="gb-panel-bookmark__content">${bookmark.content.substring(0, 120)}...</p>
-      <div class="gb-panel-bookmark__tags">
-        ${bookmark.tags.map(tag => `<span class="gb-panel-bookmark__tag">${tag}</span>`).join('')}
-      </div>
-    </div>
-  `).join('');
+  sortedBookmarks.forEach((bookmark) => {
+    const bookmarkElement = window.document.createElement("div");
+
+    bookmarkElement.className = "gb-panel-bookmark";
+    bookmarkElement.dataset.bookmarkId = bookmark.id;
+    bookmarkElement.title = "Click to scroll to this response";
+
+    const contentElement = window.document.createElement("p");
+
+    contentElement.className = "gb-panel-bookmark__content";
+    contentElement.textContent = `${bookmark.content.substring(0, 120)}...`;
+
+    const tagsContainer = window.document.createElement("div");
+
+    tagsContainer.className = "gb-panel-bookmark__tags";
+
+    bookmark.tags.forEach(tag => {
+      const tagElement = window.document.createElement("span");
+
+      tagElement.className = "gb-panel-bookmark__tag";
+      tagElement.textContent = tag;
+
+      tagsContainer.appendChild(tagElement);
+    });
+
+    bookmarkElement.appendChild(contentElement);
+    bookmarkElement.appendChild(tagsContainer);
+    uiElements.bookmarksContainer.appendChild(bookmarkElement);
+  });
 };
 
 const updateAllBookmarkButtonUis = (dependencies) => {
