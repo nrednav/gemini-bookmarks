@@ -16,13 +16,26 @@ export const renderUi = (dependencies) => {
 const renderPanelContent = (dependencies) => {
   const { currentState, uiElements, window } = dependencies;
 
+  // Render tags
   const uniqueTags = getUniqueTags(currentState);
 
-  uiElements.tagsContainer.innerHTML = uniqueTags.map(tag => {
-    const isActive = currentState.activeTagFilters.includes(tag);
-    return `<button class="gb-panel-filter-tag ${isActive ? 'active' : ''}" data-tag="${tag}">${tag}</button>`;
-  }).join("");
+  uiElements.tagsContainer.replaceChildren();
 
+  uniqueTags.forEach((tag) => {
+    const tagButton = window.document.createElement("button");
+
+    tagButton.className = 'gb-panel-filter-tag';
+    tagButton.textContent = tag;
+    tagButton.dataset.tag = tag;
+
+    if (currentState.activeTagFilters.includes(tag)) {
+      tagButton.classList.add('active');
+    }
+
+    uiElements.tagsContainer.appendChild(tagButton);
+  });
+
+  // Render bookmarks
   const bookmarksToShow = currentState.activeTagFilters.length > 0
     ? filterBookmarksByTags(currentState, currentState.activeTagFilters)
     : currentState.bookmarks;
