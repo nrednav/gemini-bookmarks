@@ -1,0 +1,62 @@
+{
+  "panelHeader": {
+    "message": "Marcadores",
+    "description": "The title text in the header of the bookmarks panel."
+  },
+  "clearAllButtonTitle": {
+    "message": "Eliminar todos los marcadores de esta conversación",
+    "description": "The tooltip for the 'Clear All' button."
+  },
+  "clearAllButtonText": {
+    "message": "Borrar todo",
+    "description": "The text on the 'Clear All' button."
+  },
+  "themeButtonTitleLight": {
+    "message": "Tema: Claro (Cambiar a Oscuro)",
+    "description": "Tooltip for the theme button when the light theme is active."
+  },
+  "themeButtonTitleDark": {
+    "message": "Tema: Oscuro (Cambiar a Sistema)",
+    "description": "Tooltip for the theme button when the dark theme is active."
+  },
+  "themeButtonTitleSystem": {
+    "message": "Tema: Sistema (Cambiar a Claro)",
+    "description": "Tooltip for the theme button when the system theme is active."
+  },
+  "fabTitle": {
+    "message": "Ver marcadores",
+    "description": "Tooltip for the floating action button that opens the panel."
+  },
+  "tagEditorPlaceholder": {
+    "message": "Añade etiquetas, separadas por comas...",
+    "description": "Placeholder text for the tag editor input field."
+  },
+  "tagEditorSaveButton": {
+    "message": "Guardar",
+    "description": "Text for the save button in the tag editor."
+  },
+  "tagEditorCancelButton": {
+    "message": "Cancelar",
+    "description": "Text for the cancel button in the tag editor."
+  },
+  "addBookmarkTooltip": {
+    "message": "Haz clic para añadir marcador",
+    "description": "Tooltip for the bookmark icon when a response is not yet bookmarked."
+  },
+  "removeBookmarkTooltip": {
+    "message": "Haz clic para quitar el marcador",
+    "description": "Tooltip for the bookmark icon when a response is already bookmarked."
+  },
+  "panelEmptyMessage": {
+    "message": "Aún no hay marcadores. ¡Haz clic en el icono de una respuesta para guardarla!",
+    "description": "Message shown in the panel when there are no bookmarks."
+  },
+  "clearAllConfirmation": {
+    "message": "¿Estás seguro de que quieres eliminar TODOS los marcadores de esta conversación?",
+    "description": "The confirmation text shown to the user before clearing all bookmarks."
+  },
+  "scrollToBookmarkTitle": {
+    "message": "Haz clic para ir a esta marcador",
+    "description": "Tooltip on a bookmark item in the side panel."
+  }
+}
