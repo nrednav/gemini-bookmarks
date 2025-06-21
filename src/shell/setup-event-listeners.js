@@ -1,7 +1,9 @@
 import { clearAllBookmarks, toggleTagFilter } from "../core/actions";
 
+const HIGHLIGHT_DURATION_MS = 1500;
+
 export const setupEventListeners = (dependencies) => {
-  const { window, uiElements, elementSelectors, stateManager } = dependencies;
+  const { window, uiElements, elementSelectors } = dependencies;
 
   if (uiElements.fab && uiElements.panel) {
     uiElements.fab.addEventListener("click", () => {
@@ -31,7 +33,7 @@ export const setupEventListeners = (dependencies) => {
 
         setTimeout(() => {
           responseElement.classList.remove("bookmark-highlight");
-        }, 1500);
+        }, HIGHLIGHT_DURATION_MS);
       }
     });
   }
