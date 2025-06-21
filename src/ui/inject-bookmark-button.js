@@ -61,25 +61,68 @@ export const injectBookmarkButton = async (responseElement, dependencies) => {
  * @param {import('../core/types.js').Dependencies} dependencies
  */
 const handleBookmarkClick = async (responseElement, { id, content }, dependencies) => {
-  const { window, stateManager } = dependencies;
+  const { stateManager } = dependencies;
   const currentState = stateManager.getState();
   const existingBookmark = currentState.bookmarks.find(bookmark => bookmark.id === id);
 
   responseElement.id = id;
 
-  let tags = [];
+  if (existingBookmark) {
+    await toggleBookmark(dependencies, { id, content, tags: [] });
+  } else {
+    createTagEditor(responseElement, async (tags) => {
+      await toggleBookmark(dependencies, { id, content, tags });
+    });
+  }
+};
 
-  if (!existingBookmark) {
-    const tagsString = window.prompt("Enter optional tags for this bookmark, separated by commas:", "");
-
-    if (tagsString === null) {
-      return;
-    }
-
-    tags = tagsString
-      ? tagsString.split(",").map(tag => tag.trim()).filter(tag => tag.length > 0)
-      : [];
+/**
+ * Creates and injects a temporary UI for editing tags.
+ * @param {HTMLElement} responseElement - The element to anchor the editor to.
+ * @param {(tags: string[]) => void} onSave - Callback executed with the tags when saved.
+ */
+const createTagEditor = (responseElement, onSave) => {
+  if (responseElement.querySelector('.tag-editor')) {
+    return;
   }
 
-  await toggleBookmark(dependencies, { id, content, tags });
+  const editorContainer = document.createElement('div');
+
+  editorContainer.className = 'tag-editor';
+
+  const input = document.createElement('input');
+
+  input.type = 'text';
+  input.placeholder = 'Add tags, comma-separated...';
+  input.className = 'tag-editor-input';
+
+  const saveButton = document.createElement('button');
+
+  saveButton.textContent = 'Save';
+  saveButton.className = 'tag-editor-save';
+
+  const cancelButton = document.createElement('button');
+
+  cancelButton.textContent = 'Cancel';
+  cancelButton.className = 'tag-editor-cancel';
+
+  const cleanup = () => editorContainer.remove();
+
+  saveButton.addEventListener('click', () => {
+    const tags = input.value
+      ? input.value.split(",").map(tag => tag.trim()).filter(tag => tag.length > 0)
+      : [];
+
+    onSave(tags);
+    cleanup();
+  });
+
+  cancelButton.addEventListener('click', cleanup);
+
+  editorContainer.appendChild(input);
+  editorContainer.appendChild(saveButton);
+  editorContainer.appendChild(cancelButton);
+  responseElement.appendChild(editorContainer);
+
+  input.focus();
 };

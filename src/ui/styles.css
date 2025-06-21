@@ -226,3 +226,69 @@
 .gb-clear-all-button:disabled:hover {
   background-color: transparent;
 }
+
+/* --- Tag Editor --- */
+
+/* The main container for the inline tag editor */
+.tag-editor {
+  position: absolute;
+  top: 50px;
+  right: 8px;
+  z-index: 1001;
+  background-color: #ffffff;
+  border: 1px solid #dcdcdc;
+  border-radius: 8px;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* The text input field for tags */
+.tag-editor-input {
+  border: 1px solid #dcdcdc;
+  border-radius: 4px;
+  padding: 8px;
+  font-size: 14px;
+  width: 220px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.tag-editor-input:focus {
+  border-color: #1967d2;
+}
+
+/* General styling for buttons inside the editor */
+.tag-editor-save,
+.tag-editor-cancel {
+  border-radius: 4px;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 13px;
+  transition: background-color 0.2s ease;
+}
+
+/* Primary "Save" button styling */
+.tag-editor-save {
+  background-color: #1967d2;
+  color: #ffffff;
+  border: 1px solid #1967d2;
+}
+
+.tag-editor-save:hover {
+  background-color: #1a73e8;
+}
+
+/* Secondary "Cancel" button styling */
+.tag-editor-cancel {
+  background-color: #f0f4f9;
+  color: #3c4043;
+  border: 1px solid #dcdcdc;
+}
+
+.tag-editor-cancel:hover {
+  background-color: #e6eaf0;
+}
