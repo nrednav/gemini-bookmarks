@@ -5,8 +5,7 @@ import { toggleBookmark } from "../core/actions";
 import { logger } from "../shell/logger";
 
 export const injectBookmarkButton = async (responseElement, dependencies) => {
-  const { window } = dependencies;
-  const { elementSelectors, stateManager } = dependencies;
+  const { window, uiElements, elementSelectors, stateManager } = dependencies;
 
   const currentState = stateManager.getState();
 
@@ -41,6 +40,8 @@ export const injectBookmarkButton = async (responseElement, dependencies) => {
     });
 
     responseElement.appendChild(bookmarkButton);
+
+    uiElements.bookmarkButtons.push(bookmarkButton);
 
     updateBookmarkButtonUi(bookmarkButton, isBookmarked ? contentHash : responseElement.id, currentState);
   } catch (error) {

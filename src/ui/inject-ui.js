@@ -36,7 +36,7 @@ export const injectUi = (window, elementSelectors) => {
       tagsContainer: window.document.getElementById(elementSelectors.ui.tagsContainer),
       bookmarksContainer: window.document.getElementById(elementSelectors.ui.bookmarksContainer),
       clearAllButton: window.document.querySelector(elementSelectors.ui.clearAllButton),
-      bookmarkButtons: window.document.querySelectorAll(elementSelectors.ui.bookmarkButton),
+      bookmarkButtons: Array.from(window.document.querySelectorAll(elementSelectors.ui.bookmarkButton)),
       modelResponses: window.document.querySelectorAll(elementSelectors.modelResponse.container)
     }
   };
