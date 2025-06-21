@@ -1,0 +1,14 @@
+{
+  "name": "gemini-bookmarks",
+  "version": "1.0.0",
+  "description": "Bookmark and quickly navigate between responses in a Gemini conversation.",
+  "type": "module",
+  "author": "nrednav",
+  "keywords": [],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {},
+  "dependencies": {},
+  "devDependencies": {}
+}
