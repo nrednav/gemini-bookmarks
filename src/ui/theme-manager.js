@@ -7,11 +7,11 @@ import { themeIcons } from './icons.js';
  * @param {import('../core/types.js').UIElements} uiElements
  */
 export const applyTheme = (theme, uiElements) => {
-  const { panel, themeToggleButton } = uiElements;
+  const { themeToggleButton } = uiElements;
 
-  if (!panel || !themeToggleButton) return;
+  document.body.dataset.geminiBookmarksTheme = theme;
 
-  panel.dataset.theme = theme;
+  if (!themeToggleButton) return;
 
   if (theme === 'light') {
     themeToggleButton.innerHTML = themeIcons.light;

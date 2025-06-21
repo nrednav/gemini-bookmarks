@@ -331,67 +331,100 @@
 
 /* --- Dark Theme Styles --- */
 
-.gb-panel[data-theme='dark'] {
+body[data-gemini-bookmarks-theme='dark'] .gb-panel {
   background-color: #202124;
   color: #e8eaed;
 }
 
-.gb-panel[data-theme='dark'] .gb-panel__header {
+body[data-gemini-bookmarks-theme='dark'] .gb-panel__header {
   border-bottom-color: #3c4043;
 }
 
-.gb-panel[data-theme='dark'] .gb-panel__header h3 {
+body[data-gemini-bookmarks-theme='dark'] .gb-panel__header h3 {
   color: #e8eaed;
 }
 
-.gb-panel[data-theme='dark'] .gb-panel__tags {
+body[data-gemini-bookmarks-theme='dark'] .gb-panel__tags {
   border-bottom-color: #3c4043;
 }
 
-.gb-panel[data-theme='dark'] .gb-panel-bookmark {
+body[data-gemini-bookmarks-theme='dark'] .gb-panel-bookmark {
   border-bottom-color: #3c4043;
 }
 
-.gb-panel[data-theme='dark'] .gb-panel-bookmark:hover {
+body[data-gemini-bookmarks-theme='dark'] .gb-panel-bookmark:hover {
   background-color: #3c4043;
 }
 
-.gb-panel[data-theme='dark'] .gb-panel-bookmark__content {
+body[data-gemini-bookmarks-theme='dark'] .gb-panel-bookmark__content {
   color: #e8eaed;
 }
 
-.gb-panel[data-theme='dark'] .gb-panel-bookmark__tag {
+body[data-gemini-bookmarks-theme='dark'] .gb-panel-bookmark__tag {
   background-color: #3c4043;
   color: #bdc1c6;
 }
 
-.gb-panel[data-theme='dark'] .gb-panel__empty-message {
+body[data-gemini-bookmarks-theme='dark'] .gb-panel__empty-message {
   color: #9aa0a6;
 }
 
-.gb-panel[data-theme='dark'] .gb-theme-toggle-button:hover {
+body[data-gemini-bookmarks-theme='dark'] .gb-theme-toggle-button:hover {
   background-color: #3c4043;
 }
 
-.gb-panel[data-theme='dark'] .gb-theme-toggle-button svg {
+body[data-gemini-bookmarks-theme='dark'] .gb-theme-toggle-button svg {
   stroke: #e8eaed;
 }
 
-.gb-panel[data-theme='dark'] .gb-clear-all-button {
+body[data-gemini-bookmarks-theme='dark'] .gb-clear-all-button {
   border-color: #5f6368;
   color: #e67c73;
 }
 
-.gb-panel[data-theme='dark'] .gb-clear-all-button:hover {
+body[data-gemini-bookmarks-theme='dark'] .gb-clear-all-button:hover {
   background-color: #4d3c3a;
 }
 
-.gb-panel[data-theme='dark'] .gb-clear-all-button:disabled {
+body[data-gemini-bookmarks-theme='dark'] .gb-clear-all-button:disabled {
   opacity: 0.5;
   background-color: transparent;
 }
 
-.gb-panel[data-theme='dark'] *::selection {
+body[data-gemini-bookmarks-theme='dark'] .tag-editor {
+  background-color: #2d2e31;
+  border-color: #5f6368;
+}
+
+body[data-gemini-bookmarks-theme='dark'] .tag-editor-input {
+  background-color: #202124;
+  border-color: #5f6368;
+  color: #e8eaed;
+}
+
+body[data-gemini-bookmarks-theme='dark'] .tag-editor-input:focus {
+  border-color: #8ab4f8;
+}
+
+body[data-gemini-bookmarks-theme='dark'] .tag-editor-input::placeholder {
+  color: #9aa0a6;
+}
+
+body[data-gemini-bookmarks-theme='dark'] .tag-editor-cancel {
+  background-color: #3c4043;
+  border-color: #5f6368;
+  color: #e8eaed;
+}
+
+body[data-gemini-bookmarks-theme='dark'] .tag-editor-cancel:hover {
+  background-color: #5f6368;
+}
+
+body[data-gemini-bookmarks-theme='dark'] .tag-editor-save:hover {
+  background-color: #1b66c9;
+}
+
+body[data-gemini-bookmarks-theme='dark'] *::selection {
   background-color: #8ab4f8;
   color: #202124;
 }
