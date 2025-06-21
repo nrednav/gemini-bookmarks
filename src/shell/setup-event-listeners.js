@@ -2,6 +2,10 @@ import { clearAllBookmarks, toggleTagFilter } from "../core/actions";
 
 const HIGHLIGHT_DURATION_MS = 1500;
 
+/**
+ * Sets up all the global event listeners for the application.
+ * @param {import('../core/types.js').Dependencies} dependencies
+ */
 export const setupEventListeners = (dependencies) => {
   const { window, uiElements, elementSelectors } = dependencies;
 

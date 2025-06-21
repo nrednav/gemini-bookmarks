@@ -1,6 +1,9 @@
-import { main } from '../main';
 import { injectBookmarkButton } from '../ui/inject-bookmark-button';
 
+/**
+ * Observes the DOM for changes and handles new model responses and page navigations.
+ * @param {import('../core/types.js').Dependencies} dependencies
+ */
 export const startObserver = (dependencies) => {
   const { window, uiElements, elementSelectors, stateManager, onNavigate } = dependencies;
 

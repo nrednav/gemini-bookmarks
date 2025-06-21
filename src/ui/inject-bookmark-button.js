@@ -4,6 +4,11 @@ import { updateBookmarkButtonUi } from "./render-ui";
 import { toggleBookmark } from "../core/actions";
 import { logger } from "../shell/logger";
 
+/**
+ * Injects a bookmark button into a model response element.
+ * @param {HTMLElement} responseElement - The model response DOM element.
+ * @param {import('../core/types.js').Dependencies} dependencies - The application-wide dependencies.
+ */
 export const injectBookmarkButton = async (responseElement, dependencies) => {
   const { window, uiElements, elementSelectors, stateManager } = dependencies;
 
@@ -49,7 +54,13 @@ export const injectBookmarkButton = async (responseElement, dependencies) => {
   }
 }
 
-const handleBookmarkClick = async (responseElement, dependencies) => {
+/**
+ * Handles the logic when a bookmark button is clicked.
+ * @param {HTMLElement} responseElement
+ * @param {{id: string, content: string}} bookmarkData
+ * @param {import('../core/types.js').Dependencies} dependencies
+ */
+const handleBookmarkClick = async (responseElement, { id, content }, dependencies) => {
   const { window, stateManager } = dependencies;
   const currentState = stateManager.getState();
   const existingBookmark = currentState.bookmarks.find(bookmark => bookmark.id === id);
