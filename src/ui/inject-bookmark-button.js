@@ -1,10 +1,12 @@
 import { waitForElement } from "../helpers/wait-for-element";
 import { generateContentHash } from "../helpers/generate-content-hash";
-import { renderUi, updateBookmarkButtonUi } from "./render-ui";
-import { addBookmark, removeBookmark } from "../core/logic";
+import { updateBookmarkButtonUi } from "./render-ui";
+import { toggleBookmark } from "../core/actions";
+import { logger } from "../shell/logger";
 
 export const injectBookmarkButton = async (responseElement, dependencies) => {
-  const { window, uiElements, elementSelectors, stateManager } = dependencies;
+  const { window } = dependencies;
+  const { elementSelectors, stateManager } = dependencies;
 
   const currentState = stateManager.getState();
 
@@ -35,14 +37,7 @@ export const injectBookmarkButton = async (responseElement, dependencies) => {
       e.stopPropagation();
       e.preventDefault();
 
-      await handleBookmarkClick(responseElement, {
-        id: contentHash,
-        content: content,
-        window: window,
-        uiElements: uiElements,
-        elementSelectors: elementSelectors,
-        stateManager: stateManager
-      });
+      await handleBookmarkClick(responseElement, { id: contentHash, content: content }, dependencies);
     });
 
     responseElement.appendChild(bookmarkButton);
@@ -54,37 +49,25 @@ export const injectBookmarkButton = async (responseElement, dependencies) => {
 }
 
 const handleBookmarkClick = async (responseElement, dependencies) => {
-  const { id, content, window, uiElements, elementSelectors, stateManager } = dependencies;
-
+  const { window, stateManager } = dependencies;
   const currentState = stateManager.getState();
+  const existingBookmark = currentState.bookmarks.find(bookmark => bookmark.id === id);
 
   responseElement.id = id;
 
-  const existingBookmark = currentState.bookmarks.find(bookmark => bookmark.id === id);
+  let tags = [];
 
-  if (existingBookmark) {
-    const stateWithBookmarkRemoved = removeBookmark(currentState, id);
-
-    stateManager.setState(stateWithBookmarkRemoved);
-  } else {
+  if (!existingBookmark) {
     const tagsString = window.prompt("Enter optional tags for this bookmark, separated by commas:", "");
 
     if (tagsString === null) {
       return;
     }
 
-    const tags = tagsString
+    tags = tagsString
       ? tagsString.split(",").map(tag => tag.trim()).filter(tag => tag.length > 0)
       : [];
-
-    const newBookmarkData = { id, content, tags };
-
-    const stateWithBookmarkAdded = addBookmark(currentState, newBookmarkData);
-
-    stateManager.setState(stateWithBookmarkAdded);
   }
 
-  await stateManager.saveStateToStorage();
-
-  renderUi({ window, uiElements, elementSelectors, stateManager });
+  await toggleBookmark(dependencies, { id, content, tags });
 };
