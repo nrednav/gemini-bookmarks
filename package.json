@@ -13,6 +13,7 @@
     "dev:watch": "npm run clean && vite build --watch --mode development",
     "build:chrome": "npm run clean && vite build --mode chrome",
     "build:firefox": "npm run clean && vite build --mode firefox",
+    "test": "vitest run",
     "clean": "del dist/"
   },
   "devDependencies": {

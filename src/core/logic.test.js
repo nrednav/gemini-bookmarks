@@ -1,60 +1,54 @@
+import { describe, test, expect } from "vitest";
 import { getUniqueTags, addBookmark, removeBookmark, filterBookmarksByTags } from "./logic";
-import { AppState } from "./state";
+import { StateManager } from "./state-manager";
+import { createConversationKey } from "./create-conversation-key";
 
-function assertEquals(actual, expected, message) {
-  if (JSON.stringify(actual) !== JSON.stringify(expected)) {
-    throw new Error(`Assertion failed: ${message}\nExpected: ${JSON.stringify(expected)}\nActual: ${JSON.stringify(actual)}`);
-  }
-}
+describe("core/logic", () => {
+  const stateManager = new StateManager({ conversationKey: createConversationKey("/test") });
 
-function testAddBookmark() {
-  const state = addBookmark(AppState.get('initialState'), { id: 'test-id-1', content: 'A', tags: ['t1'] });
+  test("addBookmark should add a new bookmark to the state", () => {
+    const newBookmark = { id: "id-one", content: "Hello world!", tags: ["tag-one"] };
+    const state = addBookmark(stateManager.getInitialState(), newBookmark);
 
-  assertEquals(state.bookmarks.length, 1, 'addBookmark should add one item.');
-  assertEquals(state.bookmarks[0].content, 'A', 'addBookmark should set bookmark content correctly.');
-  assertEquals(state.bookmarks[0].id, 'test-id-1', 'addBookmark should use the provided ID.');
-}
+    expect(state.bookmarks.length).toBe(1);
+    expect(state.bookmarks[0].id).toEqual(newBookmark.id);
+    expect(state.bookmarks[0].content).toEqual(newBookmark.content);
+    expect(state.bookmarks[0].tags).toEqual(newBookmark.tags);
+  });
 
-function testRemoveBookmark() {
-  let state = addBookmark(AppState.get('initialState'), { id: 'test-id-1', content: 'A', tags: ['t1'] });
+  test("removeBookmark should remove the bookmark from the state", () => {
+    let state = addBookmark(stateManager.getInitialState(), { id: "id-one", content: "Hello world!", tags: ["tag-one"] });
 
-  state = addBookmark(state, { id: 'test-id-2', content: 'B', tags: [] });
-  state = removeBookmark(state, 'test-id-1');
+    state = addBookmark(state, { id: "id-two", content: "Hello world!", tags: ["tag-one", "tag-two"] });
 
-  assertEquals(state.bookmarks.length, 1, 'removeBookmark should remove one item.');
-  assertEquals(state.bookmarks[0].id, 'test-id-2', 'removeBookmark should remove the correct item.');
-}
+    state = removeBookmark(state, "id-one");
 
-function testGetUniqueTags() {
-  let state = addBookmark(AppState.get('initialState'), { id: 'test-id-1', content: 'A', tags: ['t1', 't2'] });
+    expect(state.bookmarks.length).toBe(1);
+    expect(state.bookmarks[0].id).toEqual("id-two");
+    expect(state.bookmarks[0].content).toEqual("Hello world!");
+    expect(state.bookmarks[0].tags).toEqual(["tag-one", "tag-two"]);
+  });
 
-  state = addBookmark(state, { id: 'test-id-2', content: 'B', tags: ['t3', 't1'] });
+  test("getUniqueTags should return a sorted list of unique tags from the state", () => {
+    let state = addBookmark(stateManager.getInitialState(), { id: "id-one", content: "A", tags: ["a", "c"] });
 
-  const tags = getUniqueTags(state);
+    state = addBookmark(state, { id: "id-two", content: "B", tags: ["a", "b"] });
 
-  assertEquals(tags, ['t1', 't2', 't3'], 'getUniqueTags should return unique, sorted tags');
-}
+    const tags = getUniqueTags(state);
 
-function testFilterBookmarksByTags() {
-  let state = addBookmark(AppState.get('initialState'), { id: 'test-id-1', content: 'A', tags: ['t1', 't2'] });
+    expect(tags).toEqual(["a", "b", "c"]);
+  });
 
-  state = addBookmark(state, { id: 'test-id-2', content: 'B', tags: ['t3', 't1'] });
+  test("filterBookmarksByTags should return a list of bookmarks filtered by a list of tags", () => {
+    let state = addBookmark(stateManager.getInitialState(), { id: "id-one", content: "A", tags: ["a", "c"] });
 
-  const filteredBookmarks = filterBookmarksByTags(state, ['t1', 't3']);
+    state = addBookmark(state, { id: "id-two", content: "B", tags: ["b"] });
+    state = addBookmark(state, { id: "id-four", content: "C", tags: ["b", "c"] });
 
-  assertEquals(filteredBookmarks.length, 2, 'filterBookmarksByTags should find all matching bookmarks');
-}
+    const bookmarks = filterBookmarksByTags(state, ["b"]);
 
-export function runCoreLogicTests() {
-  try {
-    testAddBookmark();
-    testRemoveBookmark();
-    testGetUniqueTags();
-    testFilterBookmarksByTags();
-
-    console.log('%c✅ All core logic tests passed!', 'color: green; font-weight: bold;');
-  } catch(e) {
-    console.error('%c❌ A core logic test failed.', 'color: red; font-weight: bold;');
-    console.error(e);
-  }
-}
+    expect(bookmarks.length).toBe(2);
+    expect(bookmarks[0].tags).toContain("b");
+    expect(bookmarks[1].tags).toContain("b");
+  });
+});
