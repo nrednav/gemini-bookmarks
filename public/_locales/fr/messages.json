@@ -1,0 +1,62 @@
+{
+  "panelHeader": {
+    "message": "Favoris",
+    "description": "The title text in the header of the bookmarks panel."
+  },
+  "clearAllButtonTitle": {
+    "message": "Supprimer tous les favoris de cette conversation",
+    "description": "The tooltip for the 'Clear All' button."
+  },
+  "clearAllButtonText": {
+    "message": "Tout effacer",
+    "description": "The text on the 'Clear All' button."
+  },
+  "themeButtonTitleLight": {
+    "message": "Thème : Clair (Passer à Sombre)",
+    "description": "Tooltip for the theme button when the light theme is active."
+  },
+  "themeButtonTitleDark": {
+    "message": "Thème : Sombre (Passer à Système)",
+    "description": "Tooltip for the theme button when the dark theme is active."
+  },
+  "themeButtonTitleSystem": {
+    "message": "Thème : Système (Passer à Clair)",
+    "description": "Tooltip for the theme button when the system theme is active."
+  },
+  "fabTitle": {
+    "message": "Afficher les favoris",
+    "description": "Tooltip for the floating action button that opens the panel."
+  },
+  "tagEditorPlaceholder": {
+    "message": "Ajouter des tags, séparés par des virgules...",
+    "description": "Placeholder text for the tag editor input field."
+  },
+  "tagEditorSaveButton": {
+    "message": "Enregistrer",
+    "description": "Text for the save button in the tag editor."
+  },
+  "tagEditorCancelButton": {
+    "message": "Annuler",
+    "description": "Text for the cancel button in the tag editor."
+  },
+  "addBookmarkTooltip": {
+    "message": "Cliquer pour ajouter aux favoris",
+    "description": "Tooltip for the bookmark icon when a response is not yet bookmarked."
+  },
+  "removeBookmarkTooltip": {
+    "message": "Cliquer pour retirer des favoris",
+    "description": "Tooltip for the bookmark icon when a response is already bookmarked."
+  },
+  "panelEmptyMessage": {
+    "message": "Aucun favori pour l'instant. Cliquez sur l'icône d'une réponse pour l'ajouter !",
+    "description": "Message shown in the panel when there are no bookmarks."
+  },
+  "clearAllConfirmation": {
+    "message": "Voulez-vous vraiment supprimer TOUS les favoris de cette conversation ?",
+    "description": "The confirmation text shown to the user before clearing all bookmarks."
+  },
+  "scrollToBookmarkTitle": {
+    "message": "Cliquer pour accéder à cette réponse",
+    "description": "Tooltip on a bookmark item in the side panel."
+  }
+}
