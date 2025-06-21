@@ -1,5 +1,5 @@
 import { elementSelectors } from "./data/element-selectors";
-import { logger } from "./shell/logger";
+import { Logger } from "./shell/logger";
 import { createConversationKey } from "./core/create-conversation-key";
 import { injectUi } from './ui/inject-ui';
 import { renderUi } from './ui/render-ui';
@@ -10,6 +10,8 @@ import { startObserver } from "./shell/start-observer";
 import { injectBookmarkButton } from "./ui/inject-bookmark-button";
 
 export const main = async () => {
+  const logger = new Logger(window);
+
   try {
     logger.info("Loaded.");
 
@@ -27,6 +29,7 @@ export const main = async () => {
 
     const dependencies = {
       window,
+      logger,
       uiElements,
       elementSelectors,
       stateManager,

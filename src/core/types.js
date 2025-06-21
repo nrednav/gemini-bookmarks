@@ -33,4 +33,5 @@
  * @property {import('../data/element-selectors.js').ElementSelectors} elementSelectors - The DOM selectors.
  * @property {import('./state-manager.js').StateManager} stateManager - The state manager instance.
  * @property {() => Promise<void>} onNavigate - The callback function to re-initialize the script on navigation.
+ * @property {import('../shell/logger.js').Logger} logger - The application logger instance.
  */

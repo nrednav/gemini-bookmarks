@@ -2,7 +2,6 @@ import { waitForElement } from "../helpers/wait-for-element";
 import { generateContentHash } from "../helpers/generate-content-hash";
 import { updateBookmarkButtonUi } from "./render-ui";
 import { toggleBookmark } from "../core/actions";
-import { logger } from "../shell/logger";
 
 /**
  * Injects a bookmark button into a model response element.
@@ -10,7 +9,7 @@ import { logger } from "../shell/logger";
  * @param {import('../core/types.js').Dependencies} dependencies - The application-wide dependencies.
  */
 export const injectBookmarkButton = async (responseElement, dependencies) => {
-  const { window, uiElements, elementSelectors, stateManager } = dependencies;
+  const { window, uiElements, elementSelectors, stateManager, logger } = dependencies;
 
   const currentState = stateManager.getState();
 

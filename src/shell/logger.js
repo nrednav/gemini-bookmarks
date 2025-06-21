@@ -1,13 +1,23 @@
-class Logger {
-  static instance;
+export class Logger {
+  constructor(window) {
+    const { version } = browser.runtime.getManifest();
 
-  constructor() {
-    const { version } = chrome.runtime.getManifest();
     this.prefix = `Gemini Bookmarks (v${version}):`;
+    this.debug = this.createDebugMethod(window);
   }
 
-  static getInstance() {
-    return Logger.instance ? Logger.instance : new Logger();
+  createDebugMethod(window) {
+    try {
+      const url = new URL(window.location.href);
+
+      if (url.searchParams.get("gb-debug") === true) {
+        return this.logWithPrefix(console.debug);
+      }
+    } catch (error) {
+      console.error(`${this.prefix} Failed to check for debug mode:`, error);
+    }
+
+    return () => {};
   }
 
   logWithPrefix(logMethod) {
@@ -15,22 +25,6 @@ class Logger {
   }
 
   info = this.logWithPrefix(console.info);
-  debug = (() => {
-    try {
-      const url = new URL(window.location.href);
-
-      if (url.searchParams.has("gb-debug", "true")) {
-        return this.logWithPrefix(console.debug);
-      } else {
-        return () => {};
-      }
-    } catch (error) {
-      this.error(error.message);
-      return () => {};
-    }
-  })();
   warn = this.logWithPrefix(console.warn);
   error = this.logWithPrefix(console.error);
 }
-
-export const logger = Logger.getInstance();
