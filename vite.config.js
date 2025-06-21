@@ -21,7 +21,8 @@ export default defineConfig((config) => {
       })
     ],
     build: {
-      sourcemap: "inline",
+      minify: false,
+      sourcemap: true,
       outDir: "dist",
       emptyOutDir: true
     },
