@@ -94,6 +94,11 @@
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
+.gb-panel *::selection {
+  background-color: #1a73e8;
+  color: #ffffff;
+}
+
 .gb-panel.visible {
   opacity: 1;
   transform: translateY(0);
@@ -384,4 +389,9 @@
 .gb-panel[data-theme='dark'] .gb-clear-all-button:disabled {
   opacity: 0.5;
   background-color: transparent;
+}
+
+.gb-panel[data-theme='dark'] *::selection {
+  background-color: #8ab4f8;
+  color: #202124;
 }
