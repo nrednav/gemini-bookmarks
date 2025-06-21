@@ -1,5 +1,9 @@
 import { filterBookmarksByTags, getUniqueTags } from '../core/logic';
 
+/**
+ * Renders the entire UI based on the current state.
+ * @param {import('../core/types.js').Dependencies} dependencies
+ */
 export const renderUi = (dependencies) => {
   const { uiElements, stateManager, elementSelectors, window } = dependencies;
 
@@ -13,6 +17,13 @@ export const renderUi = (dependencies) => {
   updateAllBookmarkButtonUis({ uiElements, elementSelectors, currentState });
 };
 
+/**
+ * Renders the content of the bookmarks panel (tags and bookmarks list).
+ * @param {object} dependencies - The dependencies for this specific render function.
+ * @param {import('../core/types.js').AppState} dependencies.currentState
+ * @param {import('../core/types.js').UIElements} dependencies.uiElements
+ * @param {Window} dependencies.window
+ */
 const renderPanelContent = (dependencies) => {
   const { currentState, uiElements, window } = dependencies;
 
@@ -91,6 +102,13 @@ const renderPanelContent = (dependencies) => {
   });
 };
 
+/**
+ * Updates the visual state of all bookmark buttons on the page.
+ * @param {object} dependencies - The dependencies for this specific update function.
+ * @param {import('../core/types.js').UIElements} dependencies.uiElements
+ * @param {import('../data/element-selectors.js').ElementSelectors} dependencies.elementSelectors
+ * @param {import('../core/types.js').AppState} dependencies.currentState
+ */
 const updateAllBookmarkButtonUis = (dependencies) => {
   const { uiElements, elementSelectors, currentState } = dependencies;
 
@@ -103,6 +121,12 @@ const updateAllBookmarkButtonUis = (dependencies) => {
   }
 }
 
+/**
+ * Updates the visual state of a single bookmark button.
+ * @param {HTMLButtonElement} bookmarkButton
+ * @param {string} id
+ * @param {import('../core/types.js').AppState} currentState
+ */
 export const updateBookmarkButtonUi = (bookmarkButton, id, currentState) => {
   const isBookmarked = currentState.bookmarks.some(bookmark => bookmark.id === id);
 
