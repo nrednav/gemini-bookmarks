@@ -49,7 +49,7 @@ export const injectBookmarkButton = async (responseElement, dependencies) => {
 
     updateBookmarkButtonUi(bookmarkButton, isBookmarked ? contentHash : responseElement.id, currentState);
   } catch (error) {
-    console.error(`Gemini Bookmarks: Failed to inject bookmark button into model response. Reason = ${error.message}`);
+    logger.error(`Failed to inject bookmark button into model response. Reason = ${error.message}`);
   }
 }
 
