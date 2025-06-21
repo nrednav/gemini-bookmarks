@@ -9,6 +9,7 @@
     "node": ">=20"
   },
   "scripts": {},
-  "dependencies": {},
-  "devDependencies": {}
+  "devDependencies": {
+    "vite": "^6.3.5"
+  }
 }
