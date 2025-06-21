@@ -27,9 +27,13 @@
     "message": "Afficher les favoris",
     "description": "Tooltip for the floating action button that opens the panel."
   },
+  "tagEditorLabel": {
+    "message": "Ajouter des tags (séparés par des virgules):",
+    "description": "A label appearing above the tag input field."
+  },
   "tagEditorPlaceholder": {
-    "message": "Ajouter des tags, séparés par des virgules...",
-    "description": "Placeholder text for the tag editor input field."
+    "message": "ex: idée, étude",
+    "description": "An example of tags, shown as placeholder text inside the input field."
   },
   "tagEditorSaveButton": {
     "message": "Enregistrer",

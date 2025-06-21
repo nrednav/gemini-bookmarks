@@ -89,8 +89,19 @@ const createTagEditor = (responseElement, onSave) => {
 
   editorContainer.className = 'tag-editor';
 
+  const label = document.createElement('label');
+
+  label.className = 'tag-editor-label';
+  label.textContent = chrome.i18n.getMessage("tagEditorLabel");
+  label.htmlFor = 'tag-editor-input-field';
+
+  const inputContainer = document.createElement('div');
+
+  inputContainer.className = 'tag-editor-input-container';
+
   const input = document.createElement('input');
 
+  input.id = 'tag-editor-input-field';
   input.type = 'text';
   input.placeholder = chrome.i18n.getMessage("tagEditorPlaceholder");
   input.className = 'tag-editor-input';
@@ -127,9 +138,11 @@ const createTagEditor = (responseElement, onSave) => {
     }
   });
 
-  editorContainer.appendChild(input);
-  editorContainer.appendChild(saveButton);
-  editorContainer.appendChild(cancelButton);
+  editorContainer.appendChild(label);
+  inputContainer.appendChild(input);
+  inputContainer.appendChild(saveButton);
+  inputContainer.appendChild(cancelButton);
+  editorContainer.appendChild(inputContainer);
   responseElement.appendChild(editorContainer);
 
   input.focus();

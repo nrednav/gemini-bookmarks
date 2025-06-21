@@ -27,9 +27,13 @@
     "message": "View Bookmarks",
     "description": "Tooltip for the floating action button that opens the panel."
   },
+  "tagEditorLabel": {
+    "message": "Add tags (comma-separated):",
+    "description": "A label appearing above the tag input field."
+  },
   "tagEditorPlaceholder": {
-    "message": "Add tags, comma-separated...",
-    "description": "Placeholder text for the tag editor input field."
+    "message": "e.g., idea, research",
+    "description": "An example of tags, shown as placeholder text inside the input field."
   },
   "tagEditorSaveButton": {
     "message": "Save",

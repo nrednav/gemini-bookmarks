@@ -27,9 +27,13 @@
     "message": "Ver marcadores",
     "description": "Tooltip for the floating action button that opens the panel."
   },
+  "tagEditorLabel": {
+    "message": "Añadir etiquetas (separadas por comas):",
+    "description": "A label appearing above the tag input field."
+  },
   "tagEditorPlaceholder": {
-    "message": "Añade etiquetas, separadas por comas...",
-    "description": "Placeholder text for the tag editor input field."
+    "message": "ej: idea, estudio",
+    "description": "An example of tags, shown as placeholder text inside the input field."
   },
   "tagEditorSaveButton": {
     "message": "Guardar",

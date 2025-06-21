@@ -236,6 +236,7 @@
 
 /* The main container for the inline tag editor */
 .tag-editor {
+  font-family: 'Google Sans', sans-serif;
   position: absolute;
   top: 50px;
   right: 8px;
@@ -245,9 +246,11 @@
   border-radius: 8px;
   padding: 12px;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
   gap: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  width: 400px;
 }
 
 /* The text input field for tags */
@@ -256,9 +259,24 @@
   border-radius: 4px;
   padding: 8px;
   font-size: 14px;
-  width: 220px;
+  flex-grow: 1;
+  min-width: 100px;
   outline: none;
   transition: border-color 0.2s ease;
+}
+
+.tag-editor-label {
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: #3c4043;
+}
+
+/* Container for the input and buttons */
+.tag-editor-input-container {
+  display: flex;
+  width: 100%;
+  gap: 8px;
 }
 
 .tag-editor-input:focus {
@@ -274,6 +292,8 @@
   font-weight: 500;
   font-size: 13px;
   transition: background-color 0.2s ease;
+  min-width: 75px;
+  text-align: center;
 }
 
 /* Primary "Save" button styling */
@@ -401,6 +421,10 @@ body[data-gemini-bookmarks-theme='dark'] .tag-editor-input {
   background-color: #202124;
   border-color: #5f6368;
   color: #e8eaed;
+}
+
+body[data-gemini-bookmarks-theme='dark'] .tag-editor-label {
+  color: #bdc1c6;
 }
 
 body[data-gemini-bookmarks-theme='dark'] .tag-editor-input:focus {
