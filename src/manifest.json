@@ -18,10 +18,10 @@
         "https://gemini.google.com/u/*/app/*",
         "https://gemini.google.com/u/*/gem/*"
       ],
-      "run_at": "document_end",
       "js": [
         "src/main.js"
       ],
+      "run_at": "document_idle",
       "css": ["src/ui/styles.css"]
     }
   ],

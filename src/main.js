@@ -48,10 +48,4 @@ export const main = async () => {
   }
 };
 
-if (document.readyState !== "loading") {
-  main();
-} else {
-  document.addEventListener("DOMContentLoaded", () => {
-    main();
-  });
-}
+main();
