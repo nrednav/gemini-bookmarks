@@ -3,7 +3,6 @@ export const elementSelectors = {
     container: "model-response",
     messageContent: "message-content"
   },
-  observerTarget: (window) => window.document.body.querySelector("main") || window.document.body,
   ui: {
     fab: ".gb-fab",
     panel: ".gb-panel",
