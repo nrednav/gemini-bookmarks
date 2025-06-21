@@ -10,6 +10,8 @@
   },
   "scripts": {},
   "devDependencies": {
-    "vite": "^6.3.5"
+    "vite": "6.3.5",
+    "vite-plugin-web-extension": "4.4.4",
+    "webextension-polyfill": "0.12.0"
   }
 }
