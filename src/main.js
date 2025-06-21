@@ -22,37 +22,22 @@ export const main = async () => {
 
   await stateManager.loadStateFromStorage();
 
-  const postUiInjection = injectUi(window, elementSelectors);
+  const { uiElements } = injectUi(window, elementSelectors);
 
-  for (const modelResponse of postUiInjection.uiElements.modelResponses) {
-    await injectBookmarkButton(modelResponse, {
-      window: postUiInjection.window,
-      uiElements: postUiInjection.uiElements,
-      elementSelectors: elementSelectors,
-      stateManager: stateManager
-    });
+  const dependencies = {
+    window,
+    uiElements,
+    elementSelectors,
+    stateManager
+  };
+
+  for (const modelResponse of uiElements.modelResponses) {
+    await injectBookmarkButton(modelResponse, dependencies);
   }
 
-  const postEventListenerSetup = setupEventListeners({
-    window: postUiInjection.window,
-    uiElements: postUiInjection.uiElements,
-    elementSelectors: elementSelectors,
-    stateManager: stateManager,
-  });
-
-  const postObserverStart = startObserver({
-    window: postEventListenerSetup.window,
-    uiElements: postEventListenerSetup.uiElements,
-    elementSelectors: elementSelectors,
-    stateManager: postEventListenerSetup.stateManager
-  });
-
-  renderUi({
-    window: postObserverStart.window,
-    uiElements: postEventListenerSetup.uiElements,
-    elementSelectors: elementSelectors,
-    stateManager: postObserverStart.stateManager
-  });
+  setupEventListeners(dependencies);
+  startObserver(dependencies);
+  renderUi(dependencies);
 };
 
 if (document.readyState !== "loading") {
