@@ -26,6 +26,9 @@ export default defineConfig((config) => {
       outDir: "dist",
       emptyOutDir: true
     },
+    test: {
+      environment: 'jsdom'
+    },
     resolve: {
       alias: {
         src: "/src"
