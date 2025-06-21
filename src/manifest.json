@@ -4,6 +4,7 @@
   "name": "Gemini Bookmarks",
   "version": "1.0.0",
   "description": "Bookmark and quickly navigate between responses in a Gemini conversation.",
+  "default_locale": "en",
   "permissions": [
     "storage",
     "scripting"

@@ -53,7 +53,7 @@ export const toggleTagFilter = (dependencies, tag) => {
 export const clearAllBookmarks = async (dependencies) => {
   const { stateManager, window } = dependencies;
 
-  if (window.confirm("Are you sure you want to remove ALL bookmarks for this conversation?")) {
+  if (window.confirm(browser.i18n.getMessage("clearAllConfirmation"))) {
     stateManager.resetState();
 
     await stateManager.saveStateToStorage();

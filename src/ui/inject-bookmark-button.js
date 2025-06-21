@@ -92,17 +92,17 @@ const createTagEditor = (responseElement, onSave) => {
   const input = document.createElement('input');
 
   input.type = 'text';
-  input.placeholder = 'Add tags, comma-separated...';
+  input.placeholder = browser.i18n.getMessage("tagEditorPlaceholder");
   input.className = 'tag-editor-input';
 
   const saveButton = document.createElement('button');
 
-  saveButton.textContent = 'Save';
+  saveButton.textContent = browser.i18n.getMessage("tagEditorSaveButton");
   saveButton.className = 'tag-editor-save';
 
   const cancelButton = document.createElement('button');
 
-  cancelButton.textContent = 'Cancel';
+  cancelButton.textContent = browser.i18n.getMessage("tagEditorCancelButton");
   cancelButton.className = 'tag-editor-cancel';
 
   const cleanup = () => editorContainer.remove();

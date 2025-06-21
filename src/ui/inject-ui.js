@@ -9,10 +9,12 @@ export const injectUi = (window, elementSelectors) => {
     <div class="gemini-bookmarks-container">
       <div class="gb-panel">
         <div class="gb-panel__header">
-          <h3>Bookmarked Responses</h3>
+          <h3>${browser.i18n.getMessage("panelHeader")}</h3>
           <div class="gb-panel__header-actions">
-            <button class="gb-theme-toggle-button" title="Change theme"></button>
-            <button class="gb-clear-all-button" title="Remove all bookmarks for this conversation">Clear All</button>
+            <button class="gb-theme-toggle-button"></button>
+            <button class="gb-clear-all-button" title="${browser.i18n.getMessage("clearAllButtonTitle")}">
+              ${browser.i18n.getMessage("clearAllButtonText")}
+            </button>
           </div>
         </div>
         <div class="gb-panel__tags" id="gb-tags-container">
@@ -21,7 +23,7 @@ export const injectUi = (window, elementSelectors) => {
           </div>
       </div>
 
-      <button class="gb-fab" title="View Bookmarks">
+      <button class="gb-fab" title="${browser.i18n.getMessage("fabTitle")}">
         <svg viewBox="0 0 24 24">
           <path d="M17 3H7c-1.1 0-2 .9-2 2v16l7-3 7 3V5c0-1.1-.9-2-2-2z"/>
         </svg>

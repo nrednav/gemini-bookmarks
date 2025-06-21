@@ -57,7 +57,7 @@ const renderPanelContent = (dependencies) => {
     const emptyMessage = window.document.createElement("p");
 
     emptyMessage.className = "gb-panel__empty-message";
-    emptyMessage.textContent = "No bookmarks yet. Click the icon on a response to bookmark it!";
+    emptyMessage.textContent = browser.i18n.getMessage("panelEmptyMessage");
 
     uiElements.bookmarksContainer.appendChild(emptyMessage);
 
@@ -76,7 +76,7 @@ const renderPanelContent = (dependencies) => {
 
     bookmarkElement.className = "gb-panel-bookmark";
     bookmarkElement.dataset.bookmarkId = bookmark.id;
-    bookmarkElement.title = "Click to scroll to this response";
+    bookmarkElement.title = browser.i18n.getMessage("scrollToBookmarkTitle");
 
     const contentElement = window.document.createElement("p");
 
@@ -132,9 +132,9 @@ export const updateBookmarkButtonUi = (bookmarkButton, id, currentState) => {
 
   if (isBookmarked) {
     bookmarkButton.classList.add('active');
-    bookmarkButton.title = 'Click to remove bookmark';
+    bookmarkButton.title = browser.i18n.getMessage("removeBookmarkTooltip");
   } else {
     bookmarkButton.classList.remove('active');
-    bookmarkButton.title = 'Click to add bookmark';
+    bookmarkButton.title = browser.i18n.getMessage("addBookmarkTooltip");
   }
 };
