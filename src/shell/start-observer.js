@@ -1,9 +1,18 @@
+import { main } from '../main';
 import { injectBookmarkButton } from '../ui/inject-bookmark-button';
 
 export const startObserver = (dependencies) => {
   const { window, uiElements, elementSelectors, stateManager } = dependencies;
 
-  const observer = new MutationObserver((mutations) => {
+  const previousUrl = window.location.href;
+
+  const observer = new MutationObserver((mutations, observer) => {
+    if (window.location.href !== previousUrl) {
+      observer.disconnect();
+      main();
+      return;
+    }
+
     const modelResponseNodes = new Set();
 
     for (const mutation of mutations) {

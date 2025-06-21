@@ -9,7 +9,7 @@ import { setupEventListeners } from "./shell/setup-event-listeners";
 import { startObserver } from "./shell/start-observer";
 import { injectBookmarkButton } from "./ui/inject-bookmark-button";
 
-const main = async () => {
+export const main = async () => {
   logger.info("Loaded.");
 
   await waitForElement(

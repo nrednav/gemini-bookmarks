@@ -1,4 +1,10 @@
 export const injectUi = (window, elementSelectors) => {
+  const oldUi = window.document.querySelector('.gemini-bookmarks-container');
+
+  if (oldUi) {
+    oldUi.remove();
+  }
+
   const uiHtml = `
     <div class="gemini-bookmarks-container">
       <div class="gb-panel">
