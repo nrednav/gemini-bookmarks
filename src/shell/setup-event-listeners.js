@@ -72,6 +72,4 @@ export const setupEventListeners = (dependencies) => {
       }
     });
   }
-
-  return { window, uiElements, stateManager };
 }

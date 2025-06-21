@@ -41,6 +41,4 @@ export const startObserver = (dependencies) => {
   });
 
   observer.observe(window.document.body, { childList: true, subtree: true });
-
-  return { window, uiElements, elementSelectors, stateManager };
 }
