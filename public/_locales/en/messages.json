@@ -32,7 +32,7 @@
     "description": "A label appearing above the tag input field."
   },
   "tagEditorPlaceholder": {
-    "message": "e.g., idea, research",
+    "message": "e.g., idea, study",
     "description": "An example of tags, shown as placeholder text inside the input field."
   },
   "tagEditorSaveButton": {

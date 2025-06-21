@@ -1,62 +1,66 @@
 {
   "panelHeader": {
-    "message": "Bookmarked Responses",
+    "message": "Respostas Salvas",
     "description": "The title text in the header of the bookmarks panel."
   },
   "clearAllButtonTitle": {
-    "message": "Remove all bookmarks for this conversation",
+    "message": "Remover todos os favoritos desta conversa",
     "description": "The tooltip for the 'Clear All' button."
   },
   "clearAllButtonText": {
-    "message": "Clear All",
+    "message": "Limpar Tudo",
     "description": "The text on the 'Clear All' button."
   },
   "themeButtonTitleLight": {
-    "message": "Theme: Light (Switch to Dark)",
+    "message": "Tema: Claro (Mudar para Escuro)",
     "description": "Tooltip for the theme button when the light theme is active."
   },
   "themeButtonTitleDark": {
-    "message": "Theme: Dark (Switch to System)",
+    "message": "Tema: Escuro (Mudar para Padrão do Sistema)",
     "description": "Tooltip for the theme button when the dark theme is active."
   },
   "themeButtonTitleSystem": {
-    "message": "Theme: System (Switch to Light)",
+    "message": "Tema: Padrão do Sistema (Mudar para Claro)",
     "description": "Tooltip for the theme button when the system theme is active."
   },
   "fabTitle": {
-    "message": "View Bookmarks",
+    "message": "Ver Favoritos",
     "description": "Tooltip for the floating action button that opens the panel."
   },
+  "tagEditorLabel": {
+    "message": "Adicionar tags (separadas por vírgula):",
+    "description": "A label appearing above the tag input field."
+  },
   "tagEditorPlaceholder": {
-    "message": "Add tags, comma-separated...",
-    "description": "Placeholder text for the tag editor input field."
+    "message": "ex: ideia, estudo",
+    "description": "An example of tags, shown as placeholder text inside the input field."
   },
   "tagEditorSaveButton": {
-    "message": "Save",
+    "message": "Salvar",
     "description": "Text for the save button in the tag editor."
   },
   "tagEditorCancelButton": {
-    "message": "Cancel",
+    "message": "Cancelar",
     "description": "Text for the cancel button in the tag editor."
   },
   "addBookmarkTooltip": {
-    "message": "Click to add bookmark",
+    "message": "Clique para adicionar aos favoritos",
     "description": "Tooltip for the bookmark icon when a response is not yet bookmarked."
   },
   "removeBookmarkTooltip": {
-    "message": "Click to remove bookmark",
+    "message": "Clique para remover dos favoritos",
     "description": "Tooltip for the bookmark icon when a response is already bookmarked."
   },
   "panelEmptyMessage": {
-    "message": "No bookmarks yet. Click the icon on a response to bookmark it!",
+    "message": "Nenhum favorito ainda. Clique no ícone em uma resposta para favoritá-la!",
     "description": "Message shown in the panel when there are no bookmarks."
   },
   "clearAllConfirmation": {
-    "message": "Are you sure you want to remove ALL bookmarks for this conversation?",
+    "message": "Tem certeza que deseja remover TODOS os favoritos desta conversa?",
     "description": "The confirmation text shown to the user before clearing all bookmarks."
   },
   "scrollToBookmarkTitle": {
-    "message": "Click to scroll to this response",
+    "message": "Clique para rolar até esta resposta",
     "description": "Tooltip on a bookmark item in the side panel."
   }
 }

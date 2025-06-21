@@ -1,62 +1,66 @@
 {
   "panelHeader": {
-    "message": "Bookmarked Responses",
+    "message": "收藏的回覆",
     "description": "The title text in the header of the bookmarks panel."
   },
   "clearAllButtonTitle": {
-    "message": "Remove all bookmarks for this conversation",
+    "message": "移除此對話中的全部收藏",
     "description": "The tooltip for the 'Clear All' button."
   },
   "clearAllButtonText": {
-    "message": "Clear All",
+    "message": "全部清除",
     "description": "The text on the 'Clear All' button."
   },
   "themeButtonTitleLight": {
-    "message": "Theme: Light (Switch to Dark)",
+    "message": "主題：淺色 (切換至深色)",
     "description": "Tooltip for the theme button when the light theme is active."
   },
   "themeButtonTitleDark": {
-    "message": "Theme: Dark (Switch to System)",
+    "message": "主題：深色 (切換至系統預設)",
     "description": "Tooltip for the theme button when the dark theme is active."
   },
   "themeButtonTitleSystem": {
-    "message": "Theme: System (Switch to Light)",
+    "message": "主題：系統預設 (切換至淺色)",
     "description": "Tooltip for the theme button when the system theme is active."
   },
   "fabTitle": {
-    "message": "View Bookmarks",
+    "message": "檢視收藏",
     "description": "Tooltip for the floating action button that opens the panel."
   },
+  "tagEditorLabel": {
+    "message": "新增標籤 (以逗號分隔)：",
+    "description": "A label appearing above the tag input field."
+  },
   "tagEditorPlaceholder": {
-    "message": "Add tags, comma-separated...",
-    "description": "Placeholder text for the tag editor input field."
+    "message": "例如：想法、學習",
+    "description": "An example of tags, shown as placeholder text inside the input field."
   },
   "tagEditorSaveButton": {
-    "message": "Save",
+    "message": "儲存",
     "description": "Text for the save button in the tag editor."
   },
   "tagEditorCancelButton": {
-    "message": "Cancel",
+    "message": "取消",
     "description": "Text for the cancel button in the tag editor."
   },
   "addBookmarkTooltip": {
-    "message": "Click to add bookmark",
+    "message": "點擊以新增收藏",
     "description": "Tooltip for the bookmark icon when a response is not yet bookmarked."
   },
   "removeBookmarkTooltip": {
-    "message": "Click to remove bookmark",
+    "message": "點擊以移除收藏",
     "description": "Tooltip for the bookmark icon when a response is already bookmarked."
   },
   "panelEmptyMessage": {
-    "message": "No bookmarks yet. Click the icon on a response to bookmark it!",
+    "message": "尚無收藏。點擊回覆旁的圖示即可收藏！",
     "description": "Message shown in the panel when there are no bookmarks."
   },
   "clearAllConfirmation": {
-    "message": "Are you sure you want to remove ALL bookmarks for this conversation?",
+    "message": "確定要移除此對話中的全部收藏嗎？",
     "description": "The confirmation text shown to the user before clearing all bookmarks."
   },
   "scrollToBookmarkTitle": {
-    "message": "Click to scroll to this response",
+    "message": "點擊以捲動至此回覆",
     "description": "Tooltip on a bookmark item in the side panel."
   }
 }
