@@ -8,6 +8,8 @@ import { waitForElement } from './helpers/wait-for-element'
 import { setupEventListeners } from "./shell/setup-event-listeners";
 import { startObserver } from "./shell/start-observer";
 import { injectBookmarkButton } from "./ui/inject-bookmark-button";
+import { getTheme } from "./core/settings";
+import { applyTheme } from "./ui/theme-manager";
 
 export const main = async () => {
   const logger = new Logger(window);
@@ -26,6 +28,9 @@ export const main = async () => {
     await stateManager.loadStateFromStorage();
 
     const { uiElements } = injectUi(window, elementSelectors);
+    const initialTheme = await getTheme();
+
+    applyTheme(initialTheme, uiElements);
 
     const dependencies = {
       window,

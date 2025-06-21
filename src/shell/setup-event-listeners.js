@@ -1,4 +1,4 @@
-import { clearAllBookmarks, toggleTagFilter } from "../core/actions";
+import { clearAllBookmarks, cycleTheme, toggleTagFilter } from "../core/actions";
 
 const HIGHLIGHT_DURATION_MS = 1500;
 
@@ -59,6 +59,12 @@ export const setupEventListeners = (dependencies) => {
   if (uiElements.clearAllButton) {
     uiElements.clearAllButton.addEventListener("click", async () => {
       await clearAllBookmarks(dependencies);
+    });
+  }
+
+  if (uiElements.themeToggleButton) {
+    uiElements.themeToggleButton.addEventListener("click", async () => {
+      await cycleTheme(dependencies);
     });
   }
 }

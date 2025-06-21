@@ -292,3 +292,96 @@
 .tag-editor-cancel:hover {
   background-color: #e6eaf0;
 }
+
+/* Style for the theme toggle button itself */
+.gb-theme-toggle-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+}
+
+.gb-theme-toggle-button:hover {
+  background-color: #e6eaf0;
+}
+
+.gb-theme-toggle-button svg {
+  width: 20px;
+  height: 20px;
+  stroke: #444746;
+}
+
+/* Container for the header action buttons */
+.gb-panel__header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* --- Dark Theme Styles --- */
+
+.gb-panel[data-theme='dark'] {
+  background-color: #202124;
+  color: #e8eaed;
+}
+
+.gb-panel[data-theme='dark'] .gb-panel__header {
+  border-bottom-color: #3c4043;
+}
+
+.gb-panel[data-theme='dark'] .gb-panel__header h3 {
+  color: #e8eaed;
+}
+
+.gb-panel[data-theme='dark'] .gb-panel__tags {
+  border-bottom-color: #3c4043;
+}
+
+.gb-panel[data-theme='dark'] .gb-panel-bookmark {
+  border-bottom-color: #3c4043;
+}
+
+.gb-panel[data-theme='dark'] .gb-panel-bookmark:hover {
+  background-color: #3c4043;
+}
+
+.gb-panel[data-theme='dark'] .gb-panel-bookmark__content {
+  color: #e8eaed;
+}
+
+.gb-panel[data-theme='dark'] .gb-panel-bookmark__tag {
+  background-color: #3c4043;
+  color: #bdc1c6;
+}
+
+.gb-panel[data-theme='dark'] .gb-panel__empty-message {
+  color: #9aa0a6;
+}
+
+.gb-panel[data-theme='dark'] .gb-theme-toggle-button:hover {
+  background-color: #3c4043;
+}
+
+.gb-panel[data-theme='dark'] .gb-theme-toggle-button svg {
+  stroke: #e8eaed;
+}
+
+.gb-panel[data-theme='dark'] .gb-clear-all-button {
+  border-color: #5f6368;
+  color: #e67c73;
+}
+
+.gb-panel[data-theme='dark'] .gb-clear-all-button:hover {
+  background-color: #4d3c3a;
+}
+
+.gb-panel[data-theme='dark'] .gb-clear-all-button:disabled {
+  opacity: 0.5;
+  background-color: transparent;
+}

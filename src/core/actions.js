@@ -1,5 +1,7 @@
 import { addBookmark, removeBookmark } from './logic';
 import { renderUi } from '../ui/render-ui';
+import { applyTheme } from '../ui/theme-manager';
+import { getTheme, saveTheme } from './settings';
 
 /**
  * @param {import('./types.js').Dependencies} dependencies - The application-wide dependencies.
@@ -58,4 +60,27 @@ export const clearAllBookmarks = async (dependencies) => {
 
     renderUi(dependencies);
   }
+};
+
+/**
+ * Cycles to the next theme, saves the preference, and applies the new theme to the UI.
+ * The cycle order is system -> light -> dark -> system.
+ * @param {import('./types.js').Dependencies} dependencies
+ */
+export const cycleTheme = async ({ uiElements }) => {
+  const currentTheme = await getTheme();
+
+  let nextTheme;
+
+  if (currentTheme === 'light') {
+    nextTheme = 'dark';
+  } else if (currentTheme === 'dark') {
+    nextTheme = 'system';
+  } else {
+    nextTheme = 'light';
+  }
+
+  await saveTheme(nextTheme);
+
+  applyTheme(nextTheme, uiElements);
 };
