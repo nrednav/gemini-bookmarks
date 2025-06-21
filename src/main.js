@@ -29,7 +29,8 @@ export const main = async () => {
       window,
       uiElements,
       elementSelectors,
-      stateManager
+      stateManager,
+      onNavigate: main
     };
 
     for (const modelResponse of uiElements.modelResponses) {

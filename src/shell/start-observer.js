@@ -2,14 +2,14 @@ import { main } from '../main';
 import { injectBookmarkButton } from '../ui/inject-bookmark-button';
 
 export const startObserver = (dependencies) => {
-  const { window, uiElements, elementSelectors, stateManager } = dependencies;
+  const { window, uiElements, elementSelectors, stateManager, onNavigate } = dependencies;
 
   const previousUrl = window.location.href;
 
   const observer = new MutationObserver((mutations, observer) => {
     if (window.location.href !== previousUrl) {
       observer.disconnect();
-      main();
+      onNavigate();
       return;
     }
 
