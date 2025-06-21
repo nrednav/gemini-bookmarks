@@ -21,6 +21,7 @@
  * @property {HTMLElement} tagsContainer - The container for filter tags.
  * @property {HTMLElement} bookmarksContainer - The container for bookmarks in the panel.
  * @property {HTMLButtonElement} clearAllButton - The 'Clear All' button.
+ * @property {HTMLButtonElement} themeToggleButton - The button to toggle the UI theme.
  * @property {HTMLButtonElement[]} bookmarkButtons - A mutable array of all injected bookmark buttons.
  * @property {NodeListOf<Element>} modelResponses - A list of the response containers from the page.
  */

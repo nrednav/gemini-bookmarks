@@ -10,7 +10,10 @@ export const injectUi = (window, elementSelectors) => {
       <div class="gb-panel">
         <div class="gb-panel__header">
           <h3>Bookmarked Responses</h3>
-          <button class="gb-clear-all-button" title="Remove all bookmarks for this conversation">Clear All</button>
+          <div class="gb-panel__header-actions">
+            <button class="gb-theme-toggle-button" title="Change theme"></button>
+            <button class="gb-clear-all-button" title="Remove all bookmarks for this conversation">Clear All</button>
+          </div>
         </div>
         <div class="gb-panel__tags" id="gb-tags-container">
           </div>
@@ -36,6 +39,7 @@ export const injectUi = (window, elementSelectors) => {
       tagsContainer: window.document.getElementById(elementSelectors.ui.tagsContainer),
       bookmarksContainer: window.document.getElementById(elementSelectors.ui.bookmarksContainer),
       clearAllButton: window.document.querySelector(elementSelectors.ui.clearAllButton),
+      themeToggleButton: window.document.querySelector(elementSelectors.ui.themeToggleButton),
       bookmarkButtons: Array.from(window.document.querySelectorAll(elementSelectors.ui.bookmarkButton)),
       modelResponses: window.document.querySelectorAll(elementSelectors.modelResponse.container)
     }
