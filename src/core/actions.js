@@ -1,6 +1,9 @@
 import { addBookmark, removeBookmark } from './logic';
 import { renderUi } from '../ui/render-ui';
 
+/**
+ * @param {import('./types.js').Dependencies} dependencies - The application-wide dependencies.
+ */
 export const toggleBookmark = async (dependencies, { id, content, tags }) => {
   const { stateManager } = dependencies;
   const currentState = stateManager.getState();
@@ -22,6 +25,9 @@ export const toggleBookmark = async (dependencies, { id, content, tags }) => {
   renderUi(dependencies);
 }
 
+/**
+ * @param {import('./types.js').Dependencies} dependencies - The application-wide dependencies.
+ */
 export const toggleTagFilter = (dependencies, tag) => {
   const { stateManager } = dependencies;
   const currentState = stateManager.getState();
@@ -39,6 +45,9 @@ export const toggleTagFilter = (dependencies, tag) => {
   renderUi(dependencies);
 };
 
+/**
+ * @param {import('./types.js').Dependencies} dependencies - The application-wide dependencies.
+ */
 export const clearAllBookmarks = async (dependencies) => {
   const { stateManager, window } = dependencies;
 
