@@ -107,17 +107,26 @@ const createTagEditor = (responseElement, onSave) => {
   cancelButton.className = 'tag-editor-cancel';
 
   const cleanup = () => editorContainer.remove();
-
-  saveButton.addEventListener('click', () => {
+  const handleSave = () => {
     const tags = input.value
       ? input.value.split(",").map(tag => tag.trim()).filter(tag => tag.length > 0)
       : [];
 
     onSave(tags);
     cleanup();
-  });
+  };
 
+  saveButton.addEventListener('click', handleSave);
   cancelButton.addEventListener('click', cleanup);
+
+  input.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      handleSave();
+    } else if (e.key === 'Escape') {
+      cleanup();
+    }
+  });
 
   editorContainer.appendChild(input);
   editorContainer.appendChild(saveButton);
