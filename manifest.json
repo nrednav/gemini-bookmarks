@@ -5,12 +5,8 @@
   "description": "Bookmark and quickly navigate between responses in a Gemini conversation.",
   "permissions": [
     "storage",
-    "scripting",
-    "webNavigation"
+    "scripting"
   ],
-  "background": {
-    "service_worker": "background.js"
-  },
   "host_permissions": [
     "https://gemini.google.com/u/*/app/*",
     "https://gemini.google.com/u/*/gem/*"
