@@ -2,6 +2,7 @@ import { addBookmark, removeBookmark } from './logic';
 import { renderUi } from '../ui/render-ui';
 import { applyTheme } from '../ui/theme-manager';
 import { getTheme, saveTheme } from './settings';
+import { createConfirmationModal } from '../ui/modal.js';
 
 /**
  * @param {import('./types.js').Dependencies} dependencies - The application-wide dependencies.
@@ -51,9 +52,11 @@ export const toggleTagFilter = (dependencies, tag) => {
  * @param {import('./types.js').Dependencies} dependencies - The application-wide dependencies.
  */
 export const clearAllBookmarks = async (dependencies) => {
-  const { stateManager, window } = dependencies;
+  const { stateManager } = dependencies;
 
-  if (window.confirm(chrome.i18n.getMessage("clearAllConfirmation"))) {
+  const confirmed = await createConfirmationModal(chrome.i18n.getMessage("clearAllConfirmation"));
+
+  if (confirmed) {
     stateManager.resetState();
 
     await stateManager.saveStateToStorage();

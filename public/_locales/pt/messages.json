@@ -62,5 +62,13 @@
   "scrollToBookmarkTitle": {
     "message": "Clique para rolar até esta resposta",
     "description": "Tooltip on a bookmark item in the side panel."
+  },
+  "confirmButtonText": {
+    "message": "Confirmar",
+    "description": "The text for a generic confirmation button."
+  },
+  "cancelButtonText": {
+    "message": "Cancelar",
+    "description": "The text for a generic cancel button."
   }
 }

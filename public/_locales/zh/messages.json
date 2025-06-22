@@ -62,5 +62,13 @@
   "scrollToBookmarkTitle": {
     "message": "点击以滚动至此回复",
     "description": "Tooltip on a bookmark item in the side panel."
+  },
+  "confirmButtonText": {
+    "message": "确认",
+    "description": "The text for a generic confirmation button."
+  },
+  "cancelButtonText": {
+    "message": "取消",
+    "description": "The text for a generic cancel button."
   }
 }
