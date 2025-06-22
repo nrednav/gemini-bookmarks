@@ -31,7 +31,10 @@
     "build:chrome": "npm run clean && vite build --mode chrome",
     "build:firefox": "npm run clean && vite build --mode firefox",
     "test": "vitest run",
-    "clean": "del dist/"
+    "clean": "del dist/",
+    "lint": "biome lint --apply",
+    "format": "biome format --write",
+    "check": "biome check --apply"
   },
   "devDependencies": {
     "@biomejs/biome": "2.0.4",
