@@ -1,10 +1,7 @@
 # Gemini Bookmarks
 
-A web extension that adds a simple bookmarking system to the Google Gemini web
-interface.
-
-It allows you to save specific responses from a conversation so you can easily
-refer back to them later.
+Bookmark, tag, and quickly find important responses in your Google Gemini
+conversations.
 
 <img src="screenshots/banner.png">
 

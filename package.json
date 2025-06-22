@@ -4,7 +4,7 @@
   "description": "Bookmark, tag, and quickly find important responses in your Google Gemini conversations.",
   "type": "module",
   "author": "nrednav",
-  "keywords": [],
+  "keywords": ["google", "gemini", "bookmark", "extension", "tag", "ai", "llm", "conversation", "chat", "chrome", "firefox", "organize", "save", "search", "find", "shortcut"],
   "engines": {
     "node": ">=20"
   },
