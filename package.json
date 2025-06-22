@@ -1,7 +1,7 @@
 {
   "name": "gemini-bookmarks",
   "version": "1.0.0",
-  "description": "Bookmark and quickly navigate between responses in a Gemini conversation.",
+  "description": "Bookmark, tag, and quickly find important responses in your Google Gemini conversations.",
   "type": "module",
   "author": "nrednav",
   "keywords": [],
