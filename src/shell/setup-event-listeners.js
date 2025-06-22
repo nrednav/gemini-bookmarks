@@ -1,4 +1,7 @@
 import { clearAllBookmarks, cycleTheme, toggleTagFilter } from "../core/actions";
+import { getScrollContainer } from "../helpers/get-scroll-container.js";
+import { smoothScrollUp } from "../helpers/smooth-scroll-up.js";
+import { waitForElement } from "../helpers/wait-for-element.js";
 
 const HIGHLIGHT_DURATION_MS = 1500;
 
@@ -38,6 +41,29 @@ export const setupEventListeners = (dependencies) => {
         setTimeout(() => {
           responseElement.classList.remove("bookmark-highlight");
         }, HIGHLIGHT_DURATION_MS);
+      } else {
+        const scrollContainer = getScrollContainer(elementSelectors.modelResponse.container);
+        const scrollAnimation = smoothScrollUp(scrollContainer);
+
+        waitForElement({
+          selector: bookmarkId,
+          searchMethod: "getElementById",
+          timeout: 30000,
+          rejectOnTimeout: false
+        }).then((responseElement) => {
+          scrollAnimation.cancel();
+
+          if (responseElement) {
+            responseElement.scrollIntoView({ behavior: "smooth", block: "start" });
+            responseElement.classList.add("bookmark-highlight");
+
+            setTimeout(() => {
+              responseElement.classList.remove("bookmark-highlight");
+            }, HIGHLIGHT_DURATION_MS);
+          } else {
+            console.error("Failed to find bookmark to scroll to.");
+          }
+        });
       }
     });
   }

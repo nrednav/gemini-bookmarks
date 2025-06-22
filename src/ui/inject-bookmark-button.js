@@ -20,7 +20,7 @@ export const injectBookmarkButton = async (responseElement, dependencies) => {
   responseElement.dataset.processedByExtension = "true";
 
   try {
-    const contentElement = await waitForElement(responseElement, elementSelectors.modelResponse.messageContent);
+    const contentElement = await waitForElement({ parentElement: responseElement, selector: elementSelectors.modelResponse.messageContent });
     const content = contentElement.innerText.trim();
     const contentHash = await generateContentHash(content);
 

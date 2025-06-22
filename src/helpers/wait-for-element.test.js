@@ -27,13 +27,13 @@ describe('helpers/waitForElement', () => {
 
     parentElement.appendChild(targetElement);
 
-    const foundElement = await waitForElement(parentElement, '#target');
+    const foundElement = await waitForElement({ parentElement: parentElement, selector: '#target' });
 
     expect(foundElement).toBe(targetElement);
   });
 
   test('should resolve when the element appears after a delay', async () => {
-    const promise = waitForElement(parentElement, '#target');
+    const promise = waitForElement({ parentElement: parentElement, selector: '#target' });
 
     setTimeout(() => {
       const targetElement = document.createElement('span');
@@ -52,7 +52,7 @@ describe('helpers/waitForElement', () => {
   });
 
   test('should reject if the element does not appear within the timeout', async () => {
-    const promise = waitForElement(parentElement, '#target', 500);
+    const promise = waitForElement({ parentElement: parentElement, selector: '#target', timeout: 500 });
 
     const assertionPromise = expect(promise).rejects.toThrow(
       'Element with selector "#target not found within 500 ms."'
