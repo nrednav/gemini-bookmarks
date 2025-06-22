@@ -10,6 +10,7 @@ export const addBookmark = function (state, newBookmarkData) {
     id: newBookmarkData.id,
     timestamp: Date.now(),
     content: newBookmarkData.content,
+    index: newBookmarkData.index,
     tags: newBookmarkData.tags || []
   };
 

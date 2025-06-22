@@ -3,6 +3,7 @@
  * @property {string} id - The unique identifier for the bookmark (a content hash).
  * @property {number} timestamp - The Unix timestamp when the bookmark was created.
  * @property {string} content - The text content of the bookmarked response.
+ * @property {number} index - The zero-based index of the response in the conversation flow.
  * @property {string[]} tags - A list of user-defined tags.
  */
 

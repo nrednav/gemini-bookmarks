@@ -7,10 +7,11 @@ describe("core/logic", () => {
   const stateManager = new StateManager({ conversationKey: createConversationKey("/test") });
 
   test("addBookmark should add a new bookmark to the state", () => {
-    const newBookmark = { id: "id-one", content: "Hello world!", tags: ["tag-one"] };
+    const newBookmark = { id: "id-one", content: "Hello world!", tags: ["tag-one"], index: 0 };
     const state = addBookmark(stateManager.getInitialState(), newBookmark);
 
     expect(state.bookmarks.length).toBe(1);
+    expect(state.bookmarks[0].index).toEqual(0);
     expect(state.bookmarks[0].id).toEqual(newBookmark.id);
     expect(state.bookmarks[0].content).toEqual(newBookmark.content);
     expect(state.bookmarks[0].tags).toEqual(newBookmark.tags);

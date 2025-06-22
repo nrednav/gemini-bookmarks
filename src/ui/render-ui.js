@@ -64,12 +64,7 @@ const renderPanelContent = (dependencies) => {
     return;
   }
 
-  const sortedBookmarks = bookmarksToShow
-    .map(bookmark => {
-      const element = window.document.getElementById(bookmark.id);
-      return { ...bookmark, position: element?.offsetTop ?? Infinity };
-    })
-    .sort((a, b) => a.position - b.position);
+  const sortedBookmarks = bookmarksToShow.sort((a, b) => a.index - b.index);
 
   sortedBookmarks.forEach((bookmark) => {
     const bookmarkElement = window.document.createElement("div");

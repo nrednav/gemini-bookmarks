@@ -7,7 +7,7 @@ import { createConfirmationModal } from '../ui/modal.js';
 /**
  * @param {import('./types.js').Dependencies} dependencies - The application-wide dependencies.
  */
-export const toggleBookmark = async (dependencies, { id, content, tags }) => {
+export const toggleBookmark = async (dependencies, { id, content, tags, index }) => {
   const { stateManager } = dependencies;
   const currentState = stateManager.getState();
   const existingBookmark = currentState.bookmarks.find(bookmark => bookmark.id === id);
@@ -17,7 +17,7 @@ export const toggleBookmark = async (dependencies, { id, content, tags }) => {
   if (existingBookmark) {
     nextState = removeBookmark(currentState, id);
   } else {
-    const newBookmark = { id, content, tags };
+    const newBookmark = { id, content, tags, index };
     nextState = addBookmark(currentState, newBookmark);
   }
 

@@ -60,17 +60,20 @@ export const injectBookmarkButton = async (responseElement, dependencies) => {
  * @param {import('../core/types.js').Dependencies} dependencies
  */
 const handleBookmarkClick = async (responseElement, { id, content }, dependencies) => {
-  const { stateManager } = dependencies;
+  const { stateManager, elementSelectors } = dependencies;
   const currentState = stateManager.getState();
   const existingBookmark = currentState.bookmarks.find(bookmark => bookmark.id === id);
 
   responseElement.id = id;
 
   if (existingBookmark) {
-    await toggleBookmark(dependencies, { id, content, tags: [] });
+    await toggleBookmark(dependencies, { id, content, tags: [], index: -1 });
   } else {
+    const modelResponses = Array.from(document.querySelectorAll(elementSelectors.modelResponse.container));
+    const index = modelResponses.findIndex(modelResponse => responseElement.id === modelResponse.id);
+
     createTagEditor(responseElement, async (tags) => {
-      await toggleBookmark(dependencies, { id, content, tags });
+      await toggleBookmark(dependencies, { id, content, tags, index });
     });
   }
 };
