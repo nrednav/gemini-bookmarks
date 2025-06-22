@@ -417,6 +417,74 @@
   background-color: #d93025;
 }
 
+/* --- Content Modal Styles --- */
+.gb-content-modal {
+  text-align: left;
+  width: 90%;
+  max-width: 700px;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.gb-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 12px;
+  margin-bottom: 16px;
+}
+
+.gb-modal-header h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #1f1f1f;
+}
+
+.gb-modal-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.gb-modal-action-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  color: #5f6368;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.gb-modal-action-button:hover {
+  background-color: #f1f3f4;
+  color: #202124;
+}
+
+.gb-modal-action-button svg {
+  width: 20px;
+  height: 20px;
+  stroke: currentColor;
+}
+
+.gb-modal-content {
+  overflow-y: auto;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0;
+  color: #3c4043;
+}
+
 /* --- Bookmark Panel Actions --- */
 .gb-panel-bookmark__actions {
   display: flex;
@@ -673,4 +741,25 @@ body[data-gemini-bookmarks-theme='dark'] .gb-panel-tag-filter.active {
   color: #202124;
   border-color: #8ab4f8;
   font-weight: 500;
+}
+
+body[data-gemini-bookmarks-theme='dark'] .gb-content-modal .gb-modal-header {
+  border-bottom-color: #5f6368;
+}
+
+body[data-gemini-bookmarks-theme='dark'] .gb-content-modal .gb-modal-header h3 {
+  color: #e8eaed;
+}
+
+body[data-gemini-bookmarks-theme='dark'] .gb-content-modal .gb-modal-content {
+  color: #e8eaed;
+}
+
+body[data-gemini-bookmarks-theme='dark'] .gb-modal-action-button {
+  color: #9aa0a6;
+}
+
+body[data-gemini-bookmarks-theme='dark'] .gb-modal-action-button:hover {
+  background-color: #3c4043;
+  color: #e8eaed;
 }

@@ -2,6 +2,7 @@ import { clearAllBookmarks, cycleTheme, toggleTagFilter } from "../core/actions"
 import { getScrollContainer } from "../helpers/get-scroll-container.js";
 import { smoothScrollUp } from "../helpers/smooth-scroll-up.js";
 import { waitForElement } from "../helpers/wait-for-element.js";
+import { createContentModal } from "../ui/modal.js";
 import { showToast } from "../ui/toast.js";
 
 const HIGHLIGHT_DURATION_MS = 1500;
@@ -21,6 +22,23 @@ export const setupEventListeners = (dependencies) => {
 
   if (uiElements.bookmarksContainer) {
     uiElements.bookmarksContainer.addEventListener("click", (e) => {
+      const viewButton = e.target.closest(elementSelectors.ui.viewBookmarkButton);
+
+      if (viewButton) {
+        e.stopPropagation();
+
+        const bookmarkElement = viewButton.closest(elementSelectors.ui.panelBookmark);
+        const bookmarkId = bookmarkElement.dataset.bookmarkId;
+        const currentState = dependencies.stateManager.getState();
+        const bookmark = currentState.bookmarks.find(bookmark => bookmark.id === bookmarkId);
+
+        if (bookmark) {
+          createContentModal(chrome.i18n.getMessage("viewModalTitle"), bookmark.content);
+        }
+
+        return;
+      }
+
       const copyButton = e.target.closest(elementSelectors.ui.copyBookmarkButton);
 
       if (copyButton) {
@@ -29,7 +47,7 @@ export const setupEventListeners = (dependencies) => {
         const bookmarkElement = copyButton.closest(elementSelectors.ui.panelBookmark);
         const bookmarkId = bookmarkElement.dataset.bookmarkId;
         const currentState = dependencies.stateManager.getState();
-        const bookmark = currentState.bookmarks.find(b => b.id === bookmarkId);
+        const bookmark = currentState.bookmarks.find(bookmark => bookmark.id === bookmarkId);
 
         if (bookmark) {
           navigator.clipboard.writeText(bookmark.content).then(() => {

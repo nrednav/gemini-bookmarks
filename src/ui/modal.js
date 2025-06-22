@@ -1,3 +1,6 @@
+import { actionIcons } from "./icons";
+import { showToast } from "./toast";
+
 /**
  * Creates and displays a non-blocking, promise-based confirmation modal.
  * @param {string} message - The confirmation message to display to the user.
@@ -71,4 +74,86 @@ export const createConfirmationModal = (message) => {
 
     document.body.appendChild(overlay);
   });
+};
+
+/**
+ * Creates and displays a non-blocking modal for showing content.
+ * @param {string} title - The title to display in the modal header.
+ * @param {string} content - The plain text content to display.
+ */
+export const createContentModal = (title, content) => {
+  const overlay = document.createElement('div');
+
+  overlay.className = 'gb-modal-overlay';
+
+  const modalContainer = document.createElement('div');
+
+  modalContainer.className = 'gb-modal-container gb-content-modal';
+
+  const modalHeader = document.createElement('div');
+
+  modalHeader.className = 'gb-modal-header';
+
+  const titleElement = document.createElement('h3');
+
+  titleElement.textContent = title;
+
+  const headerActions = document.createElement('div');
+
+  headerActions.className = 'gb-modal-header-actions';
+
+  const copyButton = document.createElement('button');
+
+  copyButton.className = 'gb-modal-action-button';
+  copyButton.innerHTML = actionIcons.copy;
+  copyButton.title = chrome.i18n.getMessage("copyButtonTooltip");
+  copyButton.addEventListener('click', () => {
+    navigator.clipboard.writeText(content).then(() => {
+      showToast(chrome.i18n.getMessage("copySuccessToast"), "success");
+    }).catch(error => {
+      console.error("Failed to copy text from modal: ", error);
+    });
+  });
+
+  const closeButton = document.createElement('button');
+
+  closeButton.className = 'gb-modal-close gb-modal-action-button';
+  closeButton.innerHTML = actionIcons.close;
+  closeButton.title = chrome.i18n.getMessage("modalCloseButton");
+
+  const contentElement = document.createElement('pre');
+
+  contentElement.className = 'gb-modal-content';
+  contentElement.textContent = content;
+
+  const cleanup = () => {
+    document.body.removeChild(overlay);
+    window.removeEventListener('keydown', handleEsc);
+  };
+
+  const handleEsc = (e) => {
+    if (e.key === 'Escape') {
+      cleanup();
+    }
+  };
+
+  closeButton.addEventListener('click', cleanup);
+  overlay.addEventListener('click', (e) => {
+    // Close only if the overlay itself is clicked, not the modal content
+    if (e.target === overlay) {
+      cleanup();
+    }
+  });
+
+  window.addEventListener('keydown', handleEsc);
+
+  headerActions.appendChild(copyButton);
+  headerActions.appendChild(closeButton);
+  modalHeader.appendChild(titleElement);
+  modalHeader.appendChild(headerActions);
+  modalContainer.appendChild(modalHeader);
+  modalContainer.appendChild(contentElement);
+  overlay.appendChild(modalContainer);
+
+  document.body.appendChild(overlay);
 };

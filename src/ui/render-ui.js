@@ -98,13 +98,13 @@ const renderPanelContent = (dependencies) => {
 
     const copyButton = window.document.createElement("button");
 
-    copyButton.className = "gb-panel-bookmark__action-button";
+    copyButton.className = "gb-panel-bookmark__action-button gb-panel-bookmark__copy-button";
     copyButton.title = chrome.i18n.getMessage("copyButtonTooltip");
     copyButton.innerHTML = actionIcons.copy;
 
     const viewButton = window.document.createElement("button");
 
-    viewButton.className = "gb-panel-bookmark__action-button";
+    viewButton.className = "gb-panel-bookmark__action-button gb-panel-bookmark__view-button";
     viewButton.title = chrome.i18n.getMessage("viewButtonTooltip");
     viewButton.innerHTML = actionIcons.view;
 
