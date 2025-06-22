@@ -70,5 +70,25 @@
   "cancelButtonText": {
     "message": "İptal",
     "description": "The text for a generic cancel button."
+  },
+  "copyButtonTooltip": {
+    "message": "İçeriği panoya kopyala",
+    "description": "Tooltip for the copy button on a bookmark item."
+  },
+  "copySuccessToast": {
+    "message": "İçerik panoya kopyalandı!",
+    "description": "Toast message shown after successfully copying bookmark content."
+  },
+  "viewButtonTooltip": {
+    "message": "Tüm içeriği görüntüle",
+    "description": "Tooltip for the view button on a bookmark item."
+  },
+  "viewModalTitle": {
+    "message": "İşaretli İçerik",
+    "description": "The title of the modal that displays the full content of a bookmark."
+  },
+  "modalCloseButton": {
+    "message": "Kapat",
+    "description": "The text for a button that closes a modal."
   }
 }

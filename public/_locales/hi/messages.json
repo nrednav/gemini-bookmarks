@@ -70,5 +70,25 @@
   "cancelButtonText": {
     "message": "रद्द करें",
     "description": "The text for a generic cancel button."
+  },
+  "copyButtonTooltip": {
+    "message": "सामग्री क्लिपबोर्ड पर कॉपी करें",
+    "description": "Tooltip for the copy button on a bookmark item."
+  },
+  "copySuccessToast": {
+    "message": "सामग्री क्लिपबोर्ड पर कॉपी हो गई!",
+    "description": "Toast message shown after successfully copying bookmark content."
+  },
+  "viewButtonTooltip": {
+    "message": "पूरी सामग्री देखें",
+    "description": "Tooltip for the view button on a bookmark item."
+  },
+  "viewModalTitle": {
+    "message": "बुकमार्क की गई सामग्री",
+    "description": "The title of the modal that displays the full content of a bookmark."
+  },
+  "modalCloseButton": {
+    "message": "बंद करें",
+    "description": "The text for a button that closes a modal."
   }
 }

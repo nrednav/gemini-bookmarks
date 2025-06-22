@@ -70,5 +70,25 @@
   "cancelButtonText": {
     "message": "Peruuta",
     "description": "The text for a generic cancel button."
+  },
+  "copyButtonTooltip": {
+    "message": "Kopioi sisältö leikepöydälle",
+    "description": "Tooltip for the copy button on a bookmark item."
+  },
+  "copySuccessToast": {
+    "message": "Sisältö kopioitu leikepöydälle!",
+    "description": "Toast message shown after successfully copying bookmark content."
+  },
+  "viewButtonTooltip": {
+    "message": "Näytä koko sisältö",
+    "description": "Tooltip for the view button on a bookmark item."
+  },
+  "viewModalTitle": {
+    "message": "Tallennettu sisältö",
+    "description": "The title of the modal that displays the full content of a bookmark."
+  },
+  "modalCloseButton": {
+    "message": "Sulje",
+    "description": "The text for a button that closes a modal."
   }
 }

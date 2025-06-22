@@ -70,5 +70,25 @@
   "cancelButtonText": {
     "message": "Kanselahin",
     "description": "The text for a generic cancel button."
+  },
+  "copyButtonTooltip": {
+    "message": "Kopyahin ang nilalaman sa clipboard",
+    "description": "Tooltip for the copy button on a bookmark item."
+  },
+  "copySuccessToast": {
+    "message": "Kinopya ang nilalaman sa clipboard!",
+    "description": "Toast message shown after successfully copying bookmark content."
+  },
+  "viewButtonTooltip": {
+    "message": "Tingnan ang buong nilalaman",
+    "description": "Tooltip for the view button on a bookmark item."
+  },
+  "viewModalTitle": {
+    "message": "Naka-bookmark na Nilalaman",
+    "description": "The title of the modal that displays the full content of a bookmark."
+  },
+  "modalCloseButton": {
+    "message": "Isara",
+    "description": "The text for a button that closes a modal."
   }
 }

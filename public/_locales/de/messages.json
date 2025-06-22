@@ -70,5 +70,25 @@
   "cancelButtonText": {
     "message": "Abbrechen",
     "description": "The text for a generic cancel button."
+  },
+  "copyButtonTooltip": {
+    "message": "Inhalt in die Zwischenablage kopieren",
+    "description": "Tooltip for the copy button on a bookmark item."
+  },
+  "copySuccessToast": {
+    "message": "Inhalt in die Zwischenablage kopiert!",
+    "description": "Toast message shown after successfully copying bookmark content."
+  },
+  "viewButtonTooltip": {
+    "message": "Vollständigen Inhalt anzeigen",
+    "description": "Tooltip for the view button on a bookmark item."
+  },
+  "viewModalTitle": {
+    "message": "Gespeicherter Inhalt",
+    "description": "The title of the modal that displays the full content of a bookmark."
+  },
+  "modalCloseButton": {
+    "message": "Schließen",
+    "description": "The text for a button that closes a modal."
   }
 }

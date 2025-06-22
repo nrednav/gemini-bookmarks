@@ -70,5 +70,25 @@
   "cancelButtonText": {
     "message": "Hủy",
     "description": "The text for a generic cancel button."
+  },
+  "copyButtonTooltip": {
+    "message": "Sao chép nội dung vào khay nhớ tạm",
+    "description": "Tooltip for the copy button on a bookmark item."
+  },
+  "copySuccessToast": {
+    "message": "Đã sao chép nội dung vào khay nhớ tạm!",
+    "description": "Toast message shown after successfully copying bookmark content."
+  },
+  "viewButtonTooltip": {
+    "message": "Xem toàn bộ nội dung",
+    "description": "Tooltip for the view button on a bookmark item."
+  },
+  "viewModalTitle": {
+    "message": "Nội dung đã đánh dấu",
+    "description": "The title of the modal that displays the full content of a bookmark."
+  },
+  "modalCloseButton": {
+    "message": "Đóng",
+    "description": "The text for a button that closes a modal."
   }
 }

@@ -70,5 +70,25 @@
   "cancelButtonText": {
     "message": "取消",
     "description": "The text for a generic cancel button."
+  },
+  "copyButtonTooltip": {
+    "message": "複製內容到剪貼簿",
+    "description": "Tooltip for the copy button on a bookmark item."
+  },
+  "copySuccessToast": {
+    "message": "內容已複製到剪貼簿！",
+    "description": "Toast message shown after successfully copying bookmark content."
+  },
+  "viewButtonTooltip": {
+    "message": "檢視完整內容",
+    "description": "Tooltip for the view button on a bookmark item."
+  },
+  "viewModalTitle": {
+    "message": "收藏的內容",
+    "description": "The title of the modal that displays the full content of a bookmark."
+  },
+  "modalCloseButton": {
+    "message": "關閉",
+    "description": "The text for a button that closes a modal."
   }
 }

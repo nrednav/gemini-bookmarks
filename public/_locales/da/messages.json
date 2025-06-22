@@ -70,5 +70,25 @@
   "cancelButtonText": {
     "message": "Annuller",
     "description": "The text for a generic cancel button."
+  },
+  "copyButtonTooltip": {
+    "message": "Kopier indhold til udklipsholder",
+    "description": "Tooltip for the copy button on a bookmark item."
+  },
+  "copySuccessToast": {
+    "message": "Indhold kopieret til udklipsholder!",
+    "description": "Toast message shown after successfully copying bookmark content."
+  },
+  "viewButtonTooltip": {
+    "message": "Vis fuldt indhold",
+    "description": "Tooltip for the view button on a bookmark item."
+  },
+  "viewModalTitle": {
+    "message": "Bogmærket indhold",
+    "description": "The title of the modal that displays the full content of a bookmark."
+  },
+  "modalCloseButton": {
+    "message": "Luk",
+    "description": "The text for a button that closes a modal."
   }
 }

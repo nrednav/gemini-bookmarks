@@ -70,5 +70,25 @@
   "cancelButtonText": {
     "message": "취소",
     "description": "The text for a generic cancel button."
+  },
+  "copyButtonTooltip": {
+    "message": "콘텐츠를 클립보드에 복사",
+    "description": "Tooltip for the copy button on a bookmark item."
+  },
+  "copySuccessToast": {
+    "message": "콘텐츠가 클립보드에 복사되었습니다!",
+    "description": "Toast message shown after successfully copying bookmark content."
+  },
+  "viewButtonTooltip": {
+    "message": "전체 콘텐츠 보기",
+    "description": "Tooltip for the view button on a bookmark item."
+  },
+  "viewModalTitle": {
+    "message": "북마크한 콘텐츠",
+    "description": "The title of the modal that displays the full content of a bookmark."
+  },
+  "modalCloseButton": {
+    "message": "닫기",
+    "description": "The text for a button that closes a modal."
   }
 }

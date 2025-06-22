@@ -70,5 +70,25 @@
   "cancelButtonText": {
     "message": "ยกเลิก",
     "description": "The text for a generic cancel button."
+  },
+  "copyButtonTooltip": {
+    "message": "คัดลอกเนื้อหาไปยังคลิปบอร์ด",
+    "description": "Tooltip for the copy button on a bookmark item."
+  },
+  "copySuccessToast": {
+    "message": "คัดลอกเนื้อหาไปยังคลิปบอร์ดแล้ว!",
+    "description": "Toast message shown after successfully copying bookmark content."
+  },
+  "viewButtonTooltip": {
+    "message": "ดูเนื้อหาทั้งหมด",
+    "description": "Tooltip for the view button on a bookmark item."
+  },
+  "viewModalTitle": {
+    "message": "เนื้อหาที่บุ๊กมาร์กไว้",
+    "description": "The title of the modal that displays the full content of a bookmark."
+  },
+  "modalCloseButton": {
+    "message": "ปิด",
+    "description": "The text for a button that closes a modal."
   }
 }

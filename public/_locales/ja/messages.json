@@ -70,5 +70,25 @@
   "cancelButtonText": {
     "message": "キャンセル",
     "description": "The text for a generic cancel button."
+  },
+  "copyButtonTooltip": {
+    "message": "コンテンツをクリップボードにコピー",
+    "description": "Tooltip for the copy button on a bookmark item."
+  },
+  "copySuccessToast": {
+    "message": "コンテンツをクリップボードにコピーしました！",
+    "description": "Toast message shown after successfully copying bookmark content."
+  },
+  "viewButtonTooltip": {
+    "message": "全文を表示",
+    "description": "Tooltip for the view button on a bookmark item."
+  },
+  "viewModalTitle": {
+    "message": "ブックマークしたコンテンツ",
+    "description": "The title of the modal that displays the full content of a bookmark."
+  },
+  "modalCloseButton": {
+    "message": "閉じる",
+    "description": "The text for a button that closes a modal."
   }
 }
