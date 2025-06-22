@@ -18,7 +18,7 @@
 export const elementSelectors = {
   modelResponse: {
     container: "model-response",
-    messageContent: "message-content"
+    messageContent: "message-content",
   },
   ui: {
     fab: ".gb-fab",
@@ -31,6 +31,6 @@ export const elementSelectors = {
     themeToggleButton: ".gb-theme-toggle-button",
     bookmarkButton: ".bookmark-button",
     copyBookmarkButton: ".gb-panel-bookmark__copy-button",
-    viewBookmarkButton: ".gb-panel-bookmark__view-button"
-  }
-}
+    viewBookmarkButton: ".gb-panel-bookmark__view-button",
+  },
+};

@@ -1,5 +1,5 @@
-import { filterBookmarksByTags, getUniqueTags } from '../core/logic';
-import { actionIcons } from './icons.js';
+import { filterBookmarksByTags, getUniqueTags } from "../core/logic";
+import { actionIcons } from "./icons.js";
 
 /**
  * Renders the entire UI based on the current state.
@@ -48,9 +48,10 @@ const renderPanelContent = (dependencies) => {
   });
 
   // Render bookmarks
-  const bookmarksToShow = currentState.activeTagFilters.length > 0
-    ? filterBookmarksByTags(currentState, currentState.activeTagFilters)
-    : currentState.bookmarks;
+  const bookmarksToShow =
+    currentState.activeTagFilters.length > 0
+      ? filterBookmarksByTags(currentState, currentState.activeTagFilters)
+      : currentState.bookmarks;
 
   uiElements.bookmarksContainer.replaceChildren();
 
@@ -83,7 +84,7 @@ const renderPanelContent = (dependencies) => {
 
     tagsContainer.className = "gb-panel-bookmark__tags";
 
-    bookmark.tags.forEach(tag => {
+    bookmark.tags.forEach((tag) => {
       const tagElement = window.document.createElement("span");
 
       tagElement.className = "gb-panel-bookmark__tag";
@@ -98,13 +99,15 @@ const renderPanelContent = (dependencies) => {
 
     const copyButton = window.document.createElement("button");
 
-    copyButton.className = "gb-panel-bookmark__action-button gb-panel-bookmark__copy-button";
+    copyButton.className =
+      "gb-panel-bookmark__action-button gb-panel-bookmark__copy-button";
     copyButton.title = chrome.i18n.getMessage("copyButtonTooltip");
     copyButton.innerHTML = actionIcons.copy;
 
     const viewButton = window.document.createElement("button");
 
-    viewButton.className = "gb-panel-bookmark__action-button gb-panel-bookmark__view-button";
+    viewButton.className =
+      "gb-panel-bookmark__action-button gb-panel-bookmark__view-button";
     viewButton.title = chrome.i18n.getMessage("viewButtonTooltip");
     viewButton.innerHTML = actionIcons.view;
 
@@ -128,13 +131,15 @@ const updateAllBookmarkButtonUis = (dependencies) => {
   const { uiElements, elementSelectors, currentState } = dependencies;
 
   for (const bookmarkButton of uiElements.bookmarkButtons) {
-    const responseElement = bookmarkButton.closest(elementSelectors.modelResponse.container);
+    const responseElement = bookmarkButton.closest(
+      elementSelectors.modelResponse.container,
+    );
 
     if (responseElement) {
       updateBookmarkButtonUi(bookmarkButton, responseElement.id, currentState);
     }
   }
-}
+};
 
 /**
  * Updates the visual state of a single bookmark button.
@@ -143,13 +148,15 @@ const updateAllBookmarkButtonUis = (dependencies) => {
  * @param {import('../core/types.js').AppState} currentState
  */
 export const updateBookmarkButtonUi = (bookmarkButton, id, currentState) => {
-  const isBookmarked = currentState.bookmarks.some(bookmark => bookmark.id === id);
+  const isBookmarked = currentState.bookmarks.some(
+    (bookmark) => bookmark.id === id,
+  );
 
   if (isBookmarked) {
-    bookmarkButton.classList.add('active');
+    bookmarkButton.classList.add("active");
     bookmarkButton.title = chrome.i18n.getMessage("removeBookmarkTooltip");
   } else {
-    bookmarkButton.classList.remove('active');
+    bookmarkButton.classList.remove("active");
     bookmarkButton.title = chrome.i18n.getMessage("addBookmarkTooltip");
   }
 };

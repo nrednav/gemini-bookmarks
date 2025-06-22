@@ -24,7 +24,7 @@ export const getScrollContainer = (responseSelector) => {
   while (parent) {
     const style = window.getComputedStyle(parent);
 
-    if (style.overflowY === 'auto' || style.overflowY === 'scroll') {
+    if (style.overflowY === "auto" || style.overflowY === "scroll") {
       cachedScrollContainer = parent;
       return parent;
     }

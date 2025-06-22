@@ -1,7 +1,7 @@
 /**
  * @typedef {'light' | 'dark' | 'system'} Theme
  */
-const THEME_STORAGE_KEY = 'gemini-bookmarks-theme';
+const THEME_STORAGE_KEY = "gemini-bookmarks-theme";
 
 /**
  * Retrieves the saved theme from storage.
@@ -9,7 +9,7 @@ const THEME_STORAGE_KEY = 'gemini-bookmarks-theme';
  */
 export const getTheme = async () => {
   const result = await chrome.storage.local.get(THEME_STORAGE_KEY);
-  return result[THEME_STORAGE_KEY] || 'system';
+  return result[THEME_STORAGE_KEY] || "system";
 };
 
 /**

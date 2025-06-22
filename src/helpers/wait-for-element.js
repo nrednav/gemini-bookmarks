@@ -15,12 +15,12 @@ export const waitForElement = (options) => {
     parentElement = document,
     timeout = 30000,
     rejectOnTimeout = true,
-    searchMethod = 'querySelector'
+    searchMethod = "querySelector",
   } = options;
 
   return new Promise((resolve, reject) => {
     const findElement = () => {
-      return searchMethod === 'getElementById'
+      return searchMethod === "getElementById"
         ? document.getElementById(selector)
         : parentElement.querySelector(selector);
     };
@@ -46,10 +46,14 @@ export const waitForElement = (options) => {
       clearInterval(interval);
 
       if (rejectOnTimeout) {
-        reject(new Error(`Element with selector "${selector} not found within ${timeout} ms."`));
+        reject(
+          new Error(
+            `Element with selector "${selector} not found within ${timeout} ms."`,
+          ),
+        );
       } else {
         resolve(null);
       }
     }, timeout);
   });
-}
+};

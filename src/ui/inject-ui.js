@@ -1,5 +1,5 @@
 export const injectUi = (window, elementSelectors) => {
-  const oldUi = window.document.querySelector('.gemini-bookmarks-container');
+  const oldUi = window.document.querySelector(".gemini-bookmarks-container");
 
   if (oldUi) {
     oldUi.remove();
@@ -38,12 +38,24 @@ export const injectUi = (window, elementSelectors) => {
     uiElements: {
       fab: window.document.querySelector(elementSelectors.ui.fab),
       panel: window.document.querySelector(elementSelectors.ui.panel),
-      tagsContainer: window.document.getElementById(elementSelectors.ui.tagsContainer),
-      bookmarksContainer: window.document.getElementById(elementSelectors.ui.bookmarksContainer),
-      clearAllButton: window.document.querySelector(elementSelectors.ui.clearAllButton),
-      themeToggleButton: window.document.querySelector(elementSelectors.ui.themeToggleButton),
-      bookmarkButtons: Array.from(window.document.querySelectorAll(elementSelectors.ui.bookmarkButton)),
-      modelResponses: window.document.querySelectorAll(elementSelectors.modelResponse.container)
-    }
+      tagsContainer: window.document.getElementById(
+        elementSelectors.ui.tagsContainer,
+      ),
+      bookmarksContainer: window.document.getElementById(
+        elementSelectors.ui.bookmarksContainer,
+      ),
+      clearAllButton: window.document.querySelector(
+        elementSelectors.ui.clearAllButton,
+      ),
+      themeToggleButton: window.document.querySelector(
+        elementSelectors.ui.themeToggleButton,
+      ),
+      bookmarkButtons: Array.from(
+        window.document.querySelectorAll(elementSelectors.ui.bookmarkButton),
+      ),
+      modelResponses: window.document.querySelectorAll(
+        elementSelectors.modelResponse.container,
+      ),
+    },
   };
 };

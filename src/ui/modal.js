@@ -8,35 +8,35 @@ import { showToast } from "./toast";
  */
 export const createConfirmationModal = (message) => {
   return new Promise((resolve) => {
-    const overlay = document.createElement('div');
+    const overlay = document.createElement("div");
 
-    overlay.className = 'gb-modal-overlay';
+    overlay.className = "gb-modal-overlay";
 
-    const modalContainer = document.createElement('div');
+    const modalContainer = document.createElement("div");
 
-    modalContainer.className = 'gb-modal-container';
+    modalContainer.className = "gb-modal-container";
 
-    const messageElement = document.createElement('p');
+    const messageElement = document.createElement("p");
 
     messageElement.textContent = message;
 
-    const buttonContainer = document.createElement('div');
+    const buttonContainer = document.createElement("div");
 
-    buttonContainer.className = 'gb-modal-buttons';
+    buttonContainer.className = "gb-modal-buttons";
 
-    const confirmButton = document.createElement('button');
+    const confirmButton = document.createElement("button");
 
-    confirmButton.className = 'gb-modal-confirm';
+    confirmButton.className = "gb-modal-confirm";
     confirmButton.textContent = chrome.i18n.getMessage("confirmButtonText");
 
-    const cancelButton = document.createElement('button');
+    const cancelButton = document.createElement("button");
 
-    cancelButton.className = 'gb-modal-cancel';
+    cancelButton.className = "gb-modal-cancel";
     cancelButton.textContent = chrome.i18n.getMessage("cancelButtonText");
 
     const cleanup = () => {
       document.body.removeChild(overlay);
-      window.removeEventListener('keydown', handleEsc);
+      window.removeEventListener("keydown", handleEsc);
     };
 
     const handleConfirm = () => {
@@ -50,21 +50,21 @@ export const createConfirmationModal = (message) => {
     };
 
     const handleEsc = (e) => {
-      if (e.key === 'Escape') {
+      if (e.key === "Escape") {
         handleCancel();
       }
     };
 
-    confirmButton.addEventListener('click', handleConfirm);
-    cancelButton.addEventListener('click', handleCancel);
-    overlay.addEventListener('click', (e) => {
+    confirmButton.addEventListener("click", handleConfirm);
+    cancelButton.addEventListener("click", handleCancel);
+    overlay.addEventListener("click", (e) => {
       // Close only if the overlay itself is clicked, not the modal content
       if (e.target === overlay) {
         handleCancel();
       }
     });
 
-    window.addEventListener('keydown', handleEsc);
+    window.addEventListener("keydown", handleEsc);
 
     buttonContainer.appendChild(cancelButton);
     buttonContainer.appendChild(confirmButton);
@@ -82,70 +82,73 @@ export const createConfirmationModal = (message) => {
  * @param {string} content - The plain text content to display.
  */
 export const createContentModal = (title, content) => {
-  const overlay = document.createElement('div');
+  const overlay = document.createElement("div");
 
-  overlay.className = 'gb-modal-overlay';
+  overlay.className = "gb-modal-overlay";
 
-  const modalContainer = document.createElement('div');
+  const modalContainer = document.createElement("div");
 
-  modalContainer.className = 'gb-modal-container gb-content-modal';
+  modalContainer.className = "gb-modal-container gb-content-modal";
 
-  const modalHeader = document.createElement('div');
+  const modalHeader = document.createElement("div");
 
-  modalHeader.className = 'gb-modal-header';
+  modalHeader.className = "gb-modal-header";
 
-  const titleElement = document.createElement('h3');
+  const titleElement = document.createElement("h3");
 
   titleElement.textContent = title;
 
-  const headerActions = document.createElement('div');
+  const headerActions = document.createElement("div");
 
-  headerActions.className = 'gb-modal-header-actions';
+  headerActions.className = "gb-modal-header-actions";
 
-  const copyButton = document.createElement('button');
+  const copyButton = document.createElement("button");
 
-  copyButton.className = 'gb-modal-action-button';
+  copyButton.className = "gb-modal-action-button";
   copyButton.innerHTML = actionIcons.copy;
   copyButton.title = chrome.i18n.getMessage("copyButtonTooltip");
-  copyButton.addEventListener('click', () => {
-    navigator.clipboard.writeText(content).then(() => {
-      showToast(chrome.i18n.getMessage("copySuccessToast"), "success");
-    }).catch(error => {
-      console.error("Failed to copy text from modal: ", error);
-    });
+  copyButton.addEventListener("click", () => {
+    navigator.clipboard
+      .writeText(content)
+      .then(() => {
+        showToast(chrome.i18n.getMessage("copySuccessToast"), "success");
+      })
+      .catch((error) => {
+        console.error("Failed to copy text from modal: ", error);
+      });
   });
 
-  const closeButton = document.createElement('button');
+  const closeButton = document.createElement("button");
 
-  closeButton.className = 'gb-modal-close gb-modal-action-button';
+  closeButton.className = "gb-modal-close gb-modal-action-button";
   closeButton.innerHTML = actionIcons.close;
   closeButton.title = chrome.i18n.getMessage("modalCloseButton");
 
-  const contentElement = document.createElement('pre');
+  const contentElement = document.createElement("pre");
 
-  contentElement.className = 'gb-modal-content';
+  contentElement.className = "gb-modal-content";
   contentElement.textContent = content;
 
   const cleanup = () => {
     document.body.removeChild(overlay);
-    window.removeEventListener('keydown', handleEsc);
+    window.removeEventListener("keydown", handleEsc);
   };
 
   const handleEsc = (e) => {
-    if (e.key === 'Escape') {
+    if (e.key === "Escape") {
       cleanup();
     }
   };
 
-  closeButton.addEventListener('click', cleanup);
-  overlay.addEventListener('click', (e) => {
+  closeButton.addEventListener("click", cleanup);
+  overlay.addEventListener("click", (e) => {
     // Close only if the overlay itself is clicked, not the modal content
     if (e.target === overlay) {
       cleanup();
     }
   });
 
-  window.addEventListener('keydown', handleEsc);
+  window.addEventListener("keydown", handleEsc);
 
   headerActions.appendChild(copyButton);
   headerActions.appendChild(closeButton);

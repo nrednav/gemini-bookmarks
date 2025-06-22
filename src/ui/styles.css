@@ -44,7 +44,7 @@
 }
 
 .gemini-bookmarks-container {
-  font-family: 'Google Sans', sans-serif;
+  font-family: "Google Sans", sans-serif;
 }
 
 .gb-fab {
@@ -56,7 +56,7 @@
   background-color: #f0f4f9;
   border: 1px solid #dcdcdc;
   border-radius: 50%;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
   cursor: pointer;
   z-index: 9998;
   display: flex;
@@ -83,7 +83,7 @@
   height: 450px;
   background-color: #ffffff;
   border-radius: 12px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
   z-index: 9999;
   display: flex;
   flex-direction: column;
@@ -91,7 +91,9 @@
   opacity: 0;
   transform: translateY(20px);
   pointer-events: none;
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
 }
 
 .gb-panel *::selection {
@@ -204,7 +206,9 @@
 }
 
 .bookmark-highlight {
-  box-shadow: 0 0 0 2px #1967d2, 0 0 15px rgba(25, 103, 210, 0.5);
+  box-shadow:
+    0 0 0 2px #1967d2,
+    0 0 15px rgba(25, 103, 210, 0.5);
   border-radius: 8px;
   transition: box-shadow 0.3s ease-in-out;
 }
@@ -236,7 +240,7 @@
 
 /* The main container for the inline tag editor */
 .tag-editor {
-  font-family: 'Google Sans', sans-serif;
+  font-family: "Google Sans", sans-serif;
   position: absolute;
   top: 50px;
   right: 8px;
@@ -361,14 +365,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'Google Sans', sans-serif;
+  font-family: "Google Sans", sans-serif;
 }
 
 .gb-modal-container {
   background-color: #ffffff;
   padding: 24px;
   border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
   width: 90%;
   max-width: 400px;
   text-align: center;
@@ -460,7 +464,9 @@
   width: 32px;
   height: 32px;
   color: #5f6368;
-  transition: background-color 0.2s, color 0.2s;
+  transition:
+    background-color 0.2s,
+    color 0.2s;
 }
 
 .gb-modal-action-button:hover {
@@ -478,7 +484,7 @@
   overflow-y: auto;
   white-space: pre-wrap;
   word-wrap: break-word;
-  font-family: 'Roboto Mono', monospace;
+  font-family: "Roboto Mono", monospace;
   font-size: 14px;
   line-height: 1.6;
   margin: 0;
@@ -530,10 +536,12 @@
   padding: 12px 24px;
   border-radius: 8px;
   z-index: 10001;
-  font-family: 'Google Sans', sans-serif;
+  font-family: "Google Sans", sans-serif;
   font-size: 14px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition:
+    transform 0.3s ease-in-out,
+    opacity 0.3s ease-in-out;
   opacity: 0;
   display: flex;
   align-items: center;
@@ -571,195 +579,196 @@
 
 /* --- Dark Theme Styles --- */
 
-body[data-gemini-bookmarks-theme='dark'] .gb-panel {
+body[data-gemini-bookmarks-theme="dark"] .gb-panel {
   background-color: #202124;
   color: #e8eaed;
   border: 1px solid #5f6368;
 }
 
-body[data-gemini-bookmarks-theme='dark'] .gb-panel__header {
+body[data-gemini-bookmarks-theme="dark"] .gb-panel__header {
   border-bottom-color: #5f6368;
 }
 
-body[data-gemini-bookmarks-theme='dark'] .gb-panel__header h3 {
+body[data-gemini-bookmarks-theme="dark"] .gb-panel__header h3 {
   color: #e8eaed;
 }
 
-body[data-gemini-bookmarks-theme='dark'] .gb-panel__tags {
+body[data-gemini-bookmarks-theme="dark"] .gb-panel__tags {
   border-bottom-color: #5f6368;
 }
 
-body[data-gemini-bookmarks-theme='dark'] .gb-panel-bookmark {
+body[data-gemini-bookmarks-theme="dark"] .gb-panel-bookmark {
   border-bottom-color: #5f6368;
 }
 
-body[data-gemini-bookmarks-theme='dark'] .gb-panel-bookmark:hover {
+body[data-gemini-bookmarks-theme="dark"] .gb-panel-bookmark:hover {
   background-color: #2d2e31;
 }
 
-body[data-gemini-bookmarks-theme='dark'] .gb-panel-bookmark__content {
+body[data-gemini-bookmarks-theme="dark"] .gb-panel-bookmark__content {
   color: #e8eaed;
 }
 
-body[data-gemini-bookmarks-theme='dark'] .gb-panel-bookmark__tag {
+body[data-gemini-bookmarks-theme="dark"] .gb-panel-bookmark__tag {
   background-color: #5f6368;
   color: #e8eaed;
 }
 
-body[data-gemini-bookmarks-theme='dark'] .gb-panel__empty-message {
+body[data-gemini-bookmarks-theme="dark"] .gb-panel__empty-message {
   color: #9aa0a6;
 }
 
-body[data-gemini-bookmarks-theme='dark'] .gb-theme-toggle-button:hover {
+body[data-gemini-bookmarks-theme="dark"] .gb-theme-toggle-button:hover {
   background-color: #3c4043;
 }
 
-body[data-gemini-bookmarks-theme='dark'] .gb-theme-toggle-button svg {
+body[data-gemini-bookmarks-theme="dark"] .gb-theme-toggle-button svg {
   stroke: #e8eaed;
 }
 
-body[data-gemini-bookmarks-theme='dark'] .gb-clear-all-button {
+body[data-gemini-bookmarks-theme="dark"] .gb-clear-all-button {
   border-color: #5f6368;
   color: #e67c73;
 }
 
-body[data-gemini-bookmarks-theme='dark'] .gb-clear-all-button:hover {
+body[data-gemini-bookmarks-theme="dark"] .gb-clear-all-button:hover {
   background-color: #4d3c3a;
 }
 
-body[data-gemini-bookmarks-theme='dark'] .gb-clear-all-button:disabled {
+body[data-gemini-bookmarks-theme="dark"] .gb-clear-all-button:disabled {
   opacity: 0.5;
   background-color: transparent;
 }
 
-body[data-gemini-bookmarks-theme='dark'] .tag-editor {
+body[data-gemini-bookmarks-theme="dark"] .tag-editor {
   background-color: #2d2e31;
   border-color: #5f6368;
 }
 
-body[data-gemini-bookmarks-theme='dark'] .tag-editor-input {
+body[data-gemini-bookmarks-theme="dark"] .tag-editor-input {
   background-color: #202124;
   border-color: #5f6368;
   color: #e8eaed;
 }
 
-body[data-gemini-bookmarks-theme='dark'] .tag-editor-label {
+body[data-gemini-bookmarks-theme="dark"] .tag-editor-label {
   color: #bdc1c6;
 }
 
-body[data-gemini-bookmarks-theme='dark'] .tag-editor-input:focus {
+body[data-gemini-bookmarks-theme="dark"] .tag-editor-input:focus {
   border-color: #8ab4f8;
 }
 
-body[data-gemini-bookmarks-theme='dark'] .tag-editor-input::placeholder {
+body[data-gemini-bookmarks-theme="dark"] .tag-editor-input::placeholder {
   color: #9aa0a6;
 }
 
-body[data-gemini-bookmarks-theme='dark'] .tag-editor-cancel {
+body[data-gemini-bookmarks-theme="dark"] .tag-editor-cancel {
   background-color: #3c4043;
   border-color: #5f6368;
   color: #e8eaed;
 }
 
-body[data-gemini-bookmarks-theme='dark'] .tag-editor-cancel:hover {
+body[data-gemini-bookmarks-theme="dark"] .tag-editor-cancel:hover {
   background-color: #5f6368;
 }
 
-body[data-gemini-bookmarks-theme='dark'] .tag-editor-save:hover {
+body[data-gemini-bookmarks-theme="dark"] .tag-editor-save:hover {
   background-color: #1b66c9;
 }
 
-body[data-gemini-bookmarks-theme='dark'] *::selection {
+body[data-gemini-bookmarks-theme="dark"] *::selection {
   background-color: #8ab4f8;
   color: #202124;
 }
 
-body[data-gemini-bookmarks-theme='dark'] .gb-modal-container {
+body[data-gemini-bookmarks-theme="dark"] .gb-modal-container {
   background-color: #2d2e31;
 }
 
-body[data-gemini-bookmarks-theme='dark'] .gb-modal-container p {
+body[data-gemini-bookmarks-theme="dark"] .gb-modal-container p {
   color: #e8eaed;
 }
 
-body[data-gemini-bookmarks-theme='dark'] .gb-modal-cancel {
+body[data-gemini-bookmarks-theme="dark"] .gb-modal-cancel {
   background-color: #3c4043;
   border-color: #5f6368;
   color: #e8eaed;
 }
 
-body[data-gemini-bookmarks-theme='dark'] .gb-modal-cancel:hover {
+body[data-gemini-bookmarks-theme="dark"] .gb-modal-cancel:hover {
   background-color: #5f6368;
 }
 
-body[data-gemini-bookmarks-theme='dark'] .gb-panel-bookmark__action-button {
+body[data-gemini-bookmarks-theme="dark"] .gb-panel-bookmark__action-button {
   color: #9aa0a6;
 }
 
-body[data-gemini-bookmarks-theme='dark'] .gb-panel-bookmark__action-button:hover {
+body[data-gemini-bookmarks-theme="dark"]
+  .gb-panel-bookmark__action-button:hover {
   background-color: #3c4043;
   color: #e8eaed;
 }
 
-body[data-gemini-bookmarks-theme='dark'] .gb-toast {
+body[data-gemini-bookmarks-theme="dark"] .gb-toast {
   background-color: #2d2e31;
   color: #e8eaed;
   border-color: #5f6368;
 }
 
-body[data-gemini-bookmarks-theme='dark'] .gb-toast--success {
-  background-color: #354B3E;
+body[data-gemini-bookmarks-theme="dark"] .gb-toast--success {
+  background-color: #354b3e;
   color: #a8dab5;
   border-color: #4c6655;
 }
 
-body[data-gemini-bookmarks-theme='dark'] .gb-toast--warning {
+body[data-gemini-bookmarks-theme="dark"] .gb-toast--warning {
   background-color: #574825;
   color: #fdd663;
   border-color: #705b2f;
 }
 
-body[data-gemini-bookmarks-theme='dark'] .gb-toast--error {
-  background-color: #5C3B39;
+body[data-gemini-bookmarks-theme="dark"] .gb-toast--error {
+  background-color: #5c3b39;
   color: #f28b82;
   border-color: #794c49;
 }
 
-body[data-gemini-bookmarks-theme='dark'] .gb-panel-tag-filter {
+body[data-gemini-bookmarks-theme="dark"] .gb-panel-tag-filter {
   background-color: #3c4043;
   color: #bdc1c6;
   border-color: #5f6368;
 }
 
-body[data-gemini-bookmarks-theme='dark'] .gb-panel-tag-filter:hover {
+body[data-gemini-bookmarks-theme="dark"] .gb-panel-tag-filter:hover {
   background-color: #5f6368;
   color: #e8eaed;
 }
 
-body[data-gemini-bookmarks-theme='dark'] .gb-panel-tag-filter.active {
+body[data-gemini-bookmarks-theme="dark"] .gb-panel-tag-filter.active {
   background-color: #8ab4f8;
   color: #202124;
   border-color: #8ab4f8;
   font-weight: 500;
 }
 
-body[data-gemini-bookmarks-theme='dark'] .gb-content-modal .gb-modal-header {
+body[data-gemini-bookmarks-theme="dark"] .gb-content-modal .gb-modal-header {
   border-bottom-color: #5f6368;
 }
 
-body[data-gemini-bookmarks-theme='dark'] .gb-content-modal .gb-modal-header h3 {
+body[data-gemini-bookmarks-theme="dark"] .gb-content-modal .gb-modal-header h3 {
   color: #e8eaed;
 }
 
-body[data-gemini-bookmarks-theme='dark'] .gb-content-modal .gb-modal-content {
+body[data-gemini-bookmarks-theme="dark"] .gb-content-modal .gb-modal-content {
   color: #e8eaed;
 }
 
-body[data-gemini-bookmarks-theme='dark'] .gb-modal-action-button {
+body[data-gemini-bookmarks-theme="dark"] .gb-modal-action-button {
   color: #9aa0a6;
 }
 
-body[data-gemini-bookmarks-theme='dark'] .gb-modal-action-button:hover {
+body[data-gemini-bookmarks-theme="dark"] .gb-modal-action-button:hover {
   background-color: #3c4043;
   color: #e8eaed;
 }

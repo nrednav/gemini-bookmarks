@@ -1,4 +1,8 @@
-import { clearAllBookmarks, cycleTheme, toggleTagFilter } from "../core/actions";
+import {
+  clearAllBookmarks,
+  cycleTheme,
+  toggleTagFilter,
+} from "../core/actions";
 import { getScrollContainer } from "../helpers/get-scroll-container.js";
 import { smoothScrollUp } from "../helpers/smooth-scroll-up.js";
 import { waitForElement } from "../helpers/wait-for-element.js";
@@ -51,7 +55,7 @@ export const setupEventListeners = (dependencies) => {
       await cycleTheme(dependencies);
     });
   }
-}
+};
 
 /**
  * Handles all click events within the bookmarks container, delegating to the correct action.
@@ -74,7 +78,9 @@ const handleBookmarkContainerClick = (e, dependencies) => {
   }
 
   const currentState = stateManager.getState();
-  const bookmark = currentState.bookmarks.find(bookmark => bookmark.id === bookmarkId);
+  const bookmark = currentState.bookmarks.find(
+    (bookmark) => bookmark.id === bookmarkId,
+  );
 
   if (!bookmark) {
     console.error(`Could not find bookmark data for ID: ${bookmarkId}`);
@@ -85,7 +91,10 @@ const handleBookmarkContainerClick = (e, dependencies) => {
 
   if (viewButton) {
     e.stopPropagation();
-    createContentModal(chrome.i18n.getMessage("viewModalTitle"), bookmark.content);
+    createContentModal(
+      chrome.i18n.getMessage("viewModalTitle"),
+      bookmark.content,
+    );
     return;
   }
 
@@ -94,11 +103,14 @@ const handleBookmarkContainerClick = (e, dependencies) => {
   if (copyButton) {
     e.stopPropagation();
 
-    navigator.clipboard.writeText(bookmark.content).then(() => {
-      showToast(chrome.i18n.getMessage("copySuccessToast"), "success");
-    }).catch(error => {
-      console.error("Failed to copy text: ", error);
-    });
+    navigator.clipboard
+      .writeText(bookmark.content)
+      .then(() => {
+        showToast(chrome.i18n.getMessage("copySuccessToast"), "success");
+      })
+      .catch((error) => {
+        console.error("Failed to copy text: ", error);
+      });
 
     return;
   }
@@ -108,14 +120,16 @@ const handleBookmarkContainerClick = (e, dependencies) => {
   if (responseElement) {
     highlightAndScroll(responseElement);
   } else {
-    const scrollContainer = getScrollContainer(elementSelectors.modelResponse.container);
+    const scrollContainer = getScrollContainer(
+      elementSelectors.modelResponse.container,
+    );
     const scrollAnimation = smoothScrollUp(scrollContainer);
 
     waitForElement({
       selector: bookmarkId,
       searchMethod: "getElementById",
       timeout: 30000,
-      rejectOnTimeout: false
+      rejectOnTimeout: false,
     }).then((foundElement) => {
       scrollAnimation.cancel();
 
@@ -126,7 +140,7 @@ const handleBookmarkContainerClick = (e, dependencies) => {
       }
     });
   }
-}
+};
 
 /**
  * Scrolls to an element and applies a temporary highlight.

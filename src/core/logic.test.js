@@ -1,13 +1,25 @@
-import { describe, test, expect } from "vitest";
-import { getUniqueTags, addBookmark, removeBookmark, filterBookmarksByTags } from "./logic";
-import { StateManager } from "./state-manager";
+import { describe, expect, test } from "vitest";
 import { createConversationKey } from "./create-conversation-key";
+import {
+  addBookmark,
+  filterBookmarksByTags,
+  getUniqueTags,
+  removeBookmark,
+} from "./logic";
+import { StateManager } from "./state-manager";
 
 describe("core/logic", () => {
-  const stateManager = new StateManager({ conversationKey: createConversationKey("/test") });
+  const stateManager = new StateManager({
+    conversationKey: createConversationKey("/test"),
+  });
 
   test("addBookmark should add a new bookmark to the state", () => {
-    const newBookmark = { id: "id-one", content: "Hello world!", tags: ["tag-one"], index: 0 };
+    const newBookmark = {
+      id: "id-one",
+      content: "Hello world!",
+      tags: ["tag-one"],
+      index: 0,
+    };
     const state = addBookmark(stateManager.getInitialState(), newBookmark);
 
     expect(state.bookmarks.length).toBe(1);
@@ -18,9 +30,17 @@ describe("core/logic", () => {
   });
 
   test("removeBookmark should remove the bookmark from the state", () => {
-    let state = addBookmark(stateManager.getInitialState(), { id: "id-one", content: "Hello world!", tags: ["tag-one"] });
+    let state = addBookmark(stateManager.getInitialState(), {
+      id: "id-one",
+      content: "Hello world!",
+      tags: ["tag-one"],
+    });
 
-    state = addBookmark(state, { id: "id-two", content: "Hello world!", tags: ["tag-one", "tag-two"] });
+    state = addBookmark(state, {
+      id: "id-two",
+      content: "Hello world!",
+      tags: ["tag-one", "tag-two"],
+    });
 
     state = removeBookmark(state, "id-one");
 
@@ -31,9 +51,17 @@ describe("core/logic", () => {
   });
 
   test("getUniqueTags should return a sorted list of unique tags from the state", () => {
-    let state = addBookmark(stateManager.getInitialState(), { id: "id-one", content: "A", tags: ["a", "c"] });
+    let state = addBookmark(stateManager.getInitialState(), {
+      id: "id-one",
+      content: "A",
+      tags: ["a", "c"],
+    });
 
-    state = addBookmark(state, { id: "id-two", content: "B", tags: ["a", "b"] });
+    state = addBookmark(state, {
+      id: "id-two",
+      content: "B",
+      tags: ["a", "b"],
+    });
 
     const tags = getUniqueTags(state);
 
@@ -41,10 +69,18 @@ describe("core/logic", () => {
   });
 
   test("filterBookmarksByTags should return a list of bookmarks filtered by a list of tags", () => {
-    let state = addBookmark(stateManager.getInitialState(), { id: "id-one", content: "A", tags: ["a", "c"] });
+    let state = addBookmark(stateManager.getInitialState(), {
+      id: "id-one",
+      content: "A",
+      tags: ["a", "c"],
+    });
 
     state = addBookmark(state, { id: "id-two", content: "B", tags: ["b"] });
-    state = addBookmark(state, { id: "id-four", content: "C", tags: ["b", "c"] });
+    state = addBookmark(state, {
+      id: "id-four",
+      content: "C",
+      tags: ["b", "c"],
+    });
 
     const bookmarks = filterBookmarksByTags(state, ["b"]);
 

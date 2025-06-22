@@ -1,4 +1,4 @@
-import { themeIcons } from './icons.js';
+import { themeIcons } from "./icons.js";
 
 /**
  * Applies the given theme to the UI by setting data attributes on the panel.
@@ -13,10 +13,10 @@ export const applyTheme = (theme, uiElements) => {
 
   if (!themeToggleButton) return;
 
-  if (theme === 'light') {
+  if (theme === "light") {
     themeToggleButton.innerHTML = themeIcons.light;
     themeToggleButton.title = chrome.i18n.getMessage("themeButtonTitleLight");
-  } else if (theme === 'dark') {
+  } else if (theme === "dark") {
     themeToggleButton.innerHTML = themeIcons.dark;
     themeToggleButton.title = chrome.i18n.getMessage("themeButtonTitleDark");
   } else {

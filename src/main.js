@@ -1,16 +1,16 @@
-import { elementSelectors } from "./data/element-selectors";
-import { Logger } from "./shell/logger";
 import { createConversationKey } from "./core/create-conversation-key";
-import { injectUi } from './ui/inject-ui';
-import { renderUi } from './ui/render-ui';
+import { getTheme } from "./core/settings";
 import { StateManager } from "./core/state-manager";
-import { waitForElement } from './helpers/wait-for-element'
+import { elementSelectors } from "./data/element-selectors";
+import { waitForElement } from "./helpers/wait-for-element";
+import { Logger } from "./shell/logger";
 import { setupEventListeners } from "./shell/setup-event-listeners";
 import { startObserver } from "./shell/start-observer";
 import { injectBookmarkButton } from "./ui/inject-bookmark-button";
-import { getTheme } from "./core/settings";
+import { injectStyles } from "./ui/inject-styles";
+import { injectUi } from "./ui/inject-ui";
+import { renderUi } from "./ui/render-ui";
 import { applyTheme } from "./ui/theme-manager";
-import { injectStyles } from './ui/inject-styles';
 
 export const main = async () => {
   const logger = new Logger(window);
@@ -21,8 +21,9 @@ export const main = async () => {
     injectStyles({ logger });
 
     await waitForElement({
-      parentElement: window.document.body.querySelector('main') || window.document.body,
-      selector: elementSelectors.modelResponse.container
+      parentElement:
+        window.document.body.querySelector("main") || window.document.body,
+      selector: elementSelectors.modelResponse.container,
     });
 
     const conversationKey = createConversationKey(window.location.pathname);
@@ -41,7 +42,7 @@ export const main = async () => {
       uiElements,
       elementSelectors,
       stateManager,
-      onNavigate: main
+      onNavigate: main,
     };
 
     for (const modelResponse of uiElements.modelResponses) {

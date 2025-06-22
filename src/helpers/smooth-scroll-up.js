@@ -28,7 +28,10 @@ export const smoothScrollUp = (scrollContainer) => {
   };
 
   const step = () => {
-    const currentScrollTop = scrollContainer === window ? window.scrollY : scrollContainer['scrollTop'];
+    const currentScrollTop =
+      scrollContainer === window
+        ? window.scrollY
+        : scrollContainer["scrollTop"];
 
     if (currentScrollTop === 0) {
       if (!topTimeoutId) {
@@ -47,7 +50,7 @@ export const smoothScrollUp = (scrollContainer) => {
 
     const newScrollTop = Math.max(0, currentScrollTop - SCROLL_STEP_PX);
 
-    scrollContainer.scrollTo({ top: newScrollTop, behavior: 'auto' });
+    scrollContainer.scrollTo({ top: newScrollTop, behavior: "auto" });
 
     animationFrameId = requestAnimationFrame(step);
   };

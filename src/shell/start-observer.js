@@ -1,11 +1,12 @@
-import { injectBookmarkButton } from '../ui/inject-bookmark-button';
+import { injectBookmarkButton } from "../ui/inject-bookmark-button";
 
 /**
  * Observes the DOM for changes and handles new model responses and page navigations.
  * @param {import('../core/types.js').Dependencies} dependencies
  */
 export const startObserver = (dependencies) => {
-  const { window, uiElements, elementSelectors, stateManager, onNavigate } = dependencies;
+  const { window, uiElements, elementSelectors, stateManager, onNavigate } =
+    dependencies;
 
   const previousUrl = window.location.href;
 
@@ -19,7 +20,7 @@ export const startObserver = (dependencies) => {
     const modelResponseNodes = new Set();
 
     for (const mutation of mutations) {
-      if (mutation.type !== 'childList') {
+      if (mutation.type !== "childList") {
         continue;
       }
 
@@ -32,16 +33,23 @@ export const startObserver = (dependencies) => {
           modelResponseNodes.add(addedNode);
         }
 
-        addedNode.querySelectorAll(elementSelectors.modelResponse.container).forEach((modelResponseNode) => {
-          modelResponseNodes.add(modelResponseNode);
-        });
+        addedNode
+          .querySelectorAll(elementSelectors.modelResponse.container)
+          .forEach((modelResponseNode) => {
+            modelResponseNodes.add(modelResponseNode);
+          });
       }
     }
 
     modelResponseNodes.forEach((modelResponseNode) => {
-      injectBookmarkButton(modelResponseNode, { window, uiElements, elementSelectors, stateManager });
+      injectBookmarkButton(modelResponseNode, {
+        window,
+        uiElements,
+        elementSelectors,
+        stateManager,
+      });
     });
   });
 
   observer.observe(window.document.body, { childList: true, subtree: true });
-}
+};
