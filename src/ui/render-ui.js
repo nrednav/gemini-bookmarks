@@ -98,12 +98,18 @@ const renderPanelContent = (dependencies) => {
 
     const copyButton = window.document.createElement("button");
 
-    copyButton.className = "gb-panel-bookmark__copy-button";
+    copyButton.className = "gb-panel-bookmark__action-button";
     copyButton.title = chrome.i18n.getMessage("copyButtonTooltip");
     copyButton.innerHTML = actionIcons.copy;
 
-    actionsContainer.appendChild(copyButton);
+    const viewButton = window.document.createElement("button");
 
+    viewButton.className = "gb-panel-bookmark__action-button";
+    viewButton.title = chrome.i18n.getMessage("viewButtonTooltip");
+    viewButton.innerHTML = actionIcons.view;
+
+    actionsContainer.appendChild(viewButton);
+    actionsContainer.appendChild(copyButton);
     bookmarkElement.appendChild(contentElement);
     bookmarkElement.appendChild(tagsContainer);
     bookmarkElement.appendChild(actionsContainer);

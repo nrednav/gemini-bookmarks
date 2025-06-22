@@ -425,7 +425,7 @@
   margin-top: 4px;
 }
 
-.gb-panel-bookmark__copy-button {
+.gb-panel-bookmark__action-button {
   background: none;
   border: 1px solid transparent;
   border-radius: 50%;
@@ -439,12 +439,12 @@
   color: #5f6368;
 }
 
-.gb-panel-bookmark__copy-button:hover {
+.gb-panel-bookmark__action-button:hover {
   background-color: #f1f3f4;
   color: #202124;
 }
 
-.gb-panel-bookmark__copy-button svg {
+.gb-panel-bookmark__action-button svg {
   width: 16px;
   height: 16px;
   stroke: currentColor;
@@ -624,11 +624,11 @@ body[data-gemini-bookmarks-theme='dark'] .gb-modal-cancel:hover {
   background-color: #5f6368;
 }
 
-body[data-gemini-bookmarks-theme='dark'] .gb-panel-bookmark__copy-button {
+body[data-gemini-bookmarks-theme='dark'] .gb-panel-bookmark__action-button {
   color: #9aa0a6;
 }
 
-body[data-gemini-bookmarks-theme='dark'] .gb-panel-bookmark__copy-button:hover {
+body[data-gemini-bookmarks-theme='dark'] .gb-panel-bookmark__action-button:hover {
   background-color: #3c4043;
   color: #e8eaed;
 }

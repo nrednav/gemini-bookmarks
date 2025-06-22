@@ -78,5 +78,17 @@
   "copySuccessToast": {
     "message": "Content copied to clipboard!",
     "description": "Toast message shown after successfully copying bookmark content."
+  },
+  "viewButtonTooltip": {
+    "message": "View full content",
+    "description": "Tooltip for the view button on a bookmark item."
+  },
+  "viewModalTitle": {
+    "message": "Bookmarked Content",
+    "description": "The title of the modal that displays the full content of a bookmark."
+  },
+  "modalCloseButton": {
+    "message": "Close",
+    "description": "The text for a button that closes a modal."
   }
 }
