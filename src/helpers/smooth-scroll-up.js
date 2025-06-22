@@ -6,7 +6,7 @@ const SCROLL_STEP_PX = 40;
 /**
  * How long to wait at scrollTop === 0 before assuming no more content will load.
  */
-const TOP_REACHED_TIMEOUT_MS = 3000;
+const TOP_REACHED_TIMEOUT_MS = 5000;
 
 /**
  * Initiates a smooth upward scroll on a container.
