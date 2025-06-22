@@ -106,12 +106,7 @@ const handleBookmarkContainerClick = (e, dependencies) => {
   const responseElement = window.document.getElementById(bookmarkId);
 
   if (responseElement) {
-    responseElement.scrollIntoView({ behavior: "smooth", block: "start" });
-    responseElement.classList.add("bookmark-highlight");
-
-    setTimeout(() => {
-      responseElement.classList.remove("bookmark-highlight");
-    }, HIGHLIGHT_DURATION_MS);
+    highlightAndScroll(responseElement);
   } else {
     const scrollContainer = getScrollContainer(elementSelectors.modelResponse.container);
     const scrollAnimation = smoothScrollUp(scrollContainer);
@@ -121,19 +116,27 @@ const handleBookmarkContainerClick = (e, dependencies) => {
       searchMethod: "getElementById",
       timeout: 30000,
       rejectOnTimeout: false
-    }).then((responseElement) => {
+    }).then((foundElement) => {
       scrollAnimation.cancel();
 
-      if (responseElement) {
-        responseElement.scrollIntoView({ behavior: "smooth", block: "start" });
-        responseElement.classList.add("bookmark-highlight");
-
-        setTimeout(() => {
-          responseElement.classList.remove("bookmark-highlight");
-        }, HIGHLIGHT_DURATION_MS);
+      if (foundElement) {
+        highlightAndScroll(foundElement);
       } else {
         console.error("Failed to find bookmark to scroll to.");
       }
     });
   }
 }
+
+/**
+ * Scrolls to an element and applies a temporary highlight.
+ * @param {HTMLElement} element The element to scroll to and highlight.
+ */
+const highlightAndScroll = (element) => {
+  element.scrollIntoView({ behavior: "smooth", block: "start" });
+  element.classList.add("bookmark-highlight");
+
+  setTimeout(() => {
+    element.classList.remove("bookmark-highlight");
+  }, HIGHLIGHT_DURATION_MS);
+};
