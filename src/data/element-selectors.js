@@ -29,6 +29,7 @@ export const elementSelectors = {
     bookmarksContainer: "gb-bookmarks-container",
     clearAllButton: ".gb-clear-all-button",
     themeToggleButton: ".gb-theme-toggle-button",
-    bookmarkButton: ".bookmark-button"
+    bookmarkButton: ".bookmark-button",
+    copyBookmarkButton: ".gb-panel-bookmark__copy-button"
   }
 }

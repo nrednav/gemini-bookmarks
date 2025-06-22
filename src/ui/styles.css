@@ -417,6 +417,39 @@
   background-color: #d93025;
 }
 
+/* --- Bookmark Panel Actions --- */
+.gb-panel-bookmark__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.gb-panel-bookmark__copy-button {
+  background: none;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  cursor: pointer;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  color: #5f6368;
+}
+
+.gb-panel-bookmark__copy-button:hover {
+  background-color: #f1f3f4;
+  color: #202124;
+}
+
+.gb-panel-bookmark__copy-button svg {
+  width: 16px;
+  height: 16px;
+  stroke: currentColor;
+}
+
 /* --- Dark Theme Styles --- */
 
 body[data-gemini-bookmarks-theme='dark'] .gb-panel {
@@ -538,4 +571,13 @@ body[data-gemini-bookmarks-theme='dark'] .gb-modal-cancel {
 
 body[data-gemini-bookmarks-theme='dark'] .gb-modal-cancel:hover {
   background-color: #5f6368;
+}
+
+body[data-gemini-bookmarks-theme='dark'] .gb-panel-bookmark__copy-button {
+  color: #9aa0a6;
+}
+
+body[data-gemini-bookmarks-theme='dark'] .gb-panel-bookmark__copy-button:hover {
+  background-color: #3c4043;
+  color: #e8eaed;
 }

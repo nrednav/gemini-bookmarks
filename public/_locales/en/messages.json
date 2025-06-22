@@ -70,5 +70,13 @@
   "cancelButtonText": {
     "message": "Cancel",
     "description": "The text for a generic cancel button."
+  },
+  "copyButtonTooltip": {
+    "message": "Copy content to clipboard",
+    "description": "Tooltip for the copy button on a bookmark item."
+  },
+  "copySuccessToast": {
+    "message": "Content copied to clipboard!",
+    "description": "Toast message shown after successfully copying bookmark content."
   }
 }

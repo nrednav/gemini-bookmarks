@@ -1,4 +1,5 @@
 import { filterBookmarksByTags, getUniqueTags } from '../core/logic';
+import { actionIcons } from './icons.js';
 
 /**
  * Renders the entire UI based on the current state.
@@ -91,8 +92,21 @@ const renderPanelContent = (dependencies) => {
       tagsContainer.appendChild(tagElement);
     });
 
+    const actionsContainer = window.document.createElement("div");
+
+    actionsContainer.className = "gb-panel-bookmark__actions";
+
+    const copyButton = window.document.createElement("button");
+
+    copyButton.className = "gb-panel-bookmark__copy-button";
+    copyButton.title = chrome.i18n.getMessage("copyButtonTooltip");
+    copyButton.innerHTML = actionIcons.copy;
+
+    actionsContainer.appendChild(copyButton);
+
     bookmarkElement.appendChild(contentElement);
     bookmarkElement.appendChild(tagsContainer);
+    bookmarkElement.appendChild(actionsContainer);
     uiElements.bookmarksContainer.appendChild(bookmarkElement);
   });
 };
