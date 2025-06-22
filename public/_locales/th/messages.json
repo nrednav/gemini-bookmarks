@@ -1,0 +1,74 @@
+{
+  "panelHeader": {
+    "message": "การตอบกลับที่บุ๊กมาร์กไว้",
+    "description": "The title text in the header of the bookmarks panel."
+  },
+  "clearAllButtonTitle": {
+    "message": "ลบบุ๊กมาร์กทั้งหมดสำหรับบทสนทนานี้",
+    "description": "The tooltip for the 'Clear All' button."
+  },
+  "clearAllButtonText": {
+    "message": "ล้างทั้งหมด",
+    "description": "The text on the 'Clear All' button."
+  },
+  "themeButtonTitleLight": {
+    "message": "ธีม: สว่าง (เปลี่ยนเป็นมืด)",
+    "description": "Tooltip for the theme button when the light theme is active."
+  },
+  "themeButtonTitleDark": {
+    "message": "ธีม: มืด (เปลี่ยนเป็นของระบบ)",
+    "description": "Tooltip for the theme button when the dark theme is active."
+  },
+  "themeButtonTitleSystem": {
+    "message": "ธีม: ของระบบ (เปลี่ยนเป็นสว่าง)",
+    "description": "Tooltip for the theme button when the system theme is active."
+  },
+  "fabTitle": {
+    "message": "ดูบุ๊กมาร์ก",
+    "description": "Tooltip for the floating action button that opens the panel."
+  },
+  "tagEditorLabel": {
+    "message": "เพิ่มแท็ก (คั่นด้วยจุลภาค):",
+    "description": "A label appearing above the tag input field."
+  },
+  "tagEditorPlaceholder": {
+    "message": "เช่น ไอเดีย, การศึกษา",
+    "description": "An example of tags, shown as placeholder text inside the input field."
+  },
+  "tagEditorSaveButton": {
+    "message": "บันทึก",
+    "description": "Text for the save button in the tag editor."
+  },
+  "tagEditorCancelButton": {
+    "message": "ยกเลิก",
+    "description": "Text for the cancel button in the tag editor."
+  },
+  "addBookmarkTooltip": {
+    "message": "คลิกเพื่อเพิ่มบุ๊กมาร์ก",
+    "description": "Tooltip for the bookmark icon when a response is not yet bookmarked."
+  },
+  "removeBookmarkTooltip": {
+    "message": "คลิกเพื่อลบบุ๊กมาร์ก",
+    "description": "Tooltip for the bookmark icon when a response is already bookmarked."
+  },
+  "panelEmptyMessage": {
+    "message": "ยังไม่มีบุ๊กมาร์ก คลิกไอคอนบนการตอบกลับเพื่อบุ๊กมาร์ก!",
+    "description": "Message shown in the panel when there are no bookmarks."
+  },
+  "clearAllConfirmation": {
+    "message": "แน่ใจหรือไม่ว่าต้องการลบบุ๊กมาร์กทั้งหมดสำหรับบทสนทนานี้",
+    "description": "The confirmation text shown to the user before clearing all bookmarks."
+  },
+  "scrollToBookmarkTitle": {
+    "message": "คลิกเพื่อเลื่อนไปยังการตอบกลับนี้",
+    "description": "Tooltip on a bookmark item in the side panel."
+  },
+  "confirmButtonText": {
+    "message": "ยืนยัน",
+    "description": "The text for a generic confirmation button."
+  },
+  "cancelButtonText": {
+    "message": "ยกเลิก",
+    "description": "The text for a generic cancel button."
+  }
+}

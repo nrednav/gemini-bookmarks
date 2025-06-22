@@ -1,0 +1,74 @@
+{
+  "panelHeader": {
+    "message": "Mga Naka-bookmark na Tugon",
+    "description": "The title text in the header of the bookmarks panel."
+  },
+  "clearAllButtonTitle": {
+    "message": "Alisin ang lahat ng bookmark para sa pag-uusap na ito",
+    "description": "The tooltip for the 'Clear All' button."
+  },
+  "clearAllButtonText": {
+    "message": "I-clear Lahat",
+    "description": "The text on the 'Clear All' button."
+  },
+  "themeButtonTitleLight": {
+    "message": "Tema: Maliwanag (Lumipat sa Madilim)",
+    "description": "Tooltip for the theme button when the light theme is active."
+  },
+  "themeButtonTitleDark": {
+    "message": "Tema: Madilim (Lumipat sa System)",
+    "description": "Tooltip for the theme button when the dark theme is active."
+  },
+  "themeButtonTitleSystem": {
+    "message": "Tema: System (Lumipat sa Maliwanag)",
+    "description": "Tooltip for the theme button when the system theme is active."
+  },
+  "fabTitle": {
+    "message": "Tingnan ang mga Bookmark",
+    "description": "Tooltip for the floating action button that opens the panel."
+  },
+  "tagEditorLabel": {
+    "message": "Magdagdag ng mga tag (paghiwalayin ng kuwit):",
+    "description": "A label appearing above the tag input field."
+  },
+  "tagEditorPlaceholder": {
+    "message": "hal., ideya, pag-aaral",
+    "description": "An example of tags, shown as placeholder text inside the input field."
+  },
+  "tagEditorSaveButton": {
+    "message": "I-save",
+    "description": "Text for the save button in the tag editor."
+  },
+  "tagEditorCancelButton": {
+    "message": "Kanselahin",
+    "description": "Text for the cancel button in the tag editor."
+  },
+  "addBookmarkTooltip": {
+    "message": "I-click para magdagdag ng bookmark",
+    "description": "Tooltip for the bookmark icon when a response is not yet bookmarked."
+  },
+  "removeBookmarkTooltip": {
+    "message": "I-click para alisin ang bookmark",
+    "description": "Tooltip for the bookmark icon when a response is already bookmarked."
+  },
+  "panelEmptyMessage": {
+    "message": "Wala pang mga bookmark. I-click ang icon sa isang tugon para i-bookmark ito!",
+    "description": "Message shown in the panel when there are no bookmarks."
+  },
+  "clearAllConfirmation": {
+    "message": "Sigurado ka bang gusto mong alisin ang LAHAT ng bookmark para sa pag-uusap na ito?",
+    "description": "The confirmation text shown to the user before clearing all bookmarks."
+  },
+  "scrollToBookmarkTitle": {
+    "message": "I-click para mag-scroll sa tugon na ito",
+    "description": "Tooltip on a bookmark item in the side panel."
+  },
+  "confirmButtonText": {
+    "message": "Kumpirmahin",
+    "description": "The text for a generic confirmation button."
+  },
+  "cancelButtonText": {
+    "message": "Kanselahin",
+    "description": "The text for a generic cancel button."
+  }
+}
