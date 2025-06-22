@@ -32,9 +32,9 @@
     "build:firefox": "npm run clean && vite build --mode firefox",
     "test": "vitest run",
     "clean": "del dist/",
-    "lint": "biome lint --apply",
+    "lint": "biome lint --write",
     "format": "biome format --write",
-    "check": "biome check --apply",
+    "check": "biome check --write",
     "prepare": "husky"
   },
   "devDependencies": {
@@ -42,9 +42,15 @@
     "del-cli": "6.0.0",
     "husky": "9.1.7",
     "jsdom": "26.1.0",
+    "lint-staged": "16.1.2",
     "vite": "6.3.5",
     "vite-plugin-web-extension": "4.4.4",
     "vitest": "3.2.4",
     "webextension-polyfill": "0.12.0"
+  },
+  "lint-staged": {
+    "**/*.{js,cjs,mjs,json}": [
+      "npm run check"
+    ]
   }
 }
