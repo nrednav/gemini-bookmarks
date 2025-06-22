@@ -4,7 +4,24 @@
   "description": "Bookmark, tag, and quickly find important responses in your Google Gemini conversations.",
   "type": "module",
   "author": "nrednav",
-  "keywords": ["google", "gemini", "bookmark", "extension", "tag", "ai", "llm", "conversation", "chat", "chrome", "firefox", "organize", "save", "search", "find", "shortcut"],
+  "keywords": [
+    "google",
+    "gemini",
+    "bookmark",
+    "extension",
+    "tag",
+    "ai",
+    "llm",
+    "conversation",
+    "chat",
+    "chrome",
+    "firefox",
+    "organize",
+    "save",
+    "search",
+    "find",
+    "shortcut"
+  ],
   "engines": {
     "node": ">=20"
   },
@@ -17,6 +34,7 @@
     "clean": "del dist/"
   },
   "devDependencies": {
+    "@biomejs/biome": "2.0.4",
     "del-cli": "6.0.0",
     "jsdom": "26.1.0",
     "vite": "6.3.5",
