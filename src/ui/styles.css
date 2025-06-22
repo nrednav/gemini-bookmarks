@@ -656,3 +656,21 @@ body[data-gemini-bookmarks-theme='dark'] .gb-toast--error {
   color: #f28b82;
   border-color: #794c49;
 }
+
+body[data-gemini-bookmarks-theme='dark'] .gb-panel-tag-filter {
+  background-color: #3c4043;
+  color: #bdc1c6;
+  border-color: #5f6368;
+}
+
+body[data-gemini-bookmarks-theme='dark'] .gb-panel-tag-filter:hover {
+  background-color: #5f6368;
+  color: #e8eaed;
+}
+
+body[data-gemini-bookmarks-theme='dark'] .gb-panel-tag-filter.active {
+  background-color: #8ab4f8;
+  color: #202124;
+  border-color: #8ab4f8;
+  font-weight: 500;
+}
