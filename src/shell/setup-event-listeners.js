@@ -12,7 +12,7 @@ const HIGHLIGHT_DURATION_MS = 1500;
  * @param {import('../core/types.js').Dependencies} dependencies
  */
 export const setupEventListeners = (dependencies) => {
-  const { window, uiElements, elementSelectors } = dependencies;
+  const { uiElements, elementSelectors } = dependencies;
 
   if (uiElements.fab && uiElements.panel) {
     uiElements.fab.addEventListener("click", () => {
@@ -22,89 +22,7 @@ export const setupEventListeners = (dependencies) => {
 
   if (uiElements.bookmarksContainer) {
     uiElements.bookmarksContainer.addEventListener("click", (e) => {
-      const viewButton = e.target.closest(elementSelectors.ui.viewBookmarkButton);
-
-      if (viewButton) {
-        e.stopPropagation();
-
-        const bookmarkElement = viewButton.closest(elementSelectors.ui.panelBookmark);
-        const bookmarkId = bookmarkElement.dataset.bookmarkId;
-        const currentState = dependencies.stateManager.getState();
-        const bookmark = currentState.bookmarks.find(bookmark => bookmark.id === bookmarkId);
-
-        if (bookmark) {
-          createContentModal(chrome.i18n.getMessage("viewModalTitle"), bookmark.content);
-        }
-
-        return;
-      }
-
-      const copyButton = e.target.closest(elementSelectors.ui.copyBookmarkButton);
-
-      if (copyButton) {
-        e.stopPropagation();
-
-        const bookmarkElement = copyButton.closest(elementSelectors.ui.panelBookmark);
-        const bookmarkId = bookmarkElement.dataset.bookmarkId;
-        const currentState = dependencies.stateManager.getState();
-        const bookmark = currentState.bookmarks.find(bookmark => bookmark.id === bookmarkId);
-
-        if (bookmark) {
-          navigator.clipboard.writeText(bookmark.content).then(() => {
-            showToast(chrome.i18n.getMessage("copySuccessToast"), "success");
-          }).catch(error => {
-            console.error("Failed to copy text: ", error);
-          });
-        }
-
-        return;
-      }
-
-      const clickedBookmark = e.target.closest(elementSelectors.ui.panelBookmark);
-
-      if (!clickedBookmark) {
-        return;
-      }
-
-      const bookmarkId = clickedBookmark.dataset.bookmarkId;
-
-      if (!bookmarkId) {
-        return;
-      }
-
-      const responseElement = window.document.getElementById(bookmarkId);
-
-      if (responseElement) {
-        responseElement.scrollIntoView({ behavior: "smooth", block: "start" });
-        responseElement.classList.add("bookmark-highlight");
-
-        setTimeout(() => {
-          responseElement.classList.remove("bookmark-highlight");
-        }, HIGHLIGHT_DURATION_MS);
-      } else {
-        const scrollContainer = getScrollContainer(elementSelectors.modelResponse.container);
-        const scrollAnimation = smoothScrollUp(scrollContainer);
-
-        waitForElement({
-          selector: bookmarkId,
-          searchMethod: "getElementById",
-          timeout: 30000,
-          rejectOnTimeout: false
-        }).then((responseElement) => {
-          scrollAnimation.cancel();
-
-          if (responseElement) {
-            responseElement.scrollIntoView({ behavior: "smooth", block: "start" });
-            responseElement.classList.add("bookmark-highlight");
-
-            setTimeout(() => {
-              responseElement.classList.remove("bookmark-highlight");
-            }, HIGHLIGHT_DURATION_MS);
-          } else {
-            console.error("Failed to find bookmark to scroll to.");
-          }
-        });
-      }
+      handleBookmarkContainerClick(e, dependencies);
     });
   }
 
@@ -131,6 +49,99 @@ export const setupEventListeners = (dependencies) => {
   if (uiElements.themeToggleButton) {
     uiElements.themeToggleButton.addEventListener("click", async () => {
       await cycleTheme(dependencies);
+    });
+  }
+}
+
+/**
+ * Handles all click events within the bookmarks container, delegating to the correct action.
+ * @param {MouseEvent} e The click event.
+ * @param {import('../core/types.js').Dependencies} dependencies
+ */
+const handleBookmarkContainerClick = (e, dependencies) => {
+  const { window, elementSelectors, stateManager } = dependencies;
+
+  const viewButton = e.target.closest(elementSelectors.ui.viewBookmarkButton);
+
+  if (viewButton) {
+    e.stopPropagation();
+
+    const bookmarkElement = viewButton.closest(elementSelectors.ui.panelBookmark);
+    const bookmarkId = bookmarkElement.dataset.bookmarkId;
+    const currentState = stateManager.getState();
+    const bookmark = currentState.bookmarks.find(bookmark => bookmark.id === bookmarkId);
+
+    if (bookmark) {
+      createContentModal(chrome.i18n.getMessage("viewModalTitle"), bookmark.content);
+    }
+
+    return;
+  }
+
+  const copyButton = e.target.closest(elementSelectors.ui.copyBookmarkButton);
+
+  if (copyButton) {
+    e.stopPropagation();
+
+    const bookmarkElement = copyButton.closest(elementSelectors.ui.panelBookmark);
+    const bookmarkId = bookmarkElement.dataset.bookmarkId;
+    const currentState = stateManager.getState();
+    const bookmark = currentState.bookmarks.find(bookmark => bookmark.id === bookmarkId);
+
+    if (bookmark) {
+      navigator.clipboard.writeText(bookmark.content).then(() => {
+        showToast(chrome.i18n.getMessage("copySuccessToast"), "success");
+      }).catch(error => {
+        console.error("Failed to copy text: ", error);
+      });
+    }
+
+    return;
+  }
+
+  const clickedBookmark = e.target.closest(elementSelectors.ui.panelBookmark);
+
+  if (!clickedBookmark) {
+    return;
+  }
+
+  const bookmarkId = clickedBookmark.dataset.bookmarkId;
+
+  if (!bookmarkId) {
+    return;
+  }
+
+  const responseElement = window.document.getElementById(bookmarkId);
+
+  if (responseElement) {
+    responseElement.scrollIntoView({ behavior: "smooth", block: "start" });
+    responseElement.classList.add("bookmark-highlight");
+
+    setTimeout(() => {
+      responseElement.classList.remove("bookmark-highlight");
+    }, HIGHLIGHT_DURATION_MS);
+  } else {
+    const scrollContainer = getScrollContainer(elementSelectors.modelResponse.container);
+    const scrollAnimation = smoothScrollUp(scrollContainer);
+
+    waitForElement({
+      selector: bookmarkId,
+      searchMethod: "getElementById",
+      timeout: 30000,
+      rejectOnTimeout: false
+    }).then((responseElement) => {
+      scrollAnimation.cancel();
+
+      if (responseElement) {
+        responseElement.scrollIntoView({ behavior: "smooth", block: "start" });
+        responseElement.classList.add("bookmark-highlight");
+
+        setTimeout(() => {
+          responseElement.classList.remove("bookmark-highlight");
+        }, HIGHLIGHT_DURATION_MS);
+      } else {
+        console.error("Failed to find bookmark to scroll to.");
+      }
     });
   }
 }
