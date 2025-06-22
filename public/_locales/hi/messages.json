@@ -1,0 +1,74 @@
+{
+  "panelHeader": {
+    "message": "सहेजे गए जवाब",
+    "description": "The title text in the header of the bookmarks panel."
+  },
+  "clearAllButtonTitle": {
+    "message": "इस बातचीत के सभी बुकमार्क हटाएं",
+    "description": "The tooltip for the 'Clear All' button."
+  },
+  "clearAllButtonText": {
+    "message": "सभी साफ़ करें",
+    "description": "The text on the 'Clear All' button."
+  },
+  "themeButtonTitleLight": {
+    "message": "थीम: लाइट (डार्क पर स्विच करें)",
+    "description": "Tooltip for the theme button when the light theme is active."
+  },
+  "themeButtonTitleDark": {
+    "message": "थीम: डार्क (सिस्टम पर स्विच करें)",
+    "description": "Tooltip for the theme button when the dark theme is active."
+  },
+  "themeButtonTitleSystem": {
+    "message": "थीम: सिस्टम (लाइट पर स्विच करें)",
+    "description": "Tooltip for the theme button when the system theme is active."
+  },
+  "fabTitle": {
+    "message": "बुकमार्क देखें",
+    "description": "Tooltip for the floating action button that opens the panel."
+  },
+  "tagEditorLabel": {
+    "message": "टैग जोड़ें (कॉमा से अलग करके):",
+    "description": "A label appearing above the tag input field."
+  },
+  "tagEditorPlaceholder": {
+    "message": "जैसे, विचार, अध्ययन",
+    "description": "An example of tags, shown as placeholder text inside the input field."
+  },
+  "tagEditorSaveButton": {
+    "message": "सहेजें",
+    "description": "Text for the save button in the tag editor."
+  },
+  "tagEditorCancelButton": {
+    "message": "रद्द करें",
+    "description": "Text for the cancel button in the tag editor."
+  },
+  "addBookmarkTooltip": {
+    "message": "बुकमार्क जोड़ने के लिए क्लिक करें",
+    "description": "Tooltip for the bookmark icon when a response is not yet bookmarked."
+  },
+  "removeBookmarkTooltip": {
+    "message": "बुकमार्क हटाने के लिए क्लिक करें",
+    "description": "Tooltip for the bookmark icon when a response is already bookmarked."
+  },
+  "panelEmptyMessage": {
+    "message": "अभी तक कोई बुकमार्क नहीं है. किसी जवाब को बुकमार्क करने के लिए उसके आइकन पर क्लिक करें!",
+    "description": "Message shown in the panel when there are no bookmarks."
+  },
+  "clearAllConfirmation": {
+    "message": "क्या आप वाकई इस बातचीत के सभी बुकमार्क हटाना चाहते हैं?",
+    "description": "The confirmation text shown to the user before clearing all bookmarks."
+  },
+  "scrollToBookmarkTitle": {
+    "message": "इस जवाब पर स्क्रॉल करने के लिए क्लिक करें",
+    "description": "Tooltip on a bookmark item in the side panel."
+  },
+  "confirmButtonText": {
+    "message": "पुष्टि करें",
+    "description": "The text for a generic confirmation button."
+  },
+  "cancelButtonText": {
+    "message": "रद्द करें",
+    "description": "The text for a generic cancel button."
+  }
+}

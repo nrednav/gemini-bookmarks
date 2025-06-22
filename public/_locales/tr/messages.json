@@ -1,0 +1,74 @@
+{
+  "panelHeader": {
+    "message": "İşaretli Yanıtlar",
+    "description": "The title text in the header of the bookmarks panel."
+  },
+  "clearAllButtonTitle": {
+    "message": "Bu sohbetteki tüm yer imlerini kaldır",
+    "description": "The tooltip for the 'Clear All' button."
+  },
+  "clearAllButtonText": {
+    "message": "Tümünü Temizle",
+    "description": "The text on the 'Clear All' button."
+  },
+  "themeButtonTitleLight": {
+    "message": "Tema: Aydınlık (Karanlığa geçir)",
+    "description": "Tooltip for the theme button when the light theme is active."
+  },
+  "themeButtonTitleDark": {
+    "message": "Tema: Karanlık (Sisteme geçir)",
+    "description": "Tooltip for the theme button when the dark theme is active."
+  },
+  "themeButtonTitleSystem": {
+    "message": "Tema: Sistem (Aydınlığa geçir)",
+    "description": "Tooltip for the theme button when the system theme is active."
+  },
+  "fabTitle": {
+    "message": "Yer İmlerini Görüntüle",
+    "description": "Tooltip for the floating action button that opens the panel."
+  },
+  "tagEditorLabel": {
+    "message": "Etiket ekleyin (virgülle ayırarak):",
+    "description": "A label appearing above the tag input field."
+  },
+  "tagEditorPlaceholder": {
+    "message": "örn. fikir, çalışma",
+    "description": "An example of tags, shown as placeholder text inside the input field."
+  },
+  "tagEditorSaveButton": {
+    "message": "Kaydet",
+    "description": "Text for the save button in the tag editor."
+  },
+  "tagEditorCancelButton": {
+    "message": "İptal",
+    "description": "Text for the cancel button in the tag editor."
+  },
+  "addBookmarkTooltip": {
+    "message": "Yer imi eklemek için tıklayın",
+    "description": "Tooltip for the bookmark icon when a response is not yet bookmarked."
+  },
+  "removeBookmarkTooltip": {
+    "message": "Yer imini kaldırmak için tıklayın",
+    "description": "Tooltip for the bookmark icon when a response is already bookmarked."
+  },
+  "panelEmptyMessage": {
+    "message": "Henüz yer imi yok. Bir yanıtın üzerindeki simgeye tıklayarak yer imlerine ekleyin!",
+    "description": "Message shown in the panel when there are no bookmarks."
+  },
+  "clearAllConfirmation": {
+    "message": "Bu sohbetteki TÜM yer imlerini kaldırmak istediğinizden emin misiniz?",
+    "description": "The confirmation text shown to the user before clearing all bookmarks."
+  },
+  "scrollToBookmarkTitle": {
+    "message": "Bu yanıta gitmek için tıklayın",
+    "description": "Tooltip on a bookmark item in the side panel."
+  },
+  "confirmButtonText": {
+    "message": "Onayla",
+    "description": "The text for a generic confirmation button."
+  },
+  "cancelButtonText": {
+    "message": "İptal",
+    "description": "The text for a generic cancel button."
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "panelHeader": {
+    "message": "الردود المحفوظة",
+    "description": "The title text in the header of the bookmarks panel."
+  },
+  "clearAllButtonTitle": {
+    "message": "إزالة كل الإشارات المرجعية لهذه المحادثة",
+    "description": "The tooltip for the 'Clear All' button."
+  },
+  "clearAllButtonText": {
+    "message": "مسح الكل",
+    "description": "The text on the 'Clear All' button."
+  },
+  "themeButtonTitleLight": {
+    "message": "المظهر: فاتح (التبديل إلى داكن)",
+    "description": "Tooltip for the theme button when the light theme is active."
+  },
+  "themeButtonTitleDark": {
+    "message": "المظهر: داكن (التبديل إلى النظام)",
+    "description": "Tooltip for the theme button when the dark theme is active."
+  },
+  "themeButtonTitleSystem": {
+    "message": "المظهر: النظام (التبديل إلى فاتح)",
+    "description": "Tooltip for the theme button when the system theme is active."
+  },
+  "fabTitle": {
+    "message": "عرض الإشارات المرجعية",
+    "description": "Tooltip for the floating action button that opens the panel."
+  },
+  "tagEditorLabel": {
+    "message": "إضافة علامات (مفصولة بفاصلة):",
+    "description": "A label appearing above the tag input field."
+  },
+  "tagEditorPlaceholder": {
+    "message": "مثال: فكرة، دراسة",
+    "description": "An example of tags, shown as placeholder text inside the input field."
+  },
+  "tagEditorSaveButton": {
+    "message": "حفظ",
+    "description": "Text for the save button in the tag editor."
+  },
+  "tagEditorCancelButton": {
+    "message": "إلغاء",
+    "description": "Text for the cancel button in the tag editor."
+  },
+  "addBookmarkTooltip": {
+    "message": "انقر لإضافة إشارة مرجعية",
+    "description": "Tooltip for the bookmark icon when a response is not yet bookmarked."
+  },
+  "removeBookmarkTooltip": {
+    "message": "انقر لإزالة الإشارة المرجعية",
+    "description": "Tooltip for the bookmark icon when a response is already bookmarked."
+  },
+  "panelEmptyMessage": {
+    "message": "لا توجد إشارات مرجعية بعد. انقر على الأيقونة في أي رد لوضعه في الإشارات المرجعية!",
+    "description": "Message shown in the panel when there are no bookmarks."
+  },
+  "clearAllConfirmation": {
+    "message": "هل أنت متأكد من رغبتك في إزالة كافة الإشارات المرجعية لهذه المحادثة؟",
+    "description": "The confirmation text shown to the user before clearing all bookmarks."
+  },
+  "scrollToBookmarkTitle": {
+    "message": "انقر للانتقال إلى هذا الرد",
+    "description": "Tooltip on a bookmark item in the side panel."
+  },
+  "confirmButtonText": {
+    "message": "تأكيد",
+    "description": "The text for a generic confirmation button."
+  },
+  "cancelButtonText": {
+    "message": "إلغاء",
+    "description": "The text for a generic cancel button."
+  }
+}
