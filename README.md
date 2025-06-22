@@ -34,8 +34,8 @@ The extension is available for download at:
   the panel.
 - **Smart Scrolling:** Clicking a bookmark smoothly scrolls the page to its
   original context in a long chat.
-- **Light & Dark Themes:** The UI comes with themes that can sync with your OS
-  preference.
+- **Light & Dark Themes:** The UI comes with a light and dark theme that can
+  sync with your OS preference.
 - **Copy & View Actions:** Quickly copy a bookmark's content to your clipboard
   or view the full text in a modal directly from the side panel.
 
