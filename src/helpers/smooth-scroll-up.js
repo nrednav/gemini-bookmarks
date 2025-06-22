@@ -1,3 +1,6 @@
+/**
+ * How many pixels to vertically scroll by on every animation frame
+ */
 const SCROLL_STEP_PX = 40;
 
 /**
