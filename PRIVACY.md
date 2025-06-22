@@ -33,6 +33,14 @@ All of the above information is used by the extension only for its core
 functions: to save content for later, to display it back to you in the side
 panel and modals, and to enable features like filtering and sorting.
 
+To be perfectly clear, the extension **DOES NOT** collect, store, or transmit
+any of the following information:
+
+* Your personal information (name, email address, etc.).
+* Your browsing history.
+* Your passwords, cookies, or any other sensitive data.
+* Any information from any website that is not `gemini.google.com`.
+
 ## 2. Where the information is stored
 
 It is important to note that all of the information that is handled by the
@@ -64,14 +72,6 @@ The piece of information used for UI customization is:
 
 - Theme Setting: Used to apply the correct color scheme (Light or Dark) to the
   extension's interface.
-
-To be perfectly clear, the extension **DOES NOT** collect, store, or transmit
-any of the following information:
-
-* Your personal information (name, email address, etc.).
-* Your browsing history.
-* Your passwords, cookies, or any other sensitive data.
-* Any information from any website that is not `gemini.google.com`.
 
 ## 4. Changes to this privacy policy
 
