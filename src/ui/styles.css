@@ -450,6 +450,57 @@
   stroke: currentColor;
 }
 
+/* --- Toast Notifications --- */
+.gb-toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translate(-50%, 100px);
+  background-color: #ffffff;
+  color: #202124;
+  border: 1px solid #dcdcdc;
+  padding: 12px 24px;
+  border-radius: 8px;
+  z-index: 10001;
+  font-family: 'Google Sans', sans-serif;
+  font-size: 14px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.gb-toast--visible {
+  transform: translate(-50%, 0);
+  opacity: 1;
+}
+
+.gb-toast--info {
+  background-color: #ffffff;
+  color: #202124;
+  border: 1px solid #dcdcdc;
+}
+
+.gb-toast--success {
+  background-color: #e6f4ea;
+  color: #1e8e3e;
+  border-color: #ceead6;
+}
+
+.gb-toast--warning {
+  background-color: #fef7e0;
+  color: #b06000;
+  border-color: #fde293;
+}
+
+.gb-toast--error {
+  background-color: #fce8e6;
+  color: #c5221f;
+  border-color: #f2b2ae;
+}
+
 /* --- Dark Theme Styles --- */
 
 body[data-gemini-bookmarks-theme='dark'] .gb-panel {
@@ -580,4 +631,28 @@ body[data-gemini-bookmarks-theme='dark'] .gb-panel-bookmark__copy-button {
 body[data-gemini-bookmarks-theme='dark'] .gb-panel-bookmark__copy-button:hover {
   background-color: #3c4043;
   color: #e8eaed;
+}
+
+body[data-gemini-bookmarks-theme='dark'] .gb-toast {
+  background-color: #2d2e31;
+  color: #e8eaed;
+  border-color: #5f6368;
+}
+
+body[data-gemini-bookmarks-theme='dark'] .gb-toast--success {
+  background-color: #354B3E;
+  color: #a8dab5;
+  border-color: #4c6655;
+}
+
+body[data-gemini-bookmarks-theme='dark'] .gb-toast--warning {
+  background-color: #574825;
+  color: #fdd663;
+  border-color: #705b2f;
+}
+
+body[data-gemini-bookmarks-theme='dark'] .gb-toast--error {
+  background-color: #5C3B39;
+  color: #f28b82;
+  border-color: #794c49;
 }
