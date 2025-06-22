@@ -25,7 +25,8 @@ The extension is available for download at:
 
 ## Features
 
-- **One-click Bookmarking:** A bookmark icon appears on every Gemini response.
+- **One-click Bookmarking:** A bookmark icon appears on every Gemini response in
+  a conversation.
 - **Tagging System:** Add custom, comma-separated tags to organize your
   bookmarks.
 - **Side Panel UI:** A dedicated panel lists all your bookmarks, sorted by their
@@ -34,6 +35,8 @@ The extension is available for download at:
   the panel.
 - **Smart Scrolling:** Clicking a bookmark smoothly scrolls the page to its
   original context in a long chat.
+- **Keyboard shortcuts:** When using the tag editor or one of the modals, you
+  can hit `Enter` to save or `Esc` to cancel/close.
 - **Light & Dark Themes:** The UI comes with a light and dark theme that can
   sync with your OS preference.
 - **Copy & View Actions:** Quickly copy a bookmark's content to your clipboard
@@ -118,8 +121,8 @@ To install & run the extension manually, follow these steps:
     - Persistent
       - Install the `web-ext` tool from Mozilla: [Link](https://extensionworkshop.com/documentation/develop/getting-started-with-web-ext/)
       - Test the extension by running `web-ext run` from within `dist/` directory
-        - Visit any YouTube playlist overview page and verify the extension
-          calculates & displays the playlist duration
+        - Visit any conversation page within Google Gemini and hover over a
+          model response to see the bookmark button
       - Sign the extension with `web-ext sign`
         - Follow the instructions on the same page linked above
         - You will need to run this command within the `dist` directory too
