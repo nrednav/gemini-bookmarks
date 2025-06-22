@@ -1,8 +1,10 @@
 # Gemini Bookmarks
 
 A web extension that adds a simple bookmarking system to the Google Gemini web
-interface. It allows you to save specific responses from a conversation so you
-can easily refer back to them later.
+interface.
+
+It allows you to save specific responses from a conversation so you can easily
+refer back to them later.
 
 <img src="screenshots/banner.png">
 
@@ -82,9 +84,6 @@ npm run build:firefox
 This will output the extension files into a sub-directory named `dist` within
 the `gemini-bookmarks` directory.
 
-2. Firefox
-
-
 ### Test
 
 This project uses [Vitest](httpss://vitest.dev/) for unit testing. To run the
@@ -139,7 +138,7 @@ This project uses [Semantic Versioning](http://semver.org/). For a list of
 available versions, see the [repository tag
 list](https://github.com/nrednav/gemini-bookmarks/tags).
 
-## How to Get Help
+## Issues & Requests
 
 If you encounter a bug or have a feature request, please [open an
 issue](https://github.com/nrednav/gemini-bookmarks/issues) on the GitHub
