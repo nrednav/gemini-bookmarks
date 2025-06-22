@@ -61,20 +61,31 @@ export const setupEventListeners = (dependencies) => {
 const handleBookmarkContainerClick = (e, dependencies) => {
   const { window, elementSelectors, stateManager } = dependencies;
 
+  const bookmarkElement = e.target.closest(elementSelectors.ui.panelBookmark);
+
+  if (!bookmarkElement) {
+    return;
+  }
+
+  const bookmarkId = bookmarkElement.dataset.bookmarkId;
+
+  if (!bookmarkId) {
+    return;
+  }
+
+  const currentState = stateManager.getState();
+  const bookmark = currentState.bookmarks.find(bookmark => bookmark.id === bookmarkId);
+
+  if (!bookmark) {
+    console.error(`Could not find bookmark data for ID: ${bookmarkId}`);
+    return;
+  }
+
   const viewButton = e.target.closest(elementSelectors.ui.viewBookmarkButton);
 
   if (viewButton) {
     e.stopPropagation();
-
-    const bookmarkElement = viewButton.closest(elementSelectors.ui.panelBookmark);
-    const bookmarkId = bookmarkElement.dataset.bookmarkId;
-    const currentState = stateManager.getState();
-    const bookmark = currentState.bookmarks.find(bookmark => bookmark.id === bookmarkId);
-
-    if (bookmark) {
-      createContentModal(chrome.i18n.getMessage("viewModalTitle"), bookmark.content);
-    }
-
+    createContentModal(chrome.i18n.getMessage("viewModalTitle"), bookmark.content);
     return;
   }
 
@@ -83,31 +94,12 @@ const handleBookmarkContainerClick = (e, dependencies) => {
   if (copyButton) {
     e.stopPropagation();
 
-    const bookmarkElement = copyButton.closest(elementSelectors.ui.panelBookmark);
-    const bookmarkId = bookmarkElement.dataset.bookmarkId;
-    const currentState = stateManager.getState();
-    const bookmark = currentState.bookmarks.find(bookmark => bookmark.id === bookmarkId);
+    navigator.clipboard.writeText(bookmark.content).then(() => {
+      showToast(chrome.i18n.getMessage("copySuccessToast"), "success");
+    }).catch(error => {
+      console.error("Failed to copy text: ", error);
+    });
 
-    if (bookmark) {
-      navigator.clipboard.writeText(bookmark.content).then(() => {
-        showToast(chrome.i18n.getMessage("copySuccessToast"), "success");
-      }).catch(error => {
-        console.error("Failed to copy text: ", error);
-      });
-    }
-
-    return;
-  }
-
-  const clickedBookmark = e.target.closest(elementSelectors.ui.panelBookmark);
-
-  if (!clickedBookmark) {
-    return;
-  }
-
-  const bookmarkId = clickedBookmark.dataset.bookmarkId;
-
-  if (!bookmarkId) {
     return;
   }
 
