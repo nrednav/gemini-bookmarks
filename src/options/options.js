@@ -1,4 +1,5 @@
 import { getAllStorageData } from "../helpers/get-all-storage-data";
+import { Logger } from "../shell/logger";
 import { createConfirmationModal } from "../ui/modal";
 import { showToast } from "../ui/toast";
 
@@ -12,6 +13,8 @@ const deleteAllButton = document.getElementById("delete-all-button");
 const exportAllButton = document.getElementById("export-all-button");
 
 let totalStorageBytes = 0;
+
+const logger = new Logger(window);
 
 /**
  * Formats a number of bytes into a human-readable string (KB, MB).
@@ -99,7 +102,7 @@ async function loadAndRenderConversations() {
       listElement.appendChild(listItem);
     }
   } catch (error) {
-    console.error("Error loading conversation data:", error);
+    logger.error("Error loading conversation data:", error);
     showStandardErrorToast();
   }
 }
@@ -211,7 +214,7 @@ async function handleDelete(event) {
         exportAllButton.disabled = true;
       }
     } catch (error) {
-      console.error(`Failed to delete data for key ${key}:`, error);
+      logger.error(`Failed to delete data for key ${key}:`, error);
       showStandardErrorToast();
     }
   }
@@ -247,7 +250,7 @@ async function handleDeleteAll() {
       deleteAllButton.disabled = true;
       exportAllButton.disabled = true;
     } catch (error) {
-      console.error("Failed to delete all conversation data:", error);
+      logger.error("Failed to delete all conversation data:", error);
       showStandardErrorToast();
     }
   }
@@ -268,7 +271,7 @@ async function handleExportAll() {
     }
 
     if (Object.keys(exportData).length === 0) {
-      console.error("There is no data to export.");
+      logger.error("There is no data to export.");
       return;
     }
 
@@ -292,7 +295,7 @@ async function handleExportAll() {
 
     URL.revokeObjectURL(url);
   } catch (error) {
-    console.error("Failed to export data:", error);
+    logger.error("Failed to export data:", error);
     showStandardErrorToast();
   }
 }

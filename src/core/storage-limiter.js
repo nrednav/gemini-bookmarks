@@ -9,7 +9,7 @@ const WARNING_THRESHOLD_PERCENT = 90;
  * Checks storage usage and displays a warning if it exceeds the threshold.
  * @param {import('./types.js').Dependencies} dependencies
  */
-export const checkStorageQuota = async ({ uiElements }) => {
+export const checkStorageQuota = async ({ uiElements, logger }) => {
   if (!uiElements.storageWarning) {
     return;
   }
@@ -45,7 +45,7 @@ export const checkStorageQuota = async ({ uiElements }) => {
       uiElements.storageWarning.innerHTML = "";
     }
   } catch (error) {
-    console.error("Failed to check storage quota:", error);
+    logger.error("Failed to check storage quota:", error);
     uiElements.storageWarning.style.display = "none";
   }
 };

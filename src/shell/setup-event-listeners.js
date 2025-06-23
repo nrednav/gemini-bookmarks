@@ -63,7 +63,7 @@ export const setupEventListeners = (dependencies) => {
  * @param {import('../core/types.js').Dependencies} dependencies
  */
 const handleBookmarkContainerClick = (e, dependencies) => {
-  const { window, elementSelectors, stateManager } = dependencies;
+  const { window, elementSelectors, stateManager, logger } = dependencies;
 
   const bookmarkElement = e.target.closest(elementSelectors.ui.panelBookmark);
 
@@ -83,7 +83,7 @@ const handleBookmarkContainerClick = (e, dependencies) => {
   );
 
   if (!bookmark) {
-    console.error(`Could not find bookmark data for ID: ${bookmarkId}`);
+    logger.error(`Could not find bookmark data for ID: ${bookmarkId}`);
     return;
   }
 
@@ -109,7 +109,7 @@ const handleBookmarkContainerClick = (e, dependencies) => {
         showToast(chrome.i18n.getMessage("copySuccessToast"), "success");
       })
       .catch((error) => {
-        console.error("Failed to copy text: ", error);
+        logger.error("Failed to copy text: ", error);
       });
 
     return;
@@ -136,7 +136,7 @@ const handleBookmarkContainerClick = (e, dependencies) => {
       if (foundElement) {
         highlightAndScroll(foundElement);
       } else {
-        console.error("Failed to find bookmark to scroll to.");
+        logger.error("Failed to find bookmark to scroll to.");
       }
     });
   }

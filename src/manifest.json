@@ -5,7 +5,7 @@
   "version": "1.0.0",
   "description": "Bookmark, tag, and quickly find important responses in your Google Gemini conversations.",
   "default_locale": "en",
-  "permissions": ["storage", "scripting"],
+  "permissions": ["storage"],
   "options_ui": {
     "page": "src/options/options.html",
     "open_in_tab": true
