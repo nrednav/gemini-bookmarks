@@ -4,15 +4,15 @@
   bottom: 24px;
   left: 50%;
   transform: translate(-50%, 100px);
-  background-color: #ffffff;
-  color: #202124;
-  border: 1px solid #dcdcdc;
+  background-color: var(--color-background);
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-border);
   padding: 12px 24px;
-  border-radius: 8px;
+  border-radius: var(--radius-md);
   z-index: 10001;
-  font-family: "Google Sans", sans-serif;
+  font-family: var(--font-family-sans);
   font-size: 14px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: var(--shadow-lg);
   transition:
     transform 0.3s ease-in-out,
     opacity 0.3s ease-in-out;
@@ -28,50 +28,25 @@
 }
 
 .gb-toast--info {
-  background-color: #ffffff;
-  color: #202124;
-  border: 1px solid #dcdcdc;
+  background-color: var(--color-background);
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-border);
 }
 
 .gb-toast--success {
-  background-color: #e6f4ea;
-  color: #1e8e3e;
-  border-color: #ceead6;
+  background-color: var(--color-success-surface);
+  color: var(--color-success-text);
+  border-color: var(--color-success-border);
 }
 
 .gb-toast--warning {
-  background-color: #fef7e0;
-  color: #b06000;
-  border-color: #fde293;
+  background-color: var(--color-warning-surface);
+  color: var(--color-warning-text);
+  border-color: var(--color-warning-border);
 }
 
 .gb-toast--error {
-  background-color: #fce8e6;
-  color: #c5221f;
-  border-color: #f2b2ae;
+  background-color: var(--color-danger-surface);
+  color: var(--color-danger);
+  border-color: var(--color-danger-border);
 }
-
-body[data-gemini-bookmarks-theme="dark"] .gb-toast {
-  background-color: #2d2e31;
-  color: #e8eaed;
-  border-color: #5f6368;
-}
-
-body[data-gemini-bookmarks-theme="dark"] .gb-toast--success {
-  background-color: #354b3e;
-  color: #a8dab5;
-  border-color: #4c6655;
-}
-
-body[data-gemini-bookmarks-theme="dark"] .gb-toast--warning {
-  background-color: #574825;
-  color: #fdd663;
-  border-color: #705b2f;
-}
-
-body[data-gemini-bookmarks-theme="dark"] .gb-toast--error {
-  background-color: #5c3b39;
-  color: #f28b82;
-  border-color: #794c49;
-}
-

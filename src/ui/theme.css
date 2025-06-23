@@ -1,12 +1,3 @@
-/*
- * ===============================================
- * Gemini Bookmarks - Shared Design Tokens
- * ===============================================
- * This file defines the core visual properties for the extension's UI.
- * It uses CSS Custom Properties (variables) to enable easy theming
- * and ensure consistency across all UI components.
- */
-
 :root {
   /* Font Families */
   --font-family-sans: "Google Sans", sans-serif;
@@ -32,6 +23,10 @@
   --color-warning-border: #fde293;
   --color-selection-bg: #1a73e8;
   --color-selection-text: #ffffff;
+  --color-success-surface: #e6f4ea;
+  --color-success-text: #1e8e3e;
+  --color-success-border: #ceead6;
+  --color-danger-border: #f2b2ae;
 
   /* Shadows */
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
@@ -45,7 +40,7 @@
   --radius-full: 50%;
 }
 
-[data-theme="dark"] {
+[data-gemini-bookmarks-theme="dark"] {
   /* Core Colors (Dark Theme) */
   --color-background: #202124;
   --color-background-hover: #2d2e31;
@@ -66,4 +61,8 @@
   --color-warning-border: #705b2f;
   --color-selection-bg: #8ab4f8;
   --color-selection-text: #202124;
+  --color-success-surface: #354b3e;
+  --color-success-text: #a8dab5;
+  --color-success-border: #4c6655;
+  --color-danger-border: #794c49;
 }
