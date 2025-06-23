@@ -90,5 +90,101 @@
   "modalCloseButton": {
     "message": "Đóng",
     "description": "The text for a button that closes a modal."
+  },
+  "optionsPageTitle": {
+    "message": "Cài đặt Gemini Bookmarks",
+    "description": "The title of the extension's options page."
+  },
+  "optionsPageDescription": {
+    "message": "Trên trang này, bạn có thể xem tất cả các cuộc trò chuyện mà bạn đã lưu ít nhất một dấu trang và xóa dữ liệu cho các cuộc trò chuyện bạn không còn cần nữa.",
+    "description": "The descriptive paragraph on the options page."
+  },
+  "optionsPageTotalUsage": {
+    "message": "Tổng mức sử dụng",
+    "description": "Text used as a label on the storage total usage badge."
+  },
+  "optionsSavedConversationsHeader": {
+    "message": "Các cuộc trò chuyện đã lưu",
+    "description": "The H2 header for the list of saved conversations."
+  },
+  "optionsLoadingState": {
+    "message": "Đang tải dữ liệu đã lưu...",
+    "description": "Text shown while loading data on the options page."
+  },
+  "optionsEmptyState": {
+    "message": "Bạn chưa đánh dấu cuộc trò chuyện nào.",
+    "description": "Text shown on the options page when no data is found."
+  },
+  "optionsDeleteButton": {
+    "message": "Xóa",
+    "description": "Text for the button to delete a conversation's data."
+  },
+  "optionsDeleteConfirmation": {
+    "message": "Bạn có chắc chắn muốn xóa tất cả dấu trang cho cuộc trò chuyện này không? Hành động này không thể hoàn tác.",
+    "description": "Confirmation message before deleting a conversation's data."
+  },
+  "optionsViewButton": {
+    "message": "Xem",
+    "description": "Text for the button to open a conversation from the options page."
+  },
+  "optionsDeleteAllButton": {
+    "message": "Xóa tất cả dữ liệu",
+    "description": "Text for the button that deletes all bookmark data from the options page."
+  },
+  "optionsDeleteAllConfirmation": {
+    "message": "Bạn có chắc chắn muốn xóa TẤT CẢ dữ liệu dấu trang đã lưu của mình trên TẤT CẢ các cuộc trò chuyện không? Hành động này không thể hoàn tác.",
+    "description": "A very strong confirmation message shown before deleting all user data."
+  },
+  "optionsExportAllButton": {
+    "message": "Xuất tất cả dữ liệu",
+    "description": "Text for the button that exports all bookmark data to a file."
+  },
+  "optionsPageStandardErrorToast": {
+    "message": "Đã xảy ra lỗi. Vui lòng thử lại.",
+    "description": "Standard toast message shown when an error occurs in the options page."
+  },
+  "storageWarningMessage": {
+    "message": "Bạn đang sử dụng $1% dung lượng lưu trữ của mình. Vui lòng quản lý dữ liệu để tránh sự cố.",
+    "description": "Warning message when storage is nearly full. $PERCENTAGE$ is a placeholder.",
+    "placeholders": {
+      "percentage": {
+        "content": "$1",
+        "example": "95"
+      }
+    }
+  },
+  "storageWarningAction": {
+    "message": "Quản lý dữ liệu",
+    "description": "Button text that takes the user to the options page to manage their data."
+  },
+  "bookmarkCountSingular": {
+    "message": "$1 dấu trang",
+    "description": "Used when there is exactly one bookmark. The $1 placeholder will be replaced with '1'.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "1"
+      }
+    }
+  },
+  "bookmarkCountPlural": {
+    "message": "$1 dấu trang",
+    "description": "Used when there are zero or multiple bookmarks. The $1 placeholder will be replaced with the number of bookmarks.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "5"
+      }
+    }
+  },
+  "lastUpdatedTimestamp": {
+    "message": "Cập nhật lần cuối: $1",
+    "description": "Indicates the timestamp of the last update. The $1 placeholder will be replaced with a formatted date/time string.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "2023-10-27 10:30 AM"
+      }
+    }
   }
 }

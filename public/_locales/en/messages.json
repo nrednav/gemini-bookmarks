@@ -95,10 +95,6 @@
     "message": "Gemini Bookmarks Settings",
     "description": "The title of the extension's options page."
   },
-  "optionsPageHeader": {
-    "message": "Gemini Bookmarks Settings",
-    "description": "The main H1 header on the options page."
-  },
   "optionsPageDescription": {
     "message": "On this page you can view all conversations where you have saved at least one bookmark and remove data for conversations you no longer need.",
     "description": "The descriptive paragraph on the options page."

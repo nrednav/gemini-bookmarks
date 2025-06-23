@@ -90,5 +90,101 @@
   "modalCloseButton": {
     "message": "Kapat",
     "description": "The text for a button that closes a modal."
+  },
+  "optionsPageTitle": {
+    "message": "Gemini Bookmarks Ayarları",
+    "description": "The title of the extension's options page."
+  },
+  "optionsPageDescription": {
+    "message": "Bu sayfada, en az bir yer imi kaydettiğiniz tüm sohbetleri görüntüleyebilir ve artık ihtiyaç duymadığınız sohbetlerin verilerini silebilirsiniz.",
+    "description": "The descriptive paragraph on the options page."
+  },
+  "optionsPageTotalUsage": {
+    "message": "Toplam Kullanım",
+    "description": "Text used as a label on the storage total usage badge."
+  },
+  "optionsSavedConversationsHeader": {
+    "message": "Kayıtlı Sohbetler",
+    "description": "The H2 header for the list of saved conversations."
+  },
+  "optionsLoadingState": {
+    "message": "Kayıtlı veriler yükleniyor...",
+    "description": "Text shown while loading data on the options page."
+  },
+  "optionsEmptyState": {
+    "message": "Henüz hiçbir sohbeti işaretlemediniz.",
+    "description": "Text shown on the options page when no data is found."
+  },
+  "optionsDeleteButton": {
+    "message": "Sil",
+    "description": "Text for the button to delete a conversation's data."
+  },
+  "optionsDeleteConfirmation": {
+    "message": "Bu sohbete ait tüm yer imlerini silmek istediğinizden emin misiniz? Bu işlem geri alınamaz.",
+    "description": "Confirmation message before deleting a conversation's data."
+  },
+  "optionsViewButton": {
+    "message": "Görüntüle",
+    "description": "Text for the button to open a conversation from the options page."
+  },
+  "optionsDeleteAllButton": {
+    "message": "Tüm Verileri Sil",
+    "description": "Text for the button that deletes all bookmark data from the options page."
+  },
+  "optionsDeleteAllConfirmation": {
+    "message": "TÜM sohbetlerdeki kayıtlı yer imi verilerinizin TÜMÜNÜ silmek istediğinizden emin misiniz? Bu işlem geri alınamaz.",
+    "description": "A very strong confirmation message shown before deleting all user data."
+  },
+  "optionsExportAllButton": {
+    "message": "Tüm Verileri Dışa Aktar",
+    "description": "Text for the button that exports all bookmark data to a file."
+  },
+  "optionsPageStandardErrorToast": {
+    "message": "Bir hata oluştu. Lütfen tekrar deneyin.",
+    "description": "Standard toast message shown when an error occurs in the options page."
+  },
+  "storageWarningMessage": {
+    "message": "Depolama alanınızın %$1 kadarını kullanıyorsunuz. Sorunları önlemek için lütfen verilerinizi yönetin.",
+    "description": "Warning message when storage is nearly full. $PERCENTAGE$ is a placeholder.",
+    "placeholders": {
+      "percentage": {
+        "content": "$1",
+        "example": "95"
+      }
+    }
+  },
+  "storageWarningAction": {
+    "message": "Verileri Yönet",
+    "description": "Button text that takes the user to the options page to manage their data."
+  },
+  "bookmarkCountSingular": {
+    "message": "$1 yer imi",
+    "description": "Used when there is exactly one bookmark. The $1 placeholder will be replaced with '1'.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "1"
+      }
+    }
+  },
+  "bookmarkCountPlural": {
+    "message": "$1 yer imi",
+    "description": "Used when there are zero or multiple bookmarks. The $1 placeholder will be replaced with the number of bookmarks.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "5"
+      }
+    }
+  },
+  "lastUpdatedTimestamp": {
+    "message": "Son güncelleme: $1",
+    "description": "Indicates the timestamp of the last update. The $1 placeholder will be replaced with a formatted date/time string.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "2023-10-27 10:30 AM"
+      }
+    }
   }
 }

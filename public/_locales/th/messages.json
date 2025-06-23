@@ -90,5 +90,101 @@
   "modalCloseButton": {
     "message": "ปิด",
     "description": "The text for a button that closes a modal."
+  },
+  "optionsPageTitle": {
+    "message": "การตั้งค่า Gemini Bookmarks",
+    "description": "The title of the extension's options page."
+  },
+  "optionsPageDescription": {
+    "message": "ในหน้านี้ คุณสามารถดูบทสนทนาทั้งหมดที่คุณได้บันทึกบุ๊กมาร์กไว้อย่างน้อยหนึ่งรายการ และลบข้อมูลสำหรับบทสนทนาที่คุณไม่ต้องการอีกต่อไป",
+    "description": "The descriptive paragraph on the options page."
+  },
+  "optionsPageTotalUsage": {
+    "message": "การใช้งานทั้งหมด",
+    "description": "Text used as a label on the storage total usage badge."
+  },
+  "optionsSavedConversationsHeader": {
+    "message": "บทสนทนาที่บันทึกไว้",
+    "description": "The H2 header for the list of saved conversations."
+  },
+  "optionsLoadingState": {
+    "message": "กำลังโหลดข้อมูลที่บันทึกไว้...",
+    "description": "Text shown while loading data on the options page."
+  },
+  "optionsEmptyState": {
+    "message": "คุณยังไม่ได้บุ๊กมาร์กบทสนทนาใดๆ",
+    "description": "Text shown on the options page when no data is found."
+  },
+  "optionsDeleteButton": {
+    "message": "ลบ",
+    "description": "Text for the button to delete a conversation's data."
+  },
+  "optionsDeleteConfirmation": {
+    "message": "คุณแน่ใจหรือไม่ว่าต้องการลบบุ๊กมาร์กทั้งหมดสำหรับบทสนทนานี้? การกระทำนี้ไม่สามารถยกเลิกได้",
+    "description": "Confirmation message before deleting a conversation's data."
+  },
+  "optionsViewButton": {
+    "message": "ดู",
+    "description": "Text for the button to open a conversation from the options page."
+  },
+  "optionsDeleteAllButton": {
+    "message": "ลบข้อมูลทั้งหมด",
+    "description": "Text for the button that deletes all bookmark data from the options page."
+  },
+  "optionsDeleteAllConfirmation": {
+    "message": "คุณแน่ใจหรือไม่ว่าต้องการลบข้อมูลบุ๊กมาร์กที่บันทึกไว้ทั้งหมดของคุณในทุกบทสนทนา? การกระทำนี้ไม่สามารถยกเลิกได้",
+    "description": "A very strong confirmation message shown before deleting all user data."
+  },
+  "optionsExportAllButton": {
+    "message": "ส่งออกข้อมูลทั้งหมด",
+    "description": "Text for the button that exports all bookmark data to a file."
+  },
+  "optionsPageStandardErrorToast": {
+    "message": "เกิดข้อผิดพลาด กรุณาลองอีกครั้ง",
+    "description": "Standard toast message shown when an error occurs in the options page."
+  },
+  "storageWarningMessage": {
+    "message": "คุณใช้พื้นที่เก็บข้อมูลไปแล้ว $1% โปรดจัดการข้อมูลของคุณเพื่อหลีกเลี่ยงปัญหา",
+    "description": "Warning message when storage is nearly full. $PERCENTAGE$ is a placeholder.",
+    "placeholders": {
+      "percentage": {
+        "content": "$1",
+        "example": "95"
+      }
+    }
+  },
+  "storageWarningAction": {
+    "message": "จัดการข้อมูล",
+    "description": "Button text that takes the user to the options page to manage their data."
+  },
+  "bookmarkCountSingular": {
+    "message": "$1 บุ๊กมาร์ก",
+    "description": "Used when there is exactly one bookmark. The $1 placeholder will be replaced with '1'.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "1"
+      }
+    }
+  },
+  "bookmarkCountPlural": {
+    "message": "$1 บุ๊กมาร์ก",
+    "description": "Used when there are zero or multiple bookmarks. The $1 placeholder will be replaced with the number of bookmarks.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "5"
+      }
+    }
+  },
+  "lastUpdatedTimestamp": {
+    "message": "อัปเดตล่าสุด: $1",
+    "description": "Indicates the timestamp of the last update. The $1 placeholder will be replaced with a formatted date/time string.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "2023-10-27 10:30 AM"
+      }
+    }
   }
 }
