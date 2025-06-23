@@ -3,6 +3,7 @@ import { renderUi } from "../ui/render-ui";
 import { applyTheme } from "../ui/theme-manager";
 import { addBookmark, removeBookmark } from "./logic";
 import { getTheme, saveTheme } from "./settings";
+import { checkStorageQuota } from "./storage-limiter.js";
 
 /**
  * @param {import('./types.js').Dependencies} dependencies - The application-wide dependencies.
@@ -29,6 +30,7 @@ export const toggleBookmark = async (
   stateManager.setState(nextState);
 
   await stateManager.saveStateToStorage();
+  await checkStorageQuota(dependencies);
 
   renderUi(dependencies);
 };
@@ -72,6 +74,7 @@ export const clearAllBookmarks = async (dependencies) => {
     stateManager.resetState();
 
     await stateManager.saveStateToStorage();
+    await checkStorageQuota(dependencies);
 
     renderUi(dependencies);
   }

@@ -1,3 +1,5 @@
+@import url("./theme.css");
+
 .bookmark-container {
   position: relative;
 }
@@ -575,6 +577,42 @@
   background-color: #fce8e6;
   color: #c5221f;
   border-color: #f2b2ae;
+}
+
+/* --- Storage Warning Banner --- */
+.gb-storage-warning {
+  padding: 12px 16px;
+  background-color: var(--color-warning-surface);
+  border-bottom: 1px solid var(--color-warning-border);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.gb-storage-warning p {
+  margin: 0;
+  flex-grow: 1;
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--color-warning-text);
+}
+
+.gb-storage-warning a {
+  background-color: transparent;
+  border: 1px solid var(--color-warning-text);
+  color: var(--color-warning-text);
+  border-radius: var(--radius-sm);
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: 500;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.gb-storage-warning a:hover {
+  background-color: var(--color-warning-text);
+  color: var(--color-warning-surface);
 }
 
 /* --- Dark Theme Styles --- */

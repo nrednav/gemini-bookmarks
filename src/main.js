@@ -1,6 +1,7 @@
 import { createConversationKey } from "./core/create-conversation-key";
 import { getTheme } from "./core/settings";
 import { StateManager } from "./core/state-manager";
+import { checkStorageQuota } from "./core/storage-limiter";
 import { elementSelectors } from "./data/element-selectors";
 import { waitForElement } from "./helpers/wait-for-element";
 import { Logger } from "./shell/logger";
@@ -44,6 +45,8 @@ export const main = async () => {
       stateManager,
       onNavigate: main,
     };
+
+    await checkStorageQuota(dependencies);
 
     for (const modelResponse of uiElements.modelResponses) {
       await injectBookmarkButton(modelResponse, dependencies);

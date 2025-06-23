@@ -10,6 +10,13 @@
     "page": "src/options/options.html",
     "open_in_tab": true
   },
+  "{{chrome}}.background": {
+    "service_worker": "src/background.js",
+    "type": "module"
+  },
+  "{{firefox}}.background": {
+    "scripts": ["src/background.js"]
+  },
   "{{chrome}}.host_permissions": [
     "https://gemini.google.com/u/*/app/*",
     "https://gemini.google.com/u/*/gem/*",

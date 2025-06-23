@@ -126,5 +126,19 @@
   "optionsViewButton": {
     "message": "View",
     "description": "Text for the button to open a conversation from the options page."
+  },
+  "storageWarningMessage": {
+    "message": "You are using $PERCENTAGE$% of your storage. Please manage your data to avoid issues.",
+    "description": "Warning message when storage is nearly full. $PERCENTAGE$ is a placeholder.",
+    "placeholders": {
+      "percentage": {
+        "content": "$1",
+        "example": "95"
+      }
+    }
+  },
+  "storageWarningAction": {
+    "message": "Manage Data",
+    "description": "Button text that takes the user to the options page to manage their data."
   }
 }

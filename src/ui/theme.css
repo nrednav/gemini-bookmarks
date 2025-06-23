@@ -27,6 +27,9 @@
   --color-danger: #c72300;
   --color-danger-hover: #d93025;
   --color-danger-surface: #fcece8;
+  --color-warning-surface: #fef7e0;
+  --color-warning-text: #b06000;
+  --color-warning-border: #fde293;
   --color-selection-bg: #1a73e8;
   --color-selection-text: #ffffff;
 
@@ -58,6 +61,9 @@
   --color-danger: #e67c73;
   --color-danger-hover: #ea8f89;
   --color-danger-surface: #4d3c3a;
+  --color-warning-surface: #574825;
+  --color-warning-text: #fdd663;
+  --color-warning-border: #705b2f;
   --color-selection-bg: #8ab4f8;
   --color-selection-text: #202124;
 }

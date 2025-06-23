@@ -8,6 +8,7 @@ export const injectUi = (window, elementSelectors) => {
   const uiHtml = `
     <div class="gemini-bookmarks-container">
       <div class="gb-panel">
+        <div id="gb-storage-warning" class="gb-storage-warning" style="display: none;"></div>
         <div class="gb-panel__header">
           <h3>${chrome.i18n.getMessage("panelHeader")}</h3>
           <div class="gb-panel__header-actions">
@@ -36,6 +37,7 @@ export const injectUi = (window, elementSelectors) => {
   return {
     window: window,
     uiElements: {
+      storageWarning: window.document.getElementById("gb-storage-warning"),
       fab: window.document.querySelector(elementSelectors.ui.fab),
       panel: window.document.querySelector(elementSelectors.ui.panel),
       tagsContainer: window.document.getElementById(

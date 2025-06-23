@@ -1,3 +1,5 @@
+import { getAllStorageData } from "../helpers/get-all-storage-data";
+
 const CONVERSATION_KEY_PREFIX = "gb-conversation-";
 
 const listElement = document.getElementById("conversations-list");
@@ -42,7 +44,7 @@ function updateTotalUsageDisplay() {
  */
 async function loadAndRenderConversations() {
   try {
-    const allData = await chrome.storage.local.get(null);
+    const allData = await getAllStorageData();
 
     totalStorageBytes = 0;
 
