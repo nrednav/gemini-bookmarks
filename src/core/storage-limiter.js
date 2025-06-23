@@ -38,7 +38,6 @@ export const checkStorageQuota = async ({ uiElements }) => {
         manageLink.addEventListener("click", (e) => {
           e.preventDefault();
           chrome.runtime.sendMessage({ action: "openOptionsPage" });
-          // chrome.runtime.openOptionsPage();
         });
       }
     } else {

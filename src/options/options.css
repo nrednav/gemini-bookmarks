@@ -1,4 +1,13 @@
 @import url("../ui/theme.css");
+@import url("../ui/modal.css");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 body {
   font-family: var(--font-family-sans);
@@ -25,7 +34,6 @@ header {
 
 h1 {
   font-size: 1.75rem;
-  margin: 0 0 0.5rem 0;
   color: var(--color-text-primary);
 }
 
@@ -124,10 +132,17 @@ h2 {
   border-color: var(--color-brand-primary);
 }
 
+header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
 .header-main {
   display: flex;
-  align-items: center;
-  gap: 1rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
 }
 
 .usage-badge {

@@ -100,7 +100,7 @@
     "description": "The main H1 header on the options page."
   },
   "optionsPageDescription": {
-    "message": "Manage your saved data. Here you can view all conversations where you have saved at least one bookmark and remove data for conversations you no longer need.",
+    "message": "On this page you can view all conversations where you have saved at least one bookmark and remove data for conversations you no longer need.",
     "description": "The descriptive paragraph on the options page."
   },
   "optionsSavedConversationsHeader": {

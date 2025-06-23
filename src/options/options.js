@@ -1,4 +1,5 @@
 import { getAllStorageData } from "../helpers/get-all-storage-data";
+import { createConfirmationModal } from "../ui/modal";
 
 const CONVERSATION_KEY_PREFIX = "gb-conversation-";
 
@@ -161,8 +162,9 @@ async function handleDelete(event) {
   const confirmationMessage = chrome.i18n.getMessage(
     "optionsDeleteConfirmation",
   );
+  const confirmed = await createConfirmationModal(confirmationMessage);
 
-  if (window.confirm(confirmationMessage)) {
+  if (confirmed) {
     try {
       await chrome.storage.local.remove(key);
 
