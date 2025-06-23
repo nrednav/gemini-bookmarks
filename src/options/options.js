@@ -67,14 +67,31 @@ function createConversationListItem(key, data) {
       <div class="url-path">${urlPath}</div>
       <div class="bookmark-count">${bookmarkCount} bookmark(s) – Last updated: ${lastUpdated}</div>
     </div>
-    <button class="delete-button">${chrome.i18n.getMessage("optionsDeleteButton")}</button>
+    <div class="conversation-actions">
+      <button class="view-button">${chrome.i18n.getMessage("optionsViewButton")}</button>
+      <button class="delete-button">${chrome.i18n.getMessage("optionsDeleteButton")}</button>
+    </div>
   `;
 
-  const deleteButton = listItem.querySelector(".delete-button");
-
-  deleteButton.addEventListener("click", handleDelete);
+  listItem.querySelector(".view-button").addEventListener("click", handleView);
+  listItem
+    .querySelector(".delete-button")
+    .addEventListener("click", handleDelete);
 
   return listItem;
+}
+
+/**
+ * Handles the click event for a view button.
+ * @param {MouseEvent} event
+ */
+function handleView(event) {
+  const listItem = event.target.closest(".conversation-item");
+  const key = listItem.dataset.storageKey;
+  const urlPath = key.replace(CONVERSATION_KEY_PREFIX, "");
+  const fullUrl = `https://gemini.google.com${urlPath}`;
+
+  chrome.tabs.create({ url: fullUrl });
 }
 
 /**

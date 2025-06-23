@@ -122,5 +122,9 @@
   "optionsDeleteConfirmation": {
     "message": "Are you sure you want to delete all bookmarks for this conversation? This cannot be undone.",
     "description": "Confirmation message before deleting a conversation's data."
+  },
+  "optionsViewButton": {
+    "message": "View",
+    "description": "Text for the button to open a conversation from the options page."
   }
 }
