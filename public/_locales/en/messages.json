@@ -90,5 +90,37 @@
   "modalCloseButton": {
     "message": "Close",
     "description": "The text for a button that closes a modal."
+  },
+  "optionsPageTitle": {
+    "message": "Gemini Bookmarks Settings",
+    "description": "The title of the extension's options page."
+  },
+  "optionsPageHeader": {
+    "message": "Gemini Bookmarks Settings",
+    "description": "The main H1 header on the options page."
+  },
+  "optionsPageDescription": {
+    "message": "Manage your saved data. Here you can view all conversations where you have saved at least one bookmark and remove data for conversations you no longer need.",
+    "description": "The descriptive paragraph on the options page."
+  },
+  "optionsSavedConversationsHeader": {
+    "message": "Saved Conversations",
+    "description": "The H2 header for the list of saved conversations."
+  },
+  "optionsLoadingState": {
+    "message": "Loading saved data...",
+    "description": "Text shown while loading data on the options page."
+  },
+  "optionsEmptyState": {
+    "message": "You have not bookmarked any conversations yet.",
+    "description": "Text shown on the options page when no data is found."
+  },
+  "optionsDeleteButton": {
+    "message": "Delete",
+    "description": "Text for the button to delete a conversation's data."
+  },
+  "optionsDeleteConfirmation": {
+    "message": "Are you sure you want to delete all bookmarks for this conversation? This cannot be undone.",
+    "description": "Confirmation message before deleting a conversation's data."
   }
 }

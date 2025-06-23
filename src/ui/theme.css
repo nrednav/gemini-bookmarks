@@ -1,0 +1,63 @@
+/*
+ * ===============================================
+ * Gemini Bookmarks - Shared Design Tokens
+ * ===============================================
+ * This file defines the core visual properties for the extension's UI.
+ * It uses CSS Custom Properties (variables) to enable easy theming
+ * and ensure consistency across all UI components.
+ */
+
+:root {
+  /* Font Families */
+  --font-family-sans: "Google Sans", sans-serif;
+  --font-family-mono: "Roboto Mono", monospace;
+
+  /* Core Colors (Light Theme) */
+  --color-background: #ffffff;
+  --color-background-hover: #f8f9fa;
+  --color-surface: #f0f4f9;
+  --color-surface-hover: #e6eaf0;
+  --color-border: #dcdcdc;
+  --color-text-primary: #1f1f1f;
+  --color-text-secondary: #3c4043;
+  --color-text-subtle: #5f6368;
+  --color-brand-primary: #1967d2;
+  --color-brand-primary-hover: #1a73e8;
+  --color-brand-text: #ffffff;
+  --color-danger: #c72300;
+  --color-danger-hover: #d93025;
+  --color-danger-surface: #fcece8;
+  --color-selection-bg: #1a73e8;
+  --color-selection-text: #ffffff;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.15);
+  --shadow-lg: 0 6px 20px rgba(0, 0, 0, 0.2);
+
+  /* Radii */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-full: 50%;
+}
+
+[data-theme="dark"] {
+  /* Core Colors (Dark Theme) */
+  --color-background: #202124;
+  --color-background-hover: #2d2e31;
+  --color-surface: #3c4043;
+  --color-surface-hover: #5f6368;
+  --color-border: #5f6368;
+  --color-text-primary: #e8eaed;
+  --color-text-secondary: #e8eaed;
+  --color-text-subtle: #9aa0a6;
+  --color-brand-primary: #8ab4f8;
+  --color-brand-primary-hover: #9ac0f9;
+  --color-brand-text: #202124;
+  --color-danger: #e67c73;
+  --color-danger-hover: #ea8f89;
+  --color-danger-surface: #4d3c3a;
+  --color-selection-bg: #8ab4f8;
+  --color-selection-text: #202124;
+}

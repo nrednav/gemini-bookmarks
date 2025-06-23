@@ -7,7 +7,7 @@
   "default_locale": "en",
   "permissions": ["storage", "scripting"],
   "options_ui": {
-    "page": "public/options.html",
+    "page": "src/options/options.html",
     "open_in_tab": true
   },
   "{{chrome}}.host_permissions": [
@@ -24,7 +24,7 @@
         "https://gemini.google.com/app/*",
         "https://gemini.google.com/gem/*"
       ],
-      "js": ["src/main.js"],
+      "js": ["src/main.js", "src/options/options.js"],
       "run_at": "document_idle"
     }
   ],
