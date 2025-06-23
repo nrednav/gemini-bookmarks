@@ -103,6 +103,10 @@
     "message": "On this page you can view all conversations where you have saved at least one bookmark and remove data for conversations you no longer need.",
     "description": "The descriptive paragraph on the options page."
   },
+  "optionsPageTotalUsage": {
+    "message": "Total Usage",
+    "description": "Text used as a label on the storage total usage badge."
+  },
   "optionsSavedConversationsHeader": {
     "message": "Saved Conversations",
     "description": "The H2 header for the list of saved conversations."
@@ -127,6 +131,22 @@
     "message": "View",
     "description": "Text for the button to open a conversation from the options page."
   },
+  "optionsDeleteAllButton": {
+    "message": "Delete All Data",
+    "description": "Text for the button that deletes all bookmark data from the options page."
+  },
+  "optionsDeleteAllConfirmation": {
+    "message": "Are you sure you want to delete ALL of your saved bookmark data across ALL conversations? This action cannot be undone.",
+    "description": "A very strong confirmation message shown before deleting all user data."
+  },
+  "optionsExportAllButton": {
+    "message": "Export All Data",
+    "description": "Text for the button that exports all bookmark data to a file."
+  },
+  "optionsPageStandardErrorToast": {
+    "message": "An error occured. Please try again.",
+    "description": "Standard toast message shown when an error occurs in the options page."
+  },
   "storageWarningMessage": {
     "message": "You are using $PERCENTAGE$% of your storage. Please manage your data to avoid issues.",
     "description": "Warning message when storage is nearly full. $PERCENTAGE$ is a placeholder.",
@@ -140,5 +160,35 @@
   "storageWarningAction": {
     "message": "Manage Data",
     "description": "Button text that takes the user to the options page to manage their data."
+  },
+  "bookmarkCountSingular": {
+    "message": "$1 bookmark",
+    "description": "Used when there is exactly one bookmark. The $1 placeholder will be replaced with '1'.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "1"
+      }
+    }
+  },
+  "bookmarkCountPlural": {
+    "message": "$1 bookmarks",
+    "description": "Used when there are zero or multiple bookmarks. The $1 placeholder will be replaced with the number of bookmarks.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "5"
+      }
+    }
+  },
+  "lastUpdatedTimestamp": {
+    "message": "Last updated: $1",
+    "description": "Indicates the timestamp of the last update. The $1 placeholder will be replaced with a formatted date/time string.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "2023-10-27 10:30 AM"
+      }
+    }
   }
 }

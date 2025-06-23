@@ -136,3 +136,14 @@
   color: #3c4043;
 }
 
+body[data-gemini-bookmarks-theme="dark"] .gb-content-modal .gb-modal-header {
+  border-bottom-color: #5f6368;
+}
+
+body[data-gemini-bookmarks-theme="dark"] .gb-content-modal .gb-modal-header h3 {
+  color: #e8eaed;
+}
+
+body[data-gemini-bookmarks-theme="dark"] .gb-content-modal .gb-modal-content {
+  color: #e8eaed;
+}

@@ -103,6 +103,10 @@
     "message": "On this page you can view all conversations where you have saved at least one bookmark and remove data for conversations you no longer need.",
     "description": "The descriptive paragraph on the options page."
   },
+  "optionsPageTotalUsage": {
+    "message": "Total Usage",
+    "description": "Text used as a label on the storage total usage badge."
+  },
   "optionsSavedConversationsHeader": {
     "message": "Saved Conversations",
     "description": "The H2 header for the list of saved conversations."
@@ -126,5 +130,27 @@
   "optionsViewButton": {
     "message": "View",
     "description": "Text for the button to open a conversation from the options page."
+  },
+  "optionsDeleteAllButton": {
+    "message": "Delete All Data",
+    "description": "Text for the button that deletes all bookmark data from the options page."
+  },
+  "optionsDeleteAllConfirmation": {
+    "message": "Are you sure you want to delete ALL of your saved bookmark data across ALL conversations? This action cannot be undone.",
+    "description": "A very strong confirmation message shown before deleting all user data."
+  },
+  "storageWarningMessage": {
+    "message": "You are using $PERCENTAGE$% of your storage. Please manage your data to avoid issues.",
+    "description": "Warning message when storage is nearly full. $PERCENTAGE$ is a placeholder.",
+    "placeholders": {
+      "percentage": {
+        "content": "$1",
+        "example": "95"
+      }
+    }
+  },
+  "storageWarningAction": {
+    "message": "Manage Data",
+    "description": "Button text that takes the user to the options page to manage their data."
   }
 }
