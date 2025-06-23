@@ -11,7 +11,9 @@ export const applyTheme = (theme, uiElements) => {
 
   document.body.dataset.geminiBookmarksTheme = theme;
 
-  if (!themeToggleButton) return;
+  if (!themeToggleButton) {
+    return;
+  }
 
   if (theme === "light") {
     themeToggleButton.innerHTML = themeIcons.light;

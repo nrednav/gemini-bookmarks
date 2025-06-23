@@ -11,7 +11,6 @@ import { injectBookmarkButton } from "./ui/inject-bookmark-button";
 import { injectStyles } from "./ui/inject-styles";
 import { injectUi } from "./ui/inject-ui";
 import { renderUi } from "./ui/render-ui";
-import { applyTheme } from "./ui/theme-manager";
 
 export const main = async () => {
   const logger = new Logger(window);
@@ -32,10 +31,8 @@ export const main = async () => {
 
     await stateManager.loadStateFromStorage();
 
-    const { uiElements } = injectUi(window, elementSelectors);
     const initialTheme = await getTheme();
-
-    applyTheme(initialTheme, uiElements);
+    const { uiElements } = injectUi(window, elementSelectors, initialTheme);
 
     const dependencies = {
       window,
