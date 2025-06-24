@@ -71,9 +71,7 @@ export const clearAllBookmarks = async (dependencies) => {
   );
 
   if (confirmed) {
-    stateManager.resetState();
-
-    await stateManager.saveStateToStorage();
+    await stateManager.clearStorage();
     await checkStorageQuota(dependencies);
 
     renderUi(dependencies);

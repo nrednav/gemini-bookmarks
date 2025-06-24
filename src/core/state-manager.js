@@ -46,7 +46,6 @@ export class StateManager {
    */
   async loadStateFromStorage() {
     const storedState = await chrome.storage.local.get(this.conversationKey);
-
     this.state = storedState[this.conversationKey] || this.getInitialState();
   }
 
@@ -56,5 +55,14 @@ export class StateManager {
    */
   async saveStateToStorage() {
     await chrome.storage.local.set({ [this.conversationKey]: this.state });
+  }
+
+  /**
+   * Removes the conversation state from browser storage and resets the in-memory state.
+   * @returns {Promise<void>}
+   */
+  async clearStorage() {
+    await chrome.storage.local.remove(this.conversationKey);
+    this.resetState();
   }
 }
