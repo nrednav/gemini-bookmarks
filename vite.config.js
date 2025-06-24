@@ -17,22 +17,21 @@ export default defineConfig((config) => {
         manifest: generateManifest,
         watchFilePaths: ["package.json", "src/manifest.json"],
         browser: env.VITE_TARGET_BROWSER || "chrome",
-        webExtConfig: {}
-      })
+        webExtConfig: {},
+      }),
     ],
     build: {
-      minify: false,
-      sourcemap: true,
+      minify: true,
       outDir: "dist",
-      emptyOutDir: true
+      emptyOutDir: true,
     },
     test: {
-      environment: 'jsdom'
+      environment: "jsdom",
     },
     resolve: {
       alias: {
-        src: "/src"
-      }
-    }
+        src: "/src",
+      },
+    },
   };
 });
