@@ -1,6 +1,6 @@
 # Privacy Policy
 
-Last updated: 22nd June, 2025
+Last updated: 25th June, 2025
 
 The following text details the privacy policy of the "Gemini Bookmarks" browser
 extension (referred to as "the extension").
@@ -84,5 +84,5 @@ Hope the above information is helpful to you.
 
 If you have any additional questions or require further clarification about the
 contents of this Privacy Policy, you can contact the developer by sending an
-email to the following address: `hello@vandern.com`
+email to the following address: `support@vandern.com`
 
