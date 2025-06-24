@@ -47,6 +47,8 @@ The extension is available for download at:
   sync with your OS preference.
 - **Copy & View Actions:** Quickly copy a bookmark's content to your clipboard
   or view the full text in a modal directly from the side panel.
+- **Conversation Management:** On the options page, view all conversations with
+  bookmarks and delete data for specific conversations you no longer need.
 
 ## Getting Started
 
