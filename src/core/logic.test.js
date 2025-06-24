@@ -1,57 +1,91 @@
-function assertEquals(actual, expected, message) {
-  if (JSON.stringify(actual) !== JSON.stringify(expected)) {
-    throw new Error(`Assertion failed: ${message}\nExpected: ${JSON.stringify(expected)}\nActual: ${JSON.stringify(actual)}`);
-  }
-}
+import { describe, expect, test } from "vitest";
+import { createConversationKey } from "./create-conversation-key";
+import {
+  addBookmark,
+  filterBookmarksByTags,
+  getUniqueTags,
+  removeBookmark,
+} from "./logic";
+import { StateManager } from "./state-manager";
 
-function testAddBookmark() {
-  const state = GeminiBookmarks.addBookmark(GeminiBookmarks.initialState, { id: 'test-id-1', content: 'A', tags: ['t1'] });
+describe("core/logic", () => {
+  const stateManager = new StateManager({
+    conversationKey: createConversationKey("/test"),
+  });
 
-  assertEquals(state.bookmarks.length, 1, 'addBookmark should add one item.');
-  assertEquals(state.bookmarks[0].content, 'A', 'addBookmark should set bookmark content correctly.');
-  assertEquals(state.bookmarks[0].id, 'test-id-1', 'addBookmark should use the provided ID.');
-}
+  test("addBookmark should add a new bookmark to the state", () => {
+    const newBookmark = {
+      id: "id-one",
+      content: "Hello world!",
+      tags: ["tag-one"],
+      index: 0,
+    };
+    const state = addBookmark(stateManager.getInitialState(), newBookmark);
 
-function testRemoveBookmark() {
-  let state = GeminiBookmarks.addBookmark(GeminiBookmarks.initialState, { id: 'test-id-1', content: 'A', tags: ['t1'] });
+    expect(state.bookmarks.length).toBe(1);
+    expect(state.bookmarks[0].index).toEqual(0);
+    expect(state.bookmarks[0].id).toEqual(newBookmark.id);
+    expect(state.bookmarks[0].content).toEqual(newBookmark.content);
+    expect(state.bookmarks[0].tags).toEqual(newBookmark.tags);
+  });
 
-  state = GeminiBookmarks.addBookmark(state, { id: 'test-id-2', content: 'B', tags: [] });
-  state = GeminiBookmarks.removeBookmark(state, 'test-id-1');
+  test("removeBookmark should remove the bookmark from the state", () => {
+    let state = addBookmark(stateManager.getInitialState(), {
+      id: "id-one",
+      content: "Hello world!",
+      tags: ["tag-one"],
+    });
 
-  assertEquals(state.bookmarks.length, 1, 'removeBookmark should remove one item.');
-  assertEquals(state.bookmarks[0].id, 'test-id-2', 'removeBookmark should remove the correct item.');
-}
+    state = addBookmark(state, {
+      id: "id-two",
+      content: "Hello world!",
+      tags: ["tag-one", "tag-two"],
+    });
 
-function testGetUniqueTags() {
-  let state = GeminiBookmarks.addBookmark(GeminiBookmarks.initialState, { id: 'test-id-1', content: 'A', tags: ['t1', 't2'] });
+    state = removeBookmark(state, "id-one");
 
-  state = GeminiBookmarks.addBookmark(state, { id: 'test-id-2', content: 'B', tags: ['t3', 't1'] });
+    expect(state.bookmarks.length).toBe(1);
+    expect(state.bookmarks[0].id).toEqual("id-two");
+    expect(state.bookmarks[0].content).toEqual("Hello world!");
+    expect(state.bookmarks[0].tags).toEqual(["tag-one", "tag-two"]);
+  });
 
-  const tags = GeminiBookmarks.getUniqueTags(state);
+  test("getUniqueTags should return a sorted list of unique tags from the state", () => {
+    let state = addBookmark(stateManager.getInitialState(), {
+      id: "id-one",
+      content: "A",
+      tags: ["a", "c"],
+    });
 
-  assertEquals(tags, ['t1', 't2', 't3'], 'getUniqueTags should return unique, sorted tags');
-}
+    state = addBookmark(state, {
+      id: "id-two",
+      content: "B",
+      tags: ["a", "b"],
+    });
 
-function testFilterBookmarksByTags() {
-  let state = GeminiBookmarks.addBookmark(GeminiBookmarks.initialState, { id: 'test-id-1', content: 'A', tags: ['t1', 't2'] });
+    const tags = getUniqueTags(state);
 
-  state = GeminiBookmarks.addBookmark(state, { id: 'test-id-2', content: 'B', tags: ['t3', 't1'] });
+    expect(tags).toEqual(["a", "b", "c"]);
+  });
 
-  const filteredBookmarks = GeminiBookmarks.filterBookmarksByTags(state, ['t1', 't3']);
+  test("filterBookmarksByTags should return a list of bookmarks filtered by a list of tags", () => {
+    let state = addBookmark(stateManager.getInitialState(), {
+      id: "id-one",
+      content: "A",
+      tags: ["a", "c"],
+    });
 
-  assertEquals(filteredBookmarks.length, 2, 'filterBookmarksByTags should find all matching bookmarks');
-}
+    state = addBookmark(state, { id: "id-two", content: "B", tags: ["b"] });
+    state = addBookmark(state, {
+      id: "id-four",
+      content: "C",
+      tags: ["b", "c"],
+    });
 
-export function runCoreLogicTests() {
-  try {
-    testAddBookmark();
-    testRemoveBookmark();
-    testGetUniqueTags();
-    testFilterBookmarksByTags();
+    const bookmarks = filterBookmarksByTags(state, ["b"]);
 
-    console.log('%c✅ All core logic tests passed!', 'color: green; font-weight: bold;');
-  } catch(e) {
-    console.error('%c❌ A core logic test failed.', 'color: red; font-weight: bold;');
-    console.error(e);
-  }
-}
+    expect(bookmarks.length).toBe(2);
+    expect(bookmarks[0].tags).toContain("b");
+    expect(bookmarks[1].tags).toContain("b");
+  });
+});

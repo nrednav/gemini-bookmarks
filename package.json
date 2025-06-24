@@ -1,0 +1,56 @@
+{
+  "name": "gemini-bookmarks",
+  "version": "1.0.0",
+  "description": "Bookmark, tag, and quickly find important responses in your Google Gemini conversations.",
+  "type": "module",
+  "author": "Vandern Rodrigues <hello@vandern.com>",
+  "keywords": [
+    "google",
+    "gemini",
+    "bookmark",
+    "extension",
+    "tag",
+    "ai",
+    "llm",
+    "conversation",
+    "chat",
+    "chrome",
+    "firefox",
+    "organize",
+    "save",
+    "search",
+    "find",
+    "shortcut"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "vite",
+    "dev:watch": "npm run clean && vite build --watch --mode development",
+    "build:chrome": "npm run clean && vite build --mode chrome",
+    "build:firefox": "npm run clean && vite build --mode firefox",
+    "test": "vitest run",
+    "clean": "del dist/",
+    "lint": "biome lint --write",
+    "format": "biome format --write",
+    "check": "biome check --write",
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.0.4",
+    "del-cli": "6.0.0",
+    "husky": "9.1.7",
+    "jsdom": "26.1.0",
+    "lint-staged": "16.1.2",
+    "vite": "6.3.5",
+    "vite-plugin-web-extension": "4.4.4",
+    "vitest": "3.2.4",
+    "webextension-polyfill": "0.12.0"
+  },
+  "lint-staged": {
+    "**/*.{js,cjs,mjs,json}": [
+      "npm run check"
+    ]
+  }
+}

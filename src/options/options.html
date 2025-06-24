@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-locale="optionsPageTitle">Gemini Bookmarks Settings</title>
+    <link rel="stylesheet" href="./options.css">
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="header-main">
+          <h1 data-locale="optionsPageTitle">Gemini Bookmarks Settings</h1>
+          <span id="total-usage-badge" class="usage-badge" style="display: none;"></span>
+        </div>
+        <p data-locale="optionsPageDescription">
+          Manage your saved data. Here you can view all conversations where you have saved at least one bookmark and remove data for conversations you no longer need.
+        </p>
+        <div class="header-actions">
+          <button id="export-all-button" class="export-all-button header-action-button" data-locale="optionsExportAllButton" disabled>Export All Data</button>
+          <button id="delete-all-button" class="delete-all-button header-action-button" data-locale="optionsDeleteAllButton" disabled>Delete All Data</button>
+        </div>
+      </header>
+      <main>
+        <h2 data-locale="optionsSavedConversationHeader">Saved Conversations</h2>
+        <div id="loading-state">
+          <p data-locale="optionsLoadingState">Loading saved data...</p>
+        </div>
+        <ul id="conversations-list">
+          <!-- Conversation items will be injected here by JavaScript -->
+        </ul>
+        <div id="empty-state" style="display: none;">
+          <p data-locale="optionsEmptyState">You have not bookmarked any conversations yet.</p>
+        </div>
+      </main>
+    </div>
+    <script src="./options.js"></script>
+  </body>
+</html>

@@ -1,0 +1,190 @@
+{
+  "panelHeader": {
+    "message": "收藏的回覆",
+    "description": "The title text in the header of the bookmarks panel."
+  },
+  "clearAllButtonTitle": {
+    "message": "移除此對話中的全部收藏",
+    "description": "The tooltip for the 'Clear All' button."
+  },
+  "clearAllButtonText": {
+    "message": "全部清除",
+    "description": "The text on the 'Clear All' button."
+  },
+  "themeButtonTitleLight": {
+    "message": "主題：淺色 (切換至深色)",
+    "description": "Tooltip for the theme button when the light theme is active."
+  },
+  "themeButtonTitleDark": {
+    "message": "主題：深色 (切換至系統預設)",
+    "description": "Tooltip for the theme button when the dark theme is active."
+  },
+  "themeButtonTitleSystem": {
+    "message": "主題：系統預設 (切換至淺色)",
+    "description": "Tooltip for the theme button when the system theme is active."
+  },
+  "fabTitle": {
+    "message": "檢視收藏",
+    "description": "Tooltip for the floating action button that opens the panel."
+  },
+  "tagEditorLabel": {
+    "message": "新增標籤 (以逗號分隔)：",
+    "description": "A label appearing above the tag input field."
+  },
+  "tagEditorPlaceholder": {
+    "message": "例如：想法、學習",
+    "description": "An example of tags, shown as placeholder text inside the input field."
+  },
+  "tagEditorSaveButton": {
+    "message": "儲存",
+    "description": "Text for the save button in the tag editor."
+  },
+  "tagEditorCancelButton": {
+    "message": "取消",
+    "description": "Text for the cancel button in the tag editor."
+  },
+  "addBookmarkTooltip": {
+    "message": "點擊以新增收藏",
+    "description": "Tooltip for the bookmark icon when a response is not yet bookmarked."
+  },
+  "removeBookmarkTooltip": {
+    "message": "點擊以移除收藏",
+    "description": "Tooltip for the bookmark icon when a response is already bookmarked."
+  },
+  "panelEmptyMessage": {
+    "message": "尚無收藏。點擊回覆旁的圖示即可收藏！",
+    "description": "Message shown in the panel when there are no bookmarks."
+  },
+  "clearAllConfirmation": {
+    "message": "確定要移除此對話中的全部收藏嗎？",
+    "description": "The confirmation text shown to the user before clearing all bookmarks."
+  },
+  "scrollToBookmarkTitle": {
+    "message": "點擊以捲動至此回覆",
+    "description": "Tooltip on a bookmark item in the side panel."
+  },
+  "confirmButtonText": {
+    "message": "確認",
+    "description": "The text for a generic confirmation button."
+  },
+  "cancelButtonText": {
+    "message": "取消",
+    "description": "The text for a generic cancel button."
+  },
+  "copyButtonTooltip": {
+    "message": "複製內容到剪貼簿",
+    "description": "Tooltip for the copy button on a bookmark item."
+  },
+  "copySuccessToast": {
+    "message": "內容已複製到剪貼簿！",
+    "description": "Toast message shown after successfully copying bookmark content."
+  },
+  "viewButtonTooltip": {
+    "message": "檢視完整內容",
+    "description": "Tooltip for the view button on a bookmark item."
+  },
+  "viewModalTitle": {
+    "message": "收藏的內容",
+    "description": "The title of the modal that displays the full content of a bookmark."
+  },
+  "modalCloseButton": {
+    "message": "關閉",
+    "description": "The text for a button that closes a modal."
+  },
+  "optionsPageTitle": {
+    "message": "Gemini Bookmarks 設定",
+    "description": "The title of the extension's options page."
+  },
+  "optionsPageDescription": {
+    "message": "在此頁面上，您可以檢視所有已儲存至少一個收藏的對話，並移除不再需要的對話資料。",
+    "description": "The descriptive paragraph on the options page."
+  },
+  "optionsPageTotalUsage": {
+    "message": "總使用量",
+    "description": "Text used as a label on the storage total usage badge."
+  },
+  "optionsSavedConversationsHeader": {
+    "message": "已儲存的對話",
+    "description": "The H2 header for the list of saved conversations."
+  },
+  "optionsLoadingState": {
+    "message": "正在載入已儲存的資料...",
+    "description": "Text shown while loading data on the options page."
+  },
+  "optionsEmptyState": {
+    "message": "您尚未收藏任何對話。",
+    "description": "Text shown on the options page when no data is found."
+  },
+  "optionsDeleteButton": {
+    "message": "刪除",
+    "description": "Text for the button to delete a conversation's data."
+  },
+  "optionsDeleteConfirmation": {
+    "message": "您確定要刪除此對話的所有收藏嗎？此操作無法復原。",
+    "description": "Confirmation message before deleting a conversation's data."
+  },
+  "optionsViewButton": {
+    "message": "檢視",
+    "description": "Text for the button to open a conversation from the options page."
+  },
+  "optionsDeleteAllButton": {
+    "message": "刪除所有資料",
+    "description": "Text for the button that deletes all bookmark data from the options page."
+  },
+  "optionsDeleteAllConfirmation": {
+    "message": "您確定要刪除所有對話中已儲存的全部收藏資料嗎？此操作無法復原。",
+    "description": "A very strong confirmation message shown before deleting all user data."
+  },
+  "optionsExportAllButton": {
+    "message": "匯出所有資料",
+    "description": "Text for the button that exports all bookmark data to a file."
+  },
+  "optionsPageStandardErrorToast": {
+    "message": "發生錯誤。請再試一次。",
+    "description": "Standard toast message shown when an error occurs in the options page."
+  },
+  "storageWarningMessage": {
+    "message": "您正在使用 $1% 的儲存空間。請管理您的資料以避免發生問題。",
+    "description": "Warning message when storage is nearly full. $PERCENTAGE$ is a placeholder.",
+    "placeholders": {
+      "percentage": {
+        "content": "$1",
+        "example": "95"
+      }
+    }
+  },
+  "storageWarningAction": {
+    "message": "管理資料",
+    "description": "Button text that takes the user to the options page to manage their data."
+  },
+  "bookmarkCountSingular": {
+    "message": "$1 個收藏",
+    "description": "Used when there is exactly one bookmark. The $1 placeholder will be replaced with '1'.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "1"
+      }
+    }
+  },
+  "bookmarkCountPlural": {
+    "message": "$1 個收藏",
+    "description": "Used when there are zero or multiple bookmarks. The $1 placeholder will be replaced with the number of bookmarks.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "5"
+      }
+    }
+  },
+  "lastUpdatedTimestamp": {
+    "message": "上次更新時間：$1",
+    "description": "Indicates the timestamp of the last update. The $1 placeholder will be replaced with a formatted date/time string.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "2023-10-27 10:30 AM"
+      }
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "{{chrome}}.manifest_version": 3,
+  "{{firefox}}.manifest_version": 2,
+  "name": "Gemini Bookmarks",
+  "version": "1.0.0",
+  "description": "Bookmark, tag, and quickly find important responses in your Google Gemini conversations.",
+  "default_locale": "en",
+  "permissions": ["storage"],
+  "options_ui": {
+    "page": "src/options/options.html",
+    "open_in_tab": true
+  },
+  "{{chrome}}.background": {
+    "service_worker": "src/background.js",
+    "type": "module"
+  },
+  "{{firefox}}.background": {
+    "scripts": ["src/background.js"]
+  },
+  "{{chrome}}.host_permissions": [
+    "https://gemini.google.com/u/*/app/*",
+    "https://gemini.google.com/u/*/gem/*",
+    "https://gemini.google.com/app/*",
+    "https://gemini.google.com/gem/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://gemini.google.com/u/*/app/*",
+        "https://gemini.google.com/u/*/gem/*",
+        "https://gemini.google.com/app/*",
+        "https://gemini.google.com/gem/*"
+      ],
+      "js": ["src/main.js", "src/options/options.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "icons": {
+    "16": "icons/icon-16.png",
+    "32": "icons/icon-32.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  }
+}

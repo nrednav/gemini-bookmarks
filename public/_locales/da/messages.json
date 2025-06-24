@@ -1,0 +1,190 @@
+{
+  "panelHeader": {
+    "message": "Bogmærkede svar",
+    "description": "The title text in the header of the bookmarks panel."
+  },
+  "clearAllButtonTitle": {
+    "message": "Fjern alle bogmærker for denne samtale",
+    "description": "The tooltip for the 'Clear All' button."
+  },
+  "clearAllButtonText": {
+    "message": "Ryd alt",
+    "description": "The text on the 'Clear All' button."
+  },
+  "themeButtonTitleLight": {
+    "message": "Tema: Lyst (Skift til Mørkt)",
+    "description": "Tooltip for the theme button when the light theme is active."
+  },
+  "themeButtonTitleDark": {
+    "message": "Tema: Mørkt (Skift til System)",
+    "description": "Tooltip for the theme button when the dark theme is active."
+  },
+  "themeButtonTitleSystem": {
+    "message": "Tema: System (Skift til Lyst)",
+    "description": "Tooltip for the theme button when the system theme is active."
+  },
+  "fabTitle": {
+    "message": "Vis bogmærker",
+    "description": "Tooltip for the floating action button that opens the panel."
+  },
+  "tagEditorLabel": {
+    "message": "Tilføj tags (adskilt af komma):",
+    "description": "A label appearing above the tag input field."
+  },
+  "tagEditorPlaceholder": {
+    "message": "f.eks. idé, studie",
+    "description": "An example of tags, shown as placeholder text inside the input field."
+  },
+  "tagEditorSaveButton": {
+    "message": "Gem",
+    "description": "Text for the save button in the tag editor."
+  },
+  "tagEditorCancelButton": {
+    "message": "Annuller",
+    "description": "Text for the cancel button in the tag editor."
+  },
+  "addBookmarkTooltip": {
+    "message": "Klik for at tilføje bogmærke",
+    "description": "Tooltip for the bookmark icon when a response is not yet bookmarked."
+  },
+  "removeBookmarkTooltip": {
+    "message": "Klik for at fjerne bogmærke",
+    "description": "Tooltip for the bookmark icon when a response is already bookmarked."
+  },
+  "panelEmptyMessage": {
+    "message": "Ingen bogmærker endnu. Klik på ikonet på et svar for at bogmærke det!",
+    "description": "Message shown in the panel when there are no bookmarks."
+  },
+  "clearAllConfirmation": {
+    "message": "Er du sikker på, at du vil fjerne ALLE bogmærker for denne samtale?",
+    "description": "The confirmation text shown to the user before clearing all bookmarks."
+  },
+  "scrollToBookmarkTitle": {
+    "message": "Klik for at rulle til dette svar",
+    "description": "Tooltip on a bookmark item in the side panel."
+  },
+  "confirmButtonText": {
+    "message": "Bekræft",
+    "description": "The text for a generic confirmation button."
+  },
+  "cancelButtonText": {
+    "message": "Annuller",
+    "description": "The text for a generic cancel button."
+  },
+  "copyButtonTooltip": {
+    "message": "Kopier indhold til udklipsholder",
+    "description": "Tooltip for the copy button on a bookmark item."
+  },
+  "copySuccessToast": {
+    "message": "Indhold kopieret til udklipsholder!",
+    "description": "Toast message shown after successfully copying bookmark content."
+  },
+  "viewButtonTooltip": {
+    "message": "Vis fuldt indhold",
+    "description": "Tooltip for the view button on a bookmark item."
+  },
+  "viewModalTitle": {
+    "message": "Bogmærket indhold",
+    "description": "The title of the modal that displays the full content of a bookmark."
+  },
+  "modalCloseButton": {
+    "message": "Luk",
+    "description": "The text for a button that closes a modal."
+  },
+  "optionsPageTitle": {
+    "message": "Indstillinger for Gemini Bookmarks",
+    "description": "The title of the extension's options page."
+  },
+  "optionsPageDescription": {
+    "message": "På denne side kan du se alle samtaler, hvor du har gemt mindst ét bogmærke, og fjerne data for samtaler, du ikke længere har brug for.",
+    "description": "The descriptive paragraph on the options page."
+  },
+  "optionsPageTotalUsage": {
+    "message": "Samlet brug",
+    "description": "Text used as a label on the storage total usage badge."
+  },
+  "optionsSavedConversationsHeader": {
+    "message": "Gemte samtaler",
+    "description": "The H2 header for the list of saved conversations."
+  },
+  "optionsLoadingState": {
+    "message": "Indlæser gemte data...",
+    "description": "Text shown while loading data on the options page."
+  },
+  "optionsEmptyState": {
+    "message": "Du har ikke bogmærket nogen samtaler endnu.",
+    "description": "Text shown on the options page when no data is found."
+  },
+  "optionsDeleteButton": {
+    "message": "Slet",
+    "description": "Text for the button to delete a conversation's data."
+  },
+  "optionsDeleteConfirmation": {
+    "message": "Er du sikker på, at du vil slette alle bogmærker for denne samtale? Dette kan ikke fortrydes.",
+    "description": "Confirmation message before deleting a conversation's data."
+  },
+  "optionsViewButton": {
+    "message": "Vis",
+    "description": "Text for the button to open a conversation from the options page."
+  },
+  "optionsDeleteAllButton": {
+    "message": "Slet alle data",
+    "description": "Text for the button that deletes all bookmark data from the options page."
+  },
+  "optionsDeleteAllConfirmation": {
+    "message": "Er du sikker på, at du vil slette ALLE dine gemte bogmærkedata på tværs af ALLE samtaler? Denne handling kan ikke fortrydes.",
+    "description": "A very strong confirmation message shown before deleting all user data."
+  },
+  "optionsExportAllButton": {
+    "message": "Eksporter alle data",
+    "description": "Text for the button that exports all bookmark data to a file."
+  },
+  "optionsPageStandardErrorToast": {
+    "message": "Der opstod en fejl. Prøv venligst igen.",
+    "description": "Standard toast message shown when an error occurs in the options page."
+  },
+  "storageWarningMessage": {
+    "message": "Du bruger $1% af din lagerplads. Administrer dine data for at undgå problemer.",
+    "description": "Warning message when storage is nearly full. $PERCENTAGE$ is a placeholder.",
+    "placeholders": {
+      "percentage": {
+        "content": "$1",
+        "example": "95"
+      }
+    }
+  },
+  "storageWarningAction": {
+    "message": "Administrer data",
+    "description": "Button text that takes the user to the options page to manage their data."
+  },
+  "bookmarkCountSingular": {
+    "message": "$1 bogmærke",
+    "description": "Used when there is exactly one bookmark. The $1 placeholder will be replaced with '1'.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "1"
+      }
+    }
+  },
+  "bookmarkCountPlural": {
+    "message": "$1 bogmærker",
+    "description": "Used when there are zero or multiple bookmarks. The $1 placeholder will be replaced with the number of bookmarks.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "5"
+      }
+    }
+  },
+  "lastUpdatedTimestamp": {
+    "message": "Senest opdateret: $1",
+    "description": "Indicates the timestamp of the last update. The $1 placeholder will be replaced with a formatted date/time string.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "2023-10-27 10:30 AM"
+      }
+    }
+  }
+}

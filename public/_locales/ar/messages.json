@@ -1,0 +1,190 @@
+{
+  "panelHeader": {
+    "message": "الردود المحفوظة",
+    "description": "The title text in the header of the bookmarks panel."
+  },
+  "clearAllButtonTitle": {
+    "message": "إزالة كل الإشارات المرجعية لهذه المحادثة",
+    "description": "The tooltip for the 'Clear All' button."
+  },
+  "clearAllButtonText": {
+    "message": "مسح الكل",
+    "description": "The text on the 'Clear All' button."
+  },
+  "themeButtonTitleLight": {
+    "message": "المظهر: فاتح (التبديل إلى داكن)",
+    "description": "Tooltip for the theme button when the light theme is active."
+  },
+  "themeButtonTitleDark": {
+    "message": "المظهر: داكن (التبديل إلى النظام)",
+    "description": "Tooltip for the theme button when the dark theme is active."
+  },
+  "themeButtonTitleSystem": {
+    "message": "المظهر: النظام (التبديل إلى فاتح)",
+    "description": "Tooltip for the theme button when the system theme is active."
+  },
+  "fabTitle": {
+    "message": "عرض الإشارات المرجعية",
+    "description": "Tooltip for the floating action button that opens the panel."
+  },
+  "tagEditorLabel": {
+    "message": "إضافة علامات (مفصولة بفاصلة):",
+    "description": "A label appearing above the tag input field."
+  },
+  "tagEditorPlaceholder": {
+    "message": "مثال: فكرة، دراسة",
+    "description": "An example of tags, shown as placeholder text inside the input field."
+  },
+  "tagEditorSaveButton": {
+    "message": "حفظ",
+    "description": "Text for the save button in the tag editor."
+  },
+  "tagEditorCancelButton": {
+    "message": "إلغاء",
+    "description": "Text for the cancel button in the tag editor."
+  },
+  "addBookmarkTooltip": {
+    "message": "انقر لإضافة إشارة مرجعية",
+    "description": "Tooltip for the bookmark icon when a response is not yet bookmarked."
+  },
+  "removeBookmarkTooltip": {
+    "message": "انقر لإزالة الإشارة المرجعية",
+    "description": "Tooltip for the bookmark icon when a response is already bookmarked."
+  },
+  "panelEmptyMessage": {
+    "message": "لا توجد إشارات مرجعية بعد. انقر على الأيقونة في أي رد لوضعه في الإشارات المرجعية!",
+    "description": "Message shown in the panel when there are no bookmarks."
+  },
+  "clearAllConfirmation": {
+    "message": "هل أنت متأكد من رغبتك في إزالة كافة الإشارات المرجعية لهذه المحادثة؟",
+    "description": "The confirmation text shown to the user before clearing all bookmarks."
+  },
+  "scrollToBookmarkTitle": {
+    "message": "انقر للانتقال إلى هذا الرد",
+    "description": "Tooltip on a bookmark item in the side panel."
+  },
+  "confirmButtonText": {
+    "message": "تأكيد",
+    "description": "The text for a generic confirmation button."
+  },
+  "cancelButtonText": {
+    "message": "إلغاء",
+    "description": "The text for a generic cancel button."
+  },
+  "copyButtonTooltip": {
+    "message": "نسخ المحتوى إلى الحافظة",
+    "description": "Tooltip for the copy button on a bookmark item."
+  },
+  "copySuccessToast": {
+    "message": "تم نسخ المحتوى إلى الحافظة!",
+    "description": "Toast message shown after successfully copying bookmark content."
+  },
+  "viewButtonTooltip": {
+    "message": "عرض المحتوى الكامل",
+    "description": "Tooltip for the view button on a bookmark item."
+  },
+  "viewModalTitle": {
+    "message": "المحتوى المحفوظ",
+    "description": "The title of the modal that displays the full content of a bookmark."
+  },
+  "modalCloseButton": {
+    "message": "إغلاق",
+    "description": "The text for a button that closes a modal."
+  },
+  "optionsPageTitle": {
+    "message": "إعدادات Gemini Bookmarks",
+    "description": "The title of the extension's options page."
+  },
+  "optionsPageDescription": {
+    "message": "في هذه الصفحة، يمكنك عرض جميع المحادثات التي قمت بحفظ إشارة مرجعية واحدة على الأقل فيها، وإزالة البيانات للمحادثات التي لم تعد بحاجة إليها.",
+    "description": "The descriptive paragraph on the options page."
+  },
+  "optionsPageTotalUsage": {
+    "message": "إجمالي الاستخدام",
+    "description": "Text used as a label on the storage total usage badge."
+  },
+  "optionsSavedConversationsHeader": {
+    "message": "المحادثات المحفوظة",
+    "description": "The H2 header for the list of saved conversations."
+  },
+  "optionsLoadingState": {
+    "message": "جاري تحميل البيانات المحفوظة...",
+    "description": "Text shown while loading data on the options page."
+  },
+  "optionsEmptyState": {
+    "message": "لم تقم بحفظ أي محادثات حتى الآن.",
+    "description": "Text shown on the options page when no data is found."
+  },
+  "optionsDeleteButton": {
+    "message": "حذف",
+    "description": "Text for the button to delete a conversation's data."
+  },
+  "optionsDeleteConfirmation": {
+    "message": "هل أنت متأكد من أنك تريد حذف جميع الإشارات المرجعية لهذه المحادثة؟ لا يمكن التراجع عن هذا الإجراء.",
+    "description": "Confirmation message before deleting a conversation's data."
+  },
+  "optionsViewButton": {
+    "message": "عرض",
+    "description": "Text for the button to open a conversation from the options page."
+  },
+  "optionsDeleteAllButton": {
+    "message": "حذف كل البيانات",
+    "description": "Text for the button that deletes all bookmark data from the options page."
+  },
+  "optionsDeleteAllConfirmation": {
+    "message": "هل أنت متأكد من أنك تريد حذف جميع بيانات الإشارات المرجعية المحفوظة لديك في جميع المحادثات؟ لا يمكن التراجع عن هذا الإجراء.",
+    "description": "A very strong confirmation message shown before deleting all user data."
+  },
+  "optionsExportAllButton": {
+    "message": "تصدير كل البيانات",
+    "description": "Text for the button that exports all bookmark data to a file."
+  },
+  "optionsPageStandardErrorToast": {
+    "message": "حدث خطأ. يرجى المحاولة مرة أخرى.",
+    "description": "Standard toast message shown when an error occurs in the options page."
+  },
+  "storageWarningMessage": {
+    "message": "أنت تستخدم $1% من مساحة التخزين لديك. يرجى إدارة بياناتك لتجنب المشاكل.",
+    "description": "Warning message when storage is nearly full. $PERCENTAGE$ is a placeholder.",
+    "placeholders": {
+      "percentage": {
+        "content": "$1",
+        "example": "95"
+      }
+    }
+  },
+  "storageWarningAction": {
+    "message": "إدارة البيانات",
+    "description": "Button text that takes the user to the options page to manage their data."
+  },
+  "bookmarkCountSingular": {
+    "message": "إشارة مرجعية واحدة",
+    "description": "Used when there is exactly one bookmark. The $1 placeholder will be replaced with '1'.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "1"
+      }
+    }
+  },
+  "bookmarkCountPlural": {
+    "message": "$1 إشارات مرجعية",
+    "description": "Used when there are zero or multiple bookmarks. The $1 placeholder will be replaced with the number of bookmarks.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "5"
+      }
+    }
+  },
+  "lastUpdatedTimestamp": {
+    "message": "آخر تحديث: $1",
+    "description": "Indicates the timestamp of the last update. The $1 placeholder will be replaced with a formatted date/time string.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "2023-10-27 10:30 AM"
+      }
+    }
+  }
+}
