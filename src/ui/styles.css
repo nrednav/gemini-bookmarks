@@ -86,6 +86,7 @@
   width: 350px;
   height: 450px;
   background-color: var(--color-background);
+  border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-lg);
   z-index: 9999;
