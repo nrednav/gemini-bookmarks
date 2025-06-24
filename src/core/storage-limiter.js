@@ -25,24 +25,29 @@ export const checkStorageQuota = async ({ uiElements, logger }) => {
       ]);
       const actionText = chrome.i18n.getMessage("storageWarningAction");
 
-      uiElements.storageWarning.innerHTML = `
-        <p>${message}</p>
-        <a href="#" id="gb-manage-data-link">${actionText}</a>
-      `;
+      const storageWarningMessage = document.createElement("p");
+      storageWarningMessage.textContent = message;
 
+      const manageDataLink = document.createElement("a");
+      manageDataLink.href = "#";
+      manageDataLink.id = "gb-manage-data-link";
+      manageDataLink.textContent = actionText;
+
+      uiElements.storageWarning.replaceChildren(
+        storageWarningMessage,
+        manageDataLink,
+      );
       uiElements.storageWarning.style.display = "flex";
 
-      const manageLink = document.getElementById("gb-manage-data-link");
-
-      if (manageLink) {
-        manageLink.addEventListener("click", (e) => {
+      if (manageDataLink) {
+        manageDataLink.addEventListener("click", (e) => {
           e.preventDefault();
           chrome.runtime.sendMessage({ action: "openOptionsPage" });
         });
       }
     } else {
       uiElements.storageWarning.style.display = "none";
-      uiElements.storageWarning.innerHTML = "";
+      uiElements.storageWarning.replaceChildren();
     }
   } catch (error) {
     logger.error("Failed to check storage quota:", error);

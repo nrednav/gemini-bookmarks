@@ -1,3 +1,4 @@
+import { createIconElement } from "../helpers/create-icon-element";
 import { actionIcons } from "./icons";
 import { showToast } from "./toast";
 
@@ -105,7 +106,7 @@ export const createContentModal = (title, content) => {
   const copyButton = document.createElement("button");
 
   copyButton.className = "gb-modal-action-button";
-  copyButton.innerHTML = actionIcons.copy;
+  copyButton.append(createIconElement(actionIcons.copy));
   copyButton.title = chrome.i18n.getMessage("copyButtonTooltip");
   copyButton.addEventListener("click", () => {
     navigator.clipboard
@@ -121,7 +122,7 @@ export const createContentModal = (title, content) => {
   const closeButton = document.createElement("button");
 
   closeButton.className = "gb-modal-close gb-modal-action-button";
-  closeButton.innerHTML = actionIcons.close;
+  closeButton.append(createIconElement(actionIcons.close));
   closeButton.title = chrome.i18n.getMessage("modalCloseButton");
 
   const contentElement = document.createElement("pre");

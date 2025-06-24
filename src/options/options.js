@@ -90,7 +90,7 @@ async function loadAndRenderConversations() {
       return lastBookmarkB - lastBookmarkA;
     });
 
-    listElement.innerHTML = "";
+    listElement.replaceChildren();
 
     for (const conversation of conversations) {
       const listItem = createConversationListItem(
@@ -142,26 +142,41 @@ function createConversationListItem(key, data, sizeInBytes) {
     lastUpdated,
   ]);
 
-  const bookmarkSummaryMessage = `${bookmarkCountMessage} - ${lastUpdatedMessage}`;
+  const infoElement = document.createElement("div");
+  infoElement.className = "conversation-info";
 
-  listItem.innerHTML = `
-    <div class="conversation-info">
-      <div class="url-path">${urlPath}</div>
-      <div class="bookmark-count">
-        ${bookmarkSummaryMessage}
-        <span class="usage-badge">${formatBytes(sizeInBytes)}</span>
-      </div>
-    </div>
-    <div class="conversation-actions">
-      <button class="view-button">${chrome.i18n.getMessage("optionsViewButton")}</button>
-      <button class="delete-button">${chrome.i18n.getMessage("optionsDeleteButton")}</button>
-    </div>
-  `;
+  const urlPathElement = document.createElement("p");
+  urlPathElement.className = "url-path";
+  urlPathElement.textContent = urlPath;
 
-  listItem.querySelector(".view-button").addEventListener("click", handleView);
-  listItem
-    .querySelector(".delete-button")
-    .addEventListener("click", handleDelete);
+  const bookmarkCountElement = document.createElement("div");
+  bookmarkCountElement.className = "bookmark-count";
+
+  const bookmarkSummaryMessage = document.createElement("p");
+  bookmarkSummaryMessage.textContent = `${bookmarkCountMessage} - ${lastUpdatedMessage}`;
+
+  const usageBadge = document.createElement("span");
+  usageBadge.className = "usage-badge";
+  usageBadge.textContent = formatBytes(sizeInBytes);
+
+  bookmarkCountElement.append(bookmarkSummaryMessage, usageBadge);
+  infoElement.append(urlPathElement, bookmarkCountElement);
+
+  const actionsElement = document.createElement("div");
+  actionsElement.className = "conversation-actions";
+
+  const viewButton = document.createElement("button");
+  viewButton.className = "view-button";
+  viewButton.textContent = chrome.i18n.getMessage("optionsViewButton");
+  viewButton.addEventListener("click", handleView);
+
+  const deleteButton = document.createElement("button");
+  deleteButton.className = "delete-button";
+  deleteButton.textContent = chrome.i18n.getMessage("optionsDeleteButton");
+  deleteButton.addEventListener("click", handleDelete);
+
+  actionsElement.append(viewButton, deleteButton);
+  listItem.append(infoElement, actionsElement);
 
   return listItem;
 }
@@ -204,7 +219,7 @@ async function handleDelete(event) {
       updateTotalUsageDisplay();
 
       if (listElement.children.length === 0) {
-        listElement.innerHTML = "";
+        listElement.replaceChildren();
         emptyElement.style.display = "block";
         totalStorageBytes = 0;
 
@@ -241,7 +256,7 @@ async function handleDeleteAll() {
       }
 
       // Update UI
-      listElement.innerHTML = "";
+      listElement.replaceChildren();
       emptyElement.style.display = "block";
       totalStorageBytes = 0;
 

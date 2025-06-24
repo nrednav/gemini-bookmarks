@@ -1,3 +1,4 @@
+import { createIconElement } from "../helpers/create-icon-element";
 import { actionIcons } from "./icons";
 import { applyTheme } from "./theme-manager";
 
@@ -47,7 +48,7 @@ export const injectUi = (window, elementSelectors, initialTheme) => {
   const floatingActionButton = window.document.createElement("button");
   floatingActionButton.className = "gb-fab";
   floatingActionButton.title = chrome.i18n.getMessage("fabTitle");
-  floatingActionButton.innerHTML = actionIcons.bookmark;
+  floatingActionButton.append(createIconElement(actionIcons.bookmark));
 
   panelHeaderActions.append(themeToggleButton, clearAllButton);
   panelHeader.append(panelHeaderTitle, panelHeaderActions);

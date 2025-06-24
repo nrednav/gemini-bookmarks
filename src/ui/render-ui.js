@@ -1,4 +1,5 @@
 import { filterBookmarksByTags, getUniqueTags } from "../core/logic";
+import { createIconElement } from "../helpers/create-icon-element.js";
 import { actionIcons } from "./icons.js";
 
 /**
@@ -102,14 +103,14 @@ const renderPanelContent = (dependencies) => {
     copyButton.className =
       "gb-panel-bookmark__action-button gb-panel-bookmark__copy-button";
     copyButton.title = chrome.i18n.getMessage("copyButtonTooltip");
-    copyButton.innerHTML = actionIcons.copy;
+    copyButton.append(createIconElement(actionIcons.copy));
 
     const viewButton = window.document.createElement("button");
 
     viewButton.className =
       "gb-panel-bookmark__action-button gb-panel-bookmark__view-button";
     viewButton.title = chrome.i18n.getMessage("viewButtonTooltip");
-    viewButton.innerHTML = actionIcons.view;
+    viewButton.append(createIconElement(actionIcons.view));
 
     actionsContainer.appendChild(viewButton);
     actionsContainer.appendChild(copyButton);

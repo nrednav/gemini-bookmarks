@@ -1,3 +1,4 @@
+import { createIconElement } from "../helpers/create-icon-element.js";
 import { themeIcons } from "./icons.js";
 
 /**
@@ -16,13 +17,13 @@ export const applyTheme = (theme, uiElements) => {
   }
 
   if (theme === "light") {
-    themeToggleButton.innerHTML = themeIcons.light;
+    themeToggleButton.replaceChildren(createIconElement(themeIcons.light));
     themeToggleButton.title = chrome.i18n.getMessage("themeButtonTitleLight");
   } else if (theme === "dark") {
-    themeToggleButton.innerHTML = themeIcons.dark;
+    themeToggleButton.replaceChildren(createIconElement(themeIcons.dark));
     themeToggleButton.title = chrome.i18n.getMessage("themeButtonTitleDark");
   } else {
-    themeToggleButton.innerHTML = themeIcons.system;
+    themeToggleButton.replaceChildren(createIconElement(themeIcons.system));
     themeToggleButton.title = chrome.i18n.getMessage("themeButtonTitleSystem");
   }
 };

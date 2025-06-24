@@ -82,15 +82,18 @@ h2 {
 
 .conversation-info .url-path {
   font-family: var(--font-family-mono);
-  font-size: 0.9rem;
+  font-weight: 600;
   color: var(--color-text-primary);
   word-break: break-all;
 }
 
 .conversation-info .bookmark-count {
-  font-size: 0.85rem;
   color: var(--color-text-subtle);
   margin-top: 0.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
 }
 
 .delete-button, .delete-all-button {
