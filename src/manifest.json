@@ -17,20 +17,10 @@
   "{{firefox}}.background": {
     "scripts": ["src/background.js"]
   },
-  "{{chrome}}.host_permissions": [
-    "https://gemini.google.com/u/*/app/*",
-    "https://gemini.google.com/u/*/gem/*",
-    "https://gemini.google.com/app/*",
-    "https://gemini.google.com/gem/*"
-  ],
+  "{{chrome}}.host_permissions": ["https://gemini.google.com/*"],
   "content_scripts": [
     {
-      "matches": [
-        "https://gemini.google.com/u/*/app/*",
-        "https://gemini.google.com/u/*/gem/*",
-        "https://gemini.google.com/app/*",
-        "https://gemini.google.com/gem/*"
-      ],
+      "matches": ["https://gemini.google.com/*"],
       "js": ["src/main.js", "src/options/options.js"],
       "run_at": "document_idle"
     }
