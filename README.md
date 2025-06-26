@@ -26,7 +26,7 @@ conversations.
 
 The extension is available for download at:
 
-- Chrome: [Web Store]()
+- Chrome: [Web Store](https://chromewebstore.google.com/detail/gemini-bookmarks/jmkhakbllaacpllabhljjbfgalnbocmf)
 - Firefox: [Firefox Add-ons](https://addons.mozilla.org/en-GB/firefox/addon/gemini-bookmarks/)
 
 ## Features
