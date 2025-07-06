@@ -1,175 +1,11 @@
 {
-  "panelHeader": {
-    "message": "सहेजे गए जवाब",
-    "description": "The title text in the header of the bookmarks panel."
-  },
-  "clearAllButtonTitle": {
-    "message": "इस बातचीत के सभी बुकमार्क हटाएं",
-    "description": "The tooltip for the 'Clear All' button."
-  },
-  "clearAllButtonText": {
-    "message": "सभी साफ़ करें",
-    "description": "The text on the 'Clear All' button."
-  },
-  "themeButtonTitleLight": {
-    "message": "थीम: लाइट (डार्क पर स्विच करें)",
-    "description": "Tooltip for the theme button when the light theme is active."
-  },
-  "themeButtonTitleDark": {
-    "message": "थीम: डार्क (सिस्टम पर स्विच करें)",
-    "description": "Tooltip for the theme button when the dark theme is active."
-  },
-  "themeButtonTitleSystem": {
-    "message": "थीम: सिस्टम (लाइट पर स्विच करें)",
-    "description": "Tooltip for the theme button when the system theme is active."
-  },
-  "fabTitle": {
-    "message": "बुकमार्क देखें",
-    "description": "Tooltip for the floating action button that opens the panel."
-  },
-  "tagEditorLabel": {
-    "message": "टैग जोड़ें (कॉमा से अलग करके):",
-    "description": "A label appearing above the tag input field."
-  },
-  "tagEditorPlaceholder": {
-    "message": "जैसे, विचार, अध्ययन",
-    "description": "An example of tags, shown as placeholder text inside the input field."
-  },
-  "tagEditorSaveButton": {
-    "message": "सहेजें",
-    "description": "Text for the save button in the tag editor."
-  },
-  "tagEditorCancelButton": {
-    "message": "रद्द करें",
-    "description": "Text for the cancel button in the tag editor."
-  },
   "addBookmarkTooltip": {
-    "message": "बुकमार्क जोड़ने के लिए क्लिक करें",
-    "description": "Tooltip for the bookmark icon when a response is not yet bookmarked."
-  },
-  "removeBookmarkTooltip": {
-    "message": "बुकमार्क हटाने के लिए क्लिक करें",
-    "description": "Tooltip for the bookmark icon when a response is already bookmarked."
-  },
-  "panelEmptyMessage": {
-    "message": "अभी तक कोई बुकमार्क नहीं है. किसी जवाब को बुकमार्क करने के लिए उसके आइकन पर क्लिक करें!",
-    "description": "Message shown in the panel when there are no bookmarks."
-  },
-  "clearAllConfirmation": {
-    "message": "क्या आप वाकई इस बातचीत के सभी बुकमार्क हटाना चाहते हैं?",
-    "description": "The confirmation text shown to the user before clearing all bookmarks."
-  },
-  "scrollToBookmarkTitle": {
-    "message": "इस जवाब पर स्क्रॉल करने के लिए क्लिक करें",
-    "description": "Tooltip on a bookmark item in the side panel."
-  },
-  "confirmButtonText": {
-    "message": "पुष्टि करें",
-    "description": "The text for a generic confirmation button."
-  },
-  "cancelButtonText": {
-    "message": "रद्द करें",
-    "description": "The text for a generic cancel button."
-  },
-  "copyButtonTooltip": {
-    "message": "सामग्री क्लिपबोर्ड पर कॉपी करें",
-    "description": "Tooltip for the copy button on a bookmark item."
-  },
-  "copySuccessToast": {
-    "message": "सामग्री क्लिपबोर्ड पर कॉपी हो गई!",
-    "description": "Toast message shown after successfully copying bookmark content."
-  },
-  "viewButtonTooltip": {
-    "message": "पूरी सामग्री देखें",
-    "description": "Tooltip for the view button on a bookmark item."
-  },
-  "viewModalTitle": {
-    "message": "बुकमार्क की गई सामग्री",
-    "description": "The title of the modal that displays the full content of a bookmark."
-  },
-  "modalCloseButton": {
-    "message": "बंद करें",
-    "description": "The text for a button that closes a modal."
-  },
-  "optionsPageTitle": {
-    "message": "Gemini Bookmarks सेटिंग्स",
-    "description": "The title of the extension's options page."
-  },
-  "optionsPageDescription": {
-    "message": "इस पेज पर, आप वे सभी बातचीतें देख सकते हैं जिनमें आपने कम से कम एक बुकमार्क सहेजा है, और उन बातचीतों का डेटा हटा सकते हैं जिनकी अब आपको आवश्यकता नहीं है।",
-    "description": "The descriptive paragraph on the options page."
-  },
-  "optionsPageTotalUsage": {
-    "message": "कुल उपयोग",
-    "description": "Text used as a label on the storage total usage badge."
-  },
-  "optionsSavedConversationsHeader": {
-    "message": "सहेजी गई बातचीतें",
-    "description": "The H2 header for the list of saved conversations."
-  },
-  "optionsLoadingState": {
-    "message": "सहेजा गया डेटा लोड हो रहा है...",
-    "description": "Text shown while loading data on the options page."
-  },
-  "optionsEmptyState": {
-    "message": "आपने अभी तक किसी भी बातचीत को बुकमार्क नहीं किया है।",
-    "description": "Text shown on the options page when no data is found."
-  },
-  "optionsDeleteButton": {
-    "message": "हटाएं",
-    "description": "Text for the button to delete a conversation's data."
-  },
-  "optionsDeleteConfirmation": {
-    "message": "क्या आप वाकई इस बातचीत के सभी बुकमार्क हटाना चाहते हैं? यह क्रिया पूर्ववत् नहीं की जा सकती।",
-    "description": "Confirmation message before deleting a conversation's data."
-  },
-  "optionsViewButton": {
-    "message": "देखें",
-    "description": "Text for the button to open a conversation from the options page."
-  },
-  "optionsDeleteAllButton": {
-    "message": "सारा डेटा हटाएं",
-    "description": "Text for the button that deletes all bookmark data from the options page."
-  },
-  "optionsDeleteAllConfirmation": {
-    "message": "क्या आप वाकई सभी बातचीतों से अपना सारा सहेजा हुआ बुकमार्क डेटा हटाना चाहते हैं? यह क्रिया पूर्ववत् नहीं की जा सकती।",
-    "description": "A very strong confirmation message shown before deleting all user data."
-  },
-  "optionsExportAllButton": {
-    "message": "सारा डेटा निर्यात करें",
-    "description": "Text for the button that exports all bookmark data to a file."
-  },
-  "optionsPageStandardErrorToast": {
-    "message": "एक त्रुटि हुई। कृपया फिर से प्रयास करें।",
-    "description": "Standard toast message shown when an error occurs in the options page."
-  },
-  "storageWarningMessage": {
-    "message": "आप अपने स्टोरेज का $1% उपयोग कर रहे हैं। समस्याओं से बचने के लिए कृपया अपना डेटा प्रबंधित करें।",
-    "description": "Warning message when storage is nearly full. $PERCENTAGE$ is a placeholder.",
-    "placeholders": {
-      "percentage": {
-        "content": "$1",
-        "example": "95"
-      }
-    }
-  },
-  "storageWarningAction": {
-    "message": "डेटा प्रबंधित करें",
-    "description": "Button text that takes the user to the options page to manage their data."
-  },
-  "bookmarkCountSingular": {
-    "message": "$1 बुकमार्क",
-    "description": "Used when there is exactly one bookmark. The $1 placeholder will be replaced with '1'.",
-    "placeholders": {
-      "1": {
-        "content": "$1",
-        "example": "1"
-      }
-    }
+    "description": "Tooltip for the bookmark icon when a response is not yet bookmarked.",
+    "message": "बुकमार्क जोड़ने के लिए क्लिक करें"
   },
   "bookmarkCountPlural": {
-    "message": "$1 बुकमार्क",
     "description": "Used when there are zero or multiple bookmarks. The $1 placeholder will be replaced with the number of bookmarks.",
+    "message": "$1 बुकमार्क",
     "placeholders": {
       "1": {
         "content": "$1",
@@ -177,14 +13,182 @@
       }
     }
   },
+  "bookmarkCountSingular": {
+    "description": "Used when there is exactly one bookmark. The $1 placeholder will be replaced with '1'.",
+    "message": "$1 बुकमार्क",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "1"
+      }
+    }
+  },
+  "cancelButtonText": {
+    "description": "The text for a generic cancel button.",
+    "message": "रद्द करें"
+  },
+  "clearAllButtonText": {
+    "description": "The text on the 'Clear All' button.",
+    "message": "सभी साफ़ करें"
+  },
+  "clearAllButtonTitle": {
+    "description": "The tooltip for the 'Clear All' button.",
+    "message": "इस बातचीत के सभी बुकमार्क हटाएं"
+  },
+  "clearAllConfirmation": {
+    "description": "The confirmation text shown to the user before clearing all bookmarks.",
+    "message": "क्या आप वाकई इस बातचीत के सभी बुकमार्क हटाना चाहते हैं?"
+  },
+  "confirmButtonText": {
+    "description": "The text for a generic confirmation button.",
+    "message": "पुष्टि करें"
+  },
+  "copyButtonTooltip": {
+    "description": "Tooltip for the copy button on a bookmark item.",
+    "message": "सामग्री क्लिपबोर्ड पर कॉपी करें"
+  },
+  "copySuccessToast": {
+    "description": "Toast message shown after successfully copying bookmark content.",
+    "message": "सामग्री क्लिपबोर्ड पर कॉपी हो गई!"
+  },
+  "deleteButtonTooltip": {
+    "description": "Tooltip for the delete button on a bookmark item.",
+    "message": "बुकमार्क हटाएं"
+  },
+  "fabTitle": {
+    "description": "Tooltip for the floating action button that opens the panel.",
+    "message": "बुकमार्क देखें"
+  },
   "lastUpdatedTimestamp": {
-    "message": "अंतिम अपडेट: $1",
     "description": "Indicates the timestamp of the last update. The $1 placeholder will be replaced with a formatted date/time string.",
+    "message": "अंतिम अपडेट: $1",
     "placeholders": {
       "1": {
         "content": "$1",
         "example": "2023-10-27 10:30 AM"
       }
     }
+  },
+  "modalCloseButton": {
+    "description": "The text for a button that closes a modal.",
+    "message": "बंद करें"
+  },
+  "optionsDeleteAllButton": {
+    "description": "Text for the button that deletes all bookmark data from the options page.",
+    "message": "सारा डेटा हटाएं"
+  },
+  "optionsDeleteAllConfirmation": {
+    "description": "A very strong confirmation message shown before deleting all user data.",
+    "message": "क्या आप वाकई सभी बातचीतों से अपना सारा सहेजा हुआ बुकमार्क डेटा हटाना चाहते हैं? यह क्रिया पूर्ववत् नहीं की जा सकती।"
+  },
+  "optionsDeleteButton": {
+    "description": "Text for the button to delete a conversation's data.",
+    "message": "हटाएं"
+  },
+  "optionsDeleteConfirmation": {
+    "description": "Confirmation message before deleting a conversation's data.",
+    "message": "क्या आप वाकई इस बातचीत के सभी बुकमार्क हटाना चाहते हैं? यह क्रिया पूर्ववत् नहीं की जा सकती।"
+  },
+  "optionsEmptyState": {
+    "description": "Text shown on the options page when no data is found.",
+    "message": "आपने अभी तक किसी भी बातचीत को बुकमार्क नहीं किया है।"
+  },
+  "optionsExportAllButton": {
+    "description": "Text for the button that exports all bookmark data to a file.",
+    "message": "सारा डेटा निर्यात करें"
+  },
+  "optionsLoadingState": {
+    "description": "Text shown while loading data on the options page.",
+    "message": "सहेजा गया डेटा लोड हो रहा है..."
+  },
+  "optionsPageDescription": {
+    "description": "The descriptive paragraph on the options page.",
+    "message": "इस पेज पर, आप वे सभी बातचीतें देख सकते हैं जिनमें आपने कम से कम एक बुकमार्क सहेजा है, और उन बातचीतों का डेटा हटा सकते हैं जिनकी अब आपको आवश्यकता नहीं है।"
+  },
+  "optionsPageStandardErrorToast": {
+    "description": "Standard toast message shown when an error occurs in the options page.",
+    "message": "एक त्रुटि हुई। कृपया फिर से प्रयास करें।"
+  },
+  "optionsPageTitle": {
+    "description": "The title of the extension's options page.",
+    "message": "Gemini Bookmarks सेटिंग्स"
+  },
+  "optionsPageTotalUsage": {
+    "description": "Text used as a label on the storage total usage badge.",
+    "message": "कुल उपयोग"
+  },
+  "optionsSavedConversationsHeader": {
+    "description": "The H2 header for the list of saved conversations.",
+    "message": "सहेजी गई बातचीतें"
+  },
+  "optionsViewButton": {
+    "description": "Text for the button to open a conversation from the options page.",
+    "message": "देखें"
+  },
+  "panelEmptyMessage": {
+    "description": "Message shown in the panel when there are no bookmarks.",
+    "message": "अभी तक कोई बुकमार्क नहीं है. किसी जवाब को बुकमार्क करने के लिए उसके आइकन पर क्लिक करें!"
+  },
+  "panelHeader": {
+    "description": "The title text in the header of the bookmarks panel.",
+    "message": "सहेजे गए जवाब"
+  },
+  "removeBookmarkTooltip": {
+    "description": "Tooltip for the bookmark icon when a response is already bookmarked.",
+    "message": "बुकमार्क हटाने के लिए क्लिक करें"
+  },
+  "scrollToBookmarkTitle": {
+    "description": "Tooltip on a bookmark item in the side panel.",
+    "message": "इस जवाब पर स्क्रॉल करने के लिए क्लिक करें"
+  },
+  "storageWarningAction": {
+    "description": "Button text that takes the user to the options page to manage their data.",
+    "message": "डेटा प्रबंधित करें"
+  },
+  "storageWarningMessage": {
+    "description": "Warning message when storage is nearly full. $PERCENTAGE$ is a placeholder.",
+    "message": "आप अपने स्टोरेज का $1% उपयोग कर रहे हैं। समस्याओं से बचने के लिए कृपया अपना डेटा प्रबंधित करें।",
+    "placeholders": {
+      "percentage": {
+        "content": "$1",
+        "example": "95"
+      }
+    }
+  },
+  "tagEditorCancelButton": {
+    "description": "Text for the cancel button in the tag editor.",
+    "message": "रद्द करें"
+  },
+  "tagEditorLabel": {
+    "description": "A label appearing above the tag input field.",
+    "message": "टैग जोड़ें (कॉमा से अलग करके):"
+  },
+  "tagEditorPlaceholder": {
+    "description": "An example of tags, shown as placeholder text inside the input field.",
+    "message": "जैसे, विचार, अध्ययन"
+  },
+  "tagEditorSaveButton": {
+    "description": "Text for the save button in the tag editor.",
+    "message": "सहेजें"
+  },
+  "themeButtonTitleDark": {
+    "description": "Tooltip for the theme button when the dark theme is active.",
+    "message": "थीम: डार्क (सिस्टम पर स्विच करें)"
+  },
+  "themeButtonTitleLight": {
+    "description": "Tooltip for the theme button when the light theme is active.",
+    "message": "थीम: लाइट (डार्क पर स्विच करें)"
+  },
+  "themeButtonTitleSystem": {
+    "description": "Tooltip for the theme button when the system theme is active.",
+    "message": "थीम: सिस्टम (लाइट पर स्विच करें)"
+  },
+  "viewButtonTooltip": {
+    "description": "Tooltip for the view button on a bookmark item.",
+    "message": "पूरी सामग्री देखें"
+  },
+  "viewModalTitle": {
+    "description": "The title of the modal that displays the full content of a bookmark.",
+    "message": "बुकमार्क की गई सामग्री"
   }
 }

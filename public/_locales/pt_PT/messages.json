@@ -1,175 +1,11 @@
 {
-  "panelHeader": {
-    "message": "Respostas Guardadas",
-    "description": "The title text in the header of the bookmarks panel."
-  },
-  "clearAllButtonTitle": {
-    "message": "Remover todos os marcadores desta conversa",
-    "description": "The tooltip for the 'Clear All' button."
-  },
-  "clearAllButtonText": {
-    "message": "Limpar Tudo",
-    "description": "The text on the 'Clear All' button."
-  },
-  "themeButtonTitleLight": {
-    "message": "Tema: Claro (Mudar para Escuro)",
-    "description": "Tooltip for the theme button when the light theme is active."
-  },
-  "themeButtonTitleDark": {
-    "message": "Tema: Escuro (Mudar para o do Sistema)",
-    "description": "Tooltip for the theme button when the dark theme is active."
-  },
-  "themeButtonTitleSystem": {
-    "message": "Tema: Sistema (Mudar para Claro)",
-    "description": "Tooltip for the theme button when the system theme is active."
-  },
-  "fabTitle": {
-    "message": "Ver Marcadores",
-    "description": "Tooltip for the floating action button that opens the panel."
-  },
-  "tagEditorLabel": {
-    "message": "Adicionar etiquetas (separadas por vírgula):",
-    "description": "A label appearing above the tag input field."
-  },
-  "tagEditorPlaceholder": {
-    "message": "p. ex., ideia, pesquisa",
-    "description": "An example of tags, shown as placeholder text inside the input field."
-  },
-  "tagEditorSaveButton": {
-    "message": "Guardar",
-    "description": "Text for the save button in the tag editor."
-  },
-  "tagEditorCancelButton": {
-    "message": "Cancelar",
-    "description": "Text for the cancel button in the tag editor."
-  },
   "addBookmarkTooltip": {
-    "message": "Clique para adicionar marcador",
-    "description": "Tooltip for the bookmark icon when a response is not yet bookmarked."
-  },
-  "removeBookmarkTooltip": {
-    "message": "Clique para remover marcador",
-    "description": "Tooltip for the bookmark icon when a response is already bookmarked."
-  },
-  "panelEmptyMessage": {
-    "message": "Ainda sem marcadores. Clique no ícone de uma resposta para a marcar!",
-    "description": "Message shown in the panel when there are no bookmarks."
-  },
-  "clearAllConfirmation": {
-    "message": "Tem a certeza de que quer remover TODOS os marcadores desta conversa?",
-    "description": "The confirmation text shown to the user before clearing all bookmarks."
-  },
-  "scrollToBookmarkTitle": {
-    "message": "Clique para navegar para esta resposta",
-    "description": "Tooltip on a bookmark item in the side panel."
-  },
-  "confirmButtonText": {
-    "message": "Confirmar",
-    "description": "The text for a generic confirmation button."
-  },
-  "cancelButtonText": {
-    "message": "Cancelar",
-    "description": "The text for a generic cancel button."
-  },
-  "copyButtonTooltip": {
-    "message": "Copiar conteúdo para a área de transferência",
-    "description": "Tooltip for the copy button on a bookmark item."
-  },
-  "copySuccessToast": {
-    "message": "Conteúdo copiado para a área de transferência!",
-    "description": "Toast message shown after successfully copying bookmark content."
-  },
-  "viewButtonTooltip": {
-    "message": "Ver conteúdo completo",
-    "description": "Tooltip for the view button on a bookmark item."
-  },
-  "viewModalTitle": {
-    "message": "Conteúdo Marcado",
-    "description": "The title of the modal that displays the full content of a bookmark."
-  },
-  "modalCloseButton": {
-    "message": "Fechar",
-    "description": "The text for a button that closes a modal."
-  },
-  "optionsPageTitle": {
-    "message": "Definições do Gemini Bookmarks",
-    "description": "The title of the extension's options page."
-  },
-  "optionsPageDescription": {
-    "message": "Nesta página, pode visualizar todas as conversas onde guardou pelo menos um marcador e remover os dados de conversas que já não necessita.",
-    "description": "The descriptive paragraph on the options page."
-  },
-  "optionsPageTotalUsage": {
-    "message": "Utilização total",
-    "description": "Text used as a label on the storage total usage badge."
-  },
-  "optionsSavedConversationsHeader": {
-    "message": "Conversas guardadas",
-    "description": "The H2 header for the list of saved conversations."
-  },
-  "optionsLoadingState": {
-    "message": "A carregar dados guardados...",
-    "description": "Text shown while loading data on the options page."
-  },
-  "optionsEmptyState": {
-    "message": "Ainda não marcou nenhuma conversa.",
-    "description": "Text shown on the options page when no data is found."
-  },
-  "optionsDeleteButton": {
-    "message": "Apagar",
-    "description": "Text for the button to delete a conversation's data."
-  },
-  "optionsDeleteConfirmation": {
-    "message": "Tem a certeza de que quer apagar todos os marcadores desta conversa? Esta ação não pode ser revertida.",
-    "description": "Confirmation message before deleting a conversation's data."
-  },
-  "optionsViewButton": {
-    "message": "Ver",
-    "description": "Text for the button to open a conversation from the options page."
-  },
-  "optionsDeleteAllButton": {
-    "message": "Apagar todos os dados",
-    "description": "Text for the button that deletes all bookmark data from the options page."
-  },
-  "optionsDeleteAllConfirmation": {
-    "message": "Tem a certeza de que quer apagar TODOS os seus dados de marcadores guardados em TODAS as conversas? Esta ação não pode ser revertida.",
-    "description": "A very strong confirmation message shown before deleting all user data."
-  },
-  "optionsExportAllButton": {
-    "message": "Exportar todos os dados",
-    "description": "Text for the button that exports all bookmark data to a file."
-  },
-  "optionsPageStandardErrorToast": {
-    "message": "Ocorreu um erro. Por favor, tente novamente.",
-    "description": "Standard toast message shown when an error occurs in the options page."
-  },
-  "storageWarningMessage": {
-    "message": "Está a usar $1% do seu armazenamento. Gira os seus dados para evitar problemas.",
-    "description": "Warning message when storage is nearly full. $PERCENTAGE$ is a placeholder.",
-    "placeholders": {
-      "percentage": {
-        "content": "$1",
-        "example": "95"
-      }
-    }
-  },
-  "storageWarningAction": {
-    "message": "Gerir dados",
-    "description": "Button text that takes the user to the options page to manage their data."
-  },
-  "bookmarkCountSingular": {
-    "message": "$1 marcador",
-    "description": "Used when there is exactly one bookmark. The $1 placeholder will be replaced with '1'.",
-    "placeholders": {
-      "1": {
-        "content": "$1",
-        "example": "1"
-      }
-    }
+    "description": "Tooltip for the bookmark icon when a response is not yet bookmarked.",
+    "message": "Clique para adicionar marcador"
   },
   "bookmarkCountPlural": {
-    "message": "$1 marcadores",
     "description": "Used when there are zero or multiple bookmarks. The $1 placeholder will be replaced with the number of bookmarks.",
+    "message": "$1 marcadores",
     "placeholders": {
       "1": {
         "content": "$1",
@@ -177,14 +13,182 @@
       }
     }
   },
+  "bookmarkCountSingular": {
+    "description": "Used when there is exactly one bookmark. The $1 placeholder will be replaced with '1'.",
+    "message": "$1 marcador",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "1"
+      }
+    }
+  },
+  "cancelButtonText": {
+    "description": "The text for a generic cancel button.",
+    "message": "Cancelar"
+  },
+  "clearAllButtonText": {
+    "description": "The text on the 'Clear All' button.",
+    "message": "Limpar Tudo"
+  },
+  "clearAllButtonTitle": {
+    "description": "The tooltip for the 'Clear All' button.",
+    "message": "Remover todos os marcadores desta conversa"
+  },
+  "clearAllConfirmation": {
+    "description": "The confirmation text shown to the user before clearing all bookmarks.",
+    "message": "Tem a certeza de que quer remover TODOS os marcadores desta conversa?"
+  },
+  "confirmButtonText": {
+    "description": "The text for a generic confirmation button.",
+    "message": "Confirmar"
+  },
+  "copyButtonTooltip": {
+    "description": "Tooltip for the copy button on a bookmark item.",
+    "message": "Copiar conteúdo para a área de transferência"
+  },
+  "copySuccessToast": {
+    "description": "Toast message shown after successfully copying bookmark content.",
+    "message": "Conteúdo copiado para a área de transferência!"
+  },
+  "deleteButtonTooltip": {
+    "description": "Tooltip for the delete button on a bookmark item.",
+    "message": "Eliminar marcador"
+  },
+  "fabTitle": {
+    "description": "Tooltip for the floating action button that opens the panel.",
+    "message": "Ver Marcadores"
+  },
   "lastUpdatedTimestamp": {
-    "message": "Última atualização: $1",
     "description": "Indicates the timestamp of the last update. The $1 placeholder will be replaced with a formatted date/time string.",
+    "message": "Última atualização: $1",
     "placeholders": {
       "1": {
         "content": "$1",
         "example": "2023-10-27 10:30 AM"
       }
     }
+  },
+  "modalCloseButton": {
+    "description": "The text for a button that closes a modal.",
+    "message": "Fechar"
+  },
+  "optionsDeleteAllButton": {
+    "description": "Text for the button that deletes all bookmark data from the options page.",
+    "message": "Apagar todos os dados"
+  },
+  "optionsDeleteAllConfirmation": {
+    "description": "A very strong confirmation message shown before deleting all user data.",
+    "message": "Tem a certeza de que quer apagar TODOS os seus dados de marcadores guardados em TODAS as conversas? Esta ação não pode ser revertida."
+  },
+  "optionsDeleteButton": {
+    "description": "Text for the button to delete a conversation's data.",
+    "message": "Apagar"
+  },
+  "optionsDeleteConfirmation": {
+    "description": "Confirmation message before deleting a conversation's data.",
+    "message": "Tem a certeza de que quer apagar todos os marcadores desta conversa? Esta ação não pode ser revertida."
+  },
+  "optionsEmptyState": {
+    "description": "Text shown on the options page when no data is found.",
+    "message": "Ainda não marcou nenhuma conversa."
+  },
+  "optionsExportAllButton": {
+    "description": "Text for the button that exports all bookmark data to a file.",
+    "message": "Exportar todos os dados"
+  },
+  "optionsLoadingState": {
+    "description": "Text shown while loading data on the options page.",
+    "message": "A carregar dados guardados..."
+  },
+  "optionsPageDescription": {
+    "description": "The descriptive paragraph on the options page.",
+    "message": "Nesta página, pode visualizar todas as conversas onde guardou pelo menos um marcador e remover os dados de conversas que já não necessita."
+  },
+  "optionsPageStandardErrorToast": {
+    "description": "Standard toast message shown when an error occurs in the options page.",
+    "message": "Ocorreu um erro. Por favor, tente novamente."
+  },
+  "optionsPageTitle": {
+    "description": "The title of the extension's options page.",
+    "message": "Definições do Gemini Bookmarks"
+  },
+  "optionsPageTotalUsage": {
+    "description": "Text used as a label on the storage total usage badge.",
+    "message": "Utilização total"
+  },
+  "optionsSavedConversationsHeader": {
+    "description": "The H2 header for the list of saved conversations.",
+    "message": "Conversas guardadas"
+  },
+  "optionsViewButton": {
+    "description": "Text for the button to open a conversation from the options page.",
+    "message": "Ver"
+  },
+  "panelEmptyMessage": {
+    "description": "Message shown in the panel when there are no bookmarks.",
+    "message": "Ainda sem marcadores. Clique no ícone de uma resposta para a marcar!"
+  },
+  "panelHeader": {
+    "description": "The title text in the header of the bookmarks panel.",
+    "message": "Respostas Guardadas"
+  },
+  "removeBookmarkTooltip": {
+    "description": "Tooltip for the bookmark icon when a response is already bookmarked.",
+    "message": "Clique para remover marcador"
+  },
+  "scrollToBookmarkTitle": {
+    "description": "Tooltip on a bookmark item in the side panel.",
+    "message": "Clique para navegar para esta resposta"
+  },
+  "storageWarningAction": {
+    "description": "Button text that takes the user to the options page to manage their data.",
+    "message": "Gerir dados"
+  },
+  "storageWarningMessage": {
+    "description": "Warning message when storage is nearly full. $PERCENTAGE$ is a placeholder.",
+    "message": "Está a usar $1% do seu armazenamento. Gira os seus dados para evitar problemas.",
+    "placeholders": {
+      "percentage": {
+        "content": "$1",
+        "example": "95"
+      }
+    }
+  },
+  "tagEditorCancelButton": {
+    "description": "Text for the cancel button in the tag editor.",
+    "message": "Cancelar"
+  },
+  "tagEditorLabel": {
+    "description": "A label appearing above the tag input field.",
+    "message": "Adicionar etiquetas (separadas por vírgula):"
+  },
+  "tagEditorPlaceholder": {
+    "description": "An example of tags, shown as placeholder text inside the input field.",
+    "message": "p. ex., ideia, pesquisa"
+  },
+  "tagEditorSaveButton": {
+    "description": "Text for the save button in the tag editor.",
+    "message": "Guardar"
+  },
+  "themeButtonTitleDark": {
+    "description": "Tooltip for the theme button when the dark theme is active.",
+    "message": "Tema: Escuro (Mudar para o do Sistema)"
+  },
+  "themeButtonTitleLight": {
+    "description": "Tooltip for the theme button when the light theme is active.",
+    "message": "Tema: Claro (Mudar para Escuro)"
+  },
+  "themeButtonTitleSystem": {
+    "description": "Tooltip for the theme button when the system theme is active.",
+    "message": "Tema: Sistema (Mudar para Claro)"
+  },
+  "viewButtonTooltip": {
+    "description": "Tooltip for the view button on a bookmark item.",
+    "message": "Ver conteúdo completo"
+  },
+  "viewModalTitle": {
+    "description": "The title of the modal that displays the full content of a bookmark.",
+    "message": "Conteúdo Marcado"
   }
 }

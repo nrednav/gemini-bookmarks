@@ -1,175 +1,11 @@
 {
-  "panelHeader": {
-    "message": "Mga Naka-bookmark na Tugon",
-    "description": "The title text in the header of the bookmarks panel."
-  },
-  "clearAllButtonTitle": {
-    "message": "Alisin ang lahat ng bookmark para sa pag-uusap na ito",
-    "description": "The tooltip for the 'Clear All' button."
-  },
-  "clearAllButtonText": {
-    "message": "I-clear Lahat",
-    "description": "The text on the 'Clear All' button."
-  },
-  "themeButtonTitleLight": {
-    "message": "Tema: Maliwanag (Lumipat sa Madilim)",
-    "description": "Tooltip for the theme button when the light theme is active."
-  },
-  "themeButtonTitleDark": {
-    "message": "Tema: Madilim (Lumipat sa System)",
-    "description": "Tooltip for the theme button when the dark theme is active."
-  },
-  "themeButtonTitleSystem": {
-    "message": "Tema: System (Lumipat sa Maliwanag)",
-    "description": "Tooltip for the theme button when the system theme is active."
-  },
-  "fabTitle": {
-    "message": "Tingnan ang mga Bookmark",
-    "description": "Tooltip for the floating action button that opens the panel."
-  },
-  "tagEditorLabel": {
-    "message": "Magdagdag ng mga tag (paghiwalayin ng kuwit):",
-    "description": "A label appearing above the tag input field."
-  },
-  "tagEditorPlaceholder": {
-    "message": "hal., ideya, pag-aaral",
-    "description": "An example of tags, shown as placeholder text inside the input field."
-  },
-  "tagEditorSaveButton": {
-    "message": "I-save",
-    "description": "Text for the save button in the tag editor."
-  },
-  "tagEditorCancelButton": {
-    "message": "Kanselahin",
-    "description": "Text for the cancel button in the tag editor."
-  },
   "addBookmarkTooltip": {
-    "message": "I-click para magdagdag ng bookmark",
-    "description": "Tooltip for the bookmark icon when a response is not yet bookmarked."
-  },
-  "removeBookmarkTooltip": {
-    "message": "I-click para alisin ang bookmark",
-    "description": "Tooltip for the bookmark icon when a response is already bookmarked."
-  },
-  "panelEmptyMessage": {
-    "message": "Wala pang mga bookmark. I-click ang icon sa isang tugon para i-bookmark ito!",
-    "description": "Message shown in the panel when there are no bookmarks."
-  },
-  "clearAllConfirmation": {
-    "message": "Sigurado ka bang gusto mong alisin ang LAHAT ng bookmark para sa pag-uusap na ito?",
-    "description": "The confirmation text shown to the user before clearing all bookmarks."
-  },
-  "scrollToBookmarkTitle": {
-    "message": "I-click para mag-scroll sa tugon na ito",
-    "description": "Tooltip on a bookmark item in the side panel."
-  },
-  "confirmButtonText": {
-    "message": "Kumpirmahin",
-    "description": "The text for a generic confirmation button."
-  },
-  "cancelButtonText": {
-    "message": "Kanselahin",
-    "description": "The text for a generic cancel button."
-  },
-  "copyButtonTooltip": {
-    "message": "Kopyahin ang nilalaman sa clipboard",
-    "description": "Tooltip for the copy button on a bookmark item."
-  },
-  "copySuccessToast": {
-    "message": "Kinopya ang nilalaman sa clipboard!",
-    "description": "Toast message shown after successfully copying bookmark content."
-  },
-  "viewButtonTooltip": {
-    "message": "Tingnan ang buong nilalaman",
-    "description": "Tooltip for the view button on a bookmark item."
-  },
-  "viewModalTitle": {
-    "message": "Naka-bookmark na Nilalaman",
-    "description": "The title of the modal that displays the full content of a bookmark."
-  },
-  "modalCloseButton": {
-    "message": "Isara",
-    "description": "The text for a button that closes a modal."
-  },
-  "optionsPageTitle": {
-    "message": "Mga Setting ng Gemini Bookmarks",
-    "description": "The title of the extension's options page."
-  },
-  "optionsPageDescription": {
-    "message": "Sa pahinang ito, maaari mong tingnan ang lahat ng pag-uusap kung saan ka nag-save ng kahit isang bookmark at alisin ang data para sa mga pag-uusap na hindi mo na kailangan.",
-    "description": "The descriptive paragraph on the options page."
-  },
-  "optionsPageTotalUsage": {
-    "message": "Kabuuang Paggamit",
-    "description": "Text used as a label on the storage total usage badge."
-  },
-  "optionsSavedConversationsHeader": {
-    "message": "Mga Naka-save na Pag-uusap",
-    "description": "The H2 header for the list of saved conversations."
-  },
-  "optionsLoadingState": {
-    "message": "Nilo-load ang naka-save na data...",
-    "description": "Text shown while loading data on the options page."
-  },
-  "optionsEmptyState": {
-    "message": "Wala ka pang nai-bookmark na anumang pag-uusap.",
-    "description": "Text shown on the options page when no data is found."
-  },
-  "optionsDeleteButton": {
-    "message": "Tanggalin",
-    "description": "Text for the button to delete a conversation's data."
-  },
-  "optionsDeleteConfirmation": {
-    "message": "Sigurado ka bang gusto mong tanggalin ang lahat ng bookmark para sa pag-uusap na ito? Hindi na ito maibabalik.",
-    "description": "Confirmation message before deleting a conversation's data."
-  },
-  "optionsViewButton": {
-    "message": "Tingnan",
-    "description": "Text for the button to open a conversation from the options page."
-  },
-  "optionsDeleteAllButton": {
-    "message": "Tanggalin ang Lahat ng Data",
-    "description": "Text for the button that deletes all bookmark data from the options page."
-  },
-  "optionsDeleteAllConfirmation": {
-    "message": "Sigurado ka bang gusto mong tanggalin ang LAHAT ng iyong naka-save na data ng bookmark sa LAHAT ng pag-uusap? Hindi na maibabalik ang pagkilos na ito.",
-    "description": "A very strong confirmation message shown before deleting all user data."
-  },
-  "optionsExportAllButton": {
-    "message": "I-export ang Lahat ng Data",
-    "description": "Text for the button that exports all bookmark data to a file."
-  },
-  "optionsPageStandardErrorToast": {
-    "message": "May naganap na error. Pakisubukang muli.",
-    "description": "Standard toast message shown when an error occurs in the options page."
-  },
-  "storageWarningMessage": {
-    "message": "Ginagamit mo ang $1% ng iyong storage. Paki-manage ang iyong data para maiwasan ang mga isyu.",
-    "description": "Warning message when storage is nearly full. $PERCENTAGE$ is a placeholder.",
-    "placeholders": {
-      "percentage": {
-        "content": "$1",
-        "example": "95"
-      }
-    }
-  },
-  "storageWarningAction": {
-    "message": "Pamahalaan ang Data",
-    "description": "Button text that takes the user to the options page to manage their data."
-  },
-  "bookmarkCountSingular": {
-    "message": "$1 bookmark",
-    "description": "Used when there is exactly one bookmark. The $1 placeholder will be replaced with '1'.",
-    "placeholders": {
-      "1": {
-        "content": "$1",
-        "example": "1"
-      }
-    }
+    "description": "Tooltip for the bookmark icon when a response is not yet bookmarked.",
+    "message": "I-click para magdagdag ng bookmark"
   },
   "bookmarkCountPlural": {
-    "message": "$1 (na) bookmark",
     "description": "Used when there are zero or multiple bookmarks. The $1 placeholder will be replaced with the number of bookmarks.",
+    "message": "$1 (na) bookmark",
     "placeholders": {
       "1": {
         "content": "$1",
@@ -177,14 +13,182 @@
       }
     }
   },
+  "bookmarkCountSingular": {
+    "description": "Used when there is exactly one bookmark. The $1 placeholder will be replaced with '1'.",
+    "message": "$1 bookmark",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "1"
+      }
+    }
+  },
+  "cancelButtonText": {
+    "description": "The text for a generic cancel button.",
+    "message": "Kanselahin"
+  },
+  "clearAllButtonText": {
+    "description": "The text on the 'Clear All' button.",
+    "message": "I-clear Lahat"
+  },
+  "clearAllButtonTitle": {
+    "description": "The tooltip for the 'Clear All' button.",
+    "message": "Alisin ang lahat ng bookmark para sa pag-uusap na ito"
+  },
+  "clearAllConfirmation": {
+    "description": "The confirmation text shown to the user before clearing all bookmarks.",
+    "message": "Sigurado ka bang gusto mong alisin ang LAHAT ng bookmark para sa pag-uusap na ito?"
+  },
+  "confirmButtonText": {
+    "description": "The text for a generic confirmation button.",
+    "message": "Kumpirmahin"
+  },
+  "copyButtonTooltip": {
+    "description": "Tooltip for the copy button on a bookmark item.",
+    "message": "Kopyahin ang nilalaman sa clipboard"
+  },
+  "copySuccessToast": {
+    "description": "Toast message shown after successfully copying bookmark content.",
+    "message": "Kinopya ang nilalaman sa clipboard!"
+  },
+  "deleteButtonTooltip": {
+    "description": "Tooltip for the delete button on a bookmark item.",
+    "message": "Tanggalin ang bookmark"
+  },
+  "fabTitle": {
+    "description": "Tooltip for the floating action button that opens the panel.",
+    "message": "Tingnan ang mga Bookmark"
+  },
   "lastUpdatedTimestamp": {
-    "message": "Huling na-update: $1",
     "description": "Indicates the timestamp of the last update. The $1 placeholder will be replaced with a formatted date/time string.",
+    "message": "Huling na-update: $1",
     "placeholders": {
       "1": {
         "content": "$1",
         "example": "2023-10-27 10:30 AM"
       }
     }
+  },
+  "modalCloseButton": {
+    "description": "The text for a button that closes a modal.",
+    "message": "Isara"
+  },
+  "optionsDeleteAllButton": {
+    "description": "Text for the button that deletes all bookmark data from the options page.",
+    "message": "Tanggalin ang Lahat ng Data"
+  },
+  "optionsDeleteAllConfirmation": {
+    "description": "A very strong confirmation message shown before deleting all user data.",
+    "message": "Sigurado ka bang gusto mong tanggalin ang LAHAT ng iyong naka-save na data ng bookmark sa LAHAT ng pag-uusap? Hindi na maibabalik ang pagkilos na ito."
+  },
+  "optionsDeleteButton": {
+    "description": "Text for the button to delete a conversation's data.",
+    "message": "Tanggalin"
+  },
+  "optionsDeleteConfirmation": {
+    "description": "Confirmation message before deleting a conversation's data.",
+    "message": "Sigurado ka bang gusto mong tanggalin ang lahat ng bookmark para sa pag-uusap na ito? Hindi na ito maibabalik."
+  },
+  "optionsEmptyState": {
+    "description": "Text shown on the options page when no data is found.",
+    "message": "Wala ka pang nai-bookmark na anumang pag-uusap."
+  },
+  "optionsExportAllButton": {
+    "description": "Text for the button that exports all bookmark data to a file.",
+    "message": "I-export ang Lahat ng Data"
+  },
+  "optionsLoadingState": {
+    "description": "Text shown while loading data on the options page.",
+    "message": "Nilo-load ang naka-save na data..."
+  },
+  "optionsPageDescription": {
+    "description": "The descriptive paragraph on the options page.",
+    "message": "Sa pahinang ito, maaari mong tingnan ang lahat ng pag-uusap kung saan ka nag-save ng kahit isang bookmark at alisin ang data para sa mga pag-uusap na hindi mo na kailangan."
+  },
+  "optionsPageStandardErrorToast": {
+    "description": "Standard toast message shown when an error occurs in the options page.",
+    "message": "May naganap na error. Pakisubukang muli."
+  },
+  "optionsPageTitle": {
+    "description": "The title of the extension's options page.",
+    "message": "Mga Setting ng Gemini Bookmarks"
+  },
+  "optionsPageTotalUsage": {
+    "description": "Text used as a label on the storage total usage badge.",
+    "message": "Kabuuang Paggamit"
+  },
+  "optionsSavedConversationsHeader": {
+    "description": "The H2 header for the list of saved conversations.",
+    "message": "Mga Naka-save na Pag-uusap"
+  },
+  "optionsViewButton": {
+    "description": "Text for the button to open a conversation from the options page.",
+    "message": "Tingnan"
+  },
+  "panelEmptyMessage": {
+    "description": "Message shown in the panel when there are no bookmarks.",
+    "message": "Wala pang mga bookmark. I-click ang icon sa isang tugon para i-bookmark ito!"
+  },
+  "panelHeader": {
+    "description": "The title text in the header of the bookmarks panel.",
+    "message": "Mga Naka-bookmark na Tugon"
+  },
+  "removeBookmarkTooltip": {
+    "description": "Tooltip for the bookmark icon when a response is already bookmarked.",
+    "message": "I-click para alisin ang bookmark"
+  },
+  "scrollToBookmarkTitle": {
+    "description": "Tooltip on a bookmark item in the side panel.",
+    "message": "I-click para mag-scroll sa tugon na ito"
+  },
+  "storageWarningAction": {
+    "description": "Button text that takes the user to the options page to manage their data.",
+    "message": "Pamahalaan ang Data"
+  },
+  "storageWarningMessage": {
+    "description": "Warning message when storage is nearly full. $PERCENTAGE$ is a placeholder.",
+    "message": "Ginagamit mo ang $1% ng iyong storage. Paki-manage ang iyong data para maiwasan ang mga isyu.",
+    "placeholders": {
+      "percentage": {
+        "content": "$1",
+        "example": "95"
+      }
+    }
+  },
+  "tagEditorCancelButton": {
+    "description": "Text for the cancel button in the tag editor.",
+    "message": "Kanselahin"
+  },
+  "tagEditorLabel": {
+    "description": "A label appearing above the tag input field.",
+    "message": "Magdagdag ng mga tag (paghiwalayin ng kuwit):"
+  },
+  "tagEditorPlaceholder": {
+    "description": "An example of tags, shown as placeholder text inside the input field.",
+    "message": "hal., ideya, pag-aaral"
+  },
+  "tagEditorSaveButton": {
+    "description": "Text for the save button in the tag editor.",
+    "message": "I-save"
+  },
+  "themeButtonTitleDark": {
+    "description": "Tooltip for the theme button when the dark theme is active.",
+    "message": "Tema: Madilim (Lumipat sa System)"
+  },
+  "themeButtonTitleLight": {
+    "description": "Tooltip for the theme button when the light theme is active.",
+    "message": "Tema: Maliwanag (Lumipat sa Madilim)"
+  },
+  "themeButtonTitleSystem": {
+    "description": "Tooltip for the theme button when the system theme is active.",
+    "message": "Tema: System (Lumipat sa Maliwanag)"
+  },
+  "viewButtonTooltip": {
+    "description": "Tooltip for the view button on a bookmark item.",
+    "message": "Tingnan ang buong nilalaman"
+  },
+  "viewModalTitle": {
+    "description": "The title of the modal that displays the full content of a bookmark.",
+    "message": "Naka-bookmark na Nilalaman"
   }
 }

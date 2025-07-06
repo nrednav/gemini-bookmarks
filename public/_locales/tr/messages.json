@@ -1,175 +1,11 @@
 {
-  "panelHeader": {
-    "message": "İşaretli Yanıtlar",
-    "description": "The title text in the header of the bookmarks panel."
-  },
-  "clearAllButtonTitle": {
-    "message": "Bu sohbetteki tüm yer imlerini kaldır",
-    "description": "The tooltip for the 'Clear All' button."
-  },
-  "clearAllButtonText": {
-    "message": "Tümünü Temizle",
-    "description": "The text on the 'Clear All' button."
-  },
-  "themeButtonTitleLight": {
-    "message": "Tema: Aydınlık (Karanlığa geçir)",
-    "description": "Tooltip for the theme button when the light theme is active."
-  },
-  "themeButtonTitleDark": {
-    "message": "Tema: Karanlık (Sisteme geçir)",
-    "description": "Tooltip for the theme button when the dark theme is active."
-  },
-  "themeButtonTitleSystem": {
-    "message": "Tema: Sistem (Aydınlığa geçir)",
-    "description": "Tooltip for the theme button when the system theme is active."
-  },
-  "fabTitle": {
-    "message": "Yer İmlerini Görüntüle",
-    "description": "Tooltip for the floating action button that opens the panel."
-  },
-  "tagEditorLabel": {
-    "message": "Etiket ekleyin (virgülle ayırarak):",
-    "description": "A label appearing above the tag input field."
-  },
-  "tagEditorPlaceholder": {
-    "message": "örn. fikir, çalışma",
-    "description": "An example of tags, shown as placeholder text inside the input field."
-  },
-  "tagEditorSaveButton": {
-    "message": "Kaydet",
-    "description": "Text for the save button in the tag editor."
-  },
-  "tagEditorCancelButton": {
-    "message": "İptal",
-    "description": "Text for the cancel button in the tag editor."
-  },
   "addBookmarkTooltip": {
-    "message": "Yer imi eklemek için tıklayın",
-    "description": "Tooltip for the bookmark icon when a response is not yet bookmarked."
-  },
-  "removeBookmarkTooltip": {
-    "message": "Yer imini kaldırmak için tıklayın",
-    "description": "Tooltip for the bookmark icon when a response is already bookmarked."
-  },
-  "panelEmptyMessage": {
-    "message": "Henüz yer imi yok. Bir yanıtın üzerindeki simgeye tıklayarak yer imlerine ekleyin!",
-    "description": "Message shown in the panel when there are no bookmarks."
-  },
-  "clearAllConfirmation": {
-    "message": "Bu sohbetteki TÜM yer imlerini kaldırmak istediğinizden emin misiniz?",
-    "description": "The confirmation text shown to the user before clearing all bookmarks."
-  },
-  "scrollToBookmarkTitle": {
-    "message": "Bu yanıta gitmek için tıklayın",
-    "description": "Tooltip on a bookmark item in the side panel."
-  },
-  "confirmButtonText": {
-    "message": "Onayla",
-    "description": "The text for a generic confirmation button."
-  },
-  "cancelButtonText": {
-    "message": "İptal",
-    "description": "The text for a generic cancel button."
-  },
-  "copyButtonTooltip": {
-    "message": "İçeriği panoya kopyala",
-    "description": "Tooltip for the copy button on a bookmark item."
-  },
-  "copySuccessToast": {
-    "message": "İçerik panoya kopyalandı!",
-    "description": "Toast message shown after successfully copying bookmark content."
-  },
-  "viewButtonTooltip": {
-    "message": "Tüm içeriği görüntüle",
-    "description": "Tooltip for the view button on a bookmark item."
-  },
-  "viewModalTitle": {
-    "message": "İşaretli İçerik",
-    "description": "The title of the modal that displays the full content of a bookmark."
-  },
-  "modalCloseButton": {
-    "message": "Kapat",
-    "description": "The text for a button that closes a modal."
-  },
-  "optionsPageTitle": {
-    "message": "Gemini Bookmarks Ayarları",
-    "description": "The title of the extension's options page."
-  },
-  "optionsPageDescription": {
-    "message": "Bu sayfada, en az bir yer imi kaydettiğiniz tüm sohbetleri görüntüleyebilir ve artık ihtiyaç duymadığınız sohbetlerin verilerini silebilirsiniz.",
-    "description": "The descriptive paragraph on the options page."
-  },
-  "optionsPageTotalUsage": {
-    "message": "Toplam Kullanım",
-    "description": "Text used as a label on the storage total usage badge."
-  },
-  "optionsSavedConversationsHeader": {
-    "message": "Kayıtlı Sohbetler",
-    "description": "The H2 header for the list of saved conversations."
-  },
-  "optionsLoadingState": {
-    "message": "Kayıtlı veriler yükleniyor...",
-    "description": "Text shown while loading data on the options page."
-  },
-  "optionsEmptyState": {
-    "message": "Henüz hiçbir sohbeti işaretlemediniz.",
-    "description": "Text shown on the options page when no data is found."
-  },
-  "optionsDeleteButton": {
-    "message": "Sil",
-    "description": "Text for the button to delete a conversation's data."
-  },
-  "optionsDeleteConfirmation": {
-    "message": "Bu sohbete ait tüm yer imlerini silmek istediğinizden emin misiniz? Bu işlem geri alınamaz.",
-    "description": "Confirmation message before deleting a conversation's data."
-  },
-  "optionsViewButton": {
-    "message": "Görüntüle",
-    "description": "Text for the button to open a conversation from the options page."
-  },
-  "optionsDeleteAllButton": {
-    "message": "Tüm Verileri Sil",
-    "description": "Text for the button that deletes all bookmark data from the options page."
-  },
-  "optionsDeleteAllConfirmation": {
-    "message": "TÜM sohbetlerdeki kayıtlı yer imi verilerinizin TÜMÜNÜ silmek istediğinizden emin misiniz? Bu işlem geri alınamaz.",
-    "description": "A very strong confirmation message shown before deleting all user data."
-  },
-  "optionsExportAllButton": {
-    "message": "Tüm Verileri Dışa Aktar",
-    "description": "Text for the button that exports all bookmark data to a file."
-  },
-  "optionsPageStandardErrorToast": {
-    "message": "Bir hata oluştu. Lütfen tekrar deneyin.",
-    "description": "Standard toast message shown when an error occurs in the options page."
-  },
-  "storageWarningMessage": {
-    "message": "Depolama alanınızın %$1 kadarını kullanıyorsunuz. Sorunları önlemek için lütfen verilerinizi yönetin.",
-    "description": "Warning message when storage is nearly full. $PERCENTAGE$ is a placeholder.",
-    "placeholders": {
-      "percentage": {
-        "content": "$1",
-        "example": "95"
-      }
-    }
-  },
-  "storageWarningAction": {
-    "message": "Verileri Yönet",
-    "description": "Button text that takes the user to the options page to manage their data."
-  },
-  "bookmarkCountSingular": {
-    "message": "$1 yer imi",
-    "description": "Used when there is exactly one bookmark. The $1 placeholder will be replaced with '1'.",
-    "placeholders": {
-      "1": {
-        "content": "$1",
-        "example": "1"
-      }
-    }
+    "description": "Tooltip for the bookmark icon when a response is not yet bookmarked.",
+    "message": "Yer imi eklemek için tıklayın"
   },
   "bookmarkCountPlural": {
-    "message": "$1 yer imi",
     "description": "Used when there are zero or multiple bookmarks. The $1 placeholder will be replaced with the number of bookmarks.",
+    "message": "$1 yer imi",
     "placeholders": {
       "1": {
         "content": "$1",
@@ -177,14 +13,182 @@
       }
     }
   },
+  "bookmarkCountSingular": {
+    "description": "Used when there is exactly one bookmark. The $1 placeholder will be replaced with '1'.",
+    "message": "$1 yer imi",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "1"
+      }
+    }
+  },
+  "cancelButtonText": {
+    "description": "The text for a generic cancel button.",
+    "message": "İptal"
+  },
+  "clearAllButtonText": {
+    "description": "The text on the 'Clear All' button.",
+    "message": "Tümünü Temizle"
+  },
+  "clearAllButtonTitle": {
+    "description": "The tooltip for the 'Clear All' button.",
+    "message": "Bu sohbetteki tüm yer imlerini kaldır"
+  },
+  "clearAllConfirmation": {
+    "description": "The confirmation text shown to the user before clearing all bookmarks.",
+    "message": "Bu sohbetteki TÜM yer imlerini kaldırmak istediğinizden emin misiniz?"
+  },
+  "confirmButtonText": {
+    "description": "The text for a generic confirmation button.",
+    "message": "Onayla"
+  },
+  "copyButtonTooltip": {
+    "description": "Tooltip for the copy button on a bookmark item.",
+    "message": "İçeriği panoya kopyala"
+  },
+  "copySuccessToast": {
+    "description": "Toast message shown after successfully copying bookmark content.",
+    "message": "İçerik panoya kopyalandı!"
+  },
+  "deleteButtonTooltip": {
+    "description": "Tooltip for the delete button on a bookmark item.",
+    "message": "Yer imini sil"
+  },
+  "fabTitle": {
+    "description": "Tooltip for the floating action button that opens the panel.",
+    "message": "Yer İmlerini Görüntüle"
+  },
   "lastUpdatedTimestamp": {
-    "message": "Son güncelleme: $1",
     "description": "Indicates the timestamp of the last update. The $1 placeholder will be replaced with a formatted date/time string.",
+    "message": "Son güncelleme: $1",
     "placeholders": {
       "1": {
         "content": "$1",
         "example": "2023-10-27 10:30 AM"
       }
     }
+  },
+  "modalCloseButton": {
+    "description": "The text for a button that closes a modal.",
+    "message": "Kapat"
+  },
+  "optionsDeleteAllButton": {
+    "description": "Text for the button that deletes all bookmark data from the options page.",
+    "message": "Tüm Verileri Sil"
+  },
+  "optionsDeleteAllConfirmation": {
+    "description": "A very strong confirmation message shown before deleting all user data.",
+    "message": "TÜM sohbetlerdeki kayıtlı yer imi verilerinizin TÜMÜNÜ silmek istediğinizden emin misiniz? Bu işlem geri alınamaz."
+  },
+  "optionsDeleteButton": {
+    "description": "Text for the button to delete a conversation's data.",
+    "message": "Sil"
+  },
+  "optionsDeleteConfirmation": {
+    "description": "Confirmation message before deleting a conversation's data.",
+    "message": "Bu sohbete ait tüm yer imlerini silmek istediğinizden emin misiniz? Bu işlem geri alınamaz."
+  },
+  "optionsEmptyState": {
+    "description": "Text shown on the options page when no data is found.",
+    "message": "Henüz hiçbir sohbeti işaretlemediniz."
+  },
+  "optionsExportAllButton": {
+    "description": "Text for the button that exports all bookmark data to a file.",
+    "message": "Tüm Verileri Dışa Aktar"
+  },
+  "optionsLoadingState": {
+    "description": "Text shown while loading data on the options page.",
+    "message": "Kayıtlı veriler yükleniyor..."
+  },
+  "optionsPageDescription": {
+    "description": "The descriptive paragraph on the options page.",
+    "message": "Bu sayfada, en az bir yer imi kaydettiğiniz tüm sohbetleri görüntüleyebilir ve artık ihtiyaç duymadığınız sohbetlerin verilerini silebilirsiniz."
+  },
+  "optionsPageStandardErrorToast": {
+    "description": "Standard toast message shown when an error occurs in the options page.",
+    "message": "Bir hata oluştu. Lütfen tekrar deneyin."
+  },
+  "optionsPageTitle": {
+    "description": "The title of the extension's options page.",
+    "message": "Gemini Bookmarks Ayarları"
+  },
+  "optionsPageTotalUsage": {
+    "description": "Text used as a label on the storage total usage badge.",
+    "message": "Toplam Kullanım"
+  },
+  "optionsSavedConversationsHeader": {
+    "description": "The H2 header for the list of saved conversations.",
+    "message": "Kayıtlı Sohbetler"
+  },
+  "optionsViewButton": {
+    "description": "Text for the button to open a conversation from the options page.",
+    "message": "Görüntüle"
+  },
+  "panelEmptyMessage": {
+    "description": "Message shown in the panel when there are no bookmarks.",
+    "message": "Henüz yer imi yok. Bir yanıtın üzerindeki simgeye tıklayarak yer imlerine ekleyin!"
+  },
+  "panelHeader": {
+    "description": "The title text in the header of the bookmarks panel.",
+    "message": "İşaretli Yanıtlar"
+  },
+  "removeBookmarkTooltip": {
+    "description": "Tooltip for the bookmark icon when a response is already bookmarked.",
+    "message": "Yer imini kaldırmak için tıklayın"
+  },
+  "scrollToBookmarkTitle": {
+    "description": "Tooltip on a bookmark item in the side panel.",
+    "message": "Bu yanıta gitmek için tıklayın"
+  },
+  "storageWarningAction": {
+    "description": "Button text that takes the user to the options page to manage their data.",
+    "message": "Verileri Yönet"
+  },
+  "storageWarningMessage": {
+    "description": "Warning message when storage is nearly full. $PERCENTAGE$ is a placeholder.",
+    "message": "Depolama alanınızın %$1 kadarını kullanıyorsunuz. Sorunları önlemek için lütfen verilerinizi yönetin.",
+    "placeholders": {
+      "percentage": {
+        "content": "$1",
+        "example": "95"
+      }
+    }
+  },
+  "tagEditorCancelButton": {
+    "description": "Text for the cancel button in the tag editor.",
+    "message": "İptal"
+  },
+  "tagEditorLabel": {
+    "description": "A label appearing above the tag input field.",
+    "message": "Etiket ekleyin (virgülle ayırarak):"
+  },
+  "tagEditorPlaceholder": {
+    "description": "An example of tags, shown as placeholder text inside the input field.",
+    "message": "örn. fikir, çalışma"
+  },
+  "tagEditorSaveButton": {
+    "description": "Text for the save button in the tag editor.",
+    "message": "Kaydet"
+  },
+  "themeButtonTitleDark": {
+    "description": "Tooltip for the theme button when the dark theme is active.",
+    "message": "Tema: Karanlık (Sisteme geçir)"
+  },
+  "themeButtonTitleLight": {
+    "description": "Tooltip for the theme button when the light theme is active.",
+    "message": "Tema: Aydınlık (Karanlığa geçir)"
+  },
+  "themeButtonTitleSystem": {
+    "description": "Tooltip for the theme button when the system theme is active.",
+    "message": "Tema: Sistem (Aydınlığa geçir)"
+  },
+  "viewButtonTooltip": {
+    "description": "Tooltip for the view button on a bookmark item.",
+    "message": "Tüm içeriği görüntüle"
+  },
+  "viewModalTitle": {
+    "description": "The title of the modal that displays the full content of a bookmark.",
+    "message": "İşaretli İçerik"
   }
 }

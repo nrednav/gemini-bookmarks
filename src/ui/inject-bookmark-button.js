@@ -1,7 +1,7 @@
 import { toggleBookmark } from "../core/actions";
 import { createIconElement } from "../helpers/create-icon-element.js";
 import { generateContentHash } from "../helpers/generate-content-hash";
-import { waitForElement } from "../helpers/wait-for-element";
+import { waitForResponseContent } from "../helpers/wait-for-response-content.js";
 import { actionIcons } from "./icons.js";
 import { updateBookmarkButtonUi } from "./render-ui";
 
@@ -14,8 +14,6 @@ export const injectBookmarkButton = async (responseElement, dependencies) => {
   const { window, uiElements, elementSelectors, stateManager, logger } =
     dependencies;
 
-  const currentState = stateManager.getState();
-
   if (responseElement.dataset.processedByExtension) {
     return;
   }
@@ -23,20 +21,16 @@ export const injectBookmarkButton = async (responseElement, dependencies) => {
   responseElement.dataset.processedByExtension = "true";
 
   try {
-    const contentElement = await waitForElement({
-      parentElement: responseElement,
-      selector: elementSelectors.modelResponse.messageContent,
+    const content = await waitForResponseContent({
+      responseElement: responseElement,
+      contentSelector: elementSelectors.modelResponse.messageContent,
     });
-    const content = contentElement.innerText.trim();
+
     const contentHash = await generateContentHash(content);
 
-    const isBookmarked = currentState.bookmarks.some(
-      (bookmark) => bookmark.id === contentHash,
-    );
+    responseElement.id = contentHash;
 
-    if (isBookmarked) {
-      responseElement.id = contentHash;
-    }
+    const currentState = stateManager.getState();
 
     responseElement.classList.add("bookmark-container");
 
@@ -48,22 +42,13 @@ export const injectBookmarkButton = async (responseElement, dependencies) => {
       e.stopPropagation();
       e.preventDefault();
 
-      await handleBookmarkClick(
-        responseElement,
-        { id: contentHash, content: content },
-        dependencies,
-      );
+      await handleBookmarkClick(responseElement, dependencies);
     });
 
+    updateBookmarkButtonUi(bookmarkButton, contentHash, currentState);
+
     responseElement.appendChild(bookmarkButton);
-
     uiElements.bookmarkButtons.push(bookmarkButton);
-
-    updateBookmarkButtonUi(
-      bookmarkButton,
-      isBookmarked ? contentHash : responseElement.id,
-      currentState,
-    );
   } catch (error) {
     logger.error(
       `Failed to inject bookmark button into model response. Reason = ${error.message}`,
@@ -77,32 +62,61 @@ export const injectBookmarkButton = async (responseElement, dependencies) => {
  * @param {{id: string, content: string}} bookmarkData
  * @param {import('../core/types.js').Dependencies} dependencies
  */
-const handleBookmarkClick = async (
-  responseElement,
-  { id, content },
-  dependencies,
-) => {
-  const { stateManager, elementSelectors } = dependencies;
-  const currentState = stateManager.getState();
-  const existingBookmark = currentState.bookmarks.find(
-    (bookmark) => bookmark.id === id,
-  );
+const handleBookmarkClick = async (responseElement, dependencies) => {
+  const { stateManager, elementSelectors, logger } = dependencies;
 
-  responseElement.id = id;
-
-  if (existingBookmark) {
-    await toggleBookmark(dependencies, { id, content, tags: [], index: -1 });
-  } else {
-    const modelResponses = Array.from(
-      document.querySelectorAll(elementSelectors.modelResponse.container),
-    );
-    const index = modelResponses.findIndex(
-      (modelResponse) => responseElement.id === modelResponse.id,
+  try {
+    const contentElement = responseElement.querySelector(
+      elementSelectors.modelResponse.messageContent,
     );
 
-    createTagEditor(responseElement, async (tags) => {
-      await toggleBookmark(dependencies, { id, content, tags, index });
-    });
+    if (!contentElement) {
+      throw new Error("Could not find content element.");
+    }
+
+    const content = contentElement.innerText.trim();
+
+    if (content === "") {
+      throw new Error("Cannot bookmark response, content is empty.");
+    }
+
+    const contentHash = await generateContentHash(content);
+
+    responseElement.id = contentHash;
+
+    const currentState = stateManager.getState();
+
+    const existingBookmark = currentState.bookmarks.find(
+      (bookmark) => bookmark.id === contentHash,
+    );
+
+    if (existingBookmark) {
+      await toggleBookmark(dependencies, {
+        id: contentHash,
+        content,
+        tags: [],
+        index: -1,
+      });
+    } else {
+      const modelResponses = Array.from(
+        document.querySelectorAll(elementSelectors.modelResponse.container),
+      );
+
+      const index = modelResponses.findIndex(
+        (modelResponse) => responseElement.id === modelResponse.id,
+      );
+
+      createTagEditor(responseElement, async (tags) => {
+        await toggleBookmark(dependencies, {
+          id: contentHash,
+          content,
+          tags,
+          index,
+        });
+      });
+    }
+  } catch (error) {
+    logger.error(`Failed to handle bookmark click. Reason = ${error.message}`);
   }
 };
 

@@ -32,5 +32,6 @@ export const elementSelectors = {
     bookmarkButton: ".bookmark-button",
     copyBookmarkButton: ".gb-panel-bookmark__copy-button",
     viewBookmarkButton: ".gb-panel-bookmark__view-button",
+    deleteBookmarkButton: ".gb-panel-bookmark__delete-button",
   },
 };

@@ -2,7 +2,7 @@
   "{{chrome}}.manifest_version": 3,
   "{{firefox}}.manifest_version": 2,
   "name": "Gemini Bookmarks",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Bookmark, tag, and quickly find important responses in your Google Gemini conversations.",
   "default_locale": "en",
   "permissions": ["storage"],

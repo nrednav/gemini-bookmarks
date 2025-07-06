@@ -1,6 +1,7 @@
 import {
   clearAllBookmarks,
   cycleTheme,
+  deleteBookmark,
   toggleTagFilter,
 } from "../core/actions";
 import { getScrollContainer } from "../helpers/get-scroll-container.js";
@@ -62,7 +63,7 @@ export const setupEventListeners = (dependencies) => {
  * @param {MouseEvent} e The click event.
  * @param {import('../core/types.js').Dependencies} dependencies
  */
-const handleBookmarkContainerClick = (e, dependencies) => {
+const handleBookmarkContainerClick = async (e, dependencies) => {
   const { window, elementSelectors, stateManager, logger } = dependencies;
 
   const bookmarkElement = e.target.closest(elementSelectors.ui.panelBookmark);
@@ -111,6 +112,18 @@ const handleBookmarkContainerClick = (e, dependencies) => {
       .catch((error) => {
         logger.error("Failed to copy text: ", error);
       });
+
+    return;
+  }
+
+  const deleteButton = e.target.closest(
+    elementSelectors.ui.deleteBookmarkButton,
+  );
+
+  if (deleteButton) {
+    e.stopPropagation();
+
+    await deleteBookmark(dependencies, bookmarkId);
 
     return;
   }
