@@ -1,15 +1,7 @@
 {
-  "themeButtonTitleDark": {
-    "description": "Tooltip for the theme button when the dark theme is active.",
-    "message": "ธีม: มืด (เปลี่ยนเป็นของระบบ)"
-  },
-  "themeButtonTitleLight": {
-    "description": "Tooltip for the theme button when the light theme is active.",
-    "message": "ธีม: สว่าง (เปลี่ยนเป็นมืด)"
-  },
-  "modalCloseButton": {
-    "description": "The text for a button that closes a modal.",
-    "message": "ปิด"
+  "addBookmarkTooltip": {
+    "description": "Tooltip for the bookmark icon when a response is not yet bookmarked.",
+    "message": "คลิกเพื่อเพิ่มบุ๊กมาร์ก"
   },
   "bookmarkCountPlural": {
     "description": "Used when there are zero or multiple bookmarks. The $1 placeholder will be replaced with the number of bookmarks.",
@@ -21,67 +13,35 @@
       }
     }
   },
+  "bookmarkCountSingular": {
+    "description": "Used when there is exactly one bookmark. The $1 placeholder will be replaced with '1'.",
+    "message": "$1 บุ๊กมาร์ก",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "1"
+      }
+    }
+  },
+  "cancelButtonText": {
+    "description": "The text for a generic cancel button.",
+    "message": "ยกเลิก"
+  },
+  "clearAllButtonText": {
+    "description": "The text on the 'Clear All' button.",
+    "message": "ล้างทั้งหมด"
+  },
   "clearAllButtonTitle": {
     "description": "The tooltip for the 'Clear All' button.",
     "message": "ลบบุ๊กมาร์กทั้งหมดสำหรับบทสนทนานี้"
   },
-  "storageWarningMessage": {
-    "description": "Warning message when storage is nearly full. $PERCENTAGE$ is a placeholder.",
-    "message": "คุณใช้พื้นที่เก็บข้อมูลไปแล้ว $1% โปรดจัดการข้อมูลของคุณเพื่อหลีกเลี่ยงปัญหา",
-    "placeholders": {
-      "percentage": {
-        "content": "$1",
-        "example": "95"
-      }
-    }
-  },
-  "optionsExportAllButton": {
-    "description": "Text for the button that exports all bookmark data to a file.",
-    "message": "ส่งออกข้อมูลทั้งหมด"
-  },
-  "optionsPageTotalUsage": {
-    "description": "Text used as a label on the storage total usage badge.",
-    "message": "การใช้งานทั้งหมด"
+  "clearAllConfirmation": {
+    "description": "The confirmation text shown to the user before clearing all bookmarks.",
+    "message": "แน่ใจหรือไม่ว่าต้องการลบบุ๊กมาร์กทั้งหมดสำหรับบทสนทนานี้"
   },
   "confirmButtonText": {
     "description": "The text for a generic confirmation button.",
     "message": "ยืนยัน"
-  },
-  "tagEditorLabel": {
-    "description": "A label appearing above the tag input field.",
-    "message": "เพิ่มแท็ก (คั่นด้วยจุลภาค):"
-  },
-  "viewModalTitle": {
-    "description": "The title of the modal that displays the full content of a bookmark.",
-    "message": "เนื้อหาที่บุ๊กมาร์กไว้"
-  },
-  "optionsLoadingState": {
-    "description": "Text shown while loading data on the options page.",
-    "message": "กำลังโหลดข้อมูลที่บันทึกไว้..."
-  },
-  "optionsEmptyState": {
-    "description": "Text shown on the options page when no data is found.",
-    "message": "คุณยังไม่ได้บุ๊กมาร์กบทสนทนาใดๆ"
-  },
-  "tagEditorPlaceholder": {
-    "description": "An example of tags, shown as placeholder text inside the input field.",
-    "message": "เช่น ไอเดีย, การศึกษา"
-  },
-  "fabTitle": {
-    "description": "Tooltip for the floating action button that opens the panel.",
-    "message": "ดูบุ๊กมาร์ก"
-  },
-  "tagEditorSaveButton": {
-    "description": "Text for the save button in the tag editor.",
-    "message": "บันทึก"
-  },
-  "themeButtonTitleSystem": {
-    "description": "Tooltip for the theme button when the system theme is active.",
-    "message": "ธีม: ของระบบ (เปลี่ยนเป็นสว่าง)"
-  },
-  "removeBookmarkTooltip": {
-    "description": "Tooltip for the bookmark icon when a response is already bookmarked.",
-    "message": "คลิกเพื่อลบบุ๊กมาร์ก"
   },
   "copyButtonTooltip": {
     "description": "Tooltip for the copy button on a bookmark item.",
@@ -91,9 +51,13 @@
     "description": "Toast message shown after successfully copying bookmark content.",
     "message": "คัดลอกเนื้อหาไปยังคลิปบอร์ดแล้ว!"
   },
-  "addBookmarkTooltip": {
-    "description": "Tooltip for the bookmark icon when a response is not yet bookmarked.",
-    "message": "คลิกเพื่อเพิ่มบุ๊กมาร์ก"
+  "deleteButtonTooltip": {
+    "description": "Tooltip for the delete button on a bookmark item.",
+    "message": "ลบบุ๊กมาร์ก"
+  },
+  "fabTitle": {
+    "description": "Tooltip for the floating action button that opens the panel.",
+    "message": "ดูบุ๊กมาร์ก"
   },
   "lastUpdatedTimestamp": {
     "description": "Indicates the timestamp of the last update. The $1 placeholder will be replaced with a formatted date/time string.",
@@ -105,90 +69,126 @@
       }
     }
   },
-  "optionsDeleteButton": {
-    "description": "Text for the button to delete a conversation's data.",
-    "message": "ลบ"
-  },
-  "panelEmptyMessage": {
-    "description": "Message shown in the panel when there are no bookmarks.",
-    "message": "ยังไม่มีบุ๊กมาร์ก คลิกไอคอนบนการตอบกลับเพื่อบุ๊กมาร์ก!"
-  },
-  "deleteButtonTooltip": {
-    "description": "Tooltip for the delete button on a bookmark item.",
-    "message": "ลบบุ๊กมาร์ก"
-  },
-  "clearAllConfirmation": {
-    "description": "The confirmation text shown to the user before clearing all bookmarks.",
-    "message": "แน่ใจหรือไม่ว่าต้องการลบบุ๊กมาร์กทั้งหมดสำหรับบทสนทนานี้"
-  },
-  "optionsViewButton": {
-    "description": "Text for the button to open a conversation from the options page.",
-    "message": "ดู"
-  },
-  "optionsDeleteConfirmation": {
-    "description": "Confirmation message before deleting a conversation's data.",
-    "message": "คุณแน่ใจหรือไม่ว่าต้องการลบบุ๊กมาร์กทั้งหมดสำหรับบทสนทนานี้? การกระทำนี้ไม่สามารถยกเลิกได้"
-  },
-  "storageWarningAction": {
-    "description": "Button text that takes the user to the options page to manage their data.",
-    "message": "จัดการข้อมูล"
+  "modalCloseButton": {
+    "description": "The text for a button that closes a modal.",
+    "message": "ปิด"
   },
   "optionsDeleteAllButton": {
     "description": "Text for the button that deletes all bookmark data from the options page.",
     "message": "ลบข้อมูลทั้งหมด"
   },
-  "optionsSavedConversationsHeader": {
-    "description": "The H2 header for the list of saved conversations.",
-    "message": "บทสนทนาที่บันทึกไว้"
-  },
-  "bookmarkCountSingular": {
-    "description": "Used when there is exactly one bookmark. The $1 placeholder will be replaced with '1'.",
-    "message": "$1 บุ๊กมาร์ก",
-    "placeholders": {
-      "1": {
-        "content": "$1",
-        "example": "1"
-      }
-    }
-  },
-  "panelHeader": {
-    "description": "The title text in the header of the bookmarks panel.",
-    "message": "การตอบกลับที่บุ๊กมาร์กไว้"
-  },
-  "cancelButtonText": {
-    "description": "The text for a generic cancel button.",
-    "message": "ยกเลิก"
-  },
-  "tagEditorCancelButton": {
-    "description": "Text for the cancel button in the tag editor.",
-    "message": "ยกเลิก"
-  },
   "optionsDeleteAllConfirmation": {
     "description": "A very strong confirmation message shown before deleting all user data.",
     "message": "คุณแน่ใจหรือไม่ว่าต้องการลบข้อมูลบุ๊กมาร์กที่บันทึกไว้ทั้งหมดของคุณในทุกบทสนทนา? การกระทำนี้ไม่สามารถยกเลิกได้"
   },
-  "optionsPageTitle": {
-    "description": "The title of the extension's options page.",
-    "message": "การตั้งค่า Gemini Bookmarks"
+  "optionsDeleteButton": {
+    "description": "Text for the button to delete a conversation's data.",
+    "message": "ลบ"
   },
-  "clearAllButtonText": {
-    "description": "The text on the 'Clear All' button.",
-    "message": "ล้างทั้งหมด"
+  "optionsDeleteConfirmation": {
+    "description": "Confirmation message before deleting a conversation's data.",
+    "message": "คุณแน่ใจหรือไม่ว่าต้องการลบบุ๊กมาร์กทั้งหมดสำหรับบทสนทนานี้? การกระทำนี้ไม่สามารถยกเลิกได้"
   },
-  "viewButtonTooltip": {
-    "description": "Tooltip for the view button on a bookmark item.",
-    "message": "ดูเนื้อหาทั้งหมด"
+  "optionsEmptyState": {
+    "description": "Text shown on the options page when no data is found.",
+    "message": "คุณยังไม่ได้บุ๊กมาร์กบทสนทนาใดๆ"
   },
-  "scrollToBookmarkTitle": {
-    "description": "Tooltip on a bookmark item in the side panel.",
-    "message": "คลิกเพื่อเลื่อนไปยังการตอบกลับนี้"
+  "optionsExportAllButton": {
+    "description": "Text for the button that exports all bookmark data to a file.",
+    "message": "ส่งออกข้อมูลทั้งหมด"
+  },
+  "optionsLoadingState": {
+    "description": "Text shown while loading data on the options page.",
+    "message": "กำลังโหลดข้อมูลที่บันทึกไว้..."
+  },
+  "optionsPageDescription": {
+    "description": "The descriptive paragraph on the options page.",
+    "message": "ในหน้านี้ คุณสามารถดูบทสนทนาทั้งหมดที่คุณได้บันทึกบุ๊กมาร์กไว้อย่างน้อยหนึ่งรายการ และลบข้อมูลสำหรับบทสนทนาที่คุณไม่ต้องการอีกต่อไป"
   },
   "optionsPageStandardErrorToast": {
     "description": "Standard toast message shown when an error occurs in the options page.",
     "message": "เกิดข้อผิดพลาด กรุณาลองอีกครั้ง"
   },
-  "optionsPageDescription": {
-    "description": "The descriptive paragraph on the options page.",
-    "message": "ในหน้านี้ คุณสามารถดูบทสนทนาทั้งหมดที่คุณได้บันทึกบุ๊กมาร์กไว้อย่างน้อยหนึ่งรายการ และลบข้อมูลสำหรับบทสนทนาที่คุณไม่ต้องการอีกต่อไป"
+  "optionsPageTitle": {
+    "description": "The title of the extension's options page.",
+    "message": "การตั้งค่า Gemini Bookmarks"
+  },
+  "optionsPageTotalUsage": {
+    "description": "Text used as a label on the storage total usage badge.",
+    "message": "การใช้งานทั้งหมด"
+  },
+  "optionsSavedConversationsHeader": {
+    "description": "The H2 header for the list of saved conversations.",
+    "message": "บทสนทนาที่บันทึกไว้"
+  },
+  "optionsViewButton": {
+    "description": "Text for the button to open a conversation from the options page.",
+    "message": "ดู"
+  },
+  "panelEmptyMessage": {
+    "description": "Message shown in the panel when there are no bookmarks.",
+    "message": "ยังไม่มีบุ๊กมาร์ก คลิกไอคอนบนการตอบกลับเพื่อบุ๊กมาร์ก!"
+  },
+  "panelHeader": {
+    "description": "The title text in the header of the bookmarks panel.",
+    "message": "การตอบกลับที่บุ๊กมาร์กไว้"
+  },
+  "removeBookmarkTooltip": {
+    "description": "Tooltip for the bookmark icon when a response is already bookmarked.",
+    "message": "คลิกเพื่อลบบุ๊กมาร์ก"
+  },
+  "scrollToBookmarkTitle": {
+    "description": "Tooltip on a bookmark item in the side panel.",
+    "message": "คลิกเพื่อเลื่อนไปยังการตอบกลับนี้"
+  },
+  "storageWarningAction": {
+    "description": "Button text that takes the user to the options page to manage their data.",
+    "message": "จัดการข้อมูล"
+  },
+  "storageWarningMessage": {
+    "description": "Warning message when storage is nearly full. $PERCENTAGE$ is a placeholder.",
+    "message": "คุณใช้พื้นที่เก็บข้อมูลไปแล้ว $1% โปรดจัดการข้อมูลของคุณเพื่อหลีกเลี่ยงปัญหา",
+    "placeholders": {
+      "percentage": {
+        "content": "$1",
+        "example": "95"
+      }
+    }
+  },
+  "tagEditorCancelButton": {
+    "description": "Text for the cancel button in the tag editor.",
+    "message": "ยกเลิก"
+  },
+  "tagEditorLabel": {
+    "description": "A label appearing above the tag input field.",
+    "message": "เพิ่มแท็ก (คั่นด้วยจุลภาค):"
+  },
+  "tagEditorPlaceholder": {
+    "description": "An example of tags, shown as placeholder text inside the input field.",
+    "message": "เช่น ไอเดีย, การศึกษา"
+  },
+  "tagEditorSaveButton": {
+    "description": "Text for the save button in the tag editor.",
+    "message": "บันทึก"
+  },
+  "themeButtonTitleDark": {
+    "description": "Tooltip for the theme button when the dark theme is active.",
+    "message": "ธีม: มืด (เปลี่ยนเป็นของระบบ)"
+  },
+  "themeButtonTitleLight": {
+    "description": "Tooltip for the theme button when the light theme is active.",
+    "message": "ธีม: สว่าง (เปลี่ยนเป็นมืด)"
+  },
+  "themeButtonTitleSystem": {
+    "description": "Tooltip for the theme button when the system theme is active.",
+    "message": "ธีม: ของระบบ (เปลี่ยนเป็นสว่าง)"
+  },
+  "viewButtonTooltip": {
+    "description": "Tooltip for the view button on a bookmark item.",
+    "message": "ดูเนื้อหาทั้งหมด"
+  },
+  "viewModalTitle": {
+    "description": "The title of the modal that displays the full content of a bookmark.",
+    "message": "เนื้อหาที่บุ๊กมาร์กไว้"
   }
 }

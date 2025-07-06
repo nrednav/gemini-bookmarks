@@ -1,15 +1,7 @@
 {
-  "themeButtonTitleDark": {
-    "description": "Tooltip for the theme button when the dark theme is active.",
-    "message": "主題：深色 (切換至系統預設)"
-  },
-  "themeButtonTitleLight": {
-    "description": "Tooltip for the theme button when the light theme is active.",
-    "message": "主題：淺色 (切換至深色)"
-  },
-  "modalCloseButton": {
-    "description": "The text for a button that closes a modal.",
-    "message": "關閉"
+  "addBookmarkTooltip": {
+    "description": "Tooltip for the bookmark icon when a response is not yet bookmarked.",
+    "message": "點擊以新增收藏"
   },
   "bookmarkCountPlural": {
     "description": "Used when there are zero or multiple bookmarks. The $1 placeholder will be replaced with the number of bookmarks.",
@@ -21,67 +13,35 @@
       }
     }
   },
+  "bookmarkCountSingular": {
+    "description": "Used when there is exactly one bookmark. The $1 placeholder will be replaced with '1'.",
+    "message": "$1 個收藏",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "1"
+      }
+    }
+  },
+  "cancelButtonText": {
+    "description": "The text for a generic cancel button.",
+    "message": "取消"
+  },
+  "clearAllButtonText": {
+    "description": "The text on the 'Clear All' button.",
+    "message": "全部清除"
+  },
   "clearAllButtonTitle": {
     "description": "The tooltip for the 'Clear All' button.",
     "message": "移除此對話中的全部收藏"
   },
-  "storageWarningMessage": {
-    "description": "Warning message when storage is nearly full. $PERCENTAGE$ is a placeholder.",
-    "message": "您正在使用 $1% 的儲存空間。請管理您的資料以避免發生問題。",
-    "placeholders": {
-      "percentage": {
-        "content": "$1",
-        "example": "95"
-      }
-    }
-  },
-  "optionsExportAllButton": {
-    "description": "Text for the button that exports all bookmark data to a file.",
-    "message": "匯出所有資料"
-  },
-  "optionsPageTotalUsage": {
-    "description": "Text used as a label on the storage total usage badge.",
-    "message": "總使用量"
+  "clearAllConfirmation": {
+    "description": "The confirmation text shown to the user before clearing all bookmarks.",
+    "message": "確定要移除此對話中的全部收藏嗎？"
   },
   "confirmButtonText": {
     "description": "The text for a generic confirmation button.",
     "message": "確認"
-  },
-  "tagEditorLabel": {
-    "description": "A label appearing above the tag input field.",
-    "message": "新增標籤 (以逗號分隔)："
-  },
-  "viewModalTitle": {
-    "description": "The title of the modal that displays the full content of a bookmark.",
-    "message": "收藏的內容"
-  },
-  "optionsLoadingState": {
-    "description": "Text shown while loading data on the options page.",
-    "message": "正在載入已儲存的資料..."
-  },
-  "optionsEmptyState": {
-    "description": "Text shown on the options page when no data is found.",
-    "message": "您尚未收藏任何對話。"
-  },
-  "tagEditorPlaceholder": {
-    "description": "An example of tags, shown as placeholder text inside the input field.",
-    "message": "例如：想法、學習"
-  },
-  "fabTitle": {
-    "description": "Tooltip for the floating action button that opens the panel.",
-    "message": "檢視收藏"
-  },
-  "tagEditorSaveButton": {
-    "description": "Text for the save button in the tag editor.",
-    "message": "儲存"
-  },
-  "themeButtonTitleSystem": {
-    "description": "Tooltip for the theme button when the system theme is active.",
-    "message": "主題：系統預設 (切換至淺色)"
-  },
-  "removeBookmarkTooltip": {
-    "description": "Tooltip for the bookmark icon when a response is already bookmarked.",
-    "message": "點擊以移除收藏"
   },
   "copyButtonTooltip": {
     "description": "Tooltip for the copy button on a bookmark item.",
@@ -91,9 +51,13 @@
     "description": "Toast message shown after successfully copying bookmark content.",
     "message": "內容已複製到剪貼簿！"
   },
-  "addBookmarkTooltip": {
-    "description": "Tooltip for the bookmark icon when a response is not yet bookmarked.",
-    "message": "點擊以新增收藏"
+  "deleteButtonTooltip": {
+    "description": "Tooltip for the delete button on a bookmark item.",
+    "message": "刪除書籤"
+  },
+  "fabTitle": {
+    "description": "Tooltip for the floating action button that opens the panel.",
+    "message": "檢視收藏"
   },
   "lastUpdatedTimestamp": {
     "description": "Indicates the timestamp of the last update. The $1 placeholder will be replaced with a formatted date/time string.",
@@ -105,90 +69,126 @@
       }
     }
   },
-  "optionsDeleteButton": {
-    "description": "Text for the button to delete a conversation's data.",
-    "message": "刪除"
-  },
-  "panelEmptyMessage": {
-    "description": "Message shown in the panel when there are no bookmarks.",
-    "message": "尚無收藏。點擊回覆旁的圖示即可收藏！"
-  },
-  "deleteButtonTooltip": {
-    "description": "Tooltip for the delete button on a bookmark item.",
-    "message": "刪除書籤"
-  },
-  "clearAllConfirmation": {
-    "description": "The confirmation text shown to the user before clearing all bookmarks.",
-    "message": "確定要移除此對話中的全部收藏嗎？"
-  },
-  "optionsViewButton": {
-    "description": "Text for the button to open a conversation from the options page.",
-    "message": "檢視"
-  },
-  "optionsDeleteConfirmation": {
-    "description": "Confirmation message before deleting a conversation's data.",
-    "message": "您確定要刪除此對話的所有收藏嗎？此操作無法復原。"
-  },
-  "storageWarningAction": {
-    "description": "Button text that takes the user to the options page to manage their data.",
-    "message": "管理資料"
+  "modalCloseButton": {
+    "description": "The text for a button that closes a modal.",
+    "message": "關閉"
   },
   "optionsDeleteAllButton": {
     "description": "Text for the button that deletes all bookmark data from the options page.",
     "message": "刪除所有資料"
   },
-  "optionsSavedConversationsHeader": {
-    "description": "The H2 header for the list of saved conversations.",
-    "message": "已儲存的對話"
-  },
-  "bookmarkCountSingular": {
-    "description": "Used when there is exactly one bookmark. The $1 placeholder will be replaced with '1'.",
-    "message": "$1 個收藏",
-    "placeholders": {
-      "1": {
-        "content": "$1",
-        "example": "1"
-      }
-    }
-  },
-  "panelHeader": {
-    "description": "The title text in the header of the bookmarks panel.",
-    "message": "收藏的回覆"
-  },
-  "cancelButtonText": {
-    "description": "The text for a generic cancel button.",
-    "message": "取消"
-  },
-  "tagEditorCancelButton": {
-    "description": "Text for the cancel button in the tag editor.",
-    "message": "取消"
-  },
   "optionsDeleteAllConfirmation": {
     "description": "A very strong confirmation message shown before deleting all user data.",
     "message": "您確定要刪除所有對話中已儲存的全部收藏資料嗎？此操作無法復原。"
   },
-  "optionsPageTitle": {
-    "description": "The title of the extension's options page.",
-    "message": "Gemini Bookmarks 設定"
+  "optionsDeleteButton": {
+    "description": "Text for the button to delete a conversation's data.",
+    "message": "刪除"
   },
-  "clearAllButtonText": {
-    "description": "The text on the 'Clear All' button.",
-    "message": "全部清除"
+  "optionsDeleteConfirmation": {
+    "description": "Confirmation message before deleting a conversation's data.",
+    "message": "您確定要刪除此對話的所有收藏嗎？此操作無法復原。"
   },
-  "viewButtonTooltip": {
-    "description": "Tooltip for the view button on a bookmark item.",
-    "message": "檢視完整內容"
+  "optionsEmptyState": {
+    "description": "Text shown on the options page when no data is found.",
+    "message": "您尚未收藏任何對話。"
   },
-  "scrollToBookmarkTitle": {
-    "description": "Tooltip on a bookmark item in the side panel.",
-    "message": "點擊以捲動至此回覆"
+  "optionsExportAllButton": {
+    "description": "Text for the button that exports all bookmark data to a file.",
+    "message": "匯出所有資料"
+  },
+  "optionsLoadingState": {
+    "description": "Text shown while loading data on the options page.",
+    "message": "正在載入已儲存的資料..."
+  },
+  "optionsPageDescription": {
+    "description": "The descriptive paragraph on the options page.",
+    "message": "在此頁面上，您可以檢視所有已儲存至少一個收藏的對話，並移除不再需要的對話資料。"
   },
   "optionsPageStandardErrorToast": {
     "description": "Standard toast message shown when an error occurs in the options page.",
     "message": "發生錯誤。請再試一次。"
   },
-  "optionsPageDescription": {
-    "description": "The descriptive paragraph on the options page.",
-    "message": "在此頁面上，您可以檢視所有已儲存至少一個收藏的對話，並移除不再需要的對話資料。"
+  "optionsPageTitle": {
+    "description": "The title of the extension's options page.",
+    "message": "Gemini Bookmarks 設定"
+  },
+  "optionsPageTotalUsage": {
+    "description": "Text used as a label on the storage total usage badge.",
+    "message": "總使用量"
+  },
+  "optionsSavedConversationsHeader": {
+    "description": "The H2 header for the list of saved conversations.",
+    "message": "已儲存的對話"
+  },
+  "optionsViewButton": {
+    "description": "Text for the button to open a conversation from the options page.",
+    "message": "檢視"
+  },
+  "panelEmptyMessage": {
+    "description": "Message shown in the panel when there are no bookmarks.",
+    "message": "尚無收藏。點擊回覆旁的圖示即可收藏！"
+  },
+  "panelHeader": {
+    "description": "The title text in the header of the bookmarks panel.",
+    "message": "收藏的回覆"
+  },
+  "removeBookmarkTooltip": {
+    "description": "Tooltip for the bookmark icon when a response is already bookmarked.",
+    "message": "點擊以移除收藏"
+  },
+  "scrollToBookmarkTitle": {
+    "description": "Tooltip on a bookmark item in the side panel.",
+    "message": "點擊以捲動至此回覆"
+  },
+  "storageWarningAction": {
+    "description": "Button text that takes the user to the options page to manage their data.",
+    "message": "管理資料"
+  },
+  "storageWarningMessage": {
+    "description": "Warning message when storage is nearly full. $PERCENTAGE$ is a placeholder.",
+    "message": "您正在使用 $1% 的儲存空間。請管理您的資料以避免發生問題。",
+    "placeholders": {
+      "percentage": {
+        "content": "$1",
+        "example": "95"
+      }
+    }
+  },
+  "tagEditorCancelButton": {
+    "description": "Text for the cancel button in the tag editor.",
+    "message": "取消"
+  },
+  "tagEditorLabel": {
+    "description": "A label appearing above the tag input field.",
+    "message": "新增標籤 (以逗號分隔)："
+  },
+  "tagEditorPlaceholder": {
+    "description": "An example of tags, shown as placeholder text inside the input field.",
+    "message": "例如：想法、學習"
+  },
+  "tagEditorSaveButton": {
+    "description": "Text for the save button in the tag editor.",
+    "message": "儲存"
+  },
+  "themeButtonTitleDark": {
+    "description": "Tooltip for the theme button when the dark theme is active.",
+    "message": "主題：深色 (切換至系統預設)"
+  },
+  "themeButtonTitleLight": {
+    "description": "Tooltip for the theme button when the light theme is active.",
+    "message": "主題：淺色 (切換至深色)"
+  },
+  "themeButtonTitleSystem": {
+    "description": "Tooltip for the theme button when the system theme is active.",
+    "message": "主題：系統預設 (切換至淺色)"
+  },
+  "viewButtonTooltip": {
+    "description": "Tooltip for the view button on a bookmark item.",
+    "message": "檢視完整內容"
+  },
+  "viewModalTitle": {
+    "description": "The title of the modal that displays the full content of a bookmark.",
+    "message": "收藏的內容"
   }
 }

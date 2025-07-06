@@ -1,15 +1,7 @@
 {
-  "themeButtonTitleDark": {
-    "description": "Tooltip for the theme button when the dark theme is active.",
-    "message": "Tema: Mörkt (Byt till system)"
-  },
-  "themeButtonTitleLight": {
-    "description": "Tooltip for the theme button when the light theme is active.",
-    "message": "Tema: Ljust (Byt till mörkt)"
-  },
-  "modalCloseButton": {
-    "description": "The text for a button that closes a modal.",
-    "message": "Stäng"
+  "addBookmarkTooltip": {
+    "description": "Tooltip for the bookmark icon when a response is not yet bookmarked.",
+    "message": "Klicka för att lägga till bokmärke"
   },
   "bookmarkCountPlural": {
     "description": "Used when there are zero or multiple bookmarks. The $1 placeholder will be replaced with the number of bookmarks.",
@@ -21,67 +13,35 @@
       }
     }
   },
+  "bookmarkCountSingular": {
+    "description": "Used when there is exactly one bookmark. The $1 placeholder will be replaced with '1'.",
+    "message": "$1 bokmärke",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "1"
+      }
+    }
+  },
+  "cancelButtonText": {
+    "description": "The text for a generic cancel button.",
+    "message": "Avbryt"
+  },
+  "clearAllButtonText": {
+    "description": "The text on the 'Clear All' button.",
+    "message": "Rensa allt"
+  },
   "clearAllButtonTitle": {
     "description": "The tooltip for the 'Clear All' button.",
     "message": "Ta bort alla bokmärken för den här konversationen"
   },
-  "storageWarningMessage": {
-    "description": "Warning message when storage is nearly full. $PERCENTAGE$ is a placeholder.",
-    "message": "Du använder $1% av ditt lagringsutrymme. Hantera din data för att undvika problem.",
-    "placeholders": {
-      "percentage": {
-        "content": "$1",
-        "example": "95"
-      }
-    }
-  },
-  "optionsExportAllButton": {
-    "description": "Text for the button that exports all bookmark data to a file.",
-    "message": "Exportera all data"
-  },
-  "optionsPageTotalUsage": {
-    "description": "Text used as a label on the storage total usage badge.",
-    "message": "Total användning"
+  "clearAllConfirmation": {
+    "description": "The confirmation text shown to the user before clearing all bookmarks.",
+    "message": "Är du säker på att du vill ta bort ALLA bokmärken för den här konversationen?"
   },
   "confirmButtonText": {
     "description": "The text for a generic confirmation button.",
     "message": "Bekräfta"
-  },
-  "tagEditorLabel": {
-    "description": "A label appearing above the tag input field.",
-    "message": "Lägg till taggar (kommaseparerade):"
-  },
-  "viewModalTitle": {
-    "description": "The title of the modal that displays the full content of a bookmark.",
-    "message": "Bokmärkt innehåll"
-  },
-  "optionsLoadingState": {
-    "description": "Text shown while loading data on the options page.",
-    "message": "Laddar sparad data..."
-  },
-  "optionsEmptyState": {
-    "description": "Text shown on the options page when no data is found.",
-    "message": "Du har inte bokmärkt några konversationer än."
-  },
-  "tagEditorPlaceholder": {
-    "description": "An example of tags, shown as placeholder text inside the input field.",
-    "message": "t.ex. idé, studie"
-  },
-  "fabTitle": {
-    "description": "Tooltip for the floating action button that opens the panel.",
-    "message": "Visa bokmärken"
-  },
-  "tagEditorSaveButton": {
-    "description": "Text for the save button in the tag editor.",
-    "message": "Spara"
-  },
-  "themeButtonTitleSystem": {
-    "description": "Tooltip for the theme button when the system theme is active.",
-    "message": "Tema: System (Byt till ljust)"
-  },
-  "removeBookmarkTooltip": {
-    "description": "Tooltip for the bookmark icon when a response is already bookmarked.",
-    "message": "Klicka för att ta bort bokmärke"
   },
   "copyButtonTooltip": {
     "description": "Tooltip for the copy button on a bookmark item.",
@@ -91,9 +51,13 @@
     "description": "Toast message shown after successfully copying bookmark content.",
     "message": "Innehållet kopierades till urklipp!"
   },
-  "addBookmarkTooltip": {
-    "description": "Tooltip for the bookmark icon when a response is not yet bookmarked.",
-    "message": "Klicka för att lägga till bokmärke"
+  "deleteButtonTooltip": {
+    "description": "Tooltip for the delete button on a bookmark item.",
+    "message": "Ta bort bokmärke"
+  },
+  "fabTitle": {
+    "description": "Tooltip for the floating action button that opens the panel.",
+    "message": "Visa bokmärken"
   },
   "lastUpdatedTimestamp": {
     "description": "Indicates the timestamp of the last update. The $1 placeholder will be replaced with a formatted date/time string.",
@@ -105,90 +69,126 @@
       }
     }
   },
-  "optionsDeleteButton": {
-    "description": "Text for the button to delete a conversation's data.",
-    "message": "Ta bort"
-  },
-  "panelEmptyMessage": {
-    "description": "Message shown in the panel when there are no bookmarks.",
-    "message": "Inga bokmärken än. Klicka på ikonen på ett svar för att bokmärka det!"
-  },
-  "deleteButtonTooltip": {
-    "description": "Tooltip for the delete button on a bookmark item.",
-    "message": "Ta bort bokmärke"
-  },
-  "clearAllConfirmation": {
-    "description": "The confirmation text shown to the user before clearing all bookmarks.",
-    "message": "Är du säker på att du vill ta bort ALLA bokmärken för den här konversationen?"
-  },
-  "optionsViewButton": {
-    "description": "Text for the button to open a conversation from the options page.",
-    "message": "Visa"
-  },
-  "optionsDeleteConfirmation": {
-    "description": "Confirmation message before deleting a conversation's data.",
-    "message": "Är du säker på att du vill ta bort alla bokmärken för den här konversationen? Detta kan inte ångras."
-  },
-  "storageWarningAction": {
-    "description": "Button text that takes the user to the options page to manage their data.",
-    "message": "Hantera data"
+  "modalCloseButton": {
+    "description": "The text for a button that closes a modal.",
+    "message": "Stäng"
   },
   "optionsDeleteAllButton": {
     "description": "Text for the button that deletes all bookmark data from the options page.",
     "message": "Ta bort all data"
   },
-  "optionsSavedConversationsHeader": {
-    "description": "The H2 header for the list of saved conversations.",
-    "message": "Sparade konversationer"
-  },
-  "bookmarkCountSingular": {
-    "description": "Used when there is exactly one bookmark. The $1 placeholder will be replaced with '1'.",
-    "message": "$1 bokmärke",
-    "placeholders": {
-      "1": {
-        "content": "$1",
-        "example": "1"
-      }
-    }
-  },
-  "panelHeader": {
-    "description": "The title text in the header of the bookmarks panel.",
-    "message": "Bokmärkta svar"
-  },
-  "cancelButtonText": {
-    "description": "The text for a generic cancel button.",
-    "message": "Avbryt"
-  },
-  "tagEditorCancelButton": {
-    "description": "Text for the cancel button in the tag editor.",
-    "message": "Avbryt"
-  },
   "optionsDeleteAllConfirmation": {
     "description": "A very strong confirmation message shown before deleting all user data.",
     "message": "Är du säker på att du vill ta bort ALL din sparade bokmärkesdata från ALLA konversationer? Denna åtgärd kan inte ångras."
   },
-  "optionsPageTitle": {
-    "description": "The title of the extension's options page.",
-    "message": "Inställningar för Gemini Bookmarks"
+  "optionsDeleteButton": {
+    "description": "Text for the button to delete a conversation's data.",
+    "message": "Ta bort"
   },
-  "clearAllButtonText": {
-    "description": "The text on the 'Clear All' button.",
-    "message": "Rensa allt"
+  "optionsDeleteConfirmation": {
+    "description": "Confirmation message before deleting a conversation's data.",
+    "message": "Är du säker på att du vill ta bort alla bokmärken för den här konversationen? Detta kan inte ångras."
   },
-  "viewButtonTooltip": {
-    "description": "Tooltip for the view button on a bookmark item.",
-    "message": "Visa hela innehållet"
+  "optionsEmptyState": {
+    "description": "Text shown on the options page when no data is found.",
+    "message": "Du har inte bokmärkt några konversationer än."
   },
-  "scrollToBookmarkTitle": {
-    "description": "Tooltip on a bookmark item in the side panel.",
-    "message": "Klicka för att rulla till det här svaret"
+  "optionsExportAllButton": {
+    "description": "Text for the button that exports all bookmark data to a file.",
+    "message": "Exportera all data"
+  },
+  "optionsLoadingState": {
+    "description": "Text shown while loading data on the options page.",
+    "message": "Laddar sparad data..."
+  },
+  "optionsPageDescription": {
+    "description": "The descriptive paragraph on the options page.",
+    "message": "På den här sidan kan du se alla konversationer där du har sparat minst ett bokmärke och ta bort data för konversationer du inte längre behöver."
   },
   "optionsPageStandardErrorToast": {
     "description": "Standard toast message shown when an error occurs in the options page.",
     "message": "Ett fel uppstod. Försök igen."
   },
-  "optionsPageDescription": {
-    "description": "The descriptive paragraph on the options page.",
-    "message": "På den här sidan kan du se alla konversationer där du har sparat minst ett bokmärke och ta bort data för konversationer du inte längre behöver."
+  "optionsPageTitle": {
+    "description": "The title of the extension's options page.",
+    "message": "Inställningar för Gemini Bookmarks"
+  },
+  "optionsPageTotalUsage": {
+    "description": "Text used as a label on the storage total usage badge.",
+    "message": "Total användning"
+  },
+  "optionsSavedConversationsHeader": {
+    "description": "The H2 header for the list of saved conversations.",
+    "message": "Sparade konversationer"
+  },
+  "optionsViewButton": {
+    "description": "Text for the button to open a conversation from the options page.",
+    "message": "Visa"
+  },
+  "panelEmptyMessage": {
+    "description": "Message shown in the panel when there are no bookmarks.",
+    "message": "Inga bokmärken än. Klicka på ikonen på ett svar för att bokmärka det!"
+  },
+  "panelHeader": {
+    "description": "The title text in the header of the bookmarks panel.",
+    "message": "Bokmärkta svar"
+  },
+  "removeBookmarkTooltip": {
+    "description": "Tooltip for the bookmark icon when a response is already bookmarked.",
+    "message": "Klicka för att ta bort bokmärke"
+  },
+  "scrollToBookmarkTitle": {
+    "description": "Tooltip on a bookmark item in the side panel.",
+    "message": "Klicka för att rulla till det här svaret"
+  },
+  "storageWarningAction": {
+    "description": "Button text that takes the user to the options page to manage their data.",
+    "message": "Hantera data"
+  },
+  "storageWarningMessage": {
+    "description": "Warning message when storage is nearly full. $PERCENTAGE$ is a placeholder.",
+    "message": "Du använder $1% av ditt lagringsutrymme. Hantera din data för att undvika problem.",
+    "placeholders": {
+      "percentage": {
+        "content": "$1",
+        "example": "95"
+      }
+    }
+  },
+  "tagEditorCancelButton": {
+    "description": "Text for the cancel button in the tag editor.",
+    "message": "Avbryt"
+  },
+  "tagEditorLabel": {
+    "description": "A label appearing above the tag input field.",
+    "message": "Lägg till taggar (kommaseparerade):"
+  },
+  "tagEditorPlaceholder": {
+    "description": "An example of tags, shown as placeholder text inside the input field.",
+    "message": "t.ex. idé, studie"
+  },
+  "tagEditorSaveButton": {
+    "description": "Text for the save button in the tag editor.",
+    "message": "Spara"
+  },
+  "themeButtonTitleDark": {
+    "description": "Tooltip for the theme button when the dark theme is active.",
+    "message": "Tema: Mörkt (Byt till system)"
+  },
+  "themeButtonTitleLight": {
+    "description": "Tooltip for the theme button when the light theme is active.",
+    "message": "Tema: Ljust (Byt till mörkt)"
+  },
+  "themeButtonTitleSystem": {
+    "description": "Tooltip for the theme button when the system theme is active.",
+    "message": "Tema: System (Byt till ljust)"
+  },
+  "viewButtonTooltip": {
+    "description": "Tooltip for the view button on a bookmark item.",
+    "message": "Visa hela innehållet"
+  },
+  "viewModalTitle": {
+    "description": "The title of the modal that displays the full content of a bookmark.",
+    "message": "Bokmärkt innehåll"
   }
 }

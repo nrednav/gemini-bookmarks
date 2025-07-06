@@ -1,15 +1,7 @@
 {
-  "themeButtonTitleDark": {
-    "description": "Tooltip for the theme button when the dark theme is active.",
-    "message": "Chủ đề: Tối (Chuyển sang Hệ thống)"
-  },
-  "themeButtonTitleLight": {
-    "description": "Tooltip for the theme button when the light theme is active.",
-    "message": "Chủ đề: Sáng (Chuyển sang Tối)"
-  },
-  "modalCloseButton": {
-    "description": "The text for a button that closes a modal.",
-    "message": "Đóng"
+  "addBookmarkTooltip": {
+    "description": "Tooltip for the bookmark icon when a response is not yet bookmarked.",
+    "message": "Nhấn để thêm dấu trang"
   },
   "bookmarkCountPlural": {
     "description": "Used when there are zero or multiple bookmarks. The $1 placeholder will be replaced with the number of bookmarks.",
@@ -21,67 +13,35 @@
       }
     }
   },
+  "bookmarkCountSingular": {
+    "description": "Used when there is exactly one bookmark. The $1 placeholder will be replaced with '1'.",
+    "message": "$1 dấu trang",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "1"
+      }
+    }
+  },
+  "cancelButtonText": {
+    "description": "The text for a generic cancel button.",
+    "message": "Hủy"
+  },
+  "clearAllButtonText": {
+    "description": "The text on the 'Clear All' button.",
+    "message": "Xóa tất cả"
+  },
   "clearAllButtonTitle": {
     "description": "The tooltip for the 'Clear All' button.",
     "message": "Xóa tất cả dấu trang cho cuộc trò chuyện này"
   },
-  "storageWarningMessage": {
-    "description": "Warning message when storage is nearly full. $PERCENTAGE$ is a placeholder.",
-    "message": "Bạn đang sử dụng $1% dung lượng lưu trữ của mình. Vui lòng quản lý dữ liệu để tránh sự cố.",
-    "placeholders": {
-      "percentage": {
-        "content": "$1",
-        "example": "95"
-      }
-    }
-  },
-  "optionsExportAllButton": {
-    "description": "Text for the button that exports all bookmark data to a file.",
-    "message": "Xuất tất cả dữ liệu"
-  },
-  "optionsPageTotalUsage": {
-    "description": "Text used as a label on the storage total usage badge.",
-    "message": "Tổng mức sử dụng"
+  "clearAllConfirmation": {
+    "description": "The confirmation text shown to the user before clearing all bookmarks.",
+    "message": "Bạn có chắc chắn muốn xóa TẤT CẢ dấu trang cho cuộc trò chuyện này không?"
   },
   "confirmButtonText": {
     "description": "The text for a generic confirmation button.",
     "message": "Xác nhận"
-  },
-  "tagEditorLabel": {
-    "description": "A label appearing above the tag input field.",
-    "message": "Thêm thẻ (phân cách bằng dấu phẩy):"
-  },
-  "viewModalTitle": {
-    "description": "The title of the modal that displays the full content of a bookmark.",
-    "message": "Nội dung đã đánh dấu"
-  },
-  "optionsLoadingState": {
-    "description": "Text shown while loading data on the options page.",
-    "message": "Đang tải dữ liệu đã lưu..."
-  },
-  "optionsEmptyState": {
-    "description": "Text shown on the options page when no data is found.",
-    "message": "Bạn chưa đánh dấu cuộc trò chuyện nào."
-  },
-  "tagEditorPlaceholder": {
-    "description": "An example of tags, shown as placeholder text inside the input field.",
-    "message": "ví dụ: ý tưởng, học tập"
-  },
-  "fabTitle": {
-    "description": "Tooltip for the floating action button that opens the panel.",
-    "message": "Xem các dấu trang"
-  },
-  "tagEditorSaveButton": {
-    "description": "Text for the save button in the tag editor.",
-    "message": "Lưu"
-  },
-  "themeButtonTitleSystem": {
-    "description": "Tooltip for the theme button when the system theme is active.",
-    "message": "Chủ đề: Hệ thống (Chuyển sang Sáng)"
-  },
-  "removeBookmarkTooltip": {
-    "description": "Tooltip for the bookmark icon when a response is already bookmarked.",
-    "message": "Nhấn để xóa dấu trang"
   },
   "copyButtonTooltip": {
     "description": "Tooltip for the copy button on a bookmark item.",
@@ -91,9 +51,13 @@
     "description": "Toast message shown after successfully copying bookmark content.",
     "message": "Đã sao chép nội dung vào khay nhớ tạm!"
   },
-  "addBookmarkTooltip": {
-    "description": "Tooltip for the bookmark icon when a response is not yet bookmarked.",
-    "message": "Nhấn để thêm dấu trang"
+  "deleteButtonTooltip": {
+    "description": "Tooltip for the delete button on a bookmark item.",
+    "message": "Xóa dấu trang"
+  },
+  "fabTitle": {
+    "description": "Tooltip for the floating action button that opens the panel.",
+    "message": "Xem các dấu trang"
   },
   "lastUpdatedTimestamp": {
     "description": "Indicates the timestamp of the last update. The $1 placeholder will be replaced with a formatted date/time string.",
@@ -105,90 +69,126 @@
       }
     }
   },
-  "optionsDeleteButton": {
-    "description": "Text for the button to delete a conversation's data.",
-    "message": "Xóa"
-  },
-  "panelEmptyMessage": {
-    "description": "Message shown in the panel when there are no bookmarks.",
-    "message": "Chưa có dấu trang nào. Nhấn vào biểu tượng trên một phản hồi để đánh dấu nó!"
-  },
-  "deleteButtonTooltip": {
-    "description": "Tooltip for the delete button on a bookmark item.",
-    "message": "Xóa dấu trang"
-  },
-  "clearAllConfirmation": {
-    "description": "The confirmation text shown to the user before clearing all bookmarks.",
-    "message": "Bạn có chắc chắn muốn xóa TẤT CẢ dấu trang cho cuộc trò chuyện này không?"
-  },
-  "optionsViewButton": {
-    "description": "Text for the button to open a conversation from the options page.",
-    "message": "Xem"
-  },
-  "optionsDeleteConfirmation": {
-    "description": "Confirmation message before deleting a conversation's data.",
-    "message": "Bạn có chắc chắn muốn xóa tất cả dấu trang cho cuộc trò chuyện này không? Hành động này không thể hoàn tác."
-  },
-  "storageWarningAction": {
-    "description": "Button text that takes the user to the options page to manage their data.",
-    "message": "Quản lý dữ liệu"
+  "modalCloseButton": {
+    "description": "The text for a button that closes a modal.",
+    "message": "Đóng"
   },
   "optionsDeleteAllButton": {
     "description": "Text for the button that deletes all bookmark data from the options page.",
     "message": "Xóa tất cả dữ liệu"
   },
-  "optionsSavedConversationsHeader": {
-    "description": "The H2 header for the list of saved conversations.",
-    "message": "Các cuộc trò chuyện đã lưu"
-  },
-  "bookmarkCountSingular": {
-    "description": "Used when there is exactly one bookmark. The $1 placeholder will be replaced with '1'.",
-    "message": "$1 dấu trang",
-    "placeholders": {
-      "1": {
-        "content": "$1",
-        "example": "1"
-      }
-    }
-  },
-  "panelHeader": {
-    "description": "The title text in the header of the bookmarks panel.",
-    "message": "Các phản hồi đã đánh dấu"
-  },
-  "cancelButtonText": {
-    "description": "The text for a generic cancel button.",
-    "message": "Hủy"
-  },
-  "tagEditorCancelButton": {
-    "description": "Text for the cancel button in the tag editor.",
-    "message": "Hủy"
-  },
   "optionsDeleteAllConfirmation": {
     "description": "A very strong confirmation message shown before deleting all user data.",
     "message": "Bạn có chắc chắn muốn xóa TẤT CẢ dữ liệu dấu trang đã lưu của mình trên TẤT CẢ các cuộc trò chuyện không? Hành động này không thể hoàn tác."
   },
-  "optionsPageTitle": {
-    "description": "The title of the extension's options page.",
-    "message": "Cài đặt Gemini Bookmarks"
+  "optionsDeleteButton": {
+    "description": "Text for the button to delete a conversation's data.",
+    "message": "Xóa"
   },
-  "clearAllButtonText": {
-    "description": "The text on the 'Clear All' button.",
-    "message": "Xóa tất cả"
+  "optionsDeleteConfirmation": {
+    "description": "Confirmation message before deleting a conversation's data.",
+    "message": "Bạn có chắc chắn muốn xóa tất cả dấu trang cho cuộc trò chuyện này không? Hành động này không thể hoàn tác."
   },
-  "viewButtonTooltip": {
-    "description": "Tooltip for the view button on a bookmark item.",
-    "message": "Xem toàn bộ nội dung"
+  "optionsEmptyState": {
+    "description": "Text shown on the options page when no data is found.",
+    "message": "Bạn chưa đánh dấu cuộc trò chuyện nào."
   },
-  "scrollToBookmarkTitle": {
-    "description": "Tooltip on a bookmark item in the side panel.",
-    "message": "Nhấn để cuộn đến phản hồi này"
+  "optionsExportAllButton": {
+    "description": "Text for the button that exports all bookmark data to a file.",
+    "message": "Xuất tất cả dữ liệu"
+  },
+  "optionsLoadingState": {
+    "description": "Text shown while loading data on the options page.",
+    "message": "Đang tải dữ liệu đã lưu..."
+  },
+  "optionsPageDescription": {
+    "description": "The descriptive paragraph on the options page.",
+    "message": "Trên trang này, bạn có thể xem tất cả các cuộc trò chuyện mà bạn đã lưu ít nhất một dấu trang và xóa dữ liệu cho các cuộc trò chuyện bạn không còn cần nữa."
   },
   "optionsPageStandardErrorToast": {
     "description": "Standard toast message shown when an error occurs in the options page.",
     "message": "Đã xảy ra lỗi. Vui lòng thử lại."
   },
-  "optionsPageDescription": {
-    "description": "The descriptive paragraph on the options page.",
-    "message": "Trên trang này, bạn có thể xem tất cả các cuộc trò chuyện mà bạn đã lưu ít nhất một dấu trang và xóa dữ liệu cho các cuộc trò chuyện bạn không còn cần nữa."
+  "optionsPageTitle": {
+    "description": "The title of the extension's options page.",
+    "message": "Cài đặt Gemini Bookmarks"
+  },
+  "optionsPageTotalUsage": {
+    "description": "Text used as a label on the storage total usage badge.",
+    "message": "Tổng mức sử dụng"
+  },
+  "optionsSavedConversationsHeader": {
+    "description": "The H2 header for the list of saved conversations.",
+    "message": "Các cuộc trò chuyện đã lưu"
+  },
+  "optionsViewButton": {
+    "description": "Text for the button to open a conversation from the options page.",
+    "message": "Xem"
+  },
+  "panelEmptyMessage": {
+    "description": "Message shown in the panel when there are no bookmarks.",
+    "message": "Chưa có dấu trang nào. Nhấn vào biểu tượng trên một phản hồi để đánh dấu nó!"
+  },
+  "panelHeader": {
+    "description": "The title text in the header of the bookmarks panel.",
+    "message": "Các phản hồi đã đánh dấu"
+  },
+  "removeBookmarkTooltip": {
+    "description": "Tooltip for the bookmark icon when a response is already bookmarked.",
+    "message": "Nhấn để xóa dấu trang"
+  },
+  "scrollToBookmarkTitle": {
+    "description": "Tooltip on a bookmark item in the side panel.",
+    "message": "Nhấn để cuộn đến phản hồi này"
+  },
+  "storageWarningAction": {
+    "description": "Button text that takes the user to the options page to manage their data.",
+    "message": "Quản lý dữ liệu"
+  },
+  "storageWarningMessage": {
+    "description": "Warning message when storage is nearly full. $PERCENTAGE$ is a placeholder.",
+    "message": "Bạn đang sử dụng $1% dung lượng lưu trữ của mình. Vui lòng quản lý dữ liệu để tránh sự cố.",
+    "placeholders": {
+      "percentage": {
+        "content": "$1",
+        "example": "95"
+      }
+    }
+  },
+  "tagEditorCancelButton": {
+    "description": "Text for the cancel button in the tag editor.",
+    "message": "Hủy"
+  },
+  "tagEditorLabel": {
+    "description": "A label appearing above the tag input field.",
+    "message": "Thêm thẻ (phân cách bằng dấu phẩy):"
+  },
+  "tagEditorPlaceholder": {
+    "description": "An example of tags, shown as placeholder text inside the input field.",
+    "message": "ví dụ: ý tưởng, học tập"
+  },
+  "tagEditorSaveButton": {
+    "description": "Text for the save button in the tag editor.",
+    "message": "Lưu"
+  },
+  "themeButtonTitleDark": {
+    "description": "Tooltip for the theme button when the dark theme is active.",
+    "message": "Chủ đề: Tối (Chuyển sang Hệ thống)"
+  },
+  "themeButtonTitleLight": {
+    "description": "Tooltip for the theme button when the light theme is active.",
+    "message": "Chủ đề: Sáng (Chuyển sang Tối)"
+  },
+  "themeButtonTitleSystem": {
+    "description": "Tooltip for the theme button when the system theme is active.",
+    "message": "Chủ đề: Hệ thống (Chuyển sang Sáng)"
+  },
+  "viewButtonTooltip": {
+    "description": "Tooltip for the view button on a bookmark item.",
+    "message": "Xem toàn bộ nội dung"
+  },
+  "viewModalTitle": {
+    "description": "The title of the modal that displays the full content of a bookmark.",
+    "message": "Nội dung đã đánh dấu"
   }
 }
