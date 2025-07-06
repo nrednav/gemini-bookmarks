@@ -100,3 +100,24 @@ export const cycleTheme = async ({ uiElements }) => {
 
   applyTheme(nextTheme, uiElements);
 };
+
+/**
+ * Deletes a single bookmark from the state and storage.
+ * @param {import('./types.js').Dependencies} dependencies
+ * @param {string} bookmarkId - The ID of the bookmark to delete.
+ */
+export const deleteBookmark = async (dependencies, bookmarkId) => {
+  const { stateManager } = dependencies;
+  const currentState = stateManager.getState();
+
+  const updatedBookmarks = currentState.bookmarks.filter(
+    (bookmark) => bookmark.id !== bookmarkId,
+  );
+
+  stateManager.setState({ ...currentState, bookmarks: updatedBookmarks });
+
+  await stateManager.saveStateToStorage();
+  await checkStorageQuota(dependencies);
+
+  renderUi(dependencies);
+};

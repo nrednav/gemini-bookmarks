@@ -9,6 +9,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Added delete button to each bookmark item in the UI side panel
+  - This is meant to complement the "clear all" button and allow users to remove
+    individual bookmarks from anywhere on the page, instead of having to scroll
+    to the bookmark before being able to remove it
+
 ### Fixed
 
 - Fixed a bug where bookmarked responses would be empty ("...") and fail on page

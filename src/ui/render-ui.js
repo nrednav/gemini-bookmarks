@@ -112,8 +112,16 @@ const renderPanelContent = (dependencies) => {
     viewButton.title = chrome.i18n.getMessage("viewButtonTooltip");
     viewButton.append(createIconElement(actionIcons.view));
 
+    const deleteButton = window.document.createElement("button");
+
+    deleteButton.className =
+      "gb-panel-bookmark__action-button gb-panel-bookmark__delete-button";
+    deleteButton.title = chrome.i18n.getMessage("deleteButtonTooltip");
+    deleteButton.append(createIconElement(actionIcons.delete));
+
     actionsContainer.appendChild(viewButton);
     actionsContainer.appendChild(copyButton);
+    actionsContainer.appendChild(deleteButton);
     bookmarkElement.appendChild(contentElement);
     bookmarkElement.appendChild(tagsContainer);
     bookmarkElement.appendChild(actionsContainer);

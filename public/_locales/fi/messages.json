@@ -1,175 +1,19 @@
 {
-  "panelHeader": {
-    "message": "Tallennetut vastaukset",
-    "description": "The title text in the header of the bookmarks panel."
-  },
-  "clearAllButtonTitle": {
-    "message": "Poista kaikki tämän keskustelun kirjanmerkit",
-    "description": "The tooltip for the 'Clear All' button."
-  },
-  "clearAllButtonText": {
-    "message": "Poista kaikki",
-    "description": "The text on the 'Clear All' button."
+  "themeButtonTitleDark": {
+    "description": "Tooltip for the theme button when the dark theme is active.",
+    "message": "Teema: Tumma (Vaihda järjestelmään)"
   },
   "themeButtonTitleLight": {
-    "message": "Teema: Vaalea (Vaihda tummaan)",
-    "description": "Tooltip for the theme button when the light theme is active."
-  },
-  "themeButtonTitleDark": {
-    "message": "Teema: Tumma (Vaihda järjestelmään)",
-    "description": "Tooltip for the theme button when the dark theme is active."
-  },
-  "themeButtonTitleSystem": {
-    "message": "Teema: Järjestelmä (Vaihda vaaleaan)",
-    "description": "Tooltip for the theme button when the system theme is active."
-  },
-  "fabTitle": {
-    "message": "Näytä kirjanmerkit",
-    "description": "Tooltip for the floating action button that opens the panel."
-  },
-  "tagEditorLabel": {
-    "message": "Lisää tageja (pilkulla erotettuna):",
-    "description": "A label appearing above the tag input field."
-  },
-  "tagEditorPlaceholder": {
-    "message": "esim. idea, opiskelu",
-    "description": "An example of tags, shown as placeholder text inside the input field."
-  },
-  "tagEditorSaveButton": {
-    "message": "Tallenna",
-    "description": "Text for the save button in the tag editor."
-  },
-  "tagEditorCancelButton": {
-    "message": "Peruuta",
-    "description": "Text for the cancel button in the tag editor."
-  },
-  "addBookmarkTooltip": {
-    "message": "Napsauta lisätäksesi kirjanmerkin",
-    "description": "Tooltip for the bookmark icon when a response is not yet bookmarked."
-  },
-  "removeBookmarkTooltip": {
-    "message": "Napsauta poistaaksesi kirjanmerkin",
-    "description": "Tooltip for the bookmark icon when a response is already bookmarked."
-  },
-  "panelEmptyMessage": {
-    "message": "Ei vielä kirjanmerkkejä. Napsauta vastauskuvaketta lisätäksesi sen kirjanmerkkeihin!",
-    "description": "Message shown in the panel when there are no bookmarks."
-  },
-  "clearAllConfirmation": {
-    "message": "Haluatko varmasti poistaa KAIKKI tämän keskustelun kirjanmerkit?",
-    "description": "The confirmation text shown to the user before clearing all bookmarks."
-  },
-  "scrollToBookmarkTitle": {
-    "message": "Napsauta selataksesi tähän vastaukseen",
-    "description": "Tooltip on a bookmark item in the side panel."
-  },
-  "confirmButtonText": {
-    "message": "Vahvista",
-    "description": "The text for a generic confirmation button."
-  },
-  "cancelButtonText": {
-    "message": "Peruuta",
-    "description": "The text for a generic cancel button."
-  },
-  "copyButtonTooltip": {
-    "message": "Kopioi sisältö leikepöydälle",
-    "description": "Tooltip for the copy button on a bookmark item."
-  },
-  "copySuccessToast": {
-    "message": "Sisältö kopioitu leikepöydälle!",
-    "description": "Toast message shown after successfully copying bookmark content."
-  },
-  "viewButtonTooltip": {
-    "message": "Näytä koko sisältö",
-    "description": "Tooltip for the view button on a bookmark item."
-  },
-  "viewModalTitle": {
-    "message": "Tallennettu sisältö",
-    "description": "The title of the modal that displays the full content of a bookmark."
+    "description": "Tooltip for the theme button when the light theme is active.",
+    "message": "Teema: Vaalea (Vaihda tummaan)"
   },
   "modalCloseButton": {
-    "message": "Sulje",
-    "description": "The text for a button that closes a modal."
-  },
-  "optionsPageTitle": {
-    "message": "Gemini Bookmarks - Asetukset",
-    "description": "The title of the extension's options page."
-  },
-  "optionsPageDescription": {
-    "message": "Tällä sivulla voit tarkastella kaikkia keskusteluja, joihin olet tallentanut vähintään yhden kirjanmerkin, ja poistaa niiden keskustelujen tiedot, joita et enää tarvitse.",
-    "description": "The descriptive paragraph on the options page."
-  },
-  "optionsPageTotalUsage": {
-    "message": "Kokonaiskäyttö",
-    "description": "Text used as a label on the storage total usage badge."
-  },
-  "optionsSavedConversationsHeader": {
-    "message": "Tallennetut keskustelut",
-    "description": "The H2 header for the list of saved conversations."
-  },
-  "optionsLoadingState": {
-    "message": "Ladataan tallennettuja tietoja...",
-    "description": "Text shown while loading data on the options page."
-  },
-  "optionsEmptyState": {
-    "message": "Et ole vielä lisännyt kirjanmerkkejä mihinkään keskusteluun.",
-    "description": "Text shown on the options page when no data is found."
-  },
-  "optionsDeleteButton": {
-    "message": "Poista",
-    "description": "Text for the button to delete a conversation's data."
-  },
-  "optionsDeleteConfirmation": {
-    "message": "Haluatko varmasti poistaa kaikki tämän keskustelun kirjanmerkit? Toimintoa ei voi peruuttaa.",
-    "description": "Confirmation message before deleting a conversation's data."
-  },
-  "optionsViewButton": {
-    "message": "Näytä",
-    "description": "Text for the button to open a conversation from the options page."
-  },
-  "optionsDeleteAllButton": {
-    "message": "Poista kaikki tiedot",
-    "description": "Text for the button that deletes all bookmark data from the options page."
-  },
-  "optionsDeleteAllConfirmation": {
-    "message": "Haluatko varmasti poistaa KAIKKI tallennetut kirjanmerkkisi KAIKISTA keskusteluista? Tätä toimintoa ei voi peruuttaa.",
-    "description": "A very strong confirmation message shown before deleting all user data."
-  },
-  "optionsExportAllButton": {
-    "message": "Vie kaikki tiedot",
-    "description": "Text for the button that exports all bookmark data to a file."
-  },
-  "optionsPageStandardErrorToast": {
-    "message": "Tapahtui virhe. Yritä uudelleen.",
-    "description": "Standard toast message shown when an error occurs in the options page."
-  },
-  "storageWarningMessage": {
-    "message": "Käytät $1 % tallennustilastasi. Hallitse tietojasi ongelmien välttämiseksi.",
-    "description": "Warning message when storage is nearly full. $PERCENTAGE$ is a placeholder.",
-    "placeholders": {
-      "percentage": {
-        "content": "$1",
-        "example": "95"
-      }
-    }
-  },
-  "storageWarningAction": {
-    "message": "Hallitse tietoja",
-    "description": "Button text that takes the user to the options page to manage their data."
-  },
-  "bookmarkCountSingular": {
-    "message": "$1 kirjanmerkki",
-    "description": "Used when there is exactly one bookmark. The $1 placeholder will be replaced with '1'.",
-    "placeholders": {
-      "1": {
-        "content": "$1",
-        "example": "1"
-      }
-    }
+    "description": "The text for a button that closes a modal.",
+    "message": "Sulje"
   },
   "bookmarkCountPlural": {
-    "message": "$1 kirjanmerkkiä",
     "description": "Used when there are zero or multiple bookmarks. The $1 placeholder will be replaced with the number of bookmarks.",
+    "message": "$1 kirjanmerkkiä",
     "placeholders": {
       "1": {
         "content": "$1",
@@ -177,14 +21,174 @@
       }
     }
   },
+  "clearAllButtonTitle": {
+    "description": "The tooltip for the 'Clear All' button.",
+    "message": "Poista kaikki tämän keskustelun kirjanmerkit"
+  },
+  "storageWarningMessage": {
+    "description": "Warning message when storage is nearly full. $PERCENTAGE$ is a placeholder.",
+    "message": "Käytät $1 % tallennustilastasi. Hallitse tietojasi ongelmien välttämiseksi.",
+    "placeholders": {
+      "percentage": {
+        "content": "$1",
+        "example": "95"
+      }
+    }
+  },
+  "optionsExportAllButton": {
+    "description": "Text for the button that exports all bookmark data to a file.",
+    "message": "Vie kaikki tiedot"
+  },
+  "optionsPageTotalUsage": {
+    "description": "Text used as a label on the storage total usage badge.",
+    "message": "Kokonaiskäyttö"
+  },
+  "confirmButtonText": {
+    "description": "The text for a generic confirmation button.",
+    "message": "Vahvista"
+  },
+  "tagEditorLabel": {
+    "description": "A label appearing above the tag input field.",
+    "message": "Lisää tageja (pilkulla erotettuna):"
+  },
+  "viewModalTitle": {
+    "description": "The title of the modal that displays the full content of a bookmark.",
+    "message": "Tallennettu sisältö"
+  },
+  "optionsLoadingState": {
+    "description": "Text shown while loading data on the options page.",
+    "message": "Ladataan tallennettuja tietoja..."
+  },
+  "optionsEmptyState": {
+    "description": "Text shown on the options page when no data is found.",
+    "message": "Et ole vielä lisännyt kirjanmerkkejä mihinkään keskusteluun."
+  },
+  "tagEditorPlaceholder": {
+    "description": "An example of tags, shown as placeholder text inside the input field.",
+    "message": "esim. idea, opiskelu"
+  },
+  "fabTitle": {
+    "description": "Tooltip for the floating action button that opens the panel.",
+    "message": "Näytä kirjanmerkit"
+  },
+  "tagEditorSaveButton": {
+    "description": "Text for the save button in the tag editor.",
+    "message": "Tallenna"
+  },
+  "themeButtonTitleSystem": {
+    "description": "Tooltip for the theme button when the system theme is active.",
+    "message": "Teema: Järjestelmä (Vaihda vaaleaan)"
+  },
+  "removeBookmarkTooltip": {
+    "description": "Tooltip for the bookmark icon when a response is already bookmarked.",
+    "message": "Napsauta poistaaksesi kirjanmerkin"
+  },
+  "copyButtonTooltip": {
+    "description": "Tooltip for the copy button on a bookmark item.",
+    "message": "Kopioi sisältö leikepöydälle"
+  },
+  "copySuccessToast": {
+    "description": "Toast message shown after successfully copying bookmark content.",
+    "message": "Sisältö kopioitu leikepöydälle!"
+  },
+  "addBookmarkTooltip": {
+    "description": "Tooltip for the bookmark icon when a response is not yet bookmarked.",
+    "message": "Napsauta lisätäksesi kirjanmerkin"
+  },
   "lastUpdatedTimestamp": {
-    "message": "Viimeksi päivitetty: $1",
     "description": "Indicates the timestamp of the last update. The $1 placeholder will be replaced with a formatted date/time string.",
+    "message": "Viimeksi päivitetty: $1",
     "placeholders": {
       "1": {
         "content": "$1",
         "example": "2023-10-27 10:30 AM"
       }
     }
+  },
+  "optionsDeleteButton": {
+    "description": "Text for the button to delete a conversation's data.",
+    "message": "Poista"
+  },
+  "panelEmptyMessage": {
+    "description": "Message shown in the panel when there are no bookmarks.",
+    "message": "Ei vielä kirjanmerkkejä. Napsauta vastauskuvaketta lisätäksesi sen kirjanmerkkeihin!"
+  },
+  "deleteButtonTooltip": {
+    "description": "Tooltip for the delete button on a bookmark item.",
+    "message": "Poista kirjanmerkki"
+  },
+  "clearAllConfirmation": {
+    "description": "The confirmation text shown to the user before clearing all bookmarks.",
+    "message": "Haluatko varmasti poistaa KAIKKI tämän keskustelun kirjanmerkit?"
+  },
+  "optionsViewButton": {
+    "description": "Text for the button to open a conversation from the options page.",
+    "message": "Näytä"
+  },
+  "optionsDeleteConfirmation": {
+    "description": "Confirmation message before deleting a conversation's data.",
+    "message": "Haluatko varmasti poistaa kaikki tämän keskustelun kirjanmerkit? Toimintoa ei voi peruuttaa."
+  },
+  "storageWarningAction": {
+    "description": "Button text that takes the user to the options page to manage their data.",
+    "message": "Hallitse tietoja"
+  },
+  "optionsDeleteAllButton": {
+    "description": "Text for the button that deletes all bookmark data from the options page.",
+    "message": "Poista kaikki tiedot"
+  },
+  "optionsSavedConversationsHeader": {
+    "description": "The H2 header for the list of saved conversations.",
+    "message": "Tallennetut keskustelut"
+  },
+  "bookmarkCountSingular": {
+    "description": "Used when there is exactly one bookmark. The $1 placeholder will be replaced with '1'.",
+    "message": "$1 kirjanmerkki",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "1"
+      }
+    }
+  },
+  "panelHeader": {
+    "description": "The title text in the header of the bookmarks panel.",
+    "message": "Tallennetut vastaukset"
+  },
+  "cancelButtonText": {
+    "description": "The text for a generic cancel button.",
+    "message": "Peruuta"
+  },
+  "tagEditorCancelButton": {
+    "description": "Text for the cancel button in the tag editor.",
+    "message": "Peruuta"
+  },
+  "optionsDeleteAllConfirmation": {
+    "description": "A very strong confirmation message shown before deleting all user data.",
+    "message": "Haluatko varmasti poistaa KAIKKI tallennetut kirjanmerkkisi KAIKISTA keskusteluista? Tätä toimintoa ei voi peruuttaa."
+  },
+  "optionsPageTitle": {
+    "description": "The title of the extension's options page.",
+    "message": "Gemini Bookmarks - Asetukset"
+  },
+  "clearAllButtonText": {
+    "description": "The text on the 'Clear All' button.",
+    "message": "Poista kaikki"
+  },
+  "viewButtonTooltip": {
+    "description": "Tooltip for the view button on a bookmark item.",
+    "message": "Näytä koko sisältö"
+  },
+  "scrollToBookmarkTitle": {
+    "description": "Tooltip on a bookmark item in the side panel.",
+    "message": "Napsauta selataksesi tähän vastaukseen"
+  },
+  "optionsPageStandardErrorToast": {
+    "description": "Standard toast message shown when an error occurs in the options page.",
+    "message": "Tapahtui virhe. Yritä uudelleen."
+  },
+  "optionsPageDescription": {
+    "description": "The descriptive paragraph on the options page.",
+    "message": "Tällä sivulla voit tarkastella kaikkia keskusteluja, joihin olet tallentanut vähintään yhden kirjanmerkin, ja poistaa niiden keskustelujen tiedot, joita et enää tarvitse."
   }
 }
