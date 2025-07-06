@@ -5,8 +5,7 @@ import { injectBookmarkButton } from "../ui/inject-bookmark-button";
  * @param {import('../core/types.js').Dependencies} dependencies
  */
 export const startObserver = (dependencies) => {
-  const { window, uiElements, elementSelectors, stateManager, onNavigate } =
-    dependencies;
+  const { window, elementSelectors, onNavigate, logger } = dependencies;
 
   const previousUrl = window.location.href;
 
@@ -42,12 +41,7 @@ export const startObserver = (dependencies) => {
     }
 
     modelResponseNodes.forEach((modelResponseNode) => {
-      injectBookmarkButton(modelResponseNode, {
-        window,
-        uiElements,
-        elementSelectors,
-        stateManager,
-      });
+      injectBookmarkButton(modelResponseNode, dependencies).catch(logger.error);
     });
   });
 
