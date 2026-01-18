@@ -20,12 +20,6 @@ export const main = async () => {
 
     injectStyles({ logger });
 
-    await waitForElement({
-      parentElement:
-        window.document.body.querySelector("main") || window.document.body,
-      selector: elementSelectors.modelResponse.container,
-    });
-
     const conversationKey = createConversationKey(window.location.pathname);
     const stateManager = new StateManager({ conversationKey });
 

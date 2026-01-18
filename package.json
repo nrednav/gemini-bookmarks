@@ -1,6 +1,6 @@
 {
   "name": "gemini-bookmarks",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Bookmark, tag, and quickly find important responses in your Google Gemini conversations.",
   "type": "module",
   "author": "Vandern Rodrigues <hello@vandern.com>",
