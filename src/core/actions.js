@@ -121,3 +121,23 @@ export const deleteBookmark = async (dependencies, bookmarkId) => {
 
   renderUi(dependencies);
 };
+
+/**
+ * Toggles the expansion state of the tag list.
+ * @param {import('./types.js').Dependencies} dependencies
+ */
+export const toggleTagsExpansion = async (dependencies) => {
+  const { stateManager } = dependencies;
+  const currentState = stateManager.getState();
+
+  const newState = {
+    ...currentState,
+    isTagsExpanded: !currentState.isTagsExpanded,
+  };
+
+  stateManager.setState(newState);
+
+  await stateManager.saveStateToStorage();
+
+  renderUi(dependencies);
+};

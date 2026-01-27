@@ -37,7 +37,7 @@ export class StateManager {
    * @returns {import('./types.js').AppState}
    */
   getInitialState() {
-    return { bookmarks: [], activeTagFilters: [] };
+    return { bookmarks: [], activeTagFilters: [], isTagsExpanded: false };
   }
 
   /**

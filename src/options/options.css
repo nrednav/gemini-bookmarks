@@ -51,7 +51,8 @@ h2 {
   color: var(--color-text-primary);
 }
 
-#loading-state, #empty-state {
+#loading-state,
+#empty-state {
   text-align: center;
   padding: 2rem;
   color: var(--color-text-subtle);
@@ -96,7 +97,8 @@ h2 {
   gap: 4px;
 }
 
-.delete-button, .delete-all-button {
+.delete-button,
+.delete-all-button {
   background-color: var(--color-danger);
   color: #fff;
   border: none;
@@ -108,7 +110,8 @@ h2 {
   transition: background-color 0.2s ease;
 }
 
-.delete-button:hover, .delete-all-button:hover {
+.delete-button:hover,
+.delete-all-button:hover {
   background-color: var(--color-danger-hover);
 }
 
@@ -118,7 +121,8 @@ h2 {
   align-items: center;
 }
 
-.view-button, .export-all-button {
+.view-button,
+.export-all-button {
   background-color: transparent;
   color: var(--color-brand-primary);
   border: 1px solid var(--color-border);
@@ -130,7 +134,8 @@ h2 {
   transition: all 0.2s ease;
 }
 
-.view-button:hover, .export-all-button:hover {
+.view-button:hover,
+.export-all-button:hover {
   background-color: var(--color-brand-primary);
   color: var(--color-brand-text);
   border-color: var(--color-brand-primary);

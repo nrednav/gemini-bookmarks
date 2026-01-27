@@ -12,6 +12,7 @@
  * @typedef {object} AppState
  * @property {Bookmark[]} bookmarks - The list of all bookmarks for the conversation.
  * @property {string[]} activeTagFilters - A list of tags currently used for filtering.
+ * @property {boolean} isTagsExpanded - Whether the tag list is fully expanded.
  */
 
 /**
