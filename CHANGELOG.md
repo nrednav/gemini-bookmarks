@@ -5,6 +5,25 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v1.2.0] - 2026-01-29
+
+### Added
+
+- A toggle control to expand and collapse the tag filter list in the side panel.
+
+### Changed
+
+- The tag list now defaults to a collapsed state, showing a maximum of 10 tags
+  to conserve vertical space.
+- Active tag filters are now prioritized and remain visible even when the list
+  is collapsed.
+- Updated visual styling for tag chips and panel scrollbars.
+
+### Fixed
+
+- Resolved a layout issue where a large number of tags prevented scrolling
+  within the bookmarks side panel.
+
 ## [v1.1.1] - 2026-01-18
 
 ### Fixed

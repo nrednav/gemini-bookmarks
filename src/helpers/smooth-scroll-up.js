@@ -29,9 +29,7 @@ export const smoothScrollUp = (scrollContainer) => {
 
   const step = () => {
     const currentScrollTop =
-      scrollContainer === window
-        ? window.scrollY
-        : scrollContainer["scrollTop"];
+      scrollContainer === window ? window.scrollY : scrollContainer.scrollTop;
 
     if (currentScrollTop === 0) {
       if (!topTimeoutId) {
