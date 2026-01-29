@@ -3,7 +3,6 @@ import { getTheme } from "./core/settings";
 import { StateManager } from "./core/state-manager";
 import { checkStorageQuota } from "./core/storage-limiter";
 import { elementSelectors } from "./data/element-selectors";
-import { waitForElement } from "./helpers/wait-for-element";
 import { Logger } from "./shell/logger";
 import { setupEventListeners } from "./shell/setup-event-listeners";
 import { startObserver } from "./shell/start-observer";
